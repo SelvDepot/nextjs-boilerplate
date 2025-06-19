@@ -93,7 +93,7 @@ export default function Page() {
             Din browser understøtter ikke video-tagget.
           </video>
         </div>
-        <div style={{ maxWidth: '400px', fontSize: '1rem', lineHeight: '1.5' }}>
+        <div style={{ flex: '1 1 300px', fontSize: '1rem', lineHeight: '1.6' }}>
           <p style={{ margin: 0 }}>
             Self-Custody ved hjælp af SelvDepot er din livbåd i en verden, hvor det traditionelle
             FIAT-system suger livet af dine beholdninger og aktiver ud under inflation og kontrol.
@@ -103,12 +103,22 @@ export default function Page() {
             mulighed for arveplanlægning, msig m.m., uden at vi nogensinde rører dine private keys
             eller enhed. Dette er ikke bare en chance til 100 % kontrol og tryghed; det er din
             sidste udvej, før dørene lukker, og du bliver fanget i et forgængeligt system.
-            <span style={{ color: '#f87171', fontWeight: 'bold' }}>
-              {' '}
-              Book nu, før det er for sent!
-            </span>
           </p>
         </div>
+      </div>
+
+      {/* FOMO Callout */}
+      <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+        <p
+          style={{
+            fontSize: '1.25rem',
+            fontWeight: 'bold',
+            color: '#f87171',
+            marginBottom: '0',
+          }}
+        >
+          Book nu, før det er for sent!
+        </p>
       </div>
 
       {/* CTA og tryghedstekst */}
