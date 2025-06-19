@@ -7,7 +7,7 @@ export default function Home() {
           src="/logo.png"
           alt="SelvDepot Logo"
           style={{
-            maxWidth: "150px", // Juster størrelsen efter dit billede
+            maxWidth: "150px",
             height: "auto",
             borderRadius: "8px",
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
@@ -44,16 +44,26 @@ export default function Home() {
         </a>
       </div>
 
-      {/* Video */}
-      <div style={{ marginTop: "2rem" }}>
-        <video
-          controls
-          width="400"
-          style={{ borderRadius: "8px", boxShadow: "0 0 8px rgba(0,0,0,0.2)" }}
-        >
-          <source src="/intro.mp4" type="video/mp4" />
-          Din browser understøtter ikke video-tagget.
-        </video>
+      {/* Video og ny tekst side om side */}
+      <div style={{ marginTop: "2rem", display: "flex", alignItems: "flex-start", gap: "2rem", flexWrap: "wrap" }}>
+        {/* Video */}
+        <div>
+          <video
+            controls
+            width="400"
+            style={{ borderRadius: "8px", boxShadow: "0 0 8px rgba(0,0,0,0.2)" }}
+          >
+            <source src="/intro.mp4" type="video/mp4" />
+            Din browser understøtter ikke video-tagget.
+          </video>
+        </div>
+
+        {/* Ny tekst (FOMO og Self-Custody fokus) */}
+        <div style={{ maxWidth: "400px", fontSize: "1rem", lineHeight: "1.5" }}>
+          <p style={{ color: "#333", margin: "0" }}>
+            Self-Custody ved hjælp af SelvDepot er din livbåd i en verden, hvor det traditionelle FIAT-system suger livet af dine beholdninger og aktiver ud under inflation og kontrol. Over 80 % af nuværende Bitcoin-ejere risikerer at miste alt gennem hacks, beslaglæggelser og modpartsrisiko - men DU er den største ricisi. Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody, inklusiv mulighed for arveplanlægning, msig, mm. uden, at vi nogensinde rører dine private keys eller enhed. Dette er ikke bare en chance til 100 % kontrol og tryghed; det er din sidste udvej, før dørene lukker, og du bliver fanget i et forgængeligt system. <strong style={{ color: "#dc2626" }}>Book nu, før det er for sent!</strong>
+          </p>
+        </div>
       </div>
 
       {/* Calendly button with additional text */}
