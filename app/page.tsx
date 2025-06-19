@@ -1,4 +1,8 @@
+import { useState } from 'react';
+
 export default function Home() {
+  const [isDisclaimerOpen, setIsDisclaimerOpen] = useState(false);
+
   return (
     <main style={{ padding: "2rem", maxWidth: "800px", margin: "0 auto" }}>
       {/* Container for billede og titel/undertitel */}
@@ -47,7 +51,7 @@ export default function Home() {
       {/* Video og ny tekst side om side */}
       <div style={{ marginTop: "2rem", display: "flex", alignItems: "flex-start", gap: "2rem", flexWrap: "wrap" }}>
         {/* Video */}
-        <div style={{ flex: "0 0 400px" }}> {/* Fast bredde for video */}
+        <div style={{ flex: "0 0 400px" }}>
           <video
             controls
             width="400"
@@ -61,13 +65,13 @@ export default function Home() {
         {/* Ny tekst (FOMO og Self-Custody fokus) */}
         <div style={{ maxWidth: "400px", fontSize: "1rem", lineHeight: "1.5", color: "#ffffff" }}>
           <p style={{ color: "#ffffff", margin: "0" }}>
-            Self-Custody ved hjælp af SelvDepot er din livbåd i en verden, hvor det traditionelle FIAT-system suger livet af dine beholdninger og aktiver ud under inflation og kontrol. Over 80 % af nuværende Bitcoin-ejere risikerer at miste alt gennem hacks, beslaglæggelser og modpartsrisiko - men DU er den største risiko. Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody, inklusiv mulighed for arveplanlægning, msig, mm. uden, at vi nogensinde rører dine private keys eller enhed. Dette er ikke bare en chance til 100 % kontrol og tryghed; det er din sidste udvej, før dørene lukker, og du bliver fanget i et forgængeligt system. <strong style={{ color: "#dc2626" }}>Book nu, før det er for sent!</strong>
+            Self-Custody ved hjælp af SelvDepot er din livbåd i en verden, hvor det traditionelle FIAT-system suger livet af dine beholdninger og aktiver ud under inflation og kontrol. Over 80 % af nuværende Bitcoin-ejere risikerer at miste alt gennem hacks, beslaglæggelser og modpartsrisiko – men DU er den største risiko. Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody, inklusiv mulighed for arveplanlægning, msig m.m., uden at vi nogensinde rører dine private keys eller enhed. Dette er ikke bare en chance til 100 % kontrol og tryghed; det er din sidste udvej, før dørene lukker, og du bliver fanget i et forgængeligt system. <strong style={{ color: "#dc2626" }}>Book nu, før det er for sent!</strong>
           </p>
         </div>
       </div>
 
       {/* Calendly button with additional text */}
-      <div style={{ marginTop: "2rem" }}>
+      <div style={{ marginTop: "2rem", textAlign: "center" }}>
         <a
           href="https://calendly.com/selvdepot/30min"
           target="_blank"
@@ -97,18 +101,19 @@ export default function Home() {
         </p>
       </div>
 
-      {/* Disclaimer */}
-      <div style={{ marginTop: "3rem", fontSize: "0.9rem", color: "#666" }}>
-        <p>
-          <strong>Disclaimer:</strong> Informationen på denne hjemmeside er ikke
-          juridisk, finansiel eller investeringsrådgivning. SelvDepot yder udelukkende
-          uddannelse og værktøjer til at hjælpe dig med at administrere dine egne
-          bitcoin. Alle handlinger, der udføres baseret på dette indhold, er på eget
-          ansvar. Konsulter venligst en kvalificeret advokat eller finansiel rådgiver
-          før du træffer beslutninger vedrørende dine aktiver. SelvDepot påtager sig
-          ikke ansvar for eventuelle tab eller skader, der opstår som følge af
-          brugen af denne hjemmeside eller dens indhold.
+      {/* Disclaimer med klik-udvidelse */}
+      <div style={{ marginTop: "3rem" }}>
+        <p
+          style={{ fontSize: "0.9rem", color: "#666", cursor: "pointer", textDecoration: "underline" }}
+          onClick={() => setIsDisclaimerOpen(!isDisclaimerOpen)}
+        >
+          Disclaimer
         </p>
+        {isDisclaimerOpen && (
+          <p style={{ fontSize: "0.9rem", color: "#666", marginTop: "0.5rem" }}>
+            Informationen på denne hjemmeside er ikke juridisk, finansiel eller investeringsrådgivning. SelvDepot yder udelukkende uddannelse og værktøjer til at hjælpe dig med at administrere dine egne bitcoin. Alle handlinger, der udføres baseret på dette indhold, er på eget ansvar. Konsulter venligst en kvalificeret advokat eller finansiel rådgiver før du træffer beslutninger vedrørende dine aktiver. SelvDepot påtager sig ikke ansvar for eventuelle tab eller skader, der opstår som følge af brugen af denne hjemmeside eller dens indhold.
+          </p>
+        )}
       </div>
     </main>
   );
