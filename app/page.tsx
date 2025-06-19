@@ -99,15 +99,23 @@ export default function Page() {
           self-custody, inklusiv mulighed for arveplanlægning, trusselsanalyse, svigtpunktsanalyse,
           multisig m.m., uden at vi nogensinde rører dine private keys eller enhed. Dette er ikke
           bare en chance til 100 % kontrol og tryghed; det er din sidste udvej, før dørene lukker,
-          og du bliver fanget i et forgængeligt system.{' '}
-          <span style={{ color: '#f87171', fontWeight: 'bold', fontSize: '1.1rem' }}>
-            Book nu, før det er for sent!
-          </span>
+          og du bliver fanget i et forgængeligt system.
         </p>
       </div>
 
-      {/* CTA */}
-      <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+      {/* CTA og "Book nu" */}
+      <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
+        <p
+          style={{
+            fontSize: '1.25rem',
+            fontWeight: 'bold',
+            color: '#f87171',
+            marginBottom: '1rem',
+          }}
+        >
+          Book nu, før det er for sent!
+        </p>
+
         <a
           href="https://calendly.com/selvdepot/30min"
           target="_blank"
@@ -119,11 +127,11 @@ export default function Page() {
             borderRadius: '8px',
             textDecoration: 'none',
             display: 'inline-block',
-            marginTop: '1rem',
           }}
         >
           Book et gratis 30-minutters møde
         </a>
+
         <p style={{ fontSize: '1.1rem', fontWeight: 'bold', marginTop: '1rem' }}>
           Vi rører aldrig dine bitcoin. Vi lærer dig at eje dem selv, for evigt.
         </p>
