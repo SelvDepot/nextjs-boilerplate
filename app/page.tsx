@@ -52,7 +52,7 @@ export default function Page() {
 
       {/* Ny introduktionstekst */}
       <p style={{ marginTop: '2rem', fontSize: '1.2rem' }}>
-        Fjern mellemled. Fjern modpartsrisiko. Kun dig og dine bitcoin – på dine præmisser.
+        Ingen mellemled. Ingen bureaukrati. Kun dig og dine bitcoin – på dine præmisser.
         <br />
         Dine penge. Din fremtid. Din familie. Tag kontrol.
       </p>
@@ -91,14 +91,15 @@ export default function Page() {
       {/* TEKST i fuld bredde */}
       <div style={{ marginTop: '2rem', fontSize: '1rem', lineHeight: '1.6' }}>
         <p style={{ margin: 0 }}>
-          Self-Custody ved hjælp af SelvDepot er din livbåd i en verden, hvor det traditionelle
-          FIAT-system suger livet af dine beholdninger og aktiver ud under inflation og kontrol.
-          Over 80 % af nuværende Bitcoin-ejere risikerer at miste alt gennem hacks,
-          beslaglæggelser og modpartsrisiko – men DU er den største risiko. Med vores
-          1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody, inklusiv
-          mulighed for arveplanlægning, msig m.m., uden at vi nogensinde rører dine private keys
-          eller enhed. Dette er ikke bare en chance til 100 % kontrol og tryghed; det er din
-          sidste udvej, før dørene lukker, og du bliver fanget i et forgængeligt system.{' '}
+          Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden, hvor det
+          traditionelle FIAT-system suger livet af dine beholdninger og aktiver ud under inflation
+          og kontrol. Over 80 % af nuværende Bitcoin-ejere risikerer at miste alt gennem hacks,
+          social engineering og modpartsrisiko (Bitcoin IOUs) – men DU er den største risiko for
+          tab af dine Bitcoin. Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem
+          self-custody, inklusiv mulighed for arveplanlægning, trusselsanalyse, svigtpunktsanalyse,
+          multisig m.m., uden at vi nogensinde rører dine private keys eller enhed. Dette er ikke
+          bare en chance til 100 % kontrol og tryghed; det er din sidste udvej, før dørene lukker,
+          og du bliver fanget i et forgængeligt system.{' '}
           <span style={{ color: '#f87171', fontWeight: 'bold', fontSize: '1.1rem' }}>
             Book nu, før det er for sent!
           </span>
