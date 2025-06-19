@@ -79,34 +79,6 @@ export default function Page() {
         </a>
       </div>
 
-      {/* FOMO */}
-      <p
-        style={{
-          marginTop: '2rem',
-          fontSize: '1.1rem',
-          fontWeight: 'bold',
-          color: '#facc15',
-        }}
-      >
-        Ville du føle dig sikker, hvis dine BTC blev 10x mere værd i morgen?
-      </p>
-
-      {/* PDF-link */}
-      <div style={{ marginTop: '1rem' }}>
-        <a
-          href="/SelvDepot.pdf"
-          download
-          style={{
-            color: '#60a5fa',
-            textDecoration: 'underline',
-            display: 'block',
-            marginBottom: '1.5rem',
-          }}
-        >
-          Læs vores introduktion (PDF)
-        </a>
-      </div>
-
       {/* Email capture */}
       <div style={{ marginTop: '2rem', textAlign: 'center' }}>
         {!emailSubmitted ? (
@@ -148,6 +120,19 @@ export default function Page() {
           </div>
         )}
       </div>
+
+      {/* FOMO quote */}
+      <p
+        style={{
+          marginTop: '2rem',
+          fontSize: '1.1rem',
+          fontWeight: 'bold',
+          color: '#facc15',
+          textAlign: 'center',
+        }}
+      >
+        Ville du føle dig sikker, hvis dine BTC blev 10x mere værd i morgen?
+      </p>
 
       {/* Hvad Bitcoin er */}
       <p style={{ marginTop: '2rem', fontSize: '1.05rem', lineHeight: '1.6' }}>
