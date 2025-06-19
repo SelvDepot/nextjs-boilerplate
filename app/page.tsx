@@ -151,14 +151,27 @@ export default function Page() {
           Book din fortrolige 1:1 samtale
         </a>
 
+        {/* Professionel vurderingstekst */}
         <p
           style={{
             marginTop: '0.8rem',
-            fontSize: '0.85rem',
+            fontSize: '0.9rem',
             color: '#facc15',
+            fontStyle: 'italic',
+            maxWidth: '600px',
+            marginLeft: 'auto',
+            marginRight: 'auto',
           }}
         >
-          ⚠️ Kun få rådgivningsforløb tilbydes ad gangen. Først-til-mølle.
+          Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
+          self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har
+          de nødvendige forudsætninger for at tage det fulde ansvar – fx ved kognitiv svækkelse eller
+          tekniske begrænsninger – vil du blive afvist, men med mulighed for undervisning og støtte,
+          indtil du er klar.
+          <br />
+          <br />
+          Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller
+          hjælpelinje at ringe til, hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt ansvar.
         </p>
 
         <p style={{ fontSize: '1.1rem', fontWeight: 'bold', marginTop: '1.2rem' }}>
@@ -227,44 +240,4 @@ export default function Page() {
           <p>
             Alt indhold på denne hjemmeside er til generel information og udgør ikke juridisk,
             finansiel, skattemæssig eller investeringsrådgivning. SelvDepot yder udelukkende
-            uddannelse og værktøjer til selvstændig opbevaring af Bitcoin.
-          </p>
-          <p>
-            Vi håndterer aldrig dine Bitcoin, private nøgler eller adgangsoplysninger. Alle
-            beslutninger træffes på eget ansvar.
-          </p>
-          <p>
-            SelvDepot fraskriver sig ansvar for tab, fejl eller skader som følge af brugen af
-            hjemmesiden, software, hardware eller tredjepartsindhold.
-          </p>
-        </div>
-      )}
-
-      {activeSection === 'Privatliv' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
-          <p>
-            Vi indsamler ingen personlige oplysninger uden samtykke. Ved booking via Calendly
-            håndteres dine oplysninger af dem i overensstemmelse med deres politikker.
-          </p>
-          <p>
-            Vi bruger ingen cookies eller analytics. Din færden på siden er ikke overvåget. Links
-            til tredjepart er kun til information – ikke sporing.
-          </p>
-        </div>
-      )}
-
-      {activeSection === 'Brugsvilkår' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
-          <p>
-            Ved at bruge SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
-            Vi tilbyder ikke investerings-, skatte- eller juridisk rådgivning.
-          </p>
-          <p>
-            SelvDepot rører aldrig dine midler. Vi fraskriver os ansvar for konsekvenser ved brug
-            af vores vejledning, software, hardware og links. Dansk lov gælder.
-          </p>
-        </div>
-      )}
-    </main>
-  );
-}
+            uddannelse og værktøjer til selvstændig opbevari
