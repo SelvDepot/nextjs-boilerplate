@@ -158,7 +158,7 @@ export default function Page() {
         <br />
         <br />
         Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller
-        hjælpelinje at ringe til, hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt
+        hjælpelinje at ringe til, hvis noget går galt i Bitcoin. Bitcoin giver dig fuld kontrol – og fuldt
         ansvar.
       </p>
 
