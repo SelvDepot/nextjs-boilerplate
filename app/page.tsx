@@ -6,7 +6,19 @@ export default function Page() {
   const [isDisclaimerOpen, setIsDisclaimerOpen] = useState(false);
 
   return (
-    <main style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
+    <main
+      style={{
+        backgroundImage: 'url("/imagebaggrund.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        minHeight: '100vh',
+        padding: '2rem',
+        maxWidth: '800px',
+        margin: '0 auto',
+        color: '#ffffff',
+      }}
+    >
       {/* Logo og titel */}
       <div
         style={{
@@ -25,14 +37,12 @@ export default function Page() {
             maxWidth: '150px',
             height: 'auto',
             borderRadius: '8px',
-            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
           }}
         />
         <div>
-          <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: 0, color: '#ffffff' }}>
-            SelvDepot
-          </h1>
-          <h2 style={{ fontSize: '1.5rem', marginTop: '0.5rem', color: '#ffffff' }}>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: 0 }}>SelvDepot</h1>
+          <h2 style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>
             Vi hjælper dig eje dine bitcoin – og sove trygt.
             <br />
             <span style={{ fontWeight: 'normal' }}>Sikkert. Privat. For evigt.</span>
@@ -40,20 +50,20 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Intro tekst */}
-      <p style={{ marginTop: '2rem', fontSize: '1.2rem', color: '#ffffff' }}>
+      {/* Introduktionstekst */}
+      <p style={{ marginTop: '2rem', fontSize: '1.2rem' }}>
         Ingen banker. Ingen tilladelser. Kun dig – og dem, DU stoler på.
         <br />
         Dine penge. Din fremtid. Din familie. Tag kontrol.
       </p>
 
-      {/* PDF Link */}
+      {/* PDF link */}
       <div style={{ marginTop: '2rem' }}>
         <a
           href="/SelvDepot.pdf"
           download
           style={{
-            color: '#2563eb',
+            color: '#60a5fa',
             textDecoration: 'underline',
             display: 'block',
             marginBottom: '1.5rem',
@@ -73,20 +83,17 @@ export default function Page() {
           flexWrap: 'wrap',
         }}
       >
-        {/* Video */}
         <div style={{ flex: '0 0 400px' }}>
           <video
             controls
             width="400"
-            style={{ borderRadius: '8px', boxShadow: '0 0 8px rgba(0,0,0,0.2)' }}
+            style={{ borderRadius: '8px', boxShadow: '0 0 8px rgba(0,0,0,0.3)' }}
           >
             <source src="/intro.mp4" type="video/mp4" />
             Din browser understøtter ikke video-tagget.
           </video>
         </div>
-
-        {/* Tekst med FOMO */}
-        <div style={{ maxWidth: '400px', fontSize: '1rem', lineHeight: '1.5', color: '#ffffff' }}>
+        <div style={{ maxWidth: '400px', fontSize: '1rem', lineHeight: '1.5' }}>
           <p style={{ margin: 0 }}>
             Self-Custody ved hjælp af SelvDepot er din livbåd i en verden, hvor det traditionelle
             FIAT-system suger livet af dine beholdninger og aktiver ud under inflation og kontrol.
@@ -96,7 +103,7 @@ export default function Page() {
             mulighed for arveplanlægning, msig m.m., uden at vi nogensinde rører dine private keys
             eller enhed. Dette er ikke bare en chance til 100 % kontrol og tryghed; det er din
             sidste udvej, før dørene lukker, og du bliver fanget i et forgængeligt system.
-            <span style={{ color: '#dc2626', fontWeight: 'bold' }}>
+            <span style={{ color: '#f87171', fontWeight: 'bold' }}>
               {' '}
               Book nu, før det er for sent!
             </span>
@@ -104,7 +111,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Calendly og info */}
+      {/* CTA og tryghedstekst */}
       <div style={{ marginTop: '2rem', textAlign: 'center' }}>
         <a
           href="https://calendly.com/selvdepot/30min"
@@ -122,16 +129,31 @@ export default function Page() {
         >
           Book et gratis 30-minutters møde
         </a>
-        <p
-          style={{
-            fontSize: '1.1rem',
-            fontWeight: 'bold',
-            color: '#ffffff',
-            marginTop: '1rem',
-            textAlign: 'center',
-          }}
-        >
+        <p style={{ fontSize: '1.1rem', fontWeight: 'bold', marginTop: '1rem' }}>
           Vi rører aldrig dine bitcoin. Vi lærer dig at eje dem selv, for evigt.
+        </p>
+      </div>
+
+      {/* Kontakt os */}
+      <div style={{ marginTop: '4rem', textAlign: 'center' }}>
+        <p style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>📬 Kontakt os</p>
+        <p style={{ margin: 0 }}>
+          <a
+            href="mailto:Selvdepot@gmail.com"
+            style={{ color: '#60a5fa', textDecoration: 'underline' }}
+          >
+            Selvdepot@gmail.com
+          </a>
+        </p>
+        <p style={{ margin: '0.5rem 0 0' }}>
+          <a
+            href="https://calendly.com/selvdepot/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: '#60a5fa', textDecoration: 'underline' }}
+          >
+            Book via Calendly
+          </a>
         </p>
       </div>
 
@@ -140,7 +162,7 @@ export default function Page() {
         <p
           style={{
             fontSize: '0.9rem',
-            color: '#666',
+            color: '#d1d5db',
             cursor: 'pointer',
             textDecoration: 'underline',
           }}
@@ -149,7 +171,7 @@ export default function Page() {
           Disclaimer
         </p>
         {isDisclaimerOpen && (
-          <p style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem' }}>
+          <p style={{ fontSize: '0.9rem', color: '#d1d5db', marginTop: '0.5rem' }}>
             Informationen på denne hjemmeside er ikke juridisk, finansiel eller investeringsrådgivning.
             SelvDepot yder udelukkende uddannelse og værktøjer til at hjælpe dig med at administrere
             dine egne bitcoin. Alle handlinger, der udføres baseret på dette indhold, er på eget ansvar.
