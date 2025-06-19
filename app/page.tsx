@@ -3,8 +3,7 @@
 import { useState } from 'react';
 
 export default function Page() {
-  const [isDisclaimerOpen, setIsDisclaimerOpen] = useState(false);
-  const [isContactOpen, setIsContactOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
 
   return (
     <main
@@ -138,81 +137,104 @@ export default function Page() {
         </p>
       </div>
 
-      {/* Kontakt os toggle */}
-      <div style={{ marginTop: '3rem' }}>
-        <p
-          onClick={() => setIsContactOpen(!isContactOpen)}
-          style={{
-            fontSize: '0.9rem',
-            color: '#d1d5db',
-            cursor: 'pointer',
-            textDecoration: 'underline',
-          }}
-        >
-          Kontakt os
-        </p>
-        {isContactOpen && (
-          <div style={{ fontSize: '0.9rem', color: '#d1d5db', marginTop: '0.5rem' }}>
-            <p style={{ margin: 0 }}>
-              📬 Email:{' '}
-              <a
-                href="mailto:Selvdepot@gmail.com"
-                style={{ color: '#60a5fa', textDecoration: 'underline' }}
-              >
-                Selvdepot@gmail.com
-              </a>
-            </p>
-            <p style={{ marginTop: '0.3rem' }}>
-              📅 Book:{' '}
-              <a
-                href="https://calendly.com/selvdepot/30min"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: '#60a5fa', textDecoration: 'underline' }}
-              >
-                calendly.com/selvdepot/30min
-              </a>
-            </p>
-          </div>
-        )}
+      {/* Footer-links vandret */}
+      <div
+        style={{
+          marginTop: '3rem',
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '2rem',
+          flexWrap: 'wrap',
+          fontSize: '0.9rem',
+          color: '#d1d5db',
+        }}
+      >
+        {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
+          <p
+            key={section}
+            onClick={() =>
+              setActiveSection(activeSection === section ? null : section)
+            }
+            style={{
+              cursor: 'pointer',
+              textDecoration: 'underline',
+              margin: 0,
+            }}
+          >
+            {section}
+          </p>
+        ))}
       </div>
 
-      {/* Disclaimer toggle */}
-      <div style={{ marginTop: '2rem' }}>
-        <p
-          onClick={() => setIsDisclaimerOpen(!isDisclaimerOpen)}
-          style={{
-            fontSize: '0.9rem',
-            color: '#d1d5db',
-            cursor: 'pointer',
-            textDecoration: 'underline',
-          }}
-        >
-          Disclaimer
-        </p>
-        {isDisclaimerOpen && (
-          <div style={{ fontSize: '0.9rem', color: '#d1d5db', marginTop: '0.5rem' }}>
-            <p>
-              Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke
-              juridisk, finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder
-              alene undervisning og værktøjer til selvstændig opbevaring af Bitcoin. Vores
-              rådgivning indebærer aldrig håndtering, opbevaring eller kontrol af dine midler,
-              private nøgler, wallets eller adgangsoplysninger.
-            </p>
-            <p>
-              Al brug af hjemmesiden, tilhørende vejledninger, anbefalinger, software, hardware eller
-              tredjepartsindhold sker udelukkende på eget ansvar. SelvDepot fraskriver sig ethvert
-              ansvar for tab, skader eller konsekvenser, der måtte opstå som følge af brugen af denne
-              hjemmeside eller dets indhold.
-            </p>
-            <p>
-              Vi opfordrer dig til altid at søge uafhængig rådgivning fra en kvalificeret advokat eller
-              finansiel rådgiver. Denne ansvarsfraskrivelse er underlagt dansk lov og gældende
-              EU-lovgivning.
-            </p>
-          </div>
-        )}
-      </div>
+      {/* Footer-sektioner (indhold) */}
+      {activeSection === 'Kontakt' && (
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
+          <p>
+            📬 Email:{' '}
+            <a
+              href="mailto:Selvdepot@gmail.com"
+              style={{ color: '#60a5fa', textDecoration: 'underline' }}
+            >
+              Selvdepot@gmail.com
+            </a>
+          </p>
+          <p>
+            📅 Book:{' '}
+            <a
+              href="https://calendly.com/selvdepot/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#60a5fa', textDecoration: 'underline' }}
+            >
+              calendly.com/selvdepot/30min
+            </a>
+          </p>
+        </div>
+      )}
+
+      {activeSection === 'Disclaimer' && (
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
+          <p>
+            Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke
+            juridisk, finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder
+            alene undervisning og værktøjer til selvstændig opbevaring af Bitcoin.
+          </p>
+          <p>
+            Vi håndterer aldrig dine Bitcoin, private nøgler eller adgangsoplysninger. Enhver
+            handling baseret på denne hjemmeside eller vores rådgivning er på eget ansvar.
+          </p>
+          <p>
+            SelvDepot fraskriver sig ethvert ansvar for tab, fejl eller skader som følge af brugen
+            af hjemmesiden, software, hardware eller tredjepartsindhold.
+          </p>
+        </div>
+      )}
+
+      {activeSection === 'Privatliv' && (
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
+          <p>
+            Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly
+            håndteres dine oplysninger af dem under deres politikker.
+          </p>
+          <p>
+            Vi bruger ingen cookies eller analytics. Din færden på vores side er ikke overvåget. Vi
+            linker til tredjepart som information – ikke sporing.
+          </p>
+        </div>
+      )}
+
+      {activeSection === 'Vilkår' && (
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
+          <p>
+            Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
+            Vi tilbyder ikke investering, skatte- eller juridisk rådgivning.
+          </p>
+          <p>
+            SelvDepot rører aldrig dine midler. Vi fraskriver os ansvar for konsekvenser ved brug
+            af vejledning, software, hardware og links. Dansk lovgivning er gældende.
+          </p>
+        </div>
+      )}
     </main>
   );
 }
