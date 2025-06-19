@@ -34,3 +34,20 @@ export default function Home() {
     </main>
   );
 }
+<a
+  href="/SelvDepot.pdf"
+  download
+  className="text-blue-500 underline mt-4 block"
+>
+  Læs vores introduktion (PDF)
+</a>
+<video controls width="400" className="mt-8 rounded shadow-lg">
+  <source src="/intro.mp4" type="video/mp4" />
+  Din browser understøtter ikke video-tagget.
+</video>
+<a
+  href="https://calendly.com/selvdepot/30min"
+  className="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
+>
+  Book et gratis 30-minutters møde
+</a>
