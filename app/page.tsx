@@ -96,7 +96,7 @@ export default function Page() {
           <>
             <input
               type="email"
-              placeholder="Indtast din e-mail for at modtage vores introduktion PDF"
+              placeholder="Modtag Intro PDF via Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               style={{
@@ -187,7 +187,7 @@ export default function Page() {
             fontWeight: 'bold',
           }}
         >
-          Klar til at tage ansvar? Book et kald nu →
+          Klar til at tage ansvar? Book et kald nu 
         </a>
       </div>
 
