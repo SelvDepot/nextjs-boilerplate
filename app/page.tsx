@@ -50,9 +50,9 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Introduktionstekst */}
+      {/* Ny introduktionstekst */}
       <p style={{ marginTop: '2rem', fontSize: '1.2rem' }}>
-        Ingen banker. Ingen tilladelser. Kun dig – og dem, DU stoler på.
+        Ingen mellemled. Ingen bureaukrati. Kun dig og dine bitcoin – på dine præmisser.
         <br />
         Dine penge. Din fremtid. Din familie. Tag kontrol.
       </p>
@@ -102,23 +102,12 @@ export default function Page() {
             1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody, inklusiv
             mulighed for arveplanlægning, msig m.m., uden at vi nogensinde rører dine private keys
             eller enhed. Dette er ikke bare en chance til 100 % kontrol og tryghed; det er din
-            sidste udvej, før dørene lukker, og du bliver fanget i et forgængeligt system.
+            sidste udvej, før dørene lukker, og du bliver fanget i et forgængeligt system.{' '}
+            <span style={{ color: '#f87171', fontWeight: 'bold', fontSize: '1.1rem' }}>
+              Book nu, før det er for sent!
+            </span>
           </p>
         </div>
-      </div>
-
-      {/* FOMO Callout */}
-      <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-        <p
-          style={{
-            fontSize: '1.25rem',
-            fontWeight: 'bold',
-            color: '#f87171',
-            marginBottom: '0',
-          }}
-        >
-          Book nu, før det er for sent!
-        </p>
       </div>
 
       {/* CTA og tryghedstekst */}
