@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import { useState } from 'react';
 
 export default function Page() {
@@ -58,8 +57,20 @@ export default function Page() {
         Dine penge. Din fremtid. Din familie. Tag kontrol.
       </p>
 
+      {/* FOMO tekst før PDF */}
+      <p
+        style={{
+          marginTop: '2rem',
+          fontSize: '1.1rem',
+          fontWeight: 'bold',
+          color: '#facc15',
+        }}
+      >
+        Ville du føle dig sikker, hvis dine BTC blev 10x mere værd i morgen?
+      </p>
+
       {/* PDF link */}
-      <div style={{ marginTop: '2rem' }}>
+      <div style={{ marginTop: '1rem' }}>
         <a
           href="/SelvDepot.pdf"
           download
@@ -95,7 +106,7 @@ export default function Page() {
           Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden, hvor det
           traditionelle FIAT-system suger livet af dine beholdninger og aktiver ud under inflation
           og kontrol. Over 80 % af nuværende Bitcoin-ejere risikerer at miste alt gennem hacks,
-          social engineering og modpartsrisiko (Bitcoin IOUs) – men DU er den største risiko for
+          social engineering og modpartsrisiko (Bitcoin IOUs) – men DU er stadig den største risiko for
           tab af dine Bitcoin. Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem
           self-custody, inklusiv mulighed for arveplanlægning, trusselsanalyse, svigtpunktsanalyse,
           multisig m.m., uden at vi nogensinde rører dine private keys eller enhed. Dette er ikke
@@ -138,31 +149,7 @@ export default function Page() {
         </p>
       </div>
 
-      {/* Ansvarsnote */}
-      <p
-        style={{
-          marginTop: '0.8rem',
-          fontSize: '0.9rem',
-          color: '#facc15',
-          fontStyle: 'italic',
-          maxWidth: '600px',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-        }}
-      >
-        Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
-        self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har de
-        nødvendige forudsætninger for at tage det fulde ansvar – fx ved kognitiv svækkelse eller
-        tekniske begrænsninger – vil du blive afvist, men med mulighed for undervisning og støtte,
-        indtil du er klar.
-        <br />
-        <br />
-        Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller
-        hjælpelinje at ringe til, hvis noget går galt i Bitcoin. Bitcoin giver dig fuld kontrol – og fuldt
-        ansvar.
-      </p>
-
-      {/* Footer-links */}
+      {/* Footer-links vandret */}
       <div
         style={{
           marginTop: '3rem',
@@ -177,7 +164,9 @@ export default function Page() {
         {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
           <p
             key={section}
-            onClick={() => setActiveSection(activeSection === section ? null : section)}
+            onClick={() =>
+              setActiveSection(activeSection === section ? null : section)
+            }
             style={{
               cursor: 'pointer',
               textDecoration: 'underline',
@@ -189,12 +178,15 @@ export default function Page() {
         ))}
       </div>
 
-      {/* Footer-indhold */}
+      {/* Footer-indhold dynamisk */}
       {activeSection === 'Kontakt' && (
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
           <p>
             📬 Email:{' '}
-            <a href="mailto:Selvdepot@gmail.com" style={{ color: '#60a5fa' }}>
+            <a
+              href="mailto:Selvdepot@gmail.com"
+              style={{ color: '#60a5fa', textDecoration: 'underline' }}
+            >
               Selvdepot@gmail.com
             </a>
           </p>
@@ -204,7 +196,7 @@ export default function Page() {
               href="https://calendly.com/selvdepot/30min"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: '#60a5fa' }}
+              style={{ color: '#60a5fa', textDecoration: 'underline' }}
             >
               calendly.com/selvdepot/30min
             </a>
