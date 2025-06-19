@@ -51,11 +51,15 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Top CTA */}
-      <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-        <p style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#f87171' }}>
-          Book nu – før det er for sent!
-        </p>
+      {/* Intro */}
+      <p style={{ marginTop: '2rem', fontSize: '1.2rem' }}>
+        Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
+        <br />
+        Dine penge. Din fremtid. Din familie. Tag kontrol.
+      </p>
+
+      {/* Book-møde efter intro */}
+      <div style={{ marginTop: '1rem', textAlign: 'center' }}>
         <a
           href="https://calendly.com/selvdepot/30min"
           target="_blank"
@@ -72,13 +76,6 @@ export default function Page() {
           Book et gratis 30-minutters møde
         </a>
       </div>
-
-      {/* Intro */}
-      <p style={{ marginTop: '2rem', fontSize: '1.2rem' }}>
-        Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
-        <br />
-        Dine penge. Din fremtid. Din familie. Tag kontrol.
-      </p>
 
       {/* FOMO */}
       <p
@@ -147,6 +144,26 @@ export default function Page() {
         </p>
       </div>
 
+      {/* Sekundær Call-to-Action */}
+      <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+        <a
+          href="https://calendly.com/selvdepot/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            background: '#15803d',
+            color: '#fff',
+            padding: '0.8rem 1.5rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            display: 'inline-block',
+            fontWeight: 'bold',
+          }}
+        >
+          Klar til at tage ansvar? Book et kald nu →
+        </a>
+      </div>
+
       {/* Vurderingstekst */}
       <p
         style={{
@@ -168,26 +185,6 @@ export default function Page() {
         Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller hjælpelinje
         at ringe til, hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt ansvar.
       </p>
-
-      {/* Sekundær Call-to-Action */}
-      <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-        <a
-          href="https://calendly.com/selvdepot/30min"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            background: '#15803d',
-            color: '#fff',
-            padding: '0.8rem 1.5rem',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            display: 'inline-block',
-            fontWeight: 'bold',
-          }}
-        >
-          Klar til at tage ansvar? Book et kald nu →
-        </a>
-      </div>
 
       {/* Footer-links */}
       <div
