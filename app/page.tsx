@@ -52,7 +52,7 @@ export default function Page() {
 
       {/* Ny introduktionstekst */}
       <p style={{ marginTop: '2rem', fontSize: '1.2rem' }}>
-        Ingen mellemled. Ingen bureaukrati. Kun dig og dine bitcoin – på dine præmisser.
+        Fjern mellemled. Fjern modpartsrisiko. Kun dig og dine bitcoin – på dine præmisser.
         <br />
         Dine penge. Din fremtid. Din familie. Tag kontrol.
       </p>
@@ -73,44 +73,39 @@ export default function Page() {
         </a>
       </div>
 
-      {/* Video og tekst */}
-      <div
-        style={{
-          marginTop: '2rem',
-          display: 'flex',
-          alignItems: 'flex-start',
-          gap: '2rem',
-          flexWrap: 'wrap',
-        }}
-      >
-        <div style={{ flex: '0 0 400px' }}>
-          <video
-            controls
-            width="400"
-            style={{ borderRadius: '8px', boxShadow: '0 0 8px rgba(0,0,0,0.3)' }}
-          >
-            <source src="/intro.mp4" type="video/mp4" />
-            Din browser understøtter ikke video-tagget.
-          </video>
-        </div>
-        <div style={{ flex: '1 1 300px', fontSize: '1rem', lineHeight: '1.6' }}>
-          <p style={{ margin: 0 }}>
-            Self-Custody ved hjælp af SelvDepot er din livbåd i en verden, hvor det traditionelle
-            FIAT-system suger livet af dine beholdninger og aktiver ud under inflation og kontrol.
-            Over 80 % af nuværende Bitcoin-ejere risikerer at miste alt gennem hacks,
-            beslaglæggelser og modpartsrisiko – men DU er den største risiko. Med vores
-            1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody, inklusiv
-            mulighed for arveplanlægning, msig m.m., uden at vi nogensinde rører dine private keys
-            eller enhed. Dette er ikke bare en chance til 100 % kontrol og tryghed; det er din
-            sidste udvej, før dørene lukker, og du bliver fanget i et forgængeligt system.{' '}
-            <span style={{ color: '#f87171', fontWeight: 'bold', fontSize: '1.1rem' }}>
-              Book nu, før det er for sent!
-            </span>
-          </p>
-        </div>
+      {/* VIDEO øverst */}
+      <div style={{ marginTop: '2rem' }}>
+        <video
+          controls
+          style={{
+            width: '100%',
+            borderRadius: '8px',
+            boxShadow: '0 0 8px rgba(0,0,0,0.3)',
+          }}
+        >
+          <source src="/intro.mp4" type="video/mp4" />
+          Din browser understøtter ikke video-tagget.
+        </video>
       </div>
 
-      {/* CTA og tryghedstekst */}
+      {/* TEKST i fuld bredde */}
+      <div style={{ marginTop: '2rem', fontSize: '1rem', lineHeight: '1.6' }}>
+        <p style={{ margin: 0 }}>
+          Self-Custody ved hjælp af SelvDepot er din livbåd i en verden, hvor det traditionelle
+          FIAT-system suger livet af dine beholdninger og aktiver ud under inflation og kontrol.
+          Over 80 % af nuværende Bitcoin-ejere risikerer at miste alt gennem hacks,
+          beslaglæggelser og modpartsrisiko – men DU er den største risiko. Med vores
+          1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody, inklusiv
+          mulighed for arveplanlægning, msig m.m., uden at vi nogensinde rører dine private keys
+          eller enhed. Dette er ikke bare en chance til 100 % kontrol og tryghed; det er din
+          sidste udvej, før dørene lukker, og du bliver fanget i et forgængeligt system.{' '}
+          <span style={{ color: '#f87171', fontWeight: 'bold', fontSize: '1.1rem' }}>
+            Book nu, før det er for sent!
+          </span>
+        </p>
+      </div>
+
+      {/* CTA */}
       <div style={{ marginTop: '2rem', textAlign: 'center' }}>
         <a
           href="https://calendly.com/selvdepot/30min"
