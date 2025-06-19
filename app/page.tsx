@@ -45,9 +45,9 @@ export default function Home() {
       </div>
 
       {/* Video og ny tekst side om side */}
-      <div style={{ marginTop: "2rem", display: "flex", alignItems: "flex-start", gap: "2rem", flexWrap: "wrap", backgroundColor: "#000000" }}>
+      <div style={{ marginTop: "2rem", display: "flex", alignItems: "flex-start", gap: "2rem", flexWrap: "wrap" }}>
         {/* Video */}
-        <div>
+        <div style={{ flex: "0 0 400px" }}> {/* Fast bredde for video */}
           <video
             controls
             width="400"
