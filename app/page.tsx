@@ -1,25 +1,26 @@
 export default function Home() {
   return (
     <main style={{ padding: "2rem", maxWidth: "800px", margin: "0 auto" }}>
-      {/* Billede */}
-      <div style={{ marginTop: "2rem", textAlign: "center" }}>
+      {/* Container for billede og titel/undertitel */}
+      <div style={{ marginTop: "2rem", display: "flex", alignItems: "center", flexWrap: "wrap", justifyContent: "center", gap: "1rem" }}>
         <img
-          src="/logo.png" // Erstat med dit billede i public-mappen (f.eks. logo.png)
+          src="/logo.png"
           alt="SelvDepot Logo"
           style={{
-            maxWidth: "100%",
+            maxWidth: "150px", // Juster størrelsen efter dit billede
             height: "auto",
             borderRadius: "8px",
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
           }}
         />
+        <div>
+          <h1 style={{ fontSize: "2.5rem", fontWeight: "bold", margin: "0" }}>SelvDepot</h1>
+          <h2 style={{ fontSize: "1.5rem", marginTop: "0.5rem" }}>
+            Vi hjælper dig eje dine bitcoin – og sove trygt. <br />
+            <span style={{ fontWeight: "normal" }}>Sikkert. Privat. For evigt.</span>
+          </h2>
+        </div>
       </div>
-
-      <h1 style={{ fontSize: "2.5rem", fontWeight: "bold" }}>SelvDepot</h1>
-      <h2 style={{ fontSize: "1.5rem", marginTop: "1rem" }}>
-        Vi hjælper dig eje dine bitcoin – og sove trygt. <br />
-        <span style={{ fontWeight: "normal" }}>Sikkert. Privat. For evigt.</span>
-      </h2>
 
       <p style={{ marginTop: "2rem", fontSize: "1.2rem" }}>
         Ingen banker. Ingen tilladelser. Kun dig – og dem, DU stoler på.
