@@ -79,8 +79,19 @@ export default function Page() {
         </a>
       </div>
 
-      {/* Email capture */}
-      <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+      {/* FOMO + Email */}
+      <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+        <p
+          style={{
+            fontSize: '1.1rem',
+            fontWeight: 'bold',
+            color: '#facc15',
+            marginBottom: '1rem',
+          }}
+        >
+          Ville du føle dig sikker, hvis dine BTC blev 10x mere værd i morgen?
+        </p>
+
         {!emailSubmitted ? (
           <>
             <input
@@ -121,21 +132,8 @@ export default function Page() {
         )}
       </div>
 
-      {/* FOMO quote */}
-      <p
-        style={{
-          marginTop: '2rem',
-          fontSize: '1.1rem',
-          fontWeight: 'bold',
-          color: '#facc15',
-          textAlign: 'center',
-        }}
-      >
-        Ville du føle dig sikker, hvis dine BTC blev 10x mere værd i morgen?
-      </p>
-
       {/* Hvad Bitcoin er */}
-      <p style={{ marginTop: '2rem', fontSize: '1.05rem', lineHeight: '1.6' }}>
+      <p style={{ marginTop: '3rem', fontSize: '1.05rem', lineHeight: '1.6' }}>
         Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
         med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen.
         Ingen banker. Ingen stater. Ingen modparter.
