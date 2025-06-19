@@ -43,9 +43,11 @@ export default function Page() {
         <div>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: 0 }}>SelvDepot</h1>
           <h2 style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>
-            Vi hjælper dig eje dine Bitcoin – og sove trygt.
+            Sov trygt med dine Bitcoin – uden banker, tilladelser eller afhængighed.
             <br />
-            <span style={{ fontWeight: 'normal' }}>Sikkert. Privat. For evigt.</span>
+            <span style={{ fontWeight: 'normal' }}>
+              For dem, der forstår værdien af ægte ejerskab.
+            </span>
           </h2>
         </div>
       </div>
@@ -86,6 +88,18 @@ export default function Page() {
           <source src="/intro.mp4" type="video/mp4" />
           Din browser understøtter ikke video-tagget.
         </video>
+
+        <p
+          style={{
+            marginTop: '1rem',
+            fontSize: '0.95rem',
+            fontStyle: 'italic',
+            color: '#d4d4d4',
+          }}
+        >
+          Rådgivning baseret på de samme principper, der bruges af Bitcoin-fonde, formuerådgivere
+          og cypherpunks.
+        </p>
       </div>
 
       {/* Brødtekst */}
@@ -103,17 +117,17 @@ export default function Page() {
         </p>
       </div>
 
-      {/* Call-to-action */}
+      {/* CTA */}
       <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
         <p
           style={{
-            fontSize: '1.25rem',
+            fontSize: '1.2rem',
             fontWeight: 'bold',
             color: '#f87171',
             marginBottom: '1rem',
           }}
         >
-          Book nu, før det er for sent!
+          Klar til at tage kontrol – før nogen andre gør det for dig?
         </p>
 
         <a
@@ -121,23 +135,38 @@ export default function Page() {
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            background: '#2563eb',
+            background: '#f97316',
             color: '#fff',
-            padding: '1rem 2rem',
-            borderRadius: '8px',
+            padding: '1rem 2.5rem',
+            fontWeight: 'bold',
+            borderRadius: '9999px',
             textDecoration: 'none',
+            boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
+            transition: 'transform 0.2s ease',
             display: 'inline-block',
           }}
+          onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+          onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
         >
-          Book et gratis 30-minutters møde
+          Book din fortrolige 1:1 samtale
         </a>
 
-        <p style={{ fontSize: '1.1rem', fontWeight: 'bold', marginTop: '1rem' }}>
+        <p
+          style={{
+            marginTop: '0.8rem',
+            fontSize: '0.85rem',
+            color: '#facc15',
+          }}
+        >
+          ⚠️ Kun få rådgivningsforløb tilbydes ad gangen. Først-til-mølle.
+        </p>
+
+        <p style={{ fontSize: '1.1rem', fontWeight: 'bold', marginTop: '1.2rem' }}>
           Vi rører aldrig dine Bitcoin. Vi lærer dig at eje dem selv, for evigt.
         </p>
       </div>
 
-      {/* Footer-links vandret */}
+      {/* Footer-links */}
       <div
         style={{
           marginTop: '3rem',
@@ -145,11 +174,12 @@ export default function Page() {
           justifyContent: 'center',
           gap: '2rem',
           flexWrap: 'wrap',
-          fontSize: '0.9rem',
+          fontSize: '0.8rem',
+          letterSpacing: '0.5px',
           color: '#d1d5db',
         }}
       >
-        {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
+        {['Kontakt SelvDepot', 'Juridisk Ansvar', 'Privatliv', 'Brugsvilkår'].map((section) => (
           <p
             key={section}
             onClick={() =>
@@ -166,8 +196,8 @@ export default function Page() {
         ))}
       </div>
 
-      {/* Footer-sektioner (indhold) */}
-      {activeSection === 'Kontakt' && (
+      {/* Footer-indhold */}
+      {activeSection === 'Kontakt SelvDepot' && (
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
           <p>
             📬 Email:{' '}
@@ -192,20 +222,20 @@ export default function Page() {
         </div>
       )}
 
-      {activeSection === 'Disclaimer' && (
+      {activeSection === 'Juridisk Ansvar' && (
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
           <p>
-            Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke
-            juridisk, finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder
-            alene undervisning og værktøjer til selvstændig opbevaring af Bitcoin.
+            Alt indhold på denne hjemmeside er til generel information og udgør ikke juridisk,
+            finansiel, skattemæssig eller investeringsrådgivning. SelvDepot yder udelukkende
+            uddannelse og værktøjer til selvstændig opbevaring af Bitcoin.
           </p>
           <p>
-            Vi håndterer aldrig dine Bitcoin, private nøgler eller adgangsoplysninger. Enhver
-            handling baseret på denne hjemmeside eller vores rådgivning er på eget ansvar.
+            Vi håndterer aldrig dine Bitcoin, private nøgler eller adgangsoplysninger. Alle
+            beslutninger træffes på eget ansvar.
           </p>
           <p>
-            SelvDepot fraskriver sig ethvert ansvar for tab, fejl eller skader som følge af brugen
-            af hjemmesiden, software, hardware eller tredjepartsindhold.
+            SelvDepot fraskriver sig ansvar for tab, fejl eller skader som følge af brugen af
+            hjemmesiden, software, hardware eller tredjepartsindhold.
           </p>
         </div>
       )}
@@ -213,25 +243,25 @@ export default function Page() {
       {activeSection === 'Privatliv' && (
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
           <p>
-            Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly
-            håndteres dine oplysninger af dem under deres politikker.
+            Vi indsamler ingen personlige oplysninger uden samtykke. Ved booking via Calendly
+            håndteres dine oplysninger af dem i overensstemmelse med deres politikker.
           </p>
           <p>
-            Vi bruger ingen cookies eller analytics. Din færden på vores side er ikke overvåget. Vi
-            linker til tredjepart som information – ikke sporing.
+            Vi bruger ingen cookies eller analytics. Din færden på siden er ikke overvåget. Links
+            til tredjepart er kun til information – ikke sporing.
           </p>
         </div>
       )}
 
-      {activeSection === 'Vilkår' && (
+      {activeSection === 'Brugsvilkår' && (
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
           <p>
-            Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
-            Vi tilbyder ikke investering, skatte- eller juridisk rådgivning.
+            Ved at bruge SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
+            Vi tilbyder ikke investerings-, skatte- eller juridisk rådgivning.
           </p>
           <p>
             SelvDepot rører aldrig dine midler. Vi fraskriver os ansvar for konsekvenser ved brug
-            af vejledning, software, hardware og links. Dansk lovgivning er gældende.
+            af vores vejledning, software, hardware og links. Dansk lov gælder.
           </p>
         </div>
       )}
