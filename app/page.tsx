@@ -13,13 +13,38 @@ export default function Home() {
         Dine penge. Din fremtid. Din familie. Tag kontrol.
       </p>
 
+      {/* PDF Link */}
       <div style={{ marginTop: "2rem" }}>
         <a
-          href="https://calendly.com/DIT-BRUGERNAVN/30min"
+          href="/SelvDepot.pdf"
+          download
+          style={{
+            color: "#2563eb",
+            textDecoration: "underline",
+            display: "block",
+            marginBottom: "1.5rem",
+          }}
+        >
+          Læs vores introduktion (PDF)
+        </a>
+      </div>
+
+      {/* Video */}
+      <div style={{ marginTop: "2rem" }}>
+        <video controls width="400" style={{ borderRadius: "8px", boxShadow: "0 0 8px rgba(0,0,0,0.2)" }}>
+          <source src="/intro.mp4" type="video/mp4" />
+          Din browser understøtter ikke video-tagget.
+        </video>
+      </div>
+
+      {/* Calendly button */}
+      <div style={{ marginTop: "2rem" }}>
+        <a
+          href="https://calendly.com/selvdepot/30min"
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            background: "#000",
+            background: "#2563eb",
             color: "#fff",
             padding: "1rem 2rem",
             borderRadius: "8px",
@@ -28,26 +53,9 @@ export default function Home() {
             marginTop: "1rem",
           }}
         >
-          Book et gratis 30 minutters møde
+          Book et gratis 30-minutters møde
         </a>
       </div>
     </main>
   );
 }
-<a
-  href="/SelvDepot.pdf"
-  download
-  className="text-blue-500 underline mt-4 block"
->
-  Læs vores introduktion (PDF)
-</a>
-<video controls width="400" className="mt-8 rounded shadow-lg">
-  <source src="/intro.mp4" type="video/mp4" />
-  Din browser understøtter ikke video-tagget.
-</video>
-<a
-  href="https://calendly.com/selvdepot/30min"
-  className="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
->
-  Book et gratis 30-minutters møde
-</a>
