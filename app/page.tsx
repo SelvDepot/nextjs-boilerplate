@@ -1,5 +1,6 @@
 'use client';
 
+import * as React from 'react';
 import { useState } from 'react';
 
 export default function Page() {
@@ -19,7 +20,7 @@ export default function Page() {
         color: '#ffffff',
       }}
     >
-      {/* Logo og titel */}
+      {/* Header */}
       <div
         style={{
           marginTop: '2rem',
@@ -43,21 +44,21 @@ export default function Page() {
         <div>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: 0 }}>SelvDepot</h1>
           <h2 style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>
-            Vi hjælper dig eje dine Bitcoin – og sove trygt.
+            Vi hjælper dig eje dine Bitcoin og sove trygt.
             <br />
             <span style={{ fontWeight: 'normal' }}>Sikkert. Privat. For evigt.</span>
           </h2>
         </div>
       </div>
 
-      {/* Intro */}
+      {/* Intro tekst */}
       <p style={{ marginTop: '2rem', fontSize: '1.2rem' }}>
-        Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin – på dine præmisser.
+        Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
         <br />
         Dine penge. Din fremtid. Din familie. Tag kontrol.
       </p>
 
-      {/* FOMO tekst før PDF */}
+      {/* FOMO */}
       <p
         style={{
           marginTop: '2rem',
@@ -85,6 +86,16 @@ export default function Page() {
         </a>
       </div>
 
+      {/* Intro forklaring */}
+      <p style={{ marginTop: '2rem', fontSize: '1.05rem', lineHeight: '1.6' }}>
+        Bitcoin er ikke spekulation. Det er basepenge i digital form.
+        Et globalt, upolitisk system med begrænset udbud, der ikke kan manipuleres, printes eller koopteres af nogen.
+        Ingen banker, ingen stater, ingen modparter.
+        Men uden korrekt opbevaring forsvinder sikkerheden og suveræniteten.
+        Hos SelvDepot lærer du at holde dine Bitcoin, som de var tiltænkt.
+        100 procent under din egen kontrol. Privat. Permanent.
+      </p>
+
       {/* Video */}
       <div style={{ marginTop: '2rem' }}>
         <video
@@ -103,29 +114,44 @@ export default function Page() {
       {/* Brødtekst */}
       <div style={{ marginTop: '2rem', fontSize: '1rem', lineHeight: '1.6' }}>
         <p style={{ margin: 0 }}>
-          Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden, hvor det
-          traditionelle FIAT-system suger livet af dine beholdninger og aktiver ud under inflation
-          og kontrol. Over 80 % af nuværende Bitcoin-ejere risikerer at miste alt gennem hacks,
-          social engineering og modpartsrisiko (Bitcoin IOUs) – men DU er stadig den største risiko for
-          tab af dine Bitcoin. Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem
-          self-custody, inklusiv mulighed for arveplanlægning, trusselsanalyse, svigtpunktsanalyse,
-          multisig m.m., uden at vi nogensinde rører dine private keys eller enhed. Dette er ikke
-          bare en chance til 100 % kontrol og tryghed; det er din sidste udvej, før dørene lukker,
-          og du bliver fanget i et forgængeligt system.
+          Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden hvor det
+          traditionelle FIAT-system suger livet ud af dine beholdninger og aktiver gennem inflation
+          og kontrol. Over 80 procent af Bitcoin-ejere risikerer at miste alt gennem hacks,
+          social engineering og modpartsrisiko – men DU er stadig den største risiko for tab af dine Bitcoin.
+          Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody inklusiv
+          mulighed for arveplanlægning, trusselsanalyse, svigtpunktsanalyse og multisig – uden at vi
+          nogensinde rører dine private keys eller enhed. Dette er ikke bare en chance til 100 procent
+          kontrol og tryghed. Det er din sidste udvej før dørene lukker og du bliver fanget i et
+          forgængeligt system.
         </p>
       </div>
 
-      {/* Call-to-action */}
+      {/* Advarsel / ansvar */}
+      <p
+        style={{
+          marginTop: '2.5rem',
+          fontSize: '0.95rem',
+          color: '#facc15',
+          fontStyle: 'italic',
+          maxWidth: '600px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+        }}
+      >
+        Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere self-custody
+        af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har de nødvendige forudsætninger
+        for at tage det fulde ansvar – fx ved kognitiv svækkelse eller tekniske begrænsninger – vil du blive
+        afvist, men med mulighed for undervisning og støtte, indtil du er klar.
+        <br />
+        <br />
+        Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller hjælpelinje at ringe til,
+        hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt ansvar.
+      </p>
+
+      {/* CTA */}
       <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
-        <p
-          style={{
-            fontSize: '1.25rem',
-            fontWeight: 'bold',
-            color: '#f87171',
-            marginBottom: '1rem',
-          }}
-        >
-          Book nu, før det er for sent!
+        <p style={{ fontSize: '1.25rem', fontWeight: 'bold', color: '#f87171', marginBottom: '1rem' }}>
+          Book nu før det er for sent!
         </p>
 
         <a
@@ -148,105 +174,6 @@ export default function Page() {
           Vi rører aldrig dine Bitcoin. Vi lærer dig at eje dem selv, for evigt.
         </p>
       </div>
-
-      {/* Footer-links vandret */}
-      <div
-        style={{
-          marginTop: '3rem',
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '2rem',
-          flexWrap: 'wrap',
-          fontSize: '0.9rem',
-          color: '#d1d5db',
-        }}
-      >
-        {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
-          <p
-            key={section}
-            onClick={() =>
-              setActiveSection(activeSection === section ? null : section)
-            }
-            style={{
-              cursor: 'pointer',
-              textDecoration: 'underline',
-              margin: 0,
-            }}
-          >
-            {section}
-          </p>
-        ))}
-      </div>
-
-      {/* Footer-indhold dynamisk */}
-      {activeSection === 'Kontakt' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
-          <p>
-            📬 Email:{' '}
-            <a
-              href="mailto:Selvdepot@gmail.com"
-              style={{ color: '#60a5fa', textDecoration: 'underline' }}
-            >
-              Selvdepot@gmail.com
-            </a>
-          </p>
-          <p>
-            📅 Book:{' '}
-            <a
-              href="https://calendly.com/selvdepot/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: '#60a5fa', textDecoration: 'underline' }}
-            >
-              calendly.com/selvdepot/30min
-            </a>
-          </p>
-        </div>
-      )}
-
-      {activeSection === 'Disclaimer' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
-          <p>
-            Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke
-            juridisk, finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder
-            alene undervisning og værktøjer til selvstændig opbevaring af Bitcoin.
-          </p>
-          <p>
-            Vi håndterer aldrig dine Bitcoin, private nøgler eller adgangsoplysninger. Enhver
-            handling baseret på denne hjemmeside eller vores rådgivning er på eget ansvar.
-          </p>
-          <p>
-            SelvDepot fraskriver sig ethvert ansvar for tab, fejl eller skader som følge af brugen
-            af hjemmesiden, software, hardware eller tredjepartsindhold.
-          </p>
-        </div>
-      )}
-
-      {activeSection === 'Privatliv' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
-          <p>
-            Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly
-            håndteres dine oplysninger af dem under deres politikker.
-          </p>
-          <p>
-            Vi bruger ingen cookies eller analytics. Din færden på vores side er ikke overvåget. Vi
-            linker til tredjepart som information – ikke sporing.
-          </p>
-        </div>
-      )}
-
-      {activeSection === 'Vilkår' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
-          <p>
-            Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
-            Vi tilbyder ikke investering, skatte- eller juridisk rådgivning.
-          </p>
-          <p>
-            SelvDepot rører aldrig dine midler. Vi fraskriver os ansvar for konsekvenser ved brug
-            af vejledning, software, hardware og links. Dansk lovgivning er gældende.
-          </p>
-        </div>
-      )}
     </main>
   );
 }
