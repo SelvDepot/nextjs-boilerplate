@@ -14,15 +14,15 @@ export default function Home() {
           }}
         />
         <div>
-          <h1 style={{ fontSize: "2.5rem", fontWeight: "bold", margin: "0" }}>SelvDepot</h1>
-          <h2 style={{ fontSize: "1.5rem", marginTop: "0.5rem" }}>
+          <h1 style={{ fontSize: "2.5rem", fontWeight: "bold", margin: "0", color: "#ffffff" }}>SelvDepot</h1>
+          <h2 style={{ fontSize: "1.5rem", marginTop: "0.5rem", color: "#ffffff" }}>
             Vi hjælper dig eje dine bitcoin – og sove trygt. <br />
             <span style={{ fontWeight: "normal" }}>Sikkert. Privat. For evigt.</span>
           </h2>
         </div>
       </div>
 
-      <p style={{ marginTop: "2rem", fontSize: "1.2rem" }}>
+      <p style={{ marginTop: "2rem", fontSize: "1.2rem", color: "#ffffff" }}>
         Ingen banker. Ingen tilladelser. Kun dig – og dem, DU stoler på.
         <br />
         Dine penge. Din fremtid. Din familie. Tag kontrol.
@@ -45,7 +45,7 @@ export default function Home() {
       </div>
 
       {/* Video og ny tekst side om side */}
-      <div style={{ marginTop: "2rem", display: "flex", alignItems: "flex-start", gap: "2rem", flexWrap: "wrap" }}>
+      <div style={{ marginTop: "2rem", display: "flex", alignItems: "flex-start", gap: "2rem", flexWrap: "wrap", backgroundColor: "#000000" }}>
         {/* Video */}
         <div>
           <video
@@ -59,9 +59,9 @@ export default function Home() {
         </div>
 
         {/* Ny tekst (FOMO og Self-Custody fokus) */}
-        <div style={{ maxWidth: "400px", fontSize: "1rem", lineHeight: "1.5" }}>
-          <p style={{ color: "#333", margin: "0" }}>
-            Self-Custody ved hjælp af SelvDepot er din livbåd i en verden, hvor det traditionelle FIAT-system suger livet af dine beholdninger og aktiver ud under inflation og kontrol. Over 80 % af nuværende Bitcoin-ejere risikerer at miste alt gennem hacks, beslaglæggelser og modpartsrisiko - men DU er den største ricisi. Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody, inklusiv mulighed for arveplanlægning, msig, mm. uden, at vi nogensinde rører dine private keys eller enhed. Dette er ikke bare en chance til 100 % kontrol og tryghed; det er din sidste udvej, før dørene lukker, og du bliver fanget i et forgængeligt system. <strong style={{ color: "#dc2626" }}>Book nu, før det er for sent!</strong>
+        <div style={{ maxWidth: "400px", fontSize: "1rem", lineHeight: "1.5", color: "#ffffff" }}>
+          <p style={{ color: "#ffffff", margin: "0" }}>
+            Self-Custody ved hjælp af SelvDepot er din livbåd i en verden, hvor det traditionelle FIAT-system suger livet af dine beholdninger og aktiver ud under inflation og kontrol. Over 80 % af nuværende Bitcoin-ejere risikerer at miste alt gennem hacks, beslaglæggelser og modpartsrisiko - men DU er den største risiko. Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody, inklusiv mulighed for arveplanlægning, msig, mm. uden, at vi nogensinde rører dine private keys eller enhed. Dette er ikke bare en chance til 100 % kontrol og tryghed; det er din sidste udvej, før dørene lukker, og du bliver fanget i et forgængeligt system. <strong style={{ color: "#dc2626" }}>Book nu, før det er for sent!</strong>
           </p>
         </div>
       </div>
@@ -88,7 +88,7 @@ export default function Home() {
           style={{
             fontSize: "1.1rem",
             fontWeight: "bold",
-            color: "#1e40af",
+            color: "#ffffff",
             marginTop: "1rem",
             textAlign: "center",
           }}
