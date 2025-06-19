@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 export default function Page() {
   const [isDisclaimerOpen, setIsDisclaimerOpen] = useState(false);
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
     <main
@@ -43,7 +44,7 @@ export default function Page() {
         <div>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: 0 }}>SelvDepot</h1>
           <h2 style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>
-            Vi hjælper dig eje dine bitcoin – og sove trygt.
+            Vi hjælper dig eje dine Bitcoin – og sove trygt.
             <br />
             <span style={{ fontWeight: 'normal' }}>Sikkert. Privat. For evigt.</span>
           </h2>
@@ -52,7 +53,7 @@ export default function Page() {
 
       {/* Ny introduktionstekst */}
       <p style={{ marginTop: '2rem', fontSize: '1.2rem' }}>
-        Ingen mellemled. Ingen bureaukrati. Kun dig og dine bitcoin – på dine præmisser.
+        Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin – på dine præmisser.
         <br />
         Dine penge. Din fremtid. Din familie. Tag kontrol.
       </p>
@@ -73,7 +74,7 @@ export default function Page() {
         </a>
       </div>
 
-      {/* VIDEO øverst */}
+      {/* VIDEO */}
       <div style={{ marginTop: '2rem' }}>
         <video
           controls
@@ -88,7 +89,7 @@ export default function Page() {
         </video>
       </div>
 
-      {/* TEKST i fuld bredde */}
+      {/* TEKST */}
       <div style={{ marginTop: '2rem', fontSize: '1rem', lineHeight: '1.6' }}>
         <p style={{ margin: 0 }}>
           Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden, hvor det
@@ -103,7 +104,7 @@ export default function Page() {
         </p>
       </div>
 
-      {/* CTA og "Book nu" */}
+      {/* CTA og FOMO */}
       <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
         <p
           style={{
@@ -133,35 +134,51 @@ export default function Page() {
         </a>
 
         <p style={{ fontSize: '1.1rem', fontWeight: 'bold', marginTop: '1rem' }}>
-          Vi rører aldrig dine bitcoin. Vi lærer dig at eje dem selv, for evigt.
+          Vi rører aldrig dine Bitcoin. Vi lærer dig at eje dem selv, for evigt.
         </p>
       </div>
 
-      {/* Kontakt os */}
-      <div style={{ marginTop: '4rem', textAlign: 'center' }}>
-        <p style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>📬 Kontakt os</p>
-        <p style={{ margin: 0 }}>
-          <a
-            href="mailto:Selvdepot@gmail.com"
-            style={{ color: '#60a5fa', textDecoration: 'underline' }}
-          >
-            Selvdepot@gmail.com
-          </a>
-        </p>
-        <p style={{ margin: '0.5rem 0 0' }}>
-          <a
-            href="https://calendly.com/selvdepot/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ color: '#60a5fa', textDecoration: 'underline' }}
-          >
-            Book via Calendly
-          </a>
-        </p>
-      </div>
-
-      {/* Disclaimer */}
+      {/* Kontakt os toggle */}
       <div style={{ marginTop: '3rem' }}>
+        <p
+          style={{
+            fontSize: '0.9rem',
+            color: '#d1d5db',
+            cursor: 'pointer',
+            textDecoration: 'underline',
+          }}
+          onClick={() => setIsContactOpen(!isContactOpen)}
+        >
+          Kontakt os
+        </p>
+        {isContactOpen && (
+          <div style={{ fontSize: '0.9rem', color: '#d1d5db', marginTop: '0.5rem' }}>
+            <p style={{ margin: 0 }}>
+              📬 Email:{' '}
+              <a
+                href="mailto:Selvdepot@gmail.com"
+                style={{ color: '#60a5fa', textDecoration: 'underline' }}
+              >
+                Selvdepot@gmail.com
+              </a>
+            </p>
+            <p style={{ margin: 0, marginTop: '0.3rem' }}>
+              📅 Book:{' '}
+              <a
+                href="https://calendly.com/selvdepot/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#60a5fa', textDecoration: 'underline' }}
+              >
+                calendly.com/selvdepot/30min
+              </a>
+            </p>
+          </div>
+        )}
+      </div>
+
+      {/* Disclaimer toggle */}
+      <div style={{ marginTop: '2rem' }}>
         <p
           style={{
             fontSize: '0.9rem',
@@ -175,15 +192,17 @@ export default function Page() {
         </p>
         {isDisclaimerOpen && (
           <p style={{ fontSize: '0.9rem', color: '#d1d5db', marginTop: '0.5rem' }}>
-            Informationen på denne hjemmeside er ikke juridisk, finansiel eller investeringsrådgivning.
-            SelvDepot yder udelukkende uddannelse og værktøjer til at hjælpe dig med at administrere
-            dine egne bitcoin. Alle handlinger, der udføres baseret på dette indhold, er på eget ansvar.
-            Konsulter venligst en kvalificeret advokat eller finansiel rådgiver før du træffer beslutninger
-            vedrørende dine aktiver. SelvDepot påtager sig ikke ansvar for eventuelle tab eller skader,
-            der opstår som følge af brugen af denne hjemmeside eller dens indhold.
-          </p>
-        )}
-      </div>
-    </main>
-  );
-}
+            Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke
+            juridisk, finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene
+            undervisning og værktøjer til selvstændig opbevaring af Bitcoin. Vores rådgivning
+            indebærer aldrig håndtering, opbevaring eller kontrol af dine midler, private nøgler,
+            wallets eller adgangsoplysninger.
+            <br />
+            <br />
+            Al brug af hjemmesiden, tilhørende vejledninger, anbefalinger, software, hardware eller
+            tredjepartsindhold sker udelukkende på eget ansvar. SelvDepot fraskriver sig ethvert
+            ansvar for tab, skader eller konsekvenser, der måtte opstå som følge af brugen af denne
+            hjemmeside eller dets indhold.
+            <br />
+            <br />
+            Vi opfordrer dig til altid at søge uafhængig
