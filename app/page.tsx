@@ -51,7 +51,7 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Ny introduktionstekst */}
+      {/* Intro */}
       <p style={{ marginTop: '2rem', fontSize: '1.2rem' }}>
         Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin – på dine præmisser.
         <br />
@@ -74,7 +74,7 @@ export default function Page() {
         </a>
       </div>
 
-      {/* VIDEO */}
+      {/* Video */}
       <div style={{ marginTop: '2rem' }}>
         <video
           controls
@@ -89,7 +89,7 @@ export default function Page() {
         </video>
       </div>
 
-      {/* TEKST */}
+      {/* Brødtekst */}
       <div style={{ marginTop: '2rem', fontSize: '1rem', lineHeight: '1.6' }}>
         <p style={{ margin: 0 }}>
           Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden, hvor det
@@ -104,7 +104,7 @@ export default function Page() {
         </p>
       </div>
 
-      {/* CTA og FOMO */}
+      {/* Call-to-action */}
       <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
         <p
           style={{
@@ -141,13 +141,13 @@ export default function Page() {
       {/* Kontakt os toggle */}
       <div style={{ marginTop: '3rem' }}>
         <p
+          onClick={() => setIsContactOpen(!isContactOpen)}
           style={{
             fontSize: '0.9rem',
             color: '#d1d5db',
             cursor: 'pointer',
             textDecoration: 'underline',
           }}
-          onClick={() => setIsContactOpen(!isContactOpen)}
         >
           Kontakt os
         </p>
@@ -162,7 +162,7 @@ export default function Page() {
                 Selvdepot@gmail.com
               </a>
             </p>
-            <p style={{ margin: 0, marginTop: '0.3rem' }}>
+            <p style={{ marginTop: '0.3rem' }}>
               📅 Book:{' '}
               <a
                 href="https://calendly.com/selvdepot/30min"
@@ -180,29 +180,39 @@ export default function Page() {
       {/* Disclaimer toggle */}
       <div style={{ marginTop: '2rem' }}>
         <p
+          onClick={() => setIsDisclaimerOpen(!isDisclaimerOpen)}
           style={{
             fontSize: '0.9rem',
             color: '#d1d5db',
             cursor: 'pointer',
             textDecoration: 'underline',
           }}
-          onClick={() => setIsDisclaimerOpen(!isDisclaimerOpen)}
         >
           Disclaimer
         </p>
         {isDisclaimerOpen && (
-          <p style={{ fontSize: '0.9rem', color: '#d1d5db', marginTop: '0.5rem' }}>
-            Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke
-            juridisk, finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene
-            undervisning og værktøjer til selvstændig opbevaring af Bitcoin. Vores rådgivning
-            indebærer aldrig håndtering, opbevaring eller kontrol af dine midler, private nøgler,
-            wallets eller adgangsoplysninger.
-            <br />
-            <br />
-            Al brug af hjemmesiden, tilhørende vejledninger, anbefalinger, software, hardware eller
-            tredjepartsindhold sker udelukkende på eget ansvar. SelvDepot fraskriver sig ethvert
-            ansvar for tab, skader eller konsekvenser, der måtte opstå som følge af brugen af denne
-            hjemmeside eller dets indhold.
-            <br />
-            <br />
-            Vi opfordrer dig til altid at søge uafhængig
+          <div style={{ fontSize: '0.9rem', color: '#d1d5db', marginTop: '0.5rem' }}>
+            <p>
+              Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke
+              juridisk, finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder
+              alene undervisning og værktøjer til selvstændig opbevaring af Bitcoin. Vores
+              rådgivning indebærer aldrig håndtering, opbevaring eller kontrol af dine midler,
+              private nøgler, wallets eller adgangsoplysninger.
+            </p>
+            <p>
+              Al brug af hjemmesiden, tilhørende vejledninger, anbefalinger, software, hardware eller
+              tredjepartsindhold sker udelukkende på eget ansvar. SelvDepot fraskriver sig ethvert
+              ansvar for tab, skader eller konsekvenser, der måtte opstå som følge af brugen af denne
+              hjemmeside eller dets indhold.
+            </p>
+            <p>
+              Vi opfordrer dig til altid at søge uafhængig rådgivning fra en kvalificeret advokat eller
+              finansiel rådgiver. Denne ansvarsfraskrivelse er underlagt dansk lov og gældende
+              EU-lovgivning.
+            </p>
+          </div>
+        )}
+      </div>
+    </main>
+  );
+}
