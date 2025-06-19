@@ -64,8 +64,9 @@ export default function Home() {
 
         {/* Ny tekst (FOMO og Self-Custody fokus) */}
         <div style={{ maxWidth: "400px", fontSize: "1rem", lineHeight: "1.5", color: "#ffffff" }}>
-          <p style={{ color: "#ffffff", margin: "0" }}>
-            Self-Custody ved hjælp af SelvDepot er din livbåd i en verden, hvor det traditionelle FIAT-system suger livet af dine beholdninger og aktiver ud under inflation og kontrol. Over 80 % af nuværende Bitcoin-ejere risikerer at miste alt gennem hacks, beslaglæggelser og modpartsrisiko – men DU er den største risiko. Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody, inklusiv mulighed for arveplanlægning, msig m.m., uden at vi nogensinde rører dine private keys eller enhed. Dette er ikke bare en chance til 100 % kontrol og tryghed; det er din sidste udvej, før dørene lukker, og du bliver fanget i et forgængeligt system. <strong style={{ color: "#dc2626" }}>Book nu, før det er for sent!</strong>
+          <p style={{ margin: "0" }}>
+            Self-Custody ved hjælp af SelvDepot er din livbåd i en verden, hvor det traditionelle FIAT-system suger livet af dine beholdninger og aktiver ud under inflation og kontrol. Over 80 % af nuværende Bitcoin-ejere risikerer at miste alt gennem hacks, beslaglæggelser og modpartsrisiko – men DU er den største risiko. Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody, inklusiv mulighed for arveplanlægning, msig m.m., uden at vi nogensinde rører dine private keys eller enhed. Dette er ikke bare en chance til 100 % kontrol og tryghed; det er din sidste udvej, før dørene lukker, og du bliver fanget i et forgængeligt system. 
+            <span style={{ color: "#dc2626", fontWeight: "bold" }}> Book nu, før det er for sent!</span>
           </p>
         </div>
       </div>
