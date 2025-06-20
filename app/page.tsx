@@ -17,14 +17,16 @@ export default function Page() {
           <p>
             SelvDepot er specialiseret i rådgivning og optimering af opbevaring af Bitcoin – også kaldet self-custody.
             <br />
-            Vi henvender os til alle med formuebevidsthed, fra privatpersoner til større enheder, uanset teknisk niveau eller forståelse af Bitcoin.
-            <br />
-            Bitcoin er det første aktiv i verdenshistorien, du reelt kan eje – og dermed det første, der eliminerer modpartsrisiko fuldstændigt.
-            <br />
-            Bitcoin kan opbevares, flyttes og anvendes uden tilladelse fra banker, stater eller institutioner.
-            <br />
-            Alligevel holder størstedelen af brugerne ikke deres bitcoin korrekt, og har uden at vide det, allerede mistet dem.
-            <br />
+            Vi hjælper både privatpersoner og større enheder med at eje deres bitcoin korrekt, uanset teknisk niveau.
+          </p>
+          <p>Punkter:</p>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+            <li>Bitcoin er verdens første aktiv uden modpartsrisiko</li>
+            <li>Det kan opbevares og overføres uden banker, stater eller tilladelse</li>
+            <li>Alligevel holder de fleste ikke deres bitcoin korrekt</li>
+            <li>Mange tror, de ejer bitcoin – men har kun et løfte fra en tredjepart</li>
+          </ul>
+          <p>
             <em>“[...] they’re not Bitcoin holders, they’re holders of Bitcoin IOUs.”</em>
             <br />
             – Trace Mayer, tidlig investor og stifter af “Proof of Keys”-bevægelsen
@@ -37,17 +39,21 @@ export default function Page() {
       content: (
         <>
           <p>
-            Over 80 % af selvproklamerede bitcoin-ejere bruger løsninger som børser, ETF’er og custodial wallets, der udsætter dem for:
+            Det nuværende fiat-system udsætter din formue for betydelige risici, som truer din økonomiske frihed og fremtid.
           </p>
+          <p>Punkter:</p>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
-            <li>Hacks, datalæk, insolvens og nedlukning (fx FTX, Mt. Gox, QuadrigaCX, Coinbase)</li>
-            <li>Mistet adgang, beslaglæggelse, modpartsrisiko</li>
-            <li>Overvågning, indefrysning og regulatorisk kontrol</li>
+            <li>Inflation og faldende købekraft eroderer dine penge over tid</li>
+            <li>Øget kontrol og konfiskatoriske tiltag fra stater og banker begrænser din frihed</li>
+            <li>Over 80 % af bitcoin-ejere bruger custodial løsninger som børser, ETF’er og platforme, hvilket medfører:</li>
+            <ul style={{ listStyleType: 'circle', paddingLeft: '1.5rem' }}>
+              <li>Risiko for hacks, datalæk, insolvens og nedlukning (fx FTX, Mt. Gox, Coinbase)</li>
+              <li>Mistet adgang, beslaglæggelse og frosne konti</li>
+              <li>Overvågning og regulatorisk pres</li>
+            </ul>
           </ul>
           <p>
-            Men den største risiko er slet ikke at eje bitcoin og forblive i det nuværende fiat-system.- Et system præget af inflation, konfiskatoriske tiltag og faldende reel købekraft.
-            <br />
-            Hvis du ikke selv holder dine nøgler, ejer du ikke dine bitcoin.
+            Den største risiko er at forblive fanget i fiat-systemet, men selv med bitcoin mister du ejerskab, hvis du ikke holder dine egne nøgler.
             <br />
             <em>“Not your keys, not your coins.”</em>
           </p>
@@ -58,15 +64,19 @@ export default function Page() {
       title: 'III. Løsningen',
       content: (
         <>
-          <p>
-            Hos SelvDepot lærer du ikke blot om principperne bag Bitcoin og self-custody – vi udvikler sammen en personlig, dokumenteret og sikker opsætning 1:1, der sikrer dine Bitcoin.
-            <br />
-            Opsætningen inkluderer også arveplanlægning, så dine nærmeste har mulighed for adgang i tilfælde af sygdom, ulykke eller dødsfald – uden at du på noget tidspunkt mister kontrol.
-            <br />
-            Vi rådgiver dig 1:1 og gennemgår hele opsætningen trin for trin – uden nogensinde at få adgang til dine bitcoin.
-            <br />
-            Din løsning tilpasses din risikoprofil, og vi sikrer robuste backups, forståelig struktur og langtidsholdbarhed.
-          </p>
+          <p>Punkter:</p>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+            <li>1:1 rådgivning med personlig og sikker opsætning</li>
+            <li>Vi bygger løsningen sammen – trin for trin</li>
+            <li>Du ejer det selv – vi rører aldrig dine bitcoin</li>
+          </ul>
+          <p>Inkluderer:</p>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+            <li>Arveplanlægning</li>
+            <li>Backup-struktur</li>
+            <li>Dokumentation og forståelse</li>
+            <li>Tilpasses din risikoprofil og tekniske evner</li>
+          </ul>
         </>
       ),
     },
@@ -74,14 +84,14 @@ export default function Page() {
       title: 'IV. Udbytte',
       content: (
         <>
-          <p>Når rådgivningen er gennemført, har du:</p>
+          <p>Efter rådgivning har du:</p>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
-            <li>100 % kontrol og ejerskab over dine bitcoin</li>
-            <li>En dokumenteret og forstået løsning, du selv har konstrueret</li>
-            <li>Tryghed og ro – uafhængig af banker, platforme eller tredjeparter</li>
-            <li>Mulighed for fortrolig opsætning af arvevenlig struktur med langtidsholdbarhed</li>
-            <li>Mulighed for 1:1 support</li>
-            <li>Justering og sparring efter behov – f.eks. efter 1, 3, 6 og 8 måneder</li>
+            <li>100 % ejerskab og kontrol over dine bitcoin</li>
+            <li>En løsning du selv har konstrueret og forstår</li>
+            <li>Uafhængighed af banker og platforme</li>
+            <li>Langtidsholdbar og arvevenlig struktur</li>
+            <li>Mulighed for fremtidig sparring eller justering</li>
+            <li>Tryghed og ro – for dig og din familie</li>
           </ul>
         </>
       ),
@@ -90,29 +100,77 @@ export default function Page() {
       title: 'V. Hvorfor vælge SelvDepot?',
       content: (
         <>
-          <p>Vi er:</p>
+          <p>Punkter:</p>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
-            <li>100 % Bitcoin-native – vi rådgiver kun i Bitcoin</li>
+            <li>Vi er 100 % Bitcoin-native – vi rådgiver kun i Bitcoin</li>
             <li>100 % uafhængige – vi holder intet, formidler intet</li>
-            <li>100 % dedikerede til self-custody – vi beskæftiger os ikke med investering, trading eller gebyrer</li>
+            <li>Vi beskæftiger os ikke med trading, investering eller gebyrer</li>
+            <li>Vi underviser – ikke opbevarer</li>
           </ul>
-          <p>
-            Vi rører aldrig dine bitcoin.
-            <br />
-            Vi lærer dig at eje dem selv – for evigt.
-          </p>
+          <p>Du lærer at eje dine bitcoin selv – for evigt</p>
         </>
       ),
     },
     {
-      title: 'VI. Næste skridt',
+      title: 'VI. Pakker & Priser',
       content: (
         <>
+          <h3 style={{ fontSize: '1.2rem', fontWeight: 'bold', marginTop: '1rem' }}>🟠 Klar til at eje</h3>
           <p>
-            Har du brug for vores hjælp?
+            <strong>Pris:</strong> 10.000 kr.
             <br />
-            Anmod om et gratis 30 minutters opkald og find ud af mere om Bitcoin og, om SelvDepot er det rette match for dig.
+            Til dig, der vil i gang – eller optimere det, du allerede har.
+          </p>
+          <p>Inkluderer:</p>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+            <li>Hardware wallet-rådgivning og opsætning</li>
+            <li>Single-sig med/uden passphrase</li>
+            <li>Backup-strategi og risikoforståelse</li>
+            <li>Grundlæggende sikkerhed og vaner</li>
+            <li>Gennemgang af eksisterende opsætning (hvis ønsket)</li>
+          </ul>
+          <p>
+            <strong>Varighed:</strong> Ca. 2 timer
             <br />
+            <strong>Note:</strong> Vi stopper ikke før det virker, er testet og forstået.
+          </p>
+          <h3 style={{ fontSize: '1.2rem', fontWeight: 'bold', marginTop: '1rem' }}>🟡 Ejer med overblik</h3>
+          <p>
+            <strong>Pris:</strong> 20.000 kr.
+            <br />
+            Til dig med større mængder bitcoin og behov for teknisk dybde.
+          </p>
+          <p>Inkluderer:</p>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+            <li>Alt i første pakke</li>
+            <li>Airgapped wallet-struktur</li>
+            <li>Brug og opsætning af Bitcoin node</li>
+            <li>Skræddersyet recovery-plan</li>
+            <li>Fysisk backup-strategi</li>
+          </ul>
+          <p>
+            <strong>Varighed:</strong> 2–4 timer (afhænger af node)
+          </p>
+          <h3 style={{ fontSize: '1.2rem', fontWeight: 'bold', marginTop: '1rem' }}>🔵 Fuld kontrol</h3>
+          <p>
+            <strong>Pris:</strong> 45.000 kr.
+            <br />
+            Til dig, der ønsker suveræn sikkerhed – for livet og for arvingerne.
+          </p>
+          <p>Inkluderer:</p>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+            <li>Alt i “Ejer med overblik”</li>
+            <li>Multisig-opsætning (hvis ønsket)</li>
+            <li>Udvidet trusselsanalyse (phishing, kidnapning, mm.)</li>
+            <li>Arveplan og familievejledning</li>
+            <li>Én gratis check-up inden for 12 måneder</li>
+          </ul>
+          <p>
+            <strong>Varighed:</strong> Fleksibel efter behov og kompleksitet
+            <br />
+            <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
+          </p>
+          <p style={{ marginTop: '1rem' }}>
             <a
               href="https://calendly.com/selvdepot/30min"
               target="_blank"
@@ -125,17 +183,10 @@ export default function Page() {
                 textDecoration: 'none',
                 display: 'inline-block',
                 fontWeight: 'bold',
-                marginTop: '1rem',
               }}
             >
               Book dit gratis opkald nu
             </a>
-            <br />
-            Vores mål er ikke blot, at du gennemfører – men at du forstår og ejer din opsætning fuldt ud.
-            <br />
-            Det vigtigste, du kan eje i det 21. århundrede, er dét, kun du selv kontrollerer: Bitcoin.
-            <br />
-            Velkommen til…– SelvDepot ₿
           </p>
         </>
       ),
