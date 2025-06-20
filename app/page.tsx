@@ -7,6 +7,7 @@ export default function Page() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [showPitch, setShowPitch] = useState(false);
   const [currentPitchPage, setCurrentPitchPage] = useState(0);
+  const [logoSize, setLogoSize] = useState(150); // Justérbar logo-størrelse i px
 
   // Pitch-indhold opdelt i sektioner
   const pitchContent = [
@@ -15,21 +16,18 @@ export default function Page() {
       content: (
         <>
           <p>
-            SelvDepot er specialiseret i rådgivning og optimering af opbevaring af Bitcoin – også kaldet self-custody.
+            SelvDepot specialiserer sig i rådgivning og optimering af Bitcoin-opbevaring – kendt som self-custody.
             <br />
-            Vi hjælper både privatpersoner og større enheder med at eje deres bitcoin korrekt, uanset teknisk niveau.
+            Vi assisterer både privatpersoner og institutioner i at eje deres bitcoin sikkert, uanset teknisk baggrund.
           </p>
-          <p>Punkter:</p>
           <ul style={{ listStyleType: 'none', paddingLeft: '1.5rem' }}>
-            <li><span role="img" aria-label="checkmark">✅</span> Bitcoin er verdens første aktiv uden modpartsrisiko</li>
-            <li><span role="img" aria-label="checkmark">✅</span> Det kan opbevares og overføres uden banker, stater eller tilladelse</li>
-            <li><span role="img" aria-label="checkmark">✅</span> Alligevel holder de fleste ikke deres bitcoin korrekt</li>
-            <li><span role="img" aria-label="checkmark">✅</span> Mange tror, de ejer bitcoin – men har kun et løfte fra en tredjepart</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Verdens første aktiv uden modpartsrisiko</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Opbevaring og overførsel uden tredjeparter</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> De fleste opbevarer ikke korrekt</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Mange ejer kun IOU’er fra tredjeparter</li>
           </ul>
-          <p style={{ fontStyle: 'italic', margin: '1.5rem 0', lineHeight: '1.8' }}>
-            <em>“[...] they’re not Bitcoin holders, they’re holders of Bitcoin IOUs.”</em>
-            <br />
-            – Trace Mayer, tidlig investor og stifter af “Proof of Keys”-bevægelsen
+          <p style={{ fontStyle: 'italic', color: '#a0aec0', margin: '2rem 0', lineHeight: '1.6' }}>
+            “They’re not Bitcoin holders, they’re holders of Bitcoin IOUs.” – Trace Mayer
           </p>
         </>
       ),
@@ -39,23 +37,20 @@ export default function Page() {
       content: (
         <>
           <p>
-            Det nuværende fiat-system udsætter din formue for betydelige risici, som truer din økonomiske frihed og fremtid.
+            Det nuværende fiat-system udsætter din formue for alvorlige risici, der truer din økonomiske frihed.
           </p>
-          <p>Punkter:</p>
           <ul style={{ listStyleType: 'none', paddingLeft: '1.5rem' }}>
-            <li><span role="img" aria-label="checkmark">✅</span> Inflation og faldende købekraft eroderer dine penge over tid</li>
-            <li><span role="img" aria-label="checkmark">✅</span> Øget kontrol og konfiskatoriske tiltag fra stater og banker begrænser din frihed</li>
-            <li><span role="img" aria-label="checkmark">✅</span> Over 80 % af bitcoin-ejere bruger custodial løsninger som børser, ETF’er og platforme, hvilket medfører:</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Inflation og faldende købekraft</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Øget kontrol fra stater og banker</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> 80% bruger usikre custodial løsninger, risikerende:</li>
             <ul style={{ listStyleType: 'none', paddingLeft: '1.5rem' }}>
-              <li><span role="img" aria-label="checkmark">✅</span> Risiko for hacks, datalæk, insolvens og nedlukning (fx FTX, Mt. Gox, Coinbase)</li>
-              <li><span role="img" aria-label="checkmark">✅</span> Mistet adgang, beslaglæggelse og frosne konti</li>
-              <li><span role="img" aria-label="checkmark">✅</span> Overvågning og regulatorisk pres</li>
+              <li><span style={{ color: '#c9a66b' }}>•</span> Hacks, insolvens (fx FTX, Mt. Gox)</li>
+              <li><span style={{ color: '#c9a66b' }}>•</span> Beslaglæggelse og frosne konti</li>
+              <li><span style={{ color: '#c9a66b' }}>•</span> Overvågning og regulering</li>
             </ul>
           </ul>
-          <p style={{ fontStyle: 'italic', margin: '1.5rem 0', lineHeight: '1.8' }}>
-            Den største risiko er at forblive fanget i fiat-systemet, men selv med bitcoin mister du ejerskab, hvis du ikke holder dine egne nøgler.
-            <br />
-            <em>“Not your keys, not your coins.”</em>
+          <p style={{ fontStyle: 'italic', color: '#a0aec0', margin: '2rem 0', lineHeight: '1.6' }}>
+            “Not your keys, not your coins.”
           </p>
         </>
       ),
@@ -64,18 +59,18 @@ export default function Page() {
       title: 'III. Løsningen',
       content: (
         <>
-          <p>Punkter:</p>
+          <p>Vores tilgang inkluderer:</p>
           <ul style={{ listStyleType: 'none', paddingLeft: '1.5rem' }}>
-            <li><span role="img" aria-label="checkmark">✅</span> 1:1 rådgivning med personlig og sikker opsætning</li>
-            <li><span role="img" aria-label="checkmark">✅</span> Vi bygger løsningen sammen – trin for trin</li>
-            <li><span role="img" aria-label="checkmark">✅</span> Du ejer det selv – vi rører aldrig dine bitcoin</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Personlig 1:1-rådgivning og sikker opsætning</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Trinvis udvikling af din løsning</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Fuldt ejerskab – vi rører ikke dine bitcoin</li>
           </ul>
-          <p>Inkluderer:</p>
+          <p>Yderligere funktioner:</p>
           <ul style={{ listStyleType: 'none', paddingLeft: '1.5rem' }}>
-            <li><span role="img" aria-label="checkmark">✅</span> Arveplanlægning</li>
-            <li><span role="img" aria-label="checkmark">✅</span> Backup-struktur</li>
-            <li><span role="img" aria-label="checkmark">✅</span> Dokumentation og forståelse</li>
-            <li><span role="img" aria-label="checkmark">✅</span> Tilpasses din risikoprofil og tekniske evner</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Arveplanlægning</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Robust backup-struktur</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Tilpasset dokumentation</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Skræddersyet efter din profil</li>
           </ul>
         </>
       ),
@@ -84,14 +79,14 @@ export default function Page() {
       title: 'IV. Udbytte',
       content: (
         <>
-          <p>Efter rådgivning har du:</p>
+          <p>Efter vores rådgivning opnår du:</p>
           <ul style={{ listStyleType: 'none', paddingLeft: '1.5rem' }}>
-            <li><span role="img" aria-label="checkmark">✅</span> 100 % ejerskab og kontrol over dine bitcoin</li>
-            <li><span role="img" aria-label="checkmark">✅</span> En løsning du selv har konstrueret og forstår</li>
-            <li><span role="img" aria-label="checkmark">✅</span> Uafhængighed af banker og platforme</li>
-            <li><span role="img" aria-label="checkmark">✅</span> Langtidsholdbar og arvevenlig struktur</li>
-            <li><span role="img" aria-label="checkmark">✅</span> Mulighed for fremtidig sparring eller justering</li>
-            <li><span role="img" aria-label="checkmark">✅</span> Tryghed og ro – for dig og din familie</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> 100% ejerskab og kontrol</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> En forstået, selvkonstrueret løsning</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Uafhængighed af tredjeparter</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Langtidsholdbar og arvevenlig struktur</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Fremtidig sparring</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Tryghed for dig og din familie</li>
           </ul>
         </>
       ),
@@ -100,14 +95,14 @@ export default function Page() {
       title: 'V. Hvorfor vælge SelvDepot?',
       content: (
         <>
-          <p>Punkter:</p>
+          <p>Vores unikke fordele:</p>
           <ul style={{ listStyleType: 'none', paddingLeft: '1.5rem' }}>
-            <li><span role="img" aria-label="checkmark">✅</span> Vi er 100 % Bitcoin-native – vi rådgiver kun i Bitcoin</li>
-            <li><span role="img" aria-label="checkmark">✅</span> 100 % uafhængige – vi holder intet, formidler intet</li>
-            <li><span role="img" aria-label="checkmark">✅</span> Vi beskæftiger os ikke med trading, investering eller gebyrer</li>
-            <li><span role="img" aria-label="checkmark">✅</span> Vi underviser – ikke opbevarer</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> 100% Bitcoin-fokuseret rådgivning</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Fuldt uafhængige – ingen formidling</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Ingen handel eller gebyrer</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Kun undervisning, ingen opbevaring</li>
           </ul>
-          <p>Du lærer at eje dine bitcoin selv – for evigt</p>
+          <p>Ej din bitcoin – for evigt.</p>
         </>
       ),
     },
@@ -119,9 +114,9 @@ export default function Page() {
             style={{
               display: 'flex',
               flexWrap: 'wrap',
-              gap: '1.5rem',
+              gap: '2rem',
               justifyContent: 'center',
-              marginTop: '1rem',
+              marginTop: '2rem',
             }}
           >
             {/* Pakke: Klar til at eje */}
@@ -129,42 +124,34 @@ export default function Page() {
               style={{
                 flex: '1 1 300px',
                 maxWidth: '350px',
-                padding: '1.5rem',
-                background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.2))',
+                padding: '2rem',
+                background: '#2d3748',
                 borderRadius: '12px',
-                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
-                transition: 'transform 0.3s, box-shadow 0.3s',
+                boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)',
+                transition: 'transform 0.3s',
                 textAlign: 'center',
+                border: '1px solid #c9a66b',
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'scale(1.05)';
-                e.currentTarget.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'scale(1)';
-                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
-              }}
+              onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.02)')}
+              onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
             >
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🟠</div>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+              <div style={{ fontSize: '2.5rem', color: '#c9a66b', marginBottom: '1rem' }}>●</div>
+              <h3 style={{ fontSize: '1.8rem', fontWeight: 600, color: '#ffffff', marginBottom: '1rem' }}>
                 Klar til at eje
               </h3>
-              <p style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#d4af37', margin: '0.5rem 0' }}>
+              <p style={{ fontSize: '2.2rem', fontWeight: 700, color: '#c9a66b', margin: '0.5rem 0' }}>
                 10.000 kr.
               </p>
-              <p>Til dig, der vil i gang – eller optimere det, du allerede har.</p>
-              <ul style={{ listStyleType: 'none', paddingLeft: '0', fontSize: '1rem' }}>
-                <li><span role="img" aria-label="checkmark">✅</span> Hardware wallet-rådgivning og opsætning</li>
-                <li><span role="img" aria-label="checkmark">✅</span> Single-sig med/uden passphrase</li>
-                <li><span role="img" aria-label="checkmark">✅</span> Backup-strategi og risikoforståelse</li>
-                <li><span role="img" aria-label="checkmark">✅</span> Grundlæggende sikkerhed og vaner</li>
-                <li><span role="img" aria-label="checkmark">✅</span> Gennemgang af eksisterende opsætning (hvis ønsket)</li>
-              </ul>
-              <p style={{ fontSize: '0.9rem' }}>
-                <strong>Varighed:</strong> Ca. 2 timer
-                <br />
-                <strong>Note:</strong> Vi stopper ikke før det virker, er testet og forstået.
+              <p style={{ fontSize: '1.1rem', color: '#a0aec0', marginBottom: '1rem' }}>
+                For begyndere eller optimering.
               </p>
+              <ul style={{ listStyleType: 'none', paddingLeft: '0', fontSize: '1.1rem', color: '#a0aec0' }}>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Hardware wallet-rådgivning</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Single-sig opsætning</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Backup-strategi</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Grundlæggende sikkerhed</li>
+              </ul>
+              <p style={{ fontSize: '0.9rem', color: '#718096' }}>Varighed: ~2 timer</p>
             </div>
 
             {/* Pakke: Ejer med overblik */}
@@ -172,56 +159,50 @@ export default function Page() {
               style={{
                 flex: '1 1 300px',
                 maxWidth: '350px',
-                padding: '1.5rem',
-                background: 'linear-gradient(135deg, rgba(250, 204, 21, 0.1), rgba(250, 204, 21, 0.2))',
+                padding: '2rem',
+                background: '#2d3748',
                 borderRadius: '12px',
-                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
-                transition: 'transform 0.3s, box-shadow 0.3s',
+                boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)',
+                transition: 'transform 0.3s',
                 textAlign: 'center',
+                border: '1px solid #c9a66b',
                 position: 'relative',
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'scale(1.05)';
-                e.currentTarget.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'scale(1)';
-                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
-              }}
+              onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.02)')}
+              onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
             >
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🟡</div>
+              <div style={{ fontSize: '2.5rem', color: '#c9a66b', marginBottom: '1rem' }}>●</div>
               <span
                 style={{
                   position: 'absolute',
                   top: '1rem',
                   right: '1rem',
-                  background: '#22c55e',
-                  color: '#fff',
+                  background: '#c9a66b',
+                  color: '#1a202c',
                   padding: '0.3rem 0.8rem',
-                  borderRadius: '8px',
+                  borderRadius: '6px',
                   fontSize: '0.9rem',
-                  fontWeight: 'bold',
+                  fontWeight: 600,
                 }}
               >
                 Anbefalet
               </span>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+              <h3 style={{ fontSize: '1.8rem', fontWeight: 600, color: '#ffffff', marginBottom: '1rem' }}>
                 Ejer med overblik
               </h3>
-              <p style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#d4af37', margin: '0.5rem 0' }}>
+              <p style={{ fontSize: '2.2rem', fontWeight: 700, color: '#c9a66b', margin: '0.5rem 0' }}>
                 20.000 kr.
               </p>
-              <p>Til dig med større mængder bitcoin og behov for teknisk dybde.</p>
-              <ul style={{ listStyleType: 'none', paddingLeft: '0', fontSize: '1rem' }}>
-                <li><span role="img" aria-label="checkmark">✅</span> Alt i første pakke</li>
-                <li><span role="img" aria-label="checkmark">✅</span> Airgapped wallet-struktur</li>
-                <li><span role="img" aria-label="checkmark">✅</span> Brug og opsætning af Bitcoin node</li>
-                <li><span role="img" aria-label="checkmark">✅</span> Skræddersyet recovery-plan</li>
-                <li><span role="img" aria-label="checkmark">✅</span> Fysisk backup-strategi</li>
-              </ul>
-              <p style={{ fontSize: '0.9rem' }}>
-                <strong>Varighed:</strong> 2–4 timer (afhænger af node)
+              <p style={{ fontSize: '1.1rem', color: '#a0aec0', marginBottom: '1rem' }}>
+                For større beholdninger og teknisk dybde.
               </p>
+              <ul style={{ listStyleType: 'none', paddingLeft: '0', fontSize: '1.1rem', color: '#a0aec0' }}>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Alt i "Klar til at eje"</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Airgapped wallet</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Bitcoin node opsætning</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Skræddersyet recovery</li>
+              </ul>
+              <p style={{ fontSize: '0.9rem', color: '#718096' }}>Varighed: 2–4 timer</p>
             </div>
 
             {/* Pakke: Fuld kontrol */}
@@ -229,42 +210,34 @@ export default function Page() {
               style={{
                 flex: '1 1 300px',
                 maxWidth: '350px',
-                padding: '1.5rem',
-                background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(37, 99, 235, 0.2))',
+                padding: '2rem',
+                background: '#2d3748',
                 borderRadius: '12px',
-                boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
-                transition: 'transform 0.3s, box-shadow 0.3s',
+                boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)',
+                transition: 'transform 0.3s',
                 textAlign: 'center',
+                border: '1px solid #c9a66b',
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'scale(1.05)';
-                e.currentTarget.style.boxShadow = '0 6px 15px rgba(0, 0, 0, 0.3)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'scale(1)';
-                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.2)';
-              }}
+              onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.02)')}
+              onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
             >
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🔵</div>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+              <div style={{ fontSize: '2.5rem', color: '#c9a66b', marginBottom: '1rem' }}>●</div>
+              <h3 style={{ fontSize: '1.8rem', fontWeight: 600, color: '#ffffff', marginBottom: '1rem' }}>
                 Fuld kontrol
               </h3>
-              <p style={{ fontSize: '1.8rem', fontWeight: 'bold', color: '#d4af37', margin: '0.5rem 0' }}>
+              <p style={{ fontSize: '2.2rem', fontWeight: 700, color: '#c9a66b', margin: '0.5rem 0' }}>
                 45.000 kr.
               </p>
-              <p>Til dig, der ønsker suveræn sikkerhed – for livet og for arvingerne.</p>
-              <ul style={{ listStyleType: 'none', paddingLeft: '0', fontSize: '1rem' }}>
-                <li><span role="img" aria-label="checkmark">✅</span> Alt i “Ejer med overblik”</li>
-                <li><span role="img" aria-label="checkmark">✅</span> Multisig-opsætning (hvis ønsket)</li>
-                <li><span role="img" aria-label="checkmark">✅</span> Udvidet trusselsanalyse (phishing, kidnapning, mm.)</li>
-                <li><span role="img" aria-label="checkmark">✅</span> Arveplan og familievejledning</li>
-                <li><span role="img" aria-label="checkmark">✅</span> Én gratis check-up inden for 12 måneder</li>
-              </ul>
-              <p style={{ fontSize: '0.9rem' }}>
-                <strong>Varighed:</strong> Fleksibel efter behov og kompleksitet
-                <br />
-                <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
+              <p style={{ fontSize: '1.1rem', color: '#a0aec0', marginBottom: '1rem' }}>
+                For suveræn sikkerhed og arveplanlægning.
               </p>
+              <ul style={{ listStyleType: 'none', paddingLeft: '0', fontSize: '1.1rem', color: '#a0aec0' }}>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Alt i "Ejer med overblik"</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Multisig opsætning</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Udvidet trusselsanalyse</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Arveplan og check-up</li>
+              </ul>
+              <p style={{ fontSize: '0.9rem', color: '#718096' }}>Varighed: Fleksibel</p>
             </div>
           </div>
         </>
@@ -274,14 +247,8 @@ export default function Page() {
 
   // Testimonial-data
   const testimonials = [
-    {
-      quote: "SelvDepot gav mig ro i sindet ved at sikre mine Bitcoin på en måde, jeg forstår fuldt ud.",
-      author: "Jens Hansen, Kunde",
-    },
-    {
-      quote: "Eksklusiv service og professionel vejledning – højst anbefalelsesværdig!",
-      author: "Anna Sørensen, Kunde",
-    },
+    { quote: "SelvDepot sikrede mine Bitcoin med usædvanlig præcision og ro.", author: "Jens Hansen" },
+    { quote: "Enestående service – højst anbefalelsesværdig.", author: "Anna Sørensen" },
   ];
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
@@ -297,7 +264,7 @@ export default function Page() {
     }
   };
 
-  // Tastaturgenvej til at udløse pitch-adgang (Ctrl + P)
+  // Tastaturgenvej til pitch (Ctrl + P)
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.ctrlKey && event.key === 'p') {
@@ -309,24 +276,10 @@ export default function Page() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  // Navigation i pitch og testimonials
-  const handleNextPage = () => {
-    if (currentPitchPage < pitchContent.length - 1) {
-      setCurrentPitchPage(currentPitchPage + 1);
-    }
-  };
-
-  const handlePreviousPage = () => {
-    if (currentPitchPage > 0) {
-      setCurrentPitchPage(currentPitchPage - 1);
-    }
-  };
-
-  const handleNextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
-
-  // Luk pitch
+  // Navigation
+  const handleNextPage = () => (currentPitchPage < pitchContent.length - 1 ? setCurrentPitchPage(currentPitchPage + 1) : null);
+  const handlePreviousPage = () => (currentPitchPage > 0 ? setCurrentPitchPage(currentPitchPage - 1) : null);
+  const handleNextTestimonial = () => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
   const handleClosePitch = () => {
     setShowPitch(false);
     setActiveSection(null);
@@ -336,105 +289,107 @@ export default function Page() {
   return (
     <main
       style={{
-        backgroundImage: 'url("/imagebaggrund.png"), linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.9))',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        background: '#1a202c',
         minHeight: '100vh',
-        padding: '2rem 1rem',
+        padding: '4rem 2rem',
         color: '#ffffff',
         width: '100%',
         margin: 0,
+        fontFamily: '"Roboto", sans-serif',
         position: 'relative',
+        overflowX: 'hidden',
       }}
     >
       {/* Horisontal linje */}
-      <hr style={{ border: '1px solid #d4af37', width: '10%', margin: '2rem auto' }} />
+      <hr style={{ border: '1px solid #c9a66b', width: '5%', margin: '3rem auto' }} />
 
-      {/* Logo og titel */}
-      <section style={{ textAlign: 'center', padding: '2rem', background: 'rgba(0, 0, 0, 0.7)' }}>
+      {/* Header */}
+      <section style={{ textAlign: 'center', padding: '3rem', background: 'rgba(45, 55, 72, 0.9)', borderRadius: '10px', boxShadow: '0 8px 30px rgba(0, 0, 0, 0.4)' }}>
         <img
           src="/logo.png"
           alt="SelvDepot Logo"
           style={{
-            maxWidth: '150px',
+            maxWidth: `${logoSize}px`, // Justerbar størrelse
             height: 'auto',
-            borderRadius: '4px',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+            border: '2px solid #c9a66b',
+            borderRadius: '8px',
+            boxShadow: '0 4px 15px rgba(201, 166, 107, 0.3)',
+            marginBottom: '2rem',
+            transition: 'max-width 0.3s ease',
           }}
+          onClick={() => setLogoSize(logoSize === 150 ? 200 : 150)} // Klik for at skifte størrelse
         />
-        <h1 style={{ fontSize: '3.5rem', fontWeight: 'bold', margin: '1rem 0', letterSpacing: '2px', textTransform: 'uppercase' }}>
+        <h1 style={{ fontSize: '4rem', fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase', color: '#ffffff' }}>
           SelvDepot
         </h1>
-        <h2 style={{ fontSize: '2rem', fontWeight: 600, color: '#d4af37', marginBottom: '1rem' }}>
-          Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
-          <br />
-          <span style={{ fontWeight: 'normal', color: '#ffffff' }}>Sikkert. Privat. For evigt.</span>
+        <h2 style={{ fontSize: '2.2rem', fontWeight: 500, color: '#c9a66b', marginTop: '1rem' }}>
+          Sikker ejerskab af dine Bitcoin
         </h2>
+        <p style={{ fontSize: '1.3rem', color: '#a0aec0', marginTop: '1rem' }}>Privat. Permanent. Tryg.</p>
       </section>
 
       {/* Intro */}
-      <section style={{ padding: '2rem', background: 'rgba(30, 41, 59, 0.8)', margin: '2rem 0' }}>
-        <p style={{ fontSize: '1.2rem', textAlign: 'center', lineHeight: '1.8' }}>
-          Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
-          <br />
-          Dine penge. Din fremtid. Din familie. Tag kontrol.
+      <section style={{ padding: '3rem', background: 'rgba(45, 55, 72, 0.7)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)' }}>
+        <p style={{ fontSize: '1.4rem', textAlign: 'center', lineHeight: '1.8', color: '#e2e8f0' }}>
+          Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine vilkår.
+          <br />Tag kontrol over din fremtid og din families arv.
         </p>
-        <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+        <div style={{ marginTop: '2rem', textAlign: 'center' }}>
           <a
             href="https://calendly.com/selvdepot/30min"
             target="_blank"
             rel="noopener noreferrer"
             style={{
-              background: '#d4af37',
-              color: '#1e293b',
-              padding: '1rem 3rem',
-              width: '80%',
-              maxWidth: '400px',
-              fontSize: '1.2rem',
+              background: '#c9a66b',
+              color: '#1a202c',
+              padding: '1.2rem 3.5rem',
+              width: '70%',
+              maxWidth: '450px',
+              fontSize: '1.3rem',
               fontWeight: 600,
-              borderRadius: '10px',
+              borderRadius: '12px',
               textDecoration: 'none',
               display: 'inline-block',
+              boxShadow: '0 4px 15px rgba(201, 166, 107, 0.4)',
+              transition: 'transform 0.3s',
             }}
+            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
           >
-            Book kaldet – din fremtidige ro starter her
+            Book en privat konsultation
           </a>
         </div>
       </section>
 
       {/* Hvad Bitcoin er */}
-      <section style={{ padding: '2rem', background: 'rgba(37, 99, 235, 0.2)', margin: '2rem 0' }}>
-        <h2 style={{ fontSize: '2rem', fontWeight: 600, color: '#d4af37', textAlign: 'center', marginBottom: '1rem' }}>
-          Hvad er Bitcoin?
+      <section style={{ padding: '3rem', background: 'rgba(26, 32, 44, 0.8)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)' }}>
+        <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: '#c9a66b', textAlign: 'center', marginBottom: '2rem' }}>
+          Om Bitcoin
         </h2>
-        <p style={{ fontSize: '1.2rem', lineHeight: '1.8', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
-          Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
-          med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen.
-          Ingen banker. Ingen stater. Ingen modparter.
-          Men uden korrekt opbevaring forsvinder sikkerheden og suveræniteten.
-          Hos SelvDepot lærer du at holde dine Bitcoin, som de var tiltænkt:
-          100% under din egen kontrol. Privat. Permanent.
+        <p style={{ fontSize: '1.4rem', lineHeight: '1.8', textAlign: 'center', maxWidth: '900px', margin: '0 auto', color: '#e2e8f0' }}>
+          Bitcoin er mere end en investering – det er digitale basepenge med et upolitisk, begrænset udbud.
+          Uden manipulation, uden mellemled. Uden korrekt opbevaring forsvinder dog dets værdi.
+          Hos SelvDepot mestre du self-custody med fuld kontrol og privatliv.
         </p>
       </section>
 
       {/* Video */}
-      <section style={{ padding: '2rem', background: 'rgba(0, 0, 0, 0.7)', margin: '2rem 0', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '2rem', fontWeight: 600, color: '#d4af37', marginBottom: '1rem' }}>
-          🎥 Se intro – forstå hvorfor 80% mister deres Bitcoin
+      <section style={{ padding: '3rem', background: 'rgba(45, 55, 72, 0.7)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)', textAlign: 'center' }}>
+        <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: '#c9a66b', marginBottom: '2rem' }}>
+          Introduktion til din sikkerhed
         </h2>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <video
             controls
             autoPlay
             muted
-            poster="/intro-thumbnail.jpg" // Placeholder for thumbnail
+            poster="/intro-thumbnail.jpg"
             style={{
               width: '100%',
-              maxWidth: '700px',
+              maxWidth: '800px',
               borderRadius: '10px',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
-              border: '2px solid #d4af37',
+              boxShadow: '0 6px 20px rgba(0, 0, 0, 0.4)',
+              border: '2px solid #c9a66b',
             }}
           >
             <source src="/intro.mp4" type="video/mp4" />
@@ -444,78 +399,75 @@ export default function Page() {
       </section>
 
       {/* Brødtekst */}
-      <section style={{ padding: '2rem', background: 'rgba(22, 78, 99, 0.2)', margin: '2rem 0' }}>
-        <p style={{ fontSize: '1.2rem', lineHeight: '1.8', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
-          Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden hvor det
-          traditionelle FIAT-system suger livet ud af dine beholdninger og aktiver gennem inflation
-          og kontrol. Over 80% af Bitcoin-ejere risikerer at miste alt gennem hacks,
-          social engineering og modpartsrisiko – men DU er stadig den største risiko for tab af dine Bitcoin.
-          Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody inklusiv
-          arveplanlægning, trusselsanalyse, svigtpunktsanalyse, multisig m.m. – uden at vi
-          nogensinde rører dine private keys. Dette er ikke bare en chance for 100% kontrol og tryghed.
-          Det er din sidste udvej før dørene lukker, og du bliver fanget i et forgængeligt system.
+      <section style={{ padding: '3rem', background: 'rgba(26, 32, 44, 0.8)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)' }}>
+        <p style={{ fontSize: '1.4rem', lineHeight: '1.8', textAlign: 'center', maxWidth: '900px', margin: '0 auto', color: '#e2e8f0' }}>
+          SelvDepot er din livline i en verden, hvor fiat-systemet undergraver din formue gennem inflation og kontrol.
+          Med 80% af Bitcoin-ejere udsat for tab via hacks og modpartsrisiko, er du din egen største trussel.
+          Vores personlige rådgivning sikrer dit ejerskab med arveplanlægning og trusselsanalyse – uden at røre dine nøgler.
         </p>
       </section>
 
       {/* Sekundær CTA */}
-      <section style={{ padding: '2rem', background: 'rgba(30, 41, 59, 0.8)', margin: '2rem 0', textAlign: 'center' }}>
+      <section style={{ padding: '3rem', background: 'rgba(45, 55, 72, 0.7)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)', textAlign: 'center' }}>
         <a
           href="https://calendly.com/selvdepot/30min"
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            background: '#bfa76f',
-            color: '#1e293b',
-            padding: '1rem 3rem',
-            width: '80%',
-            maxWidth: '400px',
-            fontSize: '1.2rem',
+            background: '#c9a66b',
+            color: '#1a202c',
+            padding: '1.2rem 3.5rem',
+            width: '70%',
+            maxWidth: '450px',
+            fontSize: '1.3rem',
             fontWeight: 600,
-            borderRadius: '10px',
+            borderRadius: '12px',
             textDecoration: 'none',
             display: 'inline-block',
+            boxShadow: '0 4px 15px rgba(201, 166, 107, 0.4)',
+            transition: 'transform 0.3s',
           }}
+          onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+          onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
         >
-          Book kaldet – sikr din økonomiske frihed nu
+          Sikr din frihed i dag
         </a>
       </section>
 
       {/* Vurderingstekst */}
-      <section style={{ padding: '2rem', background: 'rgba(250, 204, 21, 0.2)', margin: '2rem 0', textAlign: 'center' }}>
-        <p style={{ fontSize: '1rem', color: '#d4af37', fontStyle: 'italic', maxWidth: '600px', margin: '0 auto', lineHeight: '1.8' }}>
-          Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
-          self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har
-          de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger –
-          vil du blive afvist, men med mulighed for undervisning og støtte, indtil du er klar.
-          <br />
-          <br />
-          Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller hjælpelinje
-          at ringe til, hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt ansvar.
+      <section style={{ padding: '3rem', background: 'rgba(26, 32, 44, 0.8)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)', textAlign: 'center' }}>
+        <p style={{ fontSize: '1.2rem', color: '#c9a66b', fontStyle: 'italic', maxWidth: '700px', margin: '0 auto', lineHeight: '1.8' }}>
+          Dette er ingen salgspitch. Vi vurderer din egnethed til self-custody. Hvis du ikke opfylder kravene – fx pga. alder eller tekniske begrænsninger – tilbyder vi støtte, indtil du er klar.
+          <br /><br />Ejerskab kræver ansvar. Ingen garantiordning findes.
         </p>
       </section>
 
-      {/* Testimonial-karusel */}
-      <section style={{ padding: '2rem', background: 'rgba(0, 0, 0, 0.7)', margin: '2rem 0', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '2rem', fontWeight: 600, color: '#d4af37', marginBottom: '1rem' }}>Hvad vores kunder siger</h2>
-        <div style={{ maxWidth: '600px', margin: '0 auto', padding: '1rem', background: 'rgba(30, 41, 59, 0.8)', borderRadius: '10px' }}>
-          <p style={{ fontSize: '1.1rem', lineHeight: '1.8', fontStyle: 'italic' }}>
+      {/* Testimonial */}
+      <section style={{ padding: '3rem', background: 'rgba(45, 55, 72, 0.7)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)', textAlign: 'center' }}>
+        <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: '#c9a66b', marginBottom: '2rem' }}>Kundernes erfaringer</h2>
+        <div style={{ maxWidth: '700px', margin: '0 auto', padding: '2rem', background: 'rgba(26, 32, 44, 0.9)', borderRadius: '10px' }}>
+          <p style={{ fontSize: '1.3rem', lineHeight: '1.8', color: '#e2e8f0', fontStyle: 'italic' }}>
             "{testimonials[currentTestimonial].quote}"
           </p>
-          <p style={{ fontSize: '1rem', marginTop: '1rem', color: '#d4af37' }}>
+          <p style={{ fontSize: '1.1rem', marginTop: '1rem', color: '#c9a66b' }}>
             – {testimonials[currentTestimonial].author}
           </p>
           <button
             onClick={handleNextTestimonial}
             style={{
-              background: '#d4af37',
-              color: '#1e293b',
-              padding: '0.5rem 1.5rem',
+              background: '#c9a66b',
+              color: '#1a202c',
+              padding: '0.8rem 2rem',
               borderRadius: '8px',
               border: 'none',
-              marginTop: '1rem',
+              marginTop: '1.5rem',
               cursor: 'pointer',
-              fontSize: '1rem',
+              fontSize: '1.1rem',
+              fontWeight: 500,
+              transition: 'transform 0.3s',
             }}
+            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
           >
             Næste
           </button>
@@ -523,23 +475,19 @@ export default function Page() {
       </section>
 
       {/* Pakker */}
-      <section style={{ padding: '2rem', background: 'rgba(37, 99, 235, 0.2)', margin: '2rem 0' }}>
-        <h2 style={{ fontSize: '2rem', fontWeight: 600, color: '#d4af37', textAlign: 'center', marginBottom: '2rem' }}>Pakker & Priser</h2>
+      <section style={{ padding: '3rem', background: 'rgba(26, 32, 44, 0.8)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)' }}>
+        <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: '#c9a66b', textAlign: 'center', marginBottom: '2rem' }}>Vores Pakker</h2>
         {pitchContent[5].content}
       </section>
 
-      {/* Footer-links */}
-      <section style={{ padding: '2rem', background: 'rgba(0, 0, 0, 0.7)', margin: '2rem 0', textAlign: 'center' }}>
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', fontSize: '0.9rem', color: '#d1d5db' }}>
+      {/* Footer */}
+      <section style={{ padding: '2rem', background: 'rgba(45, 55, 72, 0.9)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)', textAlign: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', fontSize: '1rem', color: '#a0aec0' }}>
           {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
             <p
               key={section}
               onClick={() => setActiveSection(activeSection === section ? null : section)}
-              style={{
-                cursor: 'pointer',
-                textDecoration: 'underline',
-                margin: 0,
-              }}
+              style={{ cursor: 'pointer', textDecoration: 'underline', margin: '0 1rem' }}
             >
               {section}
             </p>
@@ -549,26 +497,22 @@ export default function Page() {
 
       {/* Footer indhold */}
       {activeSection === 'Kontakt' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
+        <div style={{ marginTop: '1rem', color: '#a0aec0', fontSize: '1rem', textAlign: 'center' }}>
           <p>
-            📬 Email:{' '}
-            <a href="mailto:Selvdepot@gmail.com" style={{ color: '#60a5fa' }}>
+            📧{' '}
+            <a href="mailto:Selvdepot@gmail.com" style={{ color: '#c9a66b' }}>
               Selvdepot@gmail.com
             </a>
           </p>
           <p>
-            📅 Book:{' '}
-            <a
-              href="https://calendly.com/selvdepot/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: '#60a5fa' }}
-            >
-              calendly.com/selvdepot/30min
+            📅{' '}
+            <a href="https://calendly.com/selvdepot/30min" target="_blank" rel="noopener noreferrer" style={{ color: '#c9a66b' }}>
+              Book tid
             </a>
           </p>
         </div>
       )}
+
       {/* Pitch-sektion */}
       {activeSection === 'Pitch' && showPitch && (
         <div
@@ -578,14 +522,14 @@ export default function Page() {
             left: 0,
             width: '100vw',
             height: '100vh',
-            backgroundColor: '#0f172a',
-            padding: '2rem',
+            background: 'rgba(26, 32, 44, 0.95)',
+            padding: '3rem',
             zIndex: 1000,
             overflowY: 'auto',
             textAlign: 'left',
-            fontSize: '1rem',
+            fontSize: '1.2rem',
             lineHeight: '1.8',
-            color: '#ffffff',
+            color: '#e2e8f0',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
@@ -595,38 +539,44 @@ export default function Page() {
             onClick={handleClosePitch}
             style={{
               position: 'absolute',
-              top: '1rem',
-              right: '1rem',
-              background: '#dc2626',
-              color: '#fff',
-              padding: '0.5rem 1rem',
+              top: '1.5rem',
+              right: '1.5rem',
+              background: '#4a5568',
+              color: '#ffffff',
+              padding: '0.7rem 1.5rem',
               borderRadius: '8px',
               border: 'none',
               cursor: 'pointer',
-              fontWeight: 'bold',
+              fontWeight: 500,
+              transition: 'background 0.3s',
             }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = '#718096')}
+            onMouseLeave={(e) => (e.currentTarget.style.background = '#4a5568')}
           >
             Luk
           </button>
-          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <h2 style={{ fontSize: '2rem', fontWeight: 600, marginBottom: '1rem', color: '#d4af37' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', background: '#2d3748', padding: '2rem', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.4)' }}>
+            <h2 style={{ fontSize: '2.8rem', fontWeight: 600, marginBottom: '1.5rem', color: '#c9a66b' }}>
               {pitchContent[currentPitchPage].title}
             </h2>
             {pitchContent[currentPitchPage].content}
-            <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+            <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
               {currentPitchPage > 0 && (
                 <button
                   onClick={handlePreviousPage}
                   style={{
-                    background: '#bfa76f',
-                    color: '#1e293b',
-                    padding: '0.7rem 1.5rem',
+                    background: '#4a5568',
+                    color: '#ffffff',
+                    padding: '0.9rem 2rem',
                     borderRadius: '10px',
                     border: 'none',
                     cursor: 'pointer',
-                    fontWeight: 600,
-                    fontSize: '1.1rem',
+                    fontWeight: 500,
+                    fontSize: '1.2rem',
+                    transition: 'background 0.3s',
                   }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = '#718096')}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = '#4a5568')}
                 >
                   Forrige
                 </button>
@@ -635,15 +585,18 @@ export default function Page() {
                 <button
                   onClick={handleNextPage}
                   style={{
-                    background: '#d4af37',
-                    color: '#1e293b',
-                    padding: '0.7rem 1.5rem',
+                    background: '#c9a66b',
+                    color: '#1a202c',
+                    padding: '0.9rem 2rem',
                     borderRadius: '10px',
                     border: 'none',
                     cursor: 'pointer',
-                    fontWeight: 600,
-                    fontSize: '1.1rem',
+                    fontWeight: 500,
+                    fontSize: '1.2rem',
+                    transition: 'background 0.3s',
                   }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = '#d4af37')}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = '#c9a66b')}
                 >
                   Næste
                 </button>
@@ -652,44 +605,29 @@ export default function Page() {
           </div>
         </div>
       )}
-      {activeSection === 'Disclaimer' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
-          <p>
-            Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk,
-            finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene undervisning
-            og værktøjer til selvstændig opbevaring af Bitcoin.
-          </p>
-        </div>
-      )}
-      {activeSection === 'Privatliv' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
-          <p>
-            Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly
-            håndteres dine oplysninger af dem under deres politikker. Vi bruger ikke cookies eller analytics.
-          </p>
-        </div>
-      )}
-      {activeSection === 'Vilkår' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
-          <p>
-            Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
-            Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
-          </p>
-        </div>
+
+      {['Disclaimer', 'Privatliv', 'Vilkår'].map((section) =>
+        activeSection === section && (
+          <div key={section} style={{ marginTop: '1rem', color: '#a0aec0', fontSize: '1rem', textAlign: 'center' }}>
+            <p>
+              {section === 'Disclaimer' && 'Dette er ikke juridisk eller finansiel rådgivning – kun uddannelse i Bitcoin-opbevaring.'}
+              {section === 'Privatliv' && 'Ingen data indsamles uden samtykke. Se Calendlys politikker.'}
+              {section === 'Vilkår' && 'Brug accepterer uddannelsesformål. Dansk lov gælder.'}
+            </p>
+          </div>
+        )
       )}
 
       {/* Mobiloptimering */}
       <style jsx>{`
         @media (max-width: 768px) {
-          h1 { font-size: 2.5rem; }
-          h2 { font-size: 1.5rem; }
-          p { font-size: 1.1rem; }
-          a {
-            width: 100%;
-            padding: 1rem 2rem;
-          }
-          section { padding: 1.5rem; }
-          .package-card { max-width: 100%; }
+          h1 { font-size: 3rem; }
+          h2 { font-size: 2rem; }
+          p { font-size: 1.2rem; }
+          a { width: 100%; padding: 1rem 2rem; }
+          section { padding: 2rem; }
+          .package-card { max-width: 100%; margin: 0 0 2rem 0; }
+          img[alt="SelvDepot Logo"] { max-width: ${logoSize * 0.8}px; }
         }
       `}</style>
     </main>
