@@ -226,24 +226,25 @@ export default function Page() {
     }
   };
 
-  // Tastaturgenvej til at udløse pitch-adgang (Ctrl + P) with input check
+  // Tastaturgenvej til at udløse pitch-adgang (Ctrl + P) with refined check
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      // Check if the active element is not an input or textarea
       const activeElement = document.activeElement as HTMLElement;
+      // Only trigger if not in an input/textarea and modal is not active
       if (
         event.ctrlKey &&
         event.key === 'p' &&
         activeElement &&
-        !['INPUT', 'TEXTAREA'].includes(activeElement.tagName)
+        !['INPUT', 'TEXTAREA'].includes(activeElement.tagName) &&
+        !showPasswordModal
       ) {
-        event.preventDefault();
+        event.stopPropagation(); // Prevent bubbling but allow default behavior
         handlePitchAccess();
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [passwordInput]);
+  }, [passwordInput, showPasswordModal]);
 
   // Navigation i pitch
   const handleNextPage = () => {
@@ -281,7 +282,7 @@ export default function Page() {
         padding: '2rem 1rem',
         color: '#ffffff',
         width: '100%',
-        margin: 0,
+        margin: '0 auto',
         position: 'relative',
         zIndex: -2, // Place main background below logo
       }}
