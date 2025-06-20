@@ -5,33 +5,165 @@ import { useState } from 'react';
 
 export default function Page() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  const [email, setEmail] = useState('');
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
-  const [statusMessage, setStatusMessage] = useState('');
-  const [showPitch, setShowPitch] = useState(false); // Ny state til at toggle pitch-sektionen
+  const [showPitch, setShowPitch] = useState(false);
+  const [currentPitchPage, setCurrentPitchPage] = useState(0);
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+  // Pitch-indhold opdelt i sektioner
+  const pitchContent = [
+    {
+      title: 'I. Indledning',
+      content: (
+        <>
+          <p>
+            SelvDepot er specialiseret i rådgivning og optimering af opbevaring af Bitcoin – også kaldet self-custody.
+            <br />
+            Vi henvender os til alle med formuebevidsthed, fra privatpersoner til større enheder, uanset teknisk niveau eller forståelse af Bitcoin.
+            <br />
+            Bitcoin er det første aktiv i verdenshistorien, du reelt kan eje – og dermed det første, der eliminerer modpartsrisiko fuldstændigt.
+            <br />
+            Bitcoin kan opbevares, flyttes og anvendes uden tilladelse fra banker, stater eller institutioner.
+            <br />
+            Alligevel holder størstedelen af brugerne ikke deres bitcoin korrekt, og har uden at vide det, allerede mistet dem.
+            <br />
+            <em>“[...] they’re not Bitcoin holders, they’re holders of Bitcoin IOUs.”</em>
+            <br />
+            – Trace Mayer, tidlig investor og stifter af “Proof of Keys”-bevægelsen
+          </p>
+        </>
+      ),
+    },
+    {
+      title: 'II. Problemet',
+      content: (
+        <>
+          <p>
+            Over 80 % af selvproklamerede bitcoin-ejere bruger løsninger som børser, ETF’er og custodial wallets, der udsætter dem for:
+          </p>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+            <li>Hacks, datalæk, insolvens og nedlukning (fx FTX, Mt. Gox, QuadrigaCX, Coinbase)</li>
+            <li>Mistet adgang, beslaglæggelse, modpartsrisiko</li>
+            <li>Overvågning, indefrysning og regulatorisk kontrol</li>
+          </ul>
+          <p>
+            Men den største risiko er slet ikke at eje bitcoin og forblive i det nuværende fiat-system.- Et system præget af inflation, konfiskatoriske tiltag og faldende reel købekraft.
+            <br />
+            Hvis du ikke selv holder dine nøgler, ejer du ikke dine bitcoin.
+            <br />
+            <em>“Not your keys, not your coins.”</em>
+          </p>
+        </>
+      ),
+    },
+    {
+      title: 'III. Løsningen',
+      content: (
+        <>
+          <p>
+            Hos SelvDepot lærer du ikke blot om principperne bag Bitcoin og self-custody – vi udvikler sammen en personlig, dokumenteret og sikker opsætning 1:1, der sikrer dine Bitcoin.
+            <br />
+            Opsætningen inkluderer også arveplanlægning, så dine nærmeste har mulighed for adgang i tilfælde af sygdom, ulykke eller dødsfald – uden at du på noget tidspunkt mister kontrol.
+            <br />
+            Vi rådgiver dig 1:1 og gennemgår hele opsætningen trin for trin – uden nogensinde at få adgang til dine bitcoin.
+            <br />
+            Din løsning tilpasses din risikoprofil, og vi sikrer robuste backups, forståelig struktur og langtidsholdbarhed.
+          </p>
+        </>
+      ),
+    },
+    {
+      title: 'IV. Udbytte',
+      content: (
+        <>
+          <p>Når rådgivningen er gennemført, har du:</p>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+            <li>100 % kontrol og ejerskab over dine bitcoin</li>
+            <li>En dokumenteret og forstået løsning, du selv har konstrueret</li>
+            <li>Tryghed og ro – uafhængig af banker, platforme eller tredjeparter</li>
+            <li>Mulighed for fortrolig opsætning af arvevenlig struktur med langtidsholdbarhed</li>
+            <li>Mulighed for 1:1 support</li>
+            <li>Justering og sparring efter behov – f.eks. efter 1, 3, 6 og 8 måneder</li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      title: 'V. Hvorfor vælge SelvDepot?',
+      content: (
+        <>
+          <p>Vi er:</p>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+            <li>100 % Bitcoin-native – vi rådgiver kun i Bitcoin</li>
+            <li>100 % uafhængige – vi holder intet, formidler intet</li>
+            <li>100 % dedikerede til self-custody – vi beskæftiger os ikke med investering, trading eller gebyrer</li>
+          </ul>
+          <p>
+            Vi rører aldrig dine bitcoin.
+            <br />
+            Vi lærer dig at eje dem selv – for evigt.
+          </p>
+        </>
+      ),
+    },
+    {
+      title: 'VI. Næste skridt',
+      content: (
+        <>
+          <p>
+            Har du brug for vores hjælp?
+            <br />
+            Anmod om et gratis 30 minutters opkald og find ud af mere om Bitcoin og, om SelvDepot er det rette match for dig.
+            <br />
+            <a
+              href="https://calendly.com/selvdepot/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                background: '#2563eb',
+                color: '#fff',
+                padding: '0.8rem 1.5rem',
+                borderRadius: '8px',
+                textDecoration: 'none',
+                display: 'inline-block',
+                fontWeight: 'bold',
+                marginTop: '1rem',
+              }}
+            >
+              Book dit gratis opkald nu
+            </a>
+            <br />
+            Vores mål er ikke blot, at du gennemfører – men at du forstår og ejer din opsætning fuldt ud.
+            <br />
+            Det vigtigste, du kan eje i det 21. århundrede, er dét, kun du selv kontrollerer: Bitcoin.
+            <br />
+            Velkommen til…– SelvDepot ₿
+          </p>
+        </>
+      ),
+    },
+  ];
 
-    const formData = new FormData();
-    formData.append('email', email);
-
-    const response = await fetch('https://formspree.io/f/xldnwgya', {
-      method: 'POST',
-      body: formData,
-      headers: {
-        Accept: 'application/json',
-      },
-    });
-
-    if (response.ok) {
-      setEmailSubmitted(true);
-      setStatusMessage('✔️ PDF sendt til din e-mail!');
-      setEmail('');
+  const handlePitchAccess = () => {
+    const password = prompt('Indtast adgangskode for at vise pitch');
+    if (password === '9945') {
+      setShowPitch(true);
+      setActiveSection('Pitch');
+      setCurrentPitchPage(0); // Starter på første side
     } else {
-      setStatusMessage('Noget gik galt. Prøv igen.');
+      alert('Forkert adgangskode');
     }
-  }
+  };
+
+  const handleNextPage = () => {
+    if (currentPitchPage < pitchContent.length - 1) {
+      setCurrentPitchPage(currentPitchPage + 1);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPitchPage > 0) {
+      setCurrentPitchPage(currentPitchPage - 1);
+    }
+  };
 
   return (
     <main
@@ -104,62 +236,6 @@ export default function Page() {
         </a>
       </div>
 
-      {/* FOMO + Email */}
-      <form onSubmit={handleSubmit} style={{ marginTop: '3rem', textAlign: 'center' }}>
-        <p
-          style={{
-            fontSize: '1.1rem',
-            fontWeight: 'bold',
-            color: '#facc15',
-            marginBottom: '1rem',
-          }}
-        >
-          Ville du føle dig sikker, hvis dine BTC blev 10x mere værd i morgen?
-        </p>
-
-        {!emailSubmitted && (
-          <>
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              placeholder="Modtag Introduktion PDF via Email"
-              style={{
-                padding: '0.8rem',
-                borderRadius: '8px',
-                border: '1px solid #ccc',
-                maxWidth: '300px',
-                width: '100%',
-                marginBottom: '1rem',
-              }}
-            />
-            <br />
-            <button
-              type="submit"
-              style={{
-                background: '#22c55e',
-                color: '#fff',
-                padding: '0.8rem 2rem',
-                borderRadius: '8px',
-                border: 'none',
-                cursor: 'pointer',
-                fontWeight: 'bold',
-              }}
-            >
-              JA TAK
-            </button>
-          </>
-        )}
-
-        {statusMessage && (
-          <div style={{ marginTop: '1rem', fontSize: '0.9rem', color: '#facc15' }}>
-            {statusMessage}
-          </div>
-        )}
-      </form>
-
       {/* Hvad Bitcoin er */}
       <p style={{ marginTop: '3rem', fontSize: '1.05rem', lineHeight: '1.6', textAlign: 'justify' }}>
         Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
@@ -198,69 +274,6 @@ export default function Page() {
           Det er din sidste udvej før dørene lukker, og du bliver fanget i et forgængeligt system.
         </p>
       </div>
-
-      {/* Knap til at toggle pitch-sektionen */}
-      <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-        <button
-          onClick={() => setShowPitch(!showPitch)}
-          style={{
-            background: '#f59e0b',
-            color: '#fff',
-            padding: '0.8rem 2rem',
-            borderRadius: '8px',
-            border: 'none',
-            cursor: 'pointer',
-            fontWeight: 'bold',
-          }}
-        >
-          {showPitch ? 'Skjul Pitch' : 'Vis Pitch til Kunder'}
-        </button>
-      </div>
-
-      {/* Pitch-sektion (skjult som standard) */}
-      {showPitch && (
-        <div
-          style={{
-            marginTop: '2rem',
-            padding: '2rem',
-            backgroundColor: '#0f172a',
-            borderRadius: '8px',
-            boxShadow: '0 0 12px rgba(0,0,0,0.3)',
-          }}
-        >
-          <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-            SelvDepot Pitch
-          </h1>
-          <iframe
-            src="/SelvDepot.pdf"
-            width="100%"
-            height="600px"
-            style={{ border: 'none', boxShadow: '0 0 12px rgba(0,0,0,0.3)' }}
-            title="SelvDepot Pitch PDF"
-          />
-          {/* Ekstra pitch-indhold, f.eks. mål, pris, osv. */}
-          <div style={{ marginTop: '2rem', textAlign: 'left', fontSize: '1rem' }}>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Vores Mål</h2>
-            <p>
-              At give dig fuld kontrol over dine Bitcoin gennem sikker self-custody, så du kan beskytte
-              din økonomiske fremtid uden modpartsrisiko.
-            </p>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginTop: '1rem' }}>Priser</h2>
-            <p>
-              Kontakt os for en skræddersyet pris baseret på dine behov. Vores 1:1-rådgivning starter
-              med en gratis 30-minutters konsultation.
-            </p>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginTop: '1rem' }}>
-              Hvorfor SelvDepot?
-            </h2>
-            <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
-              <li>Skræddersyet vejledning til sikker Bitcoin-opbevaring.</li>
-              <li>Ingen berøring af dine private keys – du har fuld kontrol.</li>
-              <li>Arveplanlægning og multisig-løsninger inkluderet.</li>
-            </ul>
-          </div>
-        </div>
-      )}
 
       {/* Sekundær CTA */}
       <div style={{ marginTop: '3rem', textAlign: 'center' }}>
@@ -317,10 +330,16 @@ export default function Page() {
           color: '#d1d5db',
         }}
       >
-        {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
+        {['Kontakt', 'Disclaimer', 'Pitch', 'Privatliv', 'Vilkår'].map((section) => (
           <p
             key={section}
-            onClick={() => setActiveSection(activeSection === section ? null : section)}
+            onClick={() => {
+              if (section === 'Pitch') {
+                handlePitchAccess();
+              } else {
+                setActiveSection(activeSection === section ? null : section);
+              }
+            }}
             style={{
               cursor: 'pointer',
               textDecoration: 'underline',
@@ -377,6 +396,59 @@ export default function Page() {
             Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
             Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
           </p>
+        </div>
+      )}
+      {activeSection === 'Pitch' && showPitch && (
+        <div
+          style={{
+            marginTop: '2rem',
+            padding: '2rem',
+            backgroundColor: '#0f172a',
+            borderRadius: '8px',
+            boxShadow: '0 0 12px rgba(0,0,0,0.3)',
+            textAlign: 'left',
+            fontSize: '1rem',
+            lineHeight: '1.6',
+          }}
+        >
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
+            {pitchContent[currentPitchPage].title}
+          </h2>
+          {pitchContent[currentPitchPage].content}
+          <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
+            {currentPitchPage > 0 && (
+              <button
+                onClick={handlePreviousPage}
+                style={{
+                  background: '#2563eb',
+                  color: '#fff',
+                  padding: '0.8rem 2rem',
+                  borderRadius: '8px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontWeight: 'bold',
+                }}
+              >
+                Forrige
+              </button>
+            )}
+            {currentPitchPage < pitchContent.length - 1 && (
+              <button
+                onClick={handleNextPage}
+                style={{
+                  background: '#22c55e',
+                  color: '#fff',
+                  padding: '0.8rem 2rem',
+                  borderRadius: '8px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  fontWeight: 'bold',
+                }}
+              >
+                Næste
+              </button>
+            )}
+          </div>
         </div>
       )}
     </main>
