@@ -4,7 +4,6 @@ import * as React from 'react';
 import { useState, useEffect, lazy, Suspense } from 'react';
 import Chart from 'chart.js/auto';
 
-// Lazy load the LazyVideo component from a separate file
 const LazyVideo = lazy(() => import('./components/LazyVideo'));
 
 export default function Page() {
@@ -15,7 +14,6 @@ export default function Page() {
   const [passwordInput, setPasswordInput] = useState('');
   const [charts, setCharts] = useState<{ [key: string]: Chart | null }>({});
 
-  // Pitch-indhold med visualiseringer
   const pitchContent = [
     {
       title: 'I. Indledning – Hvad er SelvDepot?',
@@ -134,7 +132,6 @@ export default function Page() {
               justifyContent: 'center',
             }}
           >
-            {/* Pakke: Klar til at eje */}
             <div
               style={{
                 flex: '1 1 300px',
@@ -169,7 +166,6 @@ export default function Page() {
               </p>
             </div>
 
-            {/* Pakke: Ejer med overblik */}
             <div
               style={{
                 flex: '1 1 300px',
@@ -202,7 +198,6 @@ export default function Page() {
               </p>
             </div>
 
-            {/* Pakke: Fuld kontrol */}
             <div
               style={{
                 flex: '1 1 300px',
@@ -242,7 +237,6 @@ export default function Page() {
     },
   ];
 
-  // Håndter adgangskode for pitch med censureret input
   const handlePitchAccess = () => {
     setShowPasswordModal(true);
   };
@@ -261,7 +255,6 @@ export default function Page() {
     }
   };
 
-  // Tastaturgenvej til at udløse pitch-adgang (Ctrl + P)
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.ctrlKey && event.key === 'p') {
@@ -273,10 +266,8 @@ export default function Page() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [passwordInput]);
 
-  // Opret charts når komponenten mountes
   useEffect(() => {
     const createCharts = () => {
-      // Inflation vs Bitcoin værdi
       if (charts['inflationChart'] === undefined && document.getElementById('inflationChart')) {
         charts['inflationChart'] = new Chart(document.getElementById('inflationChart') as HTMLCanvasElement, {
           type: 'line',
@@ -291,7 +282,6 @@ export default function Page() {
         });
       }
 
-      // Tab-fordeling
       if (charts['lossDistributionChart'] === undefined && document.getElementById('lossDistributionChart')) {
         charts['lossDistributionChart'] = new Chart(document.getElementById('lossDistributionChart') as HTMLCanvasElement, {
           type: 'pie',
@@ -303,7 +293,6 @@ export default function Page() {
         });
       }
 
-      // Sikkerhedssammenligning
       if (charts['securityComparisonChart'] === undefined && document.getElementById('securityComparisonChart')) {
         charts['securityComparisonChart'] = new Chart(document.getElementById('securityComparisonChart') as HTMLCanvasElement, {
           type: 'bar',
@@ -315,7 +304,6 @@ export default function Page() {
         });
       }
 
-      // Vækst vs Købekraft
       if (charts['valueGrowthChart'] === undefined && document.getElementById('valueGrowthChart')) {
         charts['valueGrowthChart'] = new Chart(document.getElementById('valueGrowthChart') as HTMLCanvasElement, {
           type: 'line',
@@ -334,7 +322,6 @@ export default function Page() {
         });
       }
 
-      // Kryptotab
       if (charts['cryptoLossChart'] === undefined && document.getElementById('cryptoLossChart')) {
         charts['cryptoLossChart'] = new Chart(document.getElementById('cryptoLossChart') as HTMLCanvasElement, {
           type: 'bar',
@@ -355,7 +342,6 @@ export default function Page() {
     };
   }, [currentPitchPage]);
 
-  // Navigation i pitch
   const handleNextPage = () => {
     if (currentPitchPage < pitchContent.length - 1) {
       setCurrentPitchPage(currentPitchPage + 1);
@@ -368,7 +354,6 @@ export default function Page() {
     }
   };
 
-  // Luk pitch
   const handleClosePitch = () => {
     setShowPitch(false);
     setActiveSection(null);
@@ -394,7 +379,6 @@ export default function Page() {
         margin: 0,
       }}
     >
-      {/* Logo og titel */}
       <div
         style={{
           marginTop: '2rem',
@@ -423,14 +407,12 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Intro */}
       <p style={{ marginTop: '2rem', fontSize: '1rem', textAlign: 'center', lineHeight: '1.5' }}>
         Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
         <br />
         Dine penge. Din fremtid. Din familie. Tag kontrol.
       </p>
 
-      {/* Book-møde efter intro */}
       <div style={{ marginTop: '1rem', textAlign: 'center' }}>
         <a
           href="https://calendly.com/selvdepot/30min"
@@ -450,7 +432,6 @@ export default function Page() {
         </a>
       </div>
 
-      {/* Hvad Bitcoin er */}
       <p
         style={{
           marginTop: '2rem',
@@ -465,21 +446,18 @@ export default function Page() {
         Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen. Ingen banker. Ingen stater. Ingen modparter. Men uden korrekt opbevaring forsvinder sikkerheden og suveræniteten. Hos SelvDepot lærer du at holde dine Bitcoin, som de var tiltænkt: 100% under din egen kontrol. Privat. Permanent.
       </p>
 
-      {/* Lazy-loaded Video */}
       <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <Suspense fallback={<div>Loading video...</div>}>
           <LazyVideo />
         </Suspense>
       </div>
 
-      {/* Brødtekst */}
       <div style={{ marginTop: '2rem', fontSize: '1rem', lineHeight: '1.5', textAlign: 'center' }}>
         <p style={{ maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' }}>
           Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden hvor det traditionelle FIAT-system suger livet ud af dine beholdninger og aktiver gennem inflation og kontrol. Over 80% af Bitcoin-ejere risikerer at miste alt gennem hacks, social engineering og modpartsrisiko – men DU er stadig den største risiko for tab af dine Bitcoin. Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody inklusiv arveplanlægning, trusselsanalyse, svigtpunktsanalyse, multisig m.m. – uden at vi nogensinde rører dine private keys. Dette er ikke bare en chance for 100% kontrol og tryghed. Det er din sidste udvej før dørene lukker, og du bliver fanget i et forgængeligt system.
         </p>
       </div>
 
-      {/* Sekundær CTA */}
       <div style={{ marginTop: '2rem', textAlign: 'center' }}>
         <a
           href="https://calendly.com/selvdepot/30min"
@@ -500,7 +478,6 @@ export default function Page() {
         </a>
       </div>
 
-      {/* Vurderingstekst */}
       <p
         style={{
           marginTop: '2rem',
@@ -517,7 +494,6 @@ export default function Page() {
         Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger – vil du blive afvist, men med mulighed for undervisning og støtte, indtil du er klar. <br /> <br /> Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller hjælpelinje at ringe til, hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt ansvar.
       </p>
 
-      {/* Footer-links */}
       <div
         style={{
           marginTop: '4rem',
@@ -540,7 +516,6 @@ export default function Page() {
         ))}
       </div>
 
-      {/* Footer indhold */}
       {activeSection === 'Kontakt' && (
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
           <p>
@@ -557,7 +532,6 @@ export default function Page() {
           </p>
         </div>
       )}
-      {/* Pitch-sektion */}
       {activeSection === 'Pitch' && showPitch && (
         <div
           style={{
@@ -639,7 +613,6 @@ export default function Page() {
           </div>
         </div>
       )}
-      {/* Password Modal */}
       {showPasswordModal && (
         <div
           style={{
@@ -742,3 +715,21 @@ export default function Page() {
     </main>
   );
 }
+
+// LazyVideo component (embedded here as requested)
+const LazyVideo = () => {
+  return (
+    <video
+      controls
+      style={{
+        width: '100%',
+        maxWidth: '700px',
+        borderRadius: '4px',
+        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+      }}
+    >
+      <source src="/intro.mp4" type="video/mp4" />
+      Din browser understøtter ikke video-tagget.
+    </video>
+  );
+};
