@@ -1,11 +1,3 @@
-# Re-displaying the combined final code using display_dataframe_to_user to ensure user can see and copy the full content.
-import pandas as pd
-
-# Due to length, the final code will be split into multiple labeled parts for clarity.
-# Each part will represent a file or module in the Next.js project.
-
-code_parts = {
-    "app/page.tsx": """
 'use client';
 
 import * as React from 'react';
@@ -13,6 +5,33 @@ import { useState } from 'react';
 
 export default function Page() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [email, setEmail] = useState('');
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
+  const [showPitch, setShowPitch] = useState(false); // Ny state til at toggle pitch-sektionen
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append('email', email);
+
+    const response = await fetch('https://formspree.io/f/xldnwgya', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Accept: 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      setEmailSubmitted(true);
+      setStatusMessage('✔️ PDF sendt til din e-mail!');
+      setEmail('');
+    } else {
+      setStatusMessage('Noget gik galt. Prøv igen.');
+    }
+  }
 
   return (
     <main
@@ -28,6 +47,7 @@ export default function Page() {
         color: '#ffffff',
       }}
     >
+      {/* Logo og titel */}
       <div
         style={{
           marginTop: '2rem',
@@ -58,21 +78,89 @@ export default function Page() {
         </div>
       </div>
 
+      {/* Intro */}
       <p style={{ marginTop: '2rem', fontSize: '1.2rem' }}>
         Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
         <br />
         Dine penge. Din fremtid. Din familie. Tag kontrol.
       </p>
 
-      <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-        <p style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#facc15', marginBottom: 0 }}>
-          Ville du føle dig sikker med din nuværende løsning,
-        </p>
-        <p style={{ fontSize: '1.1rem', fontWeight: 'bold', color: '#facc15' }}>
-          hvis dine BTC blev 10x mere værd i morgen?
-        </p>
+      {/* Book-møde efter intro */}
+      <div style={{ marginTop: '1rem', textAlign: 'center' }}>
+        <a
+          href="https://calendly.com/selvdepot/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            background: '#2563eb',
+            color: '#fff',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            display: 'inline-block',
+          }}
+        >
+          Book et gratis 30-minutters møde
+        </a>
       </div>
 
+      {/* FOMO + Email */}
+      <form onSubmit={handleSubmit} style={{ marginTop: '3rem', textAlign: 'center' }}>
+        <p
+          style={{
+            fontSize: '1.1rem',
+            fontWeight: 'bold',
+            color: '#facc15',
+            marginBottom: '1rem',
+          }}
+        >
+          Ville du føle dig sikker, hvis dine BTC blev 10x mere værd i morgen?
+        </p>
+
+        {!emailSubmitted && (
+          <>
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              placeholder="Modtag Introduktion PDF via Email"
+              style={{
+                padding: '0.8rem',
+                borderRadius: '8px',
+                border: '1px solid #ccc',
+                maxWidth: '300px',
+                width: '100%',
+                marginBottom: '1rem',
+              }}
+            />
+            <br />
+            <button
+              type="submit"
+              style={{
+                background: '#22c55e',
+                color: '#fff',
+                padding: '0.8rem 2rem',
+                borderRadius: '8px',
+                border: 'none',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+              }}
+            >
+              JA TAK
+            </button>
+          </>
+        )}
+
+        {statusMessage && (
+          <div style={{ marginTop: '1rem', fontSize: '0.9rem', color: '#facc15' }}>
+            {statusMessage}
+          </div>
+        )}
+      </form>
+
+      {/* Hvad Bitcoin er */}
       <p style={{ marginTop: '3rem', fontSize: '1.05rem', lineHeight: '1.6', textAlign: 'justify' }}>
         Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
         med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen.
@@ -82,6 +170,7 @@ export default function Page() {
         100% under din egen kontrol. Privat. Permanent.
       </p>
 
+      {/* Video */}
       <div style={{ marginTop: '2rem' }}>
         <video
           controls
@@ -96,6 +185,7 @@ export default function Page() {
         </video>
       </div>
 
+      {/* Brødtekst */}
       <div style={{ marginTop: '2rem', fontSize: '1rem', lineHeight: '1.6' }}>
         <p style={{ margin: 0, textAlign: 'justify' }}>
           Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden hvor det
@@ -104,11 +194,95 @@ export default function Page() {
           social engineering og modpartsrisiko – men DU er stadig den største risiko for tab af dine Bitcoin.
           Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody inklusiv
           arveplanlægning, trusselsanalyse, svigtpunktsanalyse, multisig m.m. – uden at vi
-          nogensinde rører dine private keys, Bitcoin eller enhed. Dette er ikke bare en chance for 100% kontrol og tryghed.
+          nogensinde rører dine private keys. Dette er ikke bare en chance for 100% kontrol og tryghed.
           Det er din sidste udvej før dørene lukker, og du bliver fanget i et forgængeligt system.
         </p>
       </div>
 
+      {/* Knap til at toggle pitch-sektionen */}
+      <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+        <button
+          onClick={() => setShowPitch(!showPitch)}
+          style={{
+            background: '#f59e0b',
+            color: '#fff',
+            padding: '0.8rem 2rem',
+            borderRadius: '8px',
+            border: 'none',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+          }}
+        >
+          {showPitch ? 'Skjul Pitch' : 'Vis Pitch til Kunder'}
+        </button>
+      </div>
+
+      {/* Pitch-sektion (skjult som standard) */}
+      {showPitch && (
+        <div
+          style={{
+            marginTop: '2rem',
+            padding: '2rem',
+            backgroundColor: '#0f172a',
+            borderRadius: '8px',
+            boxShadow: '0 0 12px rgba(0,0,0,0.3)',
+          }}
+        >
+          <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '1rem' }}>
+            SelvDepot Pitch
+          </h1>
+          <iframe
+            src="/SelvDepot.pdf"
+            width="100%"
+            height="600px"
+            style={{ border: 'none', boxShadow: '0 0 12px rgba(0,0,0,0.3)' }}
+            title="SelvDepot Pitch PDF"
+          />
+          {/* Ekstra pitch-indhold, f.eks. mål, pris, osv. */}
+          <div style={{ marginTop: '2rem', textAlign: 'left', fontSize: '1rem' }}>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Vores Mål</h2>
+            <p>
+              At give dig fuld kontrol over dine Bitcoin gennem sikker self-custody, så du kan beskytte
+              din økonomiske fremtid uden modpartsrisiko.
+            </p>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginTop: '1rem' }}>Priser</h2>
+            <p>
+              Kontakt os for en skræddersyet pris baseret på dine behov. Vores 1:1-rådgivning starter
+              med en gratis 30-minutters konsultation.
+            </p>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginTop: '1rem' }}>
+              Hvorfor SelvDepot?
+            </h2>
+            <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+              <li>Skræddersyet vejledning til sikker Bitcoin-opbevaring.</li>
+              <li>Ingen berøring af dine private keys – du har fuld kontrol.</li>
+              <li>Arveplanlægning og multisig-løsninger inkluderet.</li>
+            </ul>
+          </div>
+        </div>
+      )}
+
+      {/* Sekundær CTA */}
+      <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+        <a
+          href="https://calendly.com/selvdepot/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            background: '#15803d',
+            color: '#fff',
+            padding: '0.8rem 1.5rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            display: 'inline-block',
+            fontWeight: 'bold',
+          }}
+        >
+          Klar til at tage ansvar? Book et kald nu
+        </a>
+      </div>
+
+      {/* Vurderingstekst */}
       <p
         style={{
           marginTop: '2rem',
@@ -123,7 +297,7 @@ export default function Page() {
       >
         Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
         self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har
-        de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger – 
+        de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger –
         vil du blive afvist, men med mulighed for undervisning og støtte, indtil du er klar.
         <br />
         <br />
@@ -131,6 +305,7 @@ export default function Page() {
         at ringe til, hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt ansvar.
       </p>
 
+      {/* Footer-links */}
       <div
         style={{
           marginTop: '4rem',
@@ -157,10 +332,26 @@ export default function Page() {
         ))}
       </div>
 
+      {/* Footer indhold */}
       {activeSection === 'Kontakt' && (
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
-          <p>📬 Email: <a href="mailto:Selvdepot@gmail.com" style={{ color: '#60a5fa' }}>Selvdepot@gmail.com</a></p>
-          <p>📅 Book: <a href="https://calendly.com/selvdepot/30min" target="_blank" rel="noopener noreferrer" style={{ color: '#60a5fa' }}>calendly.com/selvdepot/30min</a></p>
+          <p>
+            📬 Email:{' '}
+            <a href="mailto:Selvdepot@gmail.com" style={{ color: '#60a5fa' }}>
+              Selvdepot@gmail.com
+            </a>
+          </p>
+          <p>
+            📅 Book:{' '}
+            <a
+              href="https://calendly.com/selvdepot/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#60a5fa' }}
+            >
+              calendly.com/selvdepot/30min
+            </a>
+          </p>
         </div>
       )}
       {activeSection === 'Disclaimer' && (
@@ -191,8 +382,3 @@ export default function Page() {
     </main>
   );
 }
-"""
-}
-
-df = pd.DataFrame.from_dict(code_parts, orient="index", columns=["Code"])
-import ace_tools as tools; tools.display_dataframe_to_user(name="Full Project Code (Part 1)", dataframe=df)
