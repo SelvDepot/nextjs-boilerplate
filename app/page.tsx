@@ -2,9 +2,9 @@
 
 import * as React from 'react';
 import { useState, useEffect, lazy, Suspense } from 'react';
-import Chart from 'chart.js/auto'; // Tilføj Chart.js via npm install chart.js
+import Chart from 'chart.js/auto';
 
-// Lazy load video-komponent
+// Lazy load the LazyVideo component from a separate file
 const LazyVideo = lazy(() => import('./components/LazyVideo'));
 
 export default function Page() {
@@ -353,7 +353,7 @@ export default function Page() {
     return () => {
       Object.values(charts).forEach((chart) => chart?.destroy());
     };
-  }, [currentPitchPage]); // Genkør når side skifter
+  }, [currentPitchPage]);
 
   // Navigation i pitch
   const handleNextPage = () => {
@@ -742,18 +742,3 @@ export default function Page() {
     </main>
   );
 }
-
-// LazyVideo component
-const LazyVideo = () => {
-  return (
-    <video
-      controls
-      style={{ width: '100%', maxWidth: '700px', borderRadius: '4px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}
-    >
-      <source src="/intro.mp4" type="video/mp4" />
-      Din browser understøtter ikke video-tagget.
-    </video>
-  );
-};
-
-export default LazyVideo;
