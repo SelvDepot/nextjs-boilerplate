@@ -283,10 +283,10 @@ export default function Page() {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
-        padding: '2rem',
-        maxWidth: '800px',
-        margin: '0 auto',
+        padding: '2rem 1rem', // Justerede padding for responsivitet
         color: '#ffffff',
+        width: '100%', // Sørger for fuld bredde
+        margin: 0, // Fjerner tidligere margin
       }}
     >
       {/* Logo og titel */}
@@ -298,6 +298,9 @@ export default function Page() {
           flexWrap: 'wrap',
           justifyContent: 'center',
           gap: '1rem',
+          maxWidth: '800px', // Begræns bredden for logo-sektionen for pænhed
+          marginLeft: 'auto',
+          marginRight: 'auto',
         }}
       >
         <img
@@ -321,7 +324,7 @@ export default function Page() {
       </div>
 
       {/* Intro */}
-      <p style={{ marginTop: '2rem', fontSize: '1.2rem' }}>
+      <p style={{ marginTop: '2rem', fontSize: '1.2rem', textAlign: 'center' }}>
         Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
         <br />
         Dine penge. Din fremtid. Din familie. Tag kontrol.
@@ -347,7 +350,17 @@ export default function Page() {
       </div>
 
       {/* Hvad Bitcoin er */}
-      <p style={{ marginTop: '3rem', fontSize: '1.05rem', lineHeight: '1.6', textAlign: 'justify' }}>
+      <p
+        style={{
+          marginTop: '3rem',
+          fontSize: '1.05rem',
+          lineHeight: '1.6',
+          textAlign: 'center',
+          maxWidth: '800px', // Begræns bredden for læsbarhed
+          marginLeft: 'auto',
+          marginRight: 'auto',
+        }}
+      >
         Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
         med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen.
         Ingen banker. Ingen stater. Ingen modparter.
@@ -357,11 +370,12 @@ export default function Page() {
       </p>
 
       {/* Video */}
-      <div style={{ marginTop: '2rem' }}>
+      <div style={{ marginTop: '2rem', textAlign: 'center' }}>
         <video
           controls
           style={{
             width: '100%',
+            maxWidth: '800px', // Begræns videoens bredde for pænhed
             borderRadius: '8px',
             boxShadow: '0 0 8px rgba(0,0,0,0.3)',
           }}
@@ -372,8 +386,8 @@ export default function Page() {
       </div>
 
       {/* Brødtekst */}
-      <div style={{ marginTop: '2rem', fontSize: '1rem', lineHeight: '1.6' }}>
-        <p style={{ margin: 0, textAlign: 'justify' }}>
+      <div style={{ marginTop: '2rem', fontSize: '1rem', lineHeight: '1.6', textAlign: 'center' }}>
+        <p style={{ maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' }}>
           Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden hvor det
           traditionelle FIAT-system suger livet ud af dine beholdninger og aktiver gennem inflation
           og kontrol. Over 80% af Bitcoin-ejere risikerer at miste alt gennem hacks,
@@ -415,7 +429,7 @@ export default function Page() {
           maxWidth: '600px',
           marginLeft: 'auto',
           marginRight: 'auto',
-          textAlign: 'justify',
+          textAlign: 'center',
         }}
       >
         Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
@@ -457,7 +471,7 @@ export default function Page() {
 
       {/* Footer indhold */}
       {activeSection === 'Kontakt' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
           <p>
             📬 Email:{' '}
             <a href="mailto:Selvdepot@gmail.com" style={{ color: '#60a5fa' }}>
@@ -559,7 +573,7 @@ export default function Page() {
         </div>
       )}
       {activeSection === 'Disclaimer' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
           <p>
             Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk,
             finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene undervisning
@@ -568,7 +582,7 @@ export default function Page() {
         </div>
       )}
       {activeSection === 'Privatliv' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
           <p>
             Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly
             håndteres dine oplysninger af dem under deres politikker. Vi bruger ikke cookies eller analytics.
@@ -576,7 +590,7 @@ export default function Page() {
         </div>
       )}
       {activeSection === 'Vilkår' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
           <p>
             Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
             Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
