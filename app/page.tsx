@@ -35,7 +35,7 @@ export default function Page() {
         <>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
             <li>De fleste Bitcoin-ejere har stadig modpartsrisiko (børser, apps, custodians).</li>
-            <li>20% af al BTC er allerede mistet – ikke pga. hacks, men pga. menneskelige fejl.</li>
+            <li>20% af al BTC er allerede mistet – ikke pga hacks, men pga menneskelige fejl.</li>
             <li>Uden et robust set-up, en klar arveplan og korrekte værktøjer kan du/dine elskede miste adgangen for altid.</li>
             <li>En enkelt fejl – ét forkert tryk, én mistet kode/nøgle – og pengene er for evigt væk.</li>
           </ul>
@@ -49,11 +49,11 @@ export default function Page() {
           <p>Vi hjælper dig med en skræddersyet opsætning af:</p>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
             <li>Hardware wallets, alt efter behov (hot/cold, single/multi/passphrase m.m.).</li>
-            <li>Arveplan, kan din familie/børn finde ud af at få adgang til dine Bitcoin i tilfælde af sygdom/død?</li>
-            <li>Trusselsanalyse, Svigtepunksanalyse, Privatlivsbehov.</li>
+            <li>Arveplan, kan din familie/børn finde ud af at få adgang til dine Bitcoin i tilfælde af sygdom?</li>
+            <li>Trusselsanalyse, Svigtpunktsanalyse, Privatlivsbehov.</li>
           </ul>
           <p>Du får hjælp til hele opsætningen – uden at vi nogensinde har adgang til dine midler, enhed eller lignende.</p>
-          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}></ul>
+          <ul style={{ listStyleType: 'none', paddingLeft: 0, marginBottom: '2rem' }}></ul>
         </>
       ),
     },
@@ -63,7 +63,7 @@ export default function Page() {
         <>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
             <li>Du får ro i maven nu og i fremtiden.</li>
-            <li>Du ved præcis, hvor dine Bitcoin er, at få adgang og at ingen andre kan.</li>
+            <li>Du ved præcis, hvor dine Bitcoin er, at få adgang og at ingen andre har kan.</li>
             <li>Du undgår at efterlade kaos til din ikke-tekniske onkel eller selv at miste dem.</li>
             <li>Du slipper for at famle i mørket – vi har prøvet det før og guider dig hele vejen.</li>
             <li>Du tager ansvar – men med en sparringspartner, der forstår både teknikken og dine behov.</li>
@@ -275,6 +275,8 @@ export default function Page() {
         color: '#ffffff',
         width: '100%',
         margin: 0,
+        position: 'relative', // Ensure main is a stacking context
+        zIndex: -2, // Place main background below logo
       }}
     >
       {/* Logo og titel */}
@@ -289,8 +291,9 @@ export default function Page() {
           marginLeft: 'auto',
           marginRight: 'auto',
           position: 'relative', // Contain absolutely positioned logo
-          minHeight: '250px', // Ensure enough space for logo and text
+          minHeight: '250px', // Ensure space for logo and text
           overflow: 'visible', // Prevent clipping
+          zIndex: 0, // Ensure container is above main background
         }}
       >
         <img
@@ -304,7 +307,7 @@ export default function Page() {
             left: '50%',
             transform: 'translate(-50%, -50%)', // Center the logo
             opacity: 0.3, // Lower opacity for transparency
-            zIndex: -1, // Place behind text
+            zIndex: 0, // Place above main background, below text
             borderRadius: '4px',
             boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
             pointerEvents: 'none', // Prevent interaction with logo
@@ -313,9 +316,10 @@ export default function Page() {
         <div
           style={{
             textAlign: 'center',
-            padding: '2.5rem', // Increased padding for better spacing
+            padding: '2.5rem', // Spacing for readability
             zIndex: 1, // Ensure text is above logo
-            width: '100%', // Ensure text spans container
+            width: '100%', // Span container for centering
+            backgroundColor: 'rgba(0, 0, 0, 0.2)', // Subtle backdrop for text contrast
           }}
         >
           <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: 0, textAlign: 'center', textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)' }}>
@@ -512,8 +516,8 @@ export default function Page() {
         <div
           style={{
             position: 'fixed',
-            top: '0',
-            left: '0',
+            top: 0,
+            left: 0,
             width: '100vw',
             height: '100vh',
             backgroundColor: '#1e293b',
@@ -596,8 +600,8 @@ export default function Page() {
         <div
           style={{
             position: 'fixed',
-            top: '0',
-            left: '0',
+            top: 0,
+            left: 0,
             width: '100vw',
             height: '100vh',
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
