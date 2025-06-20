@@ -5,32 +5,6 @@ import { useState } from 'react';
 
 export default function Page() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  const [email, setEmail] = useState('');
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
-  const [statusMessage, setStatusMessage] = useState('');
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-
-    const formData = new FormData();
-    formData.append('email', email);
-
-    const response = await fetch('https://formspree.io/f/xldnwgya', {
-      method: 'POST',
-      body: formData,
-      headers: {
-        Accept: 'application/json',
-      },
-    });
-
-    if (response.ok) {
-      setEmailSubmitted(true);
-      setStatusMessage('✔️ PDF sendt til din e-mail!');
-      setEmail('');
-    } else {
-      setStatusMessage('Noget gik galt. Prøv igen.');
-    }
-  }
 
   return (
     <main
@@ -84,27 +58,8 @@ export default function Page() {
         Dine penge. Din fremtid. Din familie. Tag kontrol.
       </p>
 
-      {/* Book-møde efter intro */}
-      <div style={{ marginTop: '1rem', textAlign: 'center' }}>
-        <a
-          href="https://calendly.com/selvdepot/30min"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            background: '#2563eb',
-            color: '#fff',
-            padding: '1rem 2rem',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            display: 'inline-block',
-          }}
-        >
-          Book et gratis 30-minutters møde
-        </a>
-      </div>
-
-      {/* FOMO + Email */}
-      <form onSubmit={handleSubmit} style={{ marginTop: '3rem', textAlign: 'center' }}>
+      {/* FOMO-spørgsmål */}
+      <div style={{ marginTop: '3rem', textAlign: 'center' }}>
         <p
           style={{
             fontSize: '1.1rem',
@@ -115,49 +70,32 @@ export default function Page() {
         >
           Ville du føle dig sikker, hvis dine BTC blev 10x mere værd i morgen?
         </p>
+        <p style={{ fontSize: '1rem', maxWidth: '600px', margin: '0 auto', color: '#e2e8f0' }}>
+          PDF’en med vores introduktion bliver sendt personligt til dig efter du har booket en
+          gratis rådgivningssamtale – så vi sammen kan skræddersy næste skridt.
+        </p>
+      </div>
 
-        {!emailSubmitted && (
-          <>
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              placeholder="Modtag Introduktion PDF via Email"
-              style={{
-                padding: '0.8rem',
-                borderRadius: '8px',
-                border: '1px solid #ccc',
-                maxWidth: '300px',
-                width: '100%',
-                marginBottom: '1rem',
-              }}
-            />
-            <br />
-            <button
-              type="submit"
-              style={{
-                background: '#22c55e',
-                color: '#fff',
-                padding: '0.8rem 2rem',
-                borderRadius: '8px',
-                border: 'none',
-                cursor: 'pointer',
-                fontWeight: 'bold',
-              }}
-            >
-              JA TAK
-            </button>
-          </>
-        )}
-
-        {statusMessage && (
-          <div style={{ marginTop: '1rem', fontSize: '0.9rem', color: '#facc15' }}>
-            {statusMessage}
-          </div>
-        )}
-      </form>
+      {/* Book-møde CTA */}
+      <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+        <a
+          href="https://calendly.com/selvdepot/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            background: '#22c55e',
+            color: '#fff',
+            padding: '1rem 2rem',
+            borderRadius: '8px',
+            textDecoration: 'none',
+            display: 'inline-block',
+            fontWeight: 'bold',
+            fontSize: '1.1rem',
+          }}
+        >
+          Book dit gratis 30-minutters kald
+        </a>
+      </div>
 
       {/* Hvad Bitcoin er */}
       <p style={{ marginTop: '3rem', fontSize: '1.05rem', lineHeight: '1.6', textAlign: 'justify' }}>
@@ -214,7 +152,7 @@ export default function Page() {
             fontWeight: 'bold',
           }}
         >
-          Klar til at tage ansvar? Book et kald nu
+          Klar til at tage ansvar? Book et kald nu 
         </a>
       </div>
 
@@ -271,23 +209,8 @@ export default function Page() {
       {/* Footer indhold */}
       {activeSection === 'Kontakt' && (
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
-          <p>
-            📬 Email:{' '}
-            <a href="mailto:Selvdepot@gmail.com" style={{ color: '#60a5fa' }}>
-              Selvdepot@gmail.com
-            </a>
-          </p>
-          <p>
-            📅 Book:{' '}
-            <a
-              href="https://calendly.com/selvdepot/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: '#60a5fa' }}
-            >
-              calendly.com/selvdepot/30min
-            </a>
-          </p>
+          <p>📬 Email: <a href="mailto:Selvdepot@gmail.com" style={{ color: '#60a5fa' }}>Selvdepot@gmail.com</a></p>
+          <p>📅 Book: <a href="https://calendly.com/selvdepot/30min" target="_blank" rel="noopener noreferrer" style={{ color: '#60a5fa' }}>calendly.com/selvdepot/30min</a></p>
         </div>
       )}
       {activeSection === 'Disclaimer' && (
