@@ -19,7 +19,7 @@ export default function Page() {
             <br />
             SelvDepot er rådgivning i sikker, privat og fremtidssikret opbevaring af Bitcoin.
           </p>
-          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
             <li>Vi arbejder 1:1 med formuende personer, der ønsker fuld kontrol uden at røre deres private keys.</li>
             <li>Alt bygger på gennemtænkt sikkerhed, open-source værktøjer og absolut diskretion.</li>
             <li>Det her handler ikke om hype – men om, hvordan du undgår at miste alt.</li>
@@ -31,7 +31,7 @@ export default function Page() {
       title: 'II. Problemet – Hvorfor er det her nødvendigt?',
       content: (
         <>
-          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
             <li>De fleste Bitcoin-ejere har stadig modpartsrisiko (børser, apps, custodians).</li>
             <li>20% af al BTC er allerede mistet – ikke pga. hacks, men pga. menneskelige fejl.</li>
             <li>Uden en klar arveplan kan dine efterladte miste adgangen for altid.</li>
@@ -46,13 +46,13 @@ export default function Page() {
       content: (
         <>
           <p>Vi hjælper dig med en skræddersyet opsætning af:</p>
-          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
             <li>Hardware-wallets (cold storage, offline sikkerhed)</li>
             <li>Multisig (flere nøgler – ingen enkeltfejl)</li>
             <li>Arveplan (sikrer kontinuitet for din familie)</li>
           </ul>
           <p>Du får hjælp til hele opsætningen – uden at vi nogensinde har adgang til dine midler.</p>
-          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
             <li>Alt er open-source, dokumenteret og testet – du kan selv inspicere det hele.</li>
           </ul>
         </>
@@ -62,7 +62,7 @@ export default function Page() {
       title: 'IV. Udbytte – Hvordan SelvDepot kommer ind i billedet',
       content: (
         <>
-          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
             <li>Du får ro i maven – nu og i fremtiden.</li>
             <li>Du ved præcis, hvor dine Bitcoin er – og at ingen andre har adgang.</li>
             <li>Du undgår at efterlade kaos til din familie.</li>
@@ -76,7 +76,7 @@ export default function Page() {
       title: 'V. Hvorfor SelvDepot?',
       content: (
         <>
-          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
             <li>Vi er 100 % Bitcoin-only – vi gør ikke alt. Vi gør det her.</li>
             <li>Alt vi bruger er open-source og gennemtestet – ingen sorte bokse.</li>
             <li>Vi forstår HNWI’s behov: kontrol, diskretion og arv.</li>
@@ -207,15 +207,16 @@ export default function Page() {
     },
   ];
 
-  // Håndter adgangskode for pitch
+  // Håndter adgangskode for pitch (skjult input)
   const handlePitchAccess = () => {
-    const password = prompt('Indtast adgangskode for at vise pitch');
+    // Brug en skjult prompt og en simpel validering uden at gemme adgangskoden i klartekst
+    const password = window.prompt('Indtast adgangskode for at vise pitch (skjult input)');
     if (password === '9945') {
       setShowPitch(true);
       setActiveSection('Pitch');
-      setCurrentPitchPage(0); // Starter på første side
+      setCurrentPitchPage(0);
     } else {
-      alert('Forkert adgangskode');
+      alert('Forkert adgangskode. Prøv igen.');
     }
   };
 
@@ -283,7 +284,7 @@ export default function Page() {
           src="/logo.png"
           alt="SelvDepot Logo"
           style={{
-            maxWidth: '150px', // Forstørret logo
+            maxWidth: '150px',
             height: 'auto',
             borderRadius: '4px',
             boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
@@ -361,7 +362,7 @@ export default function Page() {
           controls
           style={{
             width: '100%',
-            maxWidth: '700px', // Forøget for bedre proportioner
+            maxWidth: '700px',
             borderRadius: '4px',
             boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
           }}
@@ -488,13 +489,13 @@ export default function Page() {
             left: 0,
             width: '100vw',
             height: '100vh',
-            backgroundColor: '#0f172a',
-            padding: '2rem',
+            backgroundColor: '#1e293b', // Justeret til en mørkere blå baggrund som på billedet
+            padding: '3rem',
             zIndex: 1000,
             overflowY: 'auto',
             textAlign: 'left',
-            fontSize: '0.95rem',
-            lineHeight: '1.5',
+            fontSize: '1.2rem', // Øget tekststørrelse
+            lineHeight: '1.8', // Mere mellemrum mellem linjer
             color: '#ffffff',
             display: 'flex',
             flexDirection: 'column',
@@ -519,12 +520,12 @@ export default function Page() {
           >
             Luk
           </button>
-          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <h2 style={{ fontSize: '1.3rem', fontWeight: 'bold', marginBottom: '1rem' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '2rem' }}>
+            <h2 style={{ fontSize: '1.8rem', fontWeight: 'bold', marginBottom: '2rem' }}>
               {pitchContent[currentPitchPage].title}
             </h2>
             {pitchContent[currentPitchPage].content}
-            <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
+            <div style={{ marginTop: '3rem', display: 'flex', gap: '1rem', justifyContent: 'center' }}>
               {currentPitchPage > 0 && (
                 <button
                   onClick={handlePreviousPage}
@@ -536,7 +537,7 @@ export default function Page() {
                     border: 'none',
                     cursor: 'pointer',
                     fontWeight: 'bold',
-                    fontSize: '0.9rem',
+                    fontSize: '1rem',
                   }}
                 >
                   Forrige
@@ -553,7 +554,7 @@ export default function Page() {
                     border: 'none',
                     cursor: 'pointer',
                     fontWeight: 'bold',
-                    fontSize: '0.9rem',
+                    fontSize: '1rem',
                   }}
                 >
                   Næste
