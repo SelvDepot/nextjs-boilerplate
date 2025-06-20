@@ -307,17 +307,17 @@ export default function Page() {
           src="/logo.png"
           alt="SelvDepot Logo"
           style={{
-            maxWidth: '120px', // Reduceret størrelse for professionelt udseende
+            maxWidth: '150px', // Forstørret logo
             height: 'auto',
             borderRadius: '4px',
-            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', // Blødere skygge
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
           }}
         />
         <div>
-          <h1 style={{ fontSize: '2rem', fontWeight: 'bold', margin: 0, textAlign: 'center' }}>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: 0, textAlign: 'center' }}>
             SelvDepot
           </h1>
-          <h2 style={{ fontSize: '1.2rem', marginTop: '0.5rem', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '1.5rem', marginTop: '0.5rem', textAlign: 'center' }}>
             Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
             <br />
             <span style={{ fontWeight: 'normal' }}>Sikkert. Privat. For evigt.</span>
@@ -356,7 +356,7 @@ export default function Page() {
       <p
         style={{
           marginTop: '2rem',
-          fontSize: '0.95rem',
+          fontSize: '1rem',
           lineHeight: '1.5',
           textAlign: 'center',
           maxWidth: '800px',
@@ -385,7 +385,7 @@ export default function Page() {
           controls
           style={{
             width: '100%',
-            maxWidth: '600px', // Begrænset bredde for professionelt udseende
+            maxWidth: '700px', // Forøget for bedre proportioner
             borderRadius: '4px',
             boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
           }}
@@ -396,7 +396,7 @@ export default function Page() {
       </div>
 
       {/* Brødtekst */}
-      <div style={{ marginTop: '2rem', fontSize: '0.95rem', lineHeight: '1.5', textAlign: 'center' }}>
+      <div style={{ marginTop: '2rem', fontSize: '1rem', lineHeight: '1.5', textAlign: 'center' }}>
         <p style={{ maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' }}>
           Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden hvor det
           traditionelle FIAT-system suger livet ud af dine beholdninger og aktiver gennem inflation
@@ -434,7 +434,7 @@ export default function Page() {
       <p
         style={{
           marginTop: '2rem',
-          fontSize: '0.85rem',
+          fontSize: '0.9rem',
           color: '#facc15',
           fontStyle: 'italic',
           maxWidth: '600px',
@@ -462,7 +462,7 @@ export default function Page() {
           justifyContent: 'center',
           gap: '2rem',
           flexWrap: 'wrap',
-          fontSize: '0.85rem',
+          fontSize: '0.9rem',
           color: '#d1d5db',
         }}
       >
@@ -483,7 +483,7 @@ export default function Page() {
 
       {/* Footer indhold */}
       {activeSection === 'Kontakt' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.85rem', textAlign: 'center' }}>
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
           <p>
             📬 Email:{' '}
             <a href="mailto:Selvdepot@gmail.com" style={{ color: '#60a5fa' }}>
@@ -588,7 +588,7 @@ export default function Page() {
         </div>
       )}
       {activeSection === 'Disclaimer' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.85rem', textAlign: 'center' }}>
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
           <p>
             Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk,
             finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene undervisning
@@ -597,7 +597,7 @@ export default function Page() {
         </div>
       )}
       {activeSection === 'Privatliv' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.85rem', textAlign: 'center' }}>
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
           <p>
             Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly
             håndteres dine oplysninger af dem under deres politikker. Vi bruger ikke cookies eller analytics.
@@ -605,7 +605,7 @@ export default function Page() {
         </div>
       )}
       {activeSection === 'Vilkår' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.85rem', textAlign: 'center' }}>
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
           <p>
             Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
             Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
