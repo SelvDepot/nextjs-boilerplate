@@ -68,7 +68,7 @@ export default function Page() {
             marginBottom: '1rem',
           }}
         >
-          Ville du føle dig sikker, hvis dine BTC blev 10x mere værd i morgen?
+          Ville du føle dig sikker med din nuværende løsning, hvis dine BTC blev 10x mere værd i morgen?
         </p>
         <p style={{ fontSize: '1rem', maxWidth: '600px', margin: '0 auto', color: '#e2e8f0' }}>
           PDF’en med vores introduktion og spørgeskema bliver sendt personligt til dig efter du har booket en
@@ -131,7 +131,7 @@ export default function Page() {
           social engineering og modpartsrisiko – men DU er stadig den største risiko for tab af dine Bitcoin.
           Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody inklusiv
           arveplanlægning, trusselsanalyse, svigtpunktsanalyse, multisig m.m. – uden at vi
-          nogensinde rører dine private keys. Dette er ikke bare en chance for 100% kontrol og tryghed.
+          nogensinde rører dine private keys, Bitcoin eller enhed. Dette er ikke bare en chance for 100% kontrol og tryghed.
           Det er din sidste udvej før dørene lukker, og du bliver fanget i et forgængeligt system.
         </p>
       </div>
