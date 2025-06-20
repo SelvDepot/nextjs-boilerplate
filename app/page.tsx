@@ -1,3 +1,4 @@
+
 'use client';
 import * as React from 'react';
 import { useState, useEffect } from 'react';
@@ -87,12 +88,10 @@ export default function Page() {
 
   return (
     <main style={{ background: '#000', color: '#fff', minHeight: '100vh', padding: '2rem' }}>
-      {/* Logo øverst til venstre */}
       <div style={{ position: 'absolute', top: '1rem', left: '1rem' }}>
         <img src="/logo.png" alt="SelvDepot" style={{ height: '80px' }} />
       </div>
 
-      {/* Pitch-sektion */}
       {showPitch && (
         <div style={{ maxWidth: '1000px', margin: '0 auto', marginTop: '4rem' }}>
           <h2 style={{ fontSize: '2rem', marginBottom: '2rem' }}>{pitchContent[currentPitchPage].title}</h2>
@@ -110,7 +109,6 @@ export default function Page() {
         </div>
       )}
 
-      {/* Adgangskode modal */}
       {showPasswordModal && (
         <div style={{
           position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
@@ -131,7 +129,6 @@ export default function Page() {
         </div>
       )}
 
-      {/* GUL vurderingstekst */}
       <p style={{
         marginTop: '5rem',
         textAlign: 'center',
@@ -143,11 +140,11 @@ export default function Page() {
         marginLeft: 'auto',
         marginRight: 'auto',
       }}>
-        Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere self-custody af Bitcoin.  
-        Hvis du er for ung, for gammel, eller af andre grunde ikke har de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger –  
-        vil du blive afvist, men med mulighed for undervisning og støtte, indtil du er klar.  
+        Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere self-custody af Bitcoin.
+        Hvis du er for ung, for gammel, eller af andre grunde ikke har de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger –
+        vil du blive afvist, men med mulighed for undervisning og støtte, indtil du er klar.
         <br /><br />
-        Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller hjælpelinje at ringe til, hvis noget går galt.  
+        Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller hjælpelinje at ringe til, hvis noget går galt.
         Bitcoin giver dig fuld kontrol – og fuldt ansvar.
       </p>
     </main>
