@@ -165,7 +165,7 @@ export default function Page() {
           og kontrol. Over 80% af Bitcoin-ejere risikerer at miste alt gennem hacks,
           social engineering og modpartsrisiko – men DU er stadig den største risiko for tab af dine Bitcoin.
           Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody inklusiv
-          arveplanlægning, trusselsanalyse, svigtpunktsanalyse og multisig – uden at vi
+          arveplanlægning, trusselsanalyse, svigtpunktsanalyse, multisig m.m. – uden at vi
           nogensinde rører dine private keys. Dette er ikke bare en chance for 100% kontrol og tryghed.
           Det er din sidste udvej før dørene lukker, og du bliver fanget i et forgængeligt system.
         </p>
