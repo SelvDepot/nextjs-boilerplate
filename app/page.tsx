@@ -58,17 +58,26 @@ export default function Page() {
         Dine penge. Din fremtid. Din familie. Tag kontrol.
       </p>
 
-      {/* FOMO-spørgsmål */}
+      {/* FOMO-spørgsmål opdelt i 2 linjer */}
       <div style={{ marginTop: '3rem', textAlign: 'center' }}>
         <p
           style={{
             fontSize: '1.1rem',
             fontWeight: 'bold',
             color: '#facc15',
-            marginBottom: '1rem',
+            marginBottom: 0,
           }}
         >
-          Ville du føle dig sikker med din nuværende løsning, hvis dine BTC blev 10x mere værd i morgen?
+          Ville du føle dig sikker med din nuværende løsning,
+        </p>
+        <p
+          style={{
+            fontSize: '1.1rem',
+            fontWeight: 'bold',
+            color: '#facc15',
+          }}
+        >
+          hvis dine BTC blev 10x mere værd i morgen?
         </p>
       </div>
 
@@ -148,7 +157,7 @@ export default function Page() {
             fontWeight: 'bold',
           }}
         >
-          Klar til at tage ansvar? Book et kald nu 
+          Klar til at tage ansvar? Book et kald nu
         </a>
       </div>
 
