@@ -228,11 +228,11 @@ export default function Page() {
     }
   };
 
-  // Tastaturgenvej til at udløse pitch-adgang (Ctrl + P) med betingelse for modal
+  // Tastaturgenvej til at udløse pitch-adgang (Ctrl + P) med sikker håndtering
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.ctrlKey && event.key === 'p' && !showPasswordModal) {
-        event.preventDefault(); // Forhindrer print/PDF-prompt
+        event.preventDefault(); // Forhindrer print/PDF uden at fryse
         handlePitchAccess();
       }
     };
