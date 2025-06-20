@@ -5,7 +5,8 @@ import { useState } from 'react';
 
 export default function Page() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [disclaimerVisible, setDisclaimerVisible] = useState(true);
+  const [submitted, setSubmitted] = useState(false);
 
   return (
     <main
@@ -79,60 +80,102 @@ export default function Page() {
       </div>
 
       {/* FOMO + Email */}
-      <form
-        action="https://formspree.io/f/xldnwgya"
-        method="POST"
-        style={{ marginTop: '3rem', textAlign: 'center' }}
-        onSubmit={() => setEmailSubmitted(true)}
-      >
+      {!submitted ? (
+        <form
+          action="https://formspree.io/f/xldnwgya"
+          method="POST"
+          onSubmit={() => setSubmitted(true)}
+          style={{ marginTop: '3rem', textAlign: 'center' }}
+        >
+          <p
+            style={{
+              fontSize: '1.1rem',
+              fontWeight: 'bold',
+              color: '#facc15',
+              marginBottom: '1rem',
+            }}
+          >
+            Ville du føle dig sikker, hvis dine BTC blev 10x mere værd i morgen?
+          </p>
+
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="Modtag Introduktion PDF via Email"
+            style={{
+              padding: '0.8rem',
+              borderRadius: '8px',
+              border: '1px solid #ccc',
+              maxWidth: '300px',
+              width: '100%',
+              marginBottom: '1rem',
+            }}
+          />
+          <br />
+          <button
+            type="submit"
+            style={{
+              background: '#22c55e',
+              color: '#fff',
+              padding: '0.8rem 2rem',
+              borderRadius: '8px',
+              border: 'none',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+            }}
+          >
+            JA TAK
+          </button>
+
+          {disclaimerVisible && (
+            <div
+              style={{
+                marginTop: '1rem',
+                backgroundColor: '#1e293b',
+                padding: '1rem',
+                borderRadius: '8px',
+                maxWidth: '500px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+                fontSize: '0.9rem',
+                color: '#facc15',
+                position: 'relative',
+              }}
+            >
+              Ved at indsende din e-mail accepterer du at modtage nyheder og eksklusive tilbud fra SelvDepot.
+              Du kan til enhver tid framelde dig.
+              <span
+                onClick={() => setDisclaimerVisible(false)}
+                style={{
+                  position: 'absolute',
+                  top: '0.5rem',
+                  right: '1rem',
+                  cursor: 'pointer',
+                  color: '#f87171',
+                  fontWeight: 'bold',
+                }}
+              >
+                ✕
+              </span>
+            </div>
+          )}
+        </form>
+      ) : (
         <p
           style={{
-            fontSize: '1.1rem',
-            fontWeight: 'bold',
-            color: '#facc15',
-            marginBottom: '1rem',
+            marginTop: '3rem',
+            textAlign: 'center',
+            fontSize: '1rem',
+            backgroundColor: '#14532d',
+            padding: '1rem',
+            borderRadius: '8px',
+            color: '#bbf7d0',
           }}
         >
-          Ville du føle dig sikker, hvis dine BTC blev 10x mere værd i morgen?
+          Tak! PDF'en er nu sendt til din indbakke 📩
         </p>
-
-        <input
-          type="email"
-          name="email"
-          required
-          placeholder="Modtag Introduktion PDF via Email"
-          style={{
-            padding: '0.8rem',
-            borderRadius: '8px',
-            border: '1px solid #ccc',
-            maxWidth: '300px',
-            width: '100%',
-            marginBottom: '1rem',
-          }}
-        />
-        <br />
-        <button
-          type="submit"
-          style={{
-            background: '#22c55e',
-            color: '#fff',
-            padding: '0.8rem 2rem',
-            borderRadius: '8px',
-            border: 'none',
-            cursor: 'pointer',
-            fontWeight: 'bold',
-          }}
-        >
-          JA TAK
-        </button>
-
-        {emailSubmitted && (
-          <div style={{ marginTop: '1rem', color: '#facc15', fontSize: '0.9rem' }}>
-            Ved at indsende din e-mail accepterer du at modtage nyheder og eksklusive tilbud fra SelvDepot.
-            Du kan til enhver tid framelde dig.
-          </div>
-        )}
-      </form>
+      )}
 
       {/* Hvad Bitcoin er */}
       <p style={{ marginTop: '3rem', fontSize: '1.05rem', lineHeight: '1.6', textAlign: 'justify' }}>
