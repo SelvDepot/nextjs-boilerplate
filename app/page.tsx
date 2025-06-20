@@ -1,10 +1,8 @@
 'use client';
 
 import * as React from 'react';
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect } from 'react';
 import Chart from 'chart.js/auto';
-
-const LazyVideo = lazy(() => import('./components/LazyVideo'));
 
 export default function Page() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -447,9 +445,7 @@ export default function Page() {
       </p>
 
       <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <Suspense fallback={<div>Loading video...</div>}>
-          <LazyVideo />
-        </Suspense>
+        <LazyVideo />
       </div>
 
       <div style={{ marginTop: '2rem', fontSize: '1rem', lineHeight: '1.5', textAlign: 'center' }}>
@@ -716,7 +712,7 @@ export default function Page() {
   );
 }
 
-// LazyVideo component (embedded here as requested)
+// LazyVideo component (embedded)
 const LazyVideo = () => {
   return (
     <video
