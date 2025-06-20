@@ -7,8 +7,10 @@ export default function Page() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [showPitch, setShowPitch] = useState(false);
   const [currentPitchPage, setCurrentPitchPage] = useState(0);
+  const [showPasswordModal, setShowPasswordModal] = useState(false);
+  const [passwordInput, setPasswordInput] = useState('');
 
-  // Pitch-indhold opdelt i sektioner (opdateret med 1-5 fra PDF)
+  // Pitch-indhold opdelt i sektioner
   const pitchContent = [
     {
       title: 'I. Indledning – Hvad er SelvDepot?',
@@ -207,16 +209,22 @@ export default function Page() {
     },
   ];
 
-  // Håndter adgangskode for pitch (skjult input)
+  // Håndter adgangskode for pitch med censureret input
   const handlePitchAccess = () => {
-    // Brug en skjult prompt og en simpel validering uden at gemme adgangskoden i klartekst
-    const password = window.prompt('Indtast adgangskode for at vise pitch (skjult input)');
-    if (password === '9945') {
+    setShowPasswordModal(true);
+  };
+
+  const handlePasswordSubmit = (e) => {
+    e.preventDefault();
+    if (passwordInput === '9945') {
       setShowPitch(true);
       setActiveSection('Pitch');
       setCurrentPitchPage(0);
+      setShowPasswordModal(false);
+      setPasswordInput(''); // Ryd input efter succes
     } else {
       alert('Forkert adgangskode. Prøv igen.');
+      setPasswordInput(''); // Ryd input ved fejl
     }
   };
 
@@ -230,7 +238,7 @@ export default function Page() {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [passwordInput]); // Genafvikler effekt, når passwordInput ændres
 
   // Navigation i pitch
   const handleNextPage = () => {
@@ -250,6 +258,11 @@ export default function Page() {
     setShowPitch(false);
     setActiveSection(null);
     setCurrentPitchPage(0);
+  };
+
+  const handleClosePasswordModal = () => {
+    setShowPasswordModal(false);
+    setPasswordInput('');
   };
 
   return (
@@ -480,7 +493,7 @@ export default function Page() {
           </p>
         </div>
       )}
-      {/* Pitch-sektion (skjult, men placeret efter Kontakt) */}
+      {/* Pitch-sektion */}
       {activeSection === 'Pitch' && showPitch && (
         <div
           style={{
@@ -489,13 +502,13 @@ export default function Page() {
             left: 0,
             width: '100vw',
             height: '100vh',
-            backgroundColor: '#1e293b', // Justeret til en mørkere blå baggrund som på billedet
+            backgroundColor: '#1e293b',
             padding: '3rem',
             zIndex: 1000,
             overflowY: 'auto',
             textAlign: 'left',
-            fontSize: '1.2rem', // Øget tekststørrelse
-            lineHeight: '1.8', // Mere mellemrum mellem linjer
+            fontSize: '1.2rem',
+            lineHeight: '1.8',
             color: '#ffffff',
             display: 'flex',
             flexDirection: 'column',
@@ -561,6 +574,85 @@ export default function Page() {
                 </button>
               )}
             </div>
+          </div>
+        </div>
+      )}
+      {/* Password Modal */}
+      {showPasswordModal && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            zIndex: 1000,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: '#1e293b',
+              padding: '2rem',
+              borderRadius: '8px',
+              textAlign: 'center',
+              width: '300px',
+              color: '#ffffff',
+            }}
+          >
+            <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem' }}>Indtast adgangskode</h3>
+            <form onSubmit={handlePasswordSubmit}>
+              <input
+                type="password"
+                value={passwordInput}
+                onChange={(e) => setPasswordInput(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '0.5rem',
+                  marginBottom: '1rem',
+                  border: '1px solid #4b5563',
+                  borderRadius: '4px',
+                  backgroundColor: '#374151',
+                  color: '#ffffff',
+                }}
+                placeholder="Indtast kode"
+              />
+              <div>
+                <button
+                  type="submit"
+                  style={{
+                    background: '#22c55e',
+                    color: '#fff',
+                    padding: '0.5rem 1rem',
+                    borderRadius: '4px',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  Bekræft
+                </button>
+                <button
+                  type="button"
+                  onClick={handleClosePasswordModal}
+                  style={{
+                    background: '#dc2626',
+                    color: '#fff',
+                    padding: '0.5rem 1rem',
+                    borderRadius: '4px',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontWeight: 'bold',
+                    marginLeft: '1rem',
+                  }}
+                >
+                  Annuller
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       )}
