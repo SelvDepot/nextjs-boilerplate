@@ -5,8 +5,8 @@ import { useState } from 'react';
 
 export default function Page() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  const [disclaimerVisible, setDisclaimerVisible] = useState(true);
-  const [submitted, setSubmitted] = useState(false);
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [showDisclaimer, setShowDisclaimer] = useState(false);
 
   return (
     <main
@@ -46,7 +46,7 @@ export default function Page() {
         <div>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: 0 }}>SelvDepot</h1>
           <h2 style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>
-            Vi hjælper dig eje dine Bitcoin selv - og sove trygt.
+            Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
             <br />
             <span style={{ fontWeight: 'normal' }}>Sikkert. Privat. For evigt.</span>
           </h2>
@@ -60,7 +60,7 @@ export default function Page() {
         Dine penge. Din fremtid. Din familie. Tag kontrol.
       </p>
 
-      {/* Book-møde efter intro */}
+      {/* Book-møde */}
       <div style={{ marginTop: '1rem', textAlign: 'center' }}>
         <a
           href="https://calendly.com/selvdepot/30min"
@@ -79,103 +79,90 @@ export default function Page() {
         </a>
       </div>
 
-      {/* FOMO + Email */}
-      {!submitted ? (
-        <form
-          action="https://formspree.io/f/xldnwgya"
-          method="POST"
-          onSubmit={() => setSubmitted(true)}
-          style={{ marginTop: '3rem', textAlign: 'center' }}
-        >
-          <p
-            style={{
-              fontSize: '1.1rem',
-              fontWeight: 'bold',
-              color: '#facc15',
-              marginBottom: '1rem',
-            }}
-          >
-            Ville du føle dig sikker, hvis dine BTC blev 10x mere værd i morgen?
-          </p>
-
-          <input
-            type="email"
-            name="email"
-            required
-            placeholder="Modtag Introduktion PDF via Email"
-            style={{
-              padding: '0.8rem',
-              borderRadius: '8px',
-              border: '1px solid #ccc',
-              maxWidth: '300px',
-              width: '100%',
-              marginBottom: '1rem',
-            }}
-          />
-          <br />
-          <button
-            type="submit"
-            style={{
-              background: '#22c55e',
-              color: '#fff',
-              padding: '0.8rem 2rem',
-              borderRadius: '8px',
-              border: 'none',
-              cursor: 'pointer',
-              fontWeight: 'bold',
-            }}
-          >
-            JA TAK
-          </button>
-
-          {disclaimerVisible && (
-            <div
-              style={{
-                marginTop: '1rem',
-                backgroundColor: '#1e293b',
-                padding: '1rem',
-                borderRadius: '8px',
-                maxWidth: '500px',
-                marginLeft: 'auto',
-                marginRight: 'auto',
-                fontSize: '0.9rem',
-                color: '#facc15',
-                position: 'relative',
-              }}
-            >
-              Ved at indsende din e-mail accepterer du at modtage nyheder og eksklusive tilbud fra SelvDepot.
-              Du kan til enhver tid framelde dig.
-              <span
-                onClick={() => setDisclaimerVisible(false)}
-                style={{
-                  position: 'absolute',
-                  top: '0.5rem',
-                  right: '1rem',
-                  cursor: 'pointer',
-                  color: '#f87171',
-                  fontWeight: 'bold',
-                }}
-              >
-                ✕
-              </span>
-            </div>
-          )}
-        </form>
-      ) : (
+      {/* Email til PDF */}
+      <form
+        action="https://formspree.io/f/xldnwgya"
+        method="POST"
+        onSubmit={() => setEmailSubmitted(true)}
+        style={{ marginTop: '3rem', textAlign: 'center' }}
+      >
         <p
           style={{
-            marginTop: '3rem',
-            textAlign: 'center',
-            fontSize: '1rem',
-            backgroundColor: '#14532d',
-            padding: '1rem',
-            borderRadius: '8px',
-            color: '#bbf7d0',
+            fontSize: '1.1rem',
+            fontWeight: 'bold',
+            color: '#facc15',
+            marginBottom: '1rem',
           }}
         >
-          Tak! PDF'en er nu sendt til din indbakke 📩
+          Ville du føle dig sikker, hvis dine BTC blev 10x mere værd i morgen?
         </p>
-      )}
+
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Modtag Introduktion PDF via Email"
+          style={{
+            padding: '0.8rem',
+            borderRadius: '8px',
+            border: '1px solid #ccc',
+            maxWidth: '300px',
+            width: '100%',
+            marginBottom: '1rem',
+          }}
+        />
+        <input type="hidden" name="_redirect" value="/tak-for-email" />
+        <br />
+        <button
+          type="submit"
+          onClick={() => setShowDisclaimer(true)}
+          style={{
+            background: '#22c55e',
+            color: '#fff',
+            padding: '0.8rem 2rem',
+            borderRadius: '8px',
+            border: 'none',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+          }}
+        >
+          JA TAK
+        </button>
+
+        {showDisclaimer && (
+          <div
+            style={{
+              marginTop: '0.8rem',
+              color: '#d1d5db',
+              fontSize: '0.75rem',
+              backgroundColor: 'rgba(255,255,255,0.05)',
+              padding: '0.5rem',
+              borderRadius: '6px',
+              display: 'inline-block',
+              maxWidth: '300px',
+            }}
+          >
+            Ved at indsende din e-mail accepterer du at modtage nyheder og eksklusive tilbud fra
+            SelvDepot. Du kan til enhver tid framelde dig.
+            <br />
+            <button
+              onClick={() => setShowDisclaimer(false)}
+              type="button"
+              style={{
+                marginTop: '0.3rem',
+                fontSize: '0.7rem',
+                background: 'none',
+                border: 'none',
+                color: '#facc15',
+                cursor: 'pointer',
+                textDecoration: 'underline',
+              }}
+            >
+              Luk
+            </button>
+          </div>
+        )}
+      </form>
 
       {/* Hvad Bitcoin er */}
       <p style={{ marginTop: '3rem', fontSize: '1.05rem', lineHeight: '1.6', textAlign: 'justify' }}>
@@ -251,7 +238,7 @@ export default function Page() {
       >
         Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
         self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har
-        de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger – 
+        de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger –
         vil du blive afvist, men med mulighed for undervisning og støtte, indtil du er klar.
         <br />
         <br />
@@ -289,16 +276,31 @@ export default function Page() {
       {/* Footer indhold */}
       {activeSection === 'Kontakt' && (
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
-          <p>📬 Email: <a href="mailto:Selvdepot@gmail.com" style={{ color: '#60a5fa' }}>Selvdepot@gmail.com</a></p>
-          <p>📅 Book: <a href="https://calendly.com/selvdepot/30min" target="_blank" rel="noopener noreferrer" style={{ color: '#60a5fa' }}>calendly.com/selvdepot/30min</a></p>
+          <p>
+            📬 Email:{' '}
+            <a href="mailto:Selvdepot@gmail.com" style={{ color: '#60a5fa' }}>
+              Selvdepot@gmail.com
+            </a>
+          </p>
+          <p>
+            📅 Book:{' '}
+            <a
+              href="https://calendly.com/selvdepot/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#60a5fa' }}
+            >
+              calendly.com/selvdepot/30min
+            </a>
+          </p>
         </div>
       )}
       {activeSection === 'Disclaimer' && (
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
           <p>
-            Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk,
-            finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene undervisning
-            og værktøjer til selvstændig opbevaring af Bitcoin.
+            Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke
+            juridisk, finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene
+            undervisning og værktøjer til selvstændig opbevaring af Bitcoin.
           </p>
         </div>
       )}
@@ -313,8 +315,8 @@ export default function Page() {
       {activeSection === 'Vilkår' && (
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
           <p>
-            Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
-            Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
+            Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål. Vi
+            tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
           </p>
         </div>
       )}
