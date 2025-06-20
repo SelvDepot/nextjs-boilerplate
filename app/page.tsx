@@ -132,10 +132,10 @@ export default function Page() {
                 border: '2px solid #22c55e',
                 borderRadius: '8px',
                 backgroundColor: 'rgba(34, 197, 94, 0.1)',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
+                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
               }}
             >
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
                 🟠 Klar til at eje
               </h3>
               <p>
@@ -144,14 +144,14 @@ export default function Page() {
                 Til dig, der vil i gang – eller optimere det, du allerede har.
               </p>
               <p>Inkluderer:</p>
-              <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+              <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', fontSize: '0.9rem' }}>
                 <li>Hardware wallet-rådgivning og opsætning</li>
                 <li>Single-sig med/uden passphrase</li>
                 <li>Backup-strategi og risikoforståelse</li>
                 <li>Grundlæggende sikkerhed og vaner</li>
                 <li>Gennemgang af eksisterende opsætning (hvis ønsket)</li>
               </ul>
-              <p>
+              <p style={{ fontSize: '0.9rem' }}>
                 <strong>Varighed:</strong> Ca. 2 timer
                 <br />
                 <strong>Note:</strong> Vi stopper ikke før det virker, er testet og forstået.
@@ -167,10 +167,10 @@ export default function Page() {
                 border: '2px solid #facc15',
                 borderRadius: '8px',
                 backgroundColor: 'rgba(250, 204, 21, 0.1)',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
+                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
               }}
             >
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
                 🟡 Ejer med overblik
               </h3>
               <p>
@@ -179,14 +179,14 @@ export default function Page() {
                 Til dig med større mængder bitcoin og behov for teknisk dybde.
               </p>
               <p>Inkluderer:</p>
-              <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+              <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', fontSize: '0.9rem' }}>
                 <li>Alt i første pakke</li>
                 <li>Airgapped wallet-struktur</li>
                 <li>Brug og opsætning af Bitcoin node</li>
                 <li>Skræddersyet recovery-plan</li>
                 <li>Fysisk backup-strategi</li>
               </ul>
-              <p>
+              <p style={{ fontSize: '0.9rem' }}>
                 <strong>Varighed:</strong> 2–4 timer (afhænger af node)
               </p>
             </div>
@@ -200,10 +200,10 @@ export default function Page() {
                 border: '2px solid #2563eb',
                 borderRadius: '8px',
                 backgroundColor: 'rgba(37, 99, 235, 0.1)',
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
+                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
               }}
             >
-              <h3 style={{ fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
                 🔵 Fuld kontrol
               </h3>
               <p>
@@ -212,14 +212,14 @@ export default function Page() {
                 Til dig, der ønsker suveræn sikkerhed – for livet og for arvingerne.
               </p>
               <p>Inkluderer:</p>
-              <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+              <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', fontSize: '0.9rem' }}>
                 <li>Alt i “Ejer med overblik”</li>
                 <li>Multisig-opsætning (hvis ønsket)</li>
                 <li>Udvidet trusselsanalyse (phishing, kidnapning, mm.)</li>
                 <li>Arveplan og familievejledning</li>
                 <li>Én gratis check-up inden for 12 måneder</li>
               </ul>
-              <p>
+              <p style={{ fontSize: '0.9rem' }}>
                 <strong>Varighed:</strong> Fleksibel efter behov og kompleksitet
                 <br />
                 <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
@@ -283,10 +283,10 @@ export default function Page() {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
-        padding: '2rem 1rem', // Justerede padding for responsivitet
+        padding: '2rem 1rem',
         color: '#ffffff',
-        width: '100%', // Sørger for fuld bredde
-        margin: 0, // Fjerner tidligere margin
+        width: '100%',
+        margin: 0,
       }}
     >
       {/* Logo og titel */}
@@ -298,7 +298,7 @@ export default function Page() {
           flexWrap: 'wrap',
           justifyContent: 'center',
           gap: '1rem',
-          maxWidth: '800px', // Begræns bredden for logo-sektionen for pænhed
+          maxWidth: '800px',
           marginLeft: 'auto',
           marginRight: 'auto',
         }}
@@ -307,15 +307,17 @@ export default function Page() {
           src="/logo.png"
           alt="SelvDepot Logo"
           style={{
-            maxWidth: '150px',
+            maxWidth: '120px', // Reduceret størrelse for professionelt udseende
             height: 'auto',
-            borderRadius: '8px',
-            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
+            borderRadius: '4px',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', // Blødere skygge
           }}
         />
         <div>
-          <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: 0 }}>SelvDepot</h1>
-          <h2 style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>
+          <h1 style={{ fontSize: '2rem', fontWeight: 'bold', margin: 0, textAlign: 'center' }}>
+            SelvDepot
+          </h1>
+          <h2 style={{ fontSize: '1.2rem', marginTop: '0.5rem', textAlign: 'center' }}>
             Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
             <br />
             <span style={{ fontWeight: 'normal' }}>Sikkert. Privat. For evigt.</span>
@@ -324,7 +326,7 @@ export default function Page() {
       </div>
 
       {/* Intro */}
-      <p style={{ marginTop: '2rem', fontSize: '1.2rem', textAlign: 'center' }}>
+      <p style={{ marginTop: '2rem', fontSize: '1rem', textAlign: 'center', lineHeight: '1.5' }}>
         Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
         <br />
         Dine penge. Din fremtid. Din familie. Tag kontrol.
@@ -339,10 +341,11 @@ export default function Page() {
           style={{
             background: '#2563eb',
             color: '#fff',
-            padding: '1rem 2rem',
-            borderRadius: '8px',
+            padding: '0.8rem 1.5rem',
+            borderRadius: '4px',
             textDecoration: 'none',
             display: 'inline-block',
+            fontSize: '0.9rem',
           }}
         >
           Book et gratis 30-minutters møde
@@ -352,11 +355,11 @@ export default function Page() {
       {/* Hvad Bitcoin er */}
       <p
         style={{
-          marginTop: '3rem',
-          fontSize: '1.05rem',
-          lineHeight: '1.6',
+          marginTop: '2rem',
+          fontSize: '0.95rem',
+          lineHeight: '1.5',
           textAlign: 'center',
-          maxWidth: '800px', // Begræns bredden for læsbarhed
+          maxWidth: '800px',
           marginLeft: 'auto',
           marginRight: 'auto',
         }}
@@ -370,14 +373,21 @@ export default function Page() {
       </p>
 
       {/* Video */}
-      <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+      <div
+        style={{
+          marginTop: '2rem',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
         <video
           controls
           style={{
             width: '100%',
-            maxWidth: '800px', // Begræns videoens bredde for pænhed
-            borderRadius: '8px',
-            boxShadow: '0 0 8px rgba(0,0,0,0.3)',
+            maxWidth: '600px', // Begrænset bredde for professionelt udseende
+            borderRadius: '4px',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
           }}
         >
           <source src="/intro.mp4" type="video/mp4" />
@@ -386,7 +396,7 @@ export default function Page() {
       </div>
 
       {/* Brødtekst */}
-      <div style={{ marginTop: '2rem', fontSize: '1rem', lineHeight: '1.6', textAlign: 'center' }}>
+      <div style={{ marginTop: '2rem', fontSize: '0.95rem', lineHeight: '1.5', textAlign: 'center' }}>
         <p style={{ maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' }}>
           Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden hvor det
           traditionelle FIAT-system suger livet ud af dine beholdninger og aktiver gennem inflation
@@ -400,7 +410,7 @@ export default function Page() {
       </div>
 
       {/* Sekundær CTA */}
-      <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+      <div style={{ marginTop: '2rem', textAlign: 'center' }}>
         <a
           href="https://calendly.com/selvdepot/30min"
           target="_blank"
@@ -409,9 +419,10 @@ export default function Page() {
             background: '#15803d',
             color: '#fff',
             padding: '0.8rem 1.5rem',
-            borderRadius: '8px',
+            borderRadius: '4px',
             textDecoration: 'none',
             display: 'inline-block',
+            fontSize: '0.9rem',
             fontWeight: 'bold',
           }}
         >
@@ -423,13 +434,14 @@ export default function Page() {
       <p
         style={{
           marginTop: '2rem',
-          fontSize: '0.9rem',
+          fontSize: '0.85rem',
           color: '#facc15',
           fontStyle: 'italic',
           maxWidth: '600px',
           marginLeft: 'auto',
           marginRight: 'auto',
           textAlign: 'center',
+          lineHeight: '1.5',
         }}
       >
         Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
@@ -450,7 +462,7 @@ export default function Page() {
           justifyContent: 'center',
           gap: '2rem',
           flexWrap: 'wrap',
-          fontSize: '0.9rem',
+          fontSize: '0.85rem',
           color: '#d1d5db',
         }}
       >
@@ -471,7 +483,7 @@ export default function Page() {
 
       {/* Footer indhold */}
       {activeSection === 'Kontakt' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.85rem', textAlign: 'center' }}>
           <p>
             📬 Email:{' '}
             <a href="mailto:Selvdepot@gmail.com" style={{ color: '#60a5fa' }}>
@@ -505,8 +517,8 @@ export default function Page() {
             zIndex: 1000,
             overflowY: 'auto',
             textAlign: 'left',
-            fontSize: '1rem',
-            lineHeight: '1.6',
+            fontSize: '0.95rem',
+            lineHeight: '1.5',
             color: '#ffffff',
             display: 'flex',
             flexDirection: 'column',
@@ -522,16 +534,17 @@ export default function Page() {
               background: '#dc2626',
               color: '#fff',
               padding: '0.5rem 1rem',
-              borderRadius: '8px',
+              borderRadius: '4px',
               border: 'none',
               cursor: 'pointer',
               fontWeight: 'bold',
+              fontSize: '0.9rem',
             }}
           >
             Luk
           </button>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
+            <h2 style={{ fontSize: '1.3rem', fontWeight: 'bold', marginBottom: '1rem' }}>
               {pitchContent[currentPitchPage].title}
             </h2>
             {pitchContent[currentPitchPage].content}
@@ -542,11 +555,12 @@ export default function Page() {
                   style={{
                     background: '#2563eb',
                     color: '#fff',
-                    padding: '0.8rem 2rem',
-                    borderRadius: '8px',
+                    padding: '0.7rem 1.5rem',
+                    borderRadius: '4px',
                     border: 'none',
                     cursor: 'pointer',
                     fontWeight: 'bold',
+                    fontSize: '0.9rem',
                   }}
                 >
                   Forrige
@@ -558,11 +572,12 @@ export default function Page() {
                   style={{
                     background: '#22c55e',
                     color: '#fff',
-                    padding: '0.8rem 2rem',
-                    borderRadius: '8px',
+                    padding: '0.7rem 1.5rem',
+                    borderRadius: '4px',
                     border: 'none',
                     cursor: 'pointer',
                     fontWeight: 'bold',
+                    fontSize: '0.9rem',
                   }}
                 >
                   Næste
@@ -573,7 +588,7 @@ export default function Page() {
         </div>
       )}
       {activeSection === 'Disclaimer' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.85rem', textAlign: 'center' }}>
           <p>
             Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk,
             finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene undervisning
@@ -582,7 +597,7 @@ export default function Page() {
         </div>
       )}
       {activeSection === 'Privatliv' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.85rem', textAlign: 'center' }}>
           <p>
             Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly
             håndteres dine oplysninger af dem under deres politikker. Vi bruger ikke cookies eller analytics.
@@ -590,7 +605,7 @@ export default function Page() {
         </div>
       )}
       {activeSection === 'Vilkår' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.85rem', textAlign: 'center' }}>
           <p>
             Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
             Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
