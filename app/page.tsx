@@ -8,106 +8,82 @@ export default function Page() {
   const [showPitch, setShowPitch] = useState(false);
   const [currentPitchPage, setCurrentPitchPage] = useState(0);
 
-  // Pitch-indhold opdelt i sektioner
+  // Pitch-indhold opdelt i sektioner (opdateret med 1-5 fra PDF)
   const pitchContent = [
     {
-      title: 'I. Indledning',
+      title: 'I. Indledning – Hvad er SelvDepot?',
       content: (
         <>
           <p>
-            SelvDepot er specialiseret i rådgivning og optimering af opbevaring af Bitcoin – også kaldet self-custody.
+            "Bitcoin er ikke bare en investering – det er din økonomiske livsforsikring."
             <br />
-            Vi hjælper både privatpersoner og større enheder med at eje deres bitcoin korrekt, uanset teknisk niveau.
+            SelvDepot er rådgivning i sikker, privat og fremtidssikret opbevaring af Bitcoin.
           </p>
-          <p>Punkter:</p>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
-            <li>Bitcoin er verdens første aktiv uden modpartsrisiko</li>
-            <li>Det kan opbevares og overføres uden banker, stater eller tilladelse</li>
-            <li>Alligevel holder de fleste ikke deres bitcoin korrekt</li>
-            <li>Mange tror, de ejer bitcoin – men har kun et løfte fra en tredjepart</li>
-          </ul>
-          <p>
-            <em>“[...] they’re not Bitcoin holders, they’re holders of Bitcoin IOUs.”</em>
-            <br />
-            – Trace Mayer, tidlig investor og stifter af “Proof of Keys”-bevægelsen
-          </p>
-        </>
-      ),
-    },
-    {
-      title: 'II. Problemet',
-      content: (
-        <>
-          <p>
-            Det nuværende fiat-system udsætter din formue for betydelige risici, som truer din økonomiske frihed og fremtid.
-          </p>
-          <p>Punkter:</p>
-          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
-            <li>Inflation og faldende købekraft eroderer dine penge over tid</li>
-            <li>Øget kontrol og konfiskatoriske tiltag fra stater og banker begrænser din frihed</li>
-            <li>Over 80 % af bitcoin-ejere bruger custodial løsninger som børser, ETF’er og platforme, hvilket medfører:</li>
-            <ul style={{ listStyleType: 'circle', paddingLeft: '1.5rem' }}>
-              <li>Risiko for hacks, datalæk, insolvens og nedlukning (fx FTX, Mt. Gox, Coinbase)</li>
-              <li>Mistet adgang, beslaglæggelse og frosne konti</li>
-              <li>Overvågning og regulatorisk pres</li>
-            </ul>
-          </ul>
-          <p>
-            Den største risiko er at forblive fanget i fiat-systemet, men selv med bitcoin mister du ejerskab, hvis du ikke holder dine egne nøgler.
-            <br />
-            <em>“Not your keys, not your coins.”</em>
-          </p>
-        </>
-      ),
-    },
-    {
-      title: 'III. Løsningen',
-      content: (
-        <>
-          <p>Punkter:</p>
-          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
-            <li>1:1 rådgivning med personlig og sikker opsætning</li>
-            <li>Vi bygger løsningen sammen – trin for trin</li>
-            <li>Du ejer det selv – vi rører aldrig dine bitcoin</li>
-          </ul>
-          <p>Inkluderer:</p>
-          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
-            <li>Arveplanlægning</li>
-            <li>Backup-struktur</li>
-            <li>Dokumentation og forståelse</li>
-            <li>Tilpasses din risikoprofil og tekniske evner</li>
+            <li>Vi arbejder 1:1 med formuende personer, der ønsker fuld kontrol uden at røre deres private keys.</li>
+            <li>Alt bygger på gennemtænkt sikkerhed, open-source værktøjer og absolut diskretion.</li>
+            <li>Det her handler ikke om hype – men om, hvordan du undgår at miste alt.</li>
           </ul>
         </>
       ),
     },
     {
-      title: 'IV. Udbytte',
+      title: 'II. Problemet – Hvorfor er det her nødvendigt?',
       content: (
         <>
-          <p>Efter rådgivning har du:</p>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
-            <li>100 % ejerskab og kontrol over dine bitcoin</li>
-            <li>En løsning du selv har konstrueret og forstår</li>
-            <li>Uafhængighed af banker og platforme</li>
-            <li>Langtidsholdbar og arvevenlig struktur</li>
-            <li>Mulighed for fremtidig sparring eller justering</li>
-            <li>Tryghed og ro – for dig og din familie</li>
+            <li>De fleste Bitcoin-ejere har stadig modpartsrisiko (børser, apps, custodians).</li>
+            <li>20% af al BTC er allerede mistet – ikke pga. hacks, men pga. menneskelige fejl.</li>
+            <li>Uden en klar arveplan kan dine efterladte miste adgangen for altid.</li>
+            <li>En enkelt fejl – ét stykke papir, én mistet kode – og pengene er væk.</li>
+            <li>Compliance og sikkerhed kolliderer ofte – vi forener dem.</li>
           </ul>
         </>
       ),
     },
     {
-      title: 'V. Hvorfor vælge SelvDepot?',
+      title: 'III. Løsningen – Hvad tilbyder SelvDepot?',
       content: (
         <>
-          <p>Punkter:</p>
+          <p>Vi hjælper dig med en skræddersyet opsætning af:</p>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
-            <li>Vi er 100 % Bitcoin-native – vi rådgiver kun i Bitcoin</li>
-            <li>100 % uafhængige – vi holder intet, formidler intet</li>
-            <li>Vi beskæftiger os ikke med trading, investering eller gebyrer</li>
-            <li>Vi underviser – ikke opbevarer</li>
+            <li>Hardware-wallets (cold storage, offline sikkerhed)</li>
+            <li>Multisig (flere nøgler – ingen enkeltfejl)</li>
+            <li>Arveplan (sikrer kontinuitet for din familie)</li>
           </ul>
-          <p>Du lærer at eje dine bitcoin selv – for evigt</p>
+          <p>Du får hjælp til hele opsætningen – uden at vi nogensinde har adgang til dine midler.</p>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+            <li>Alt er open-source, dokumenteret og testet – du kan selv inspicere det hele.</li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      title: 'IV. Udbytte – Hvordan SelvDepot kommer ind i billedet',
+      content: (
+        <>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+            <li>Du får ro i maven – nu og i fremtiden.</li>
+            <li>Du ved præcis, hvor dine Bitcoin er – og at ingen andre har adgang.</li>
+            <li>Du undgår at efterlade kaos til din familie.</li>
+            <li>Du slipper for at famle i mørket – vi har prøvet det før og guider dig hele vejen.</li>
+            <li>Du tager ansvar – men med en sparringspartner, der forstår både teknikken og dine værdier.</li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      title: 'V. Hvorfor SelvDepot?',
+      content: (
+        <>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+            <li>Vi er 100 % Bitcoin-only – vi gør ikke alt. Vi gør det her.</li>
+            <li>Alt vi bruger er open-source og gennemtestet – ingen sorte bokse.</li>
+            <li>Vi forstår HNWI’s behov: kontrol, diskretion og arv.</li>
+            <li>Vi rådgiver – vi opbevarer ikke. Du ejer, du bestemmer.</li>
+            <li>Vores løsninger fungerer i praksis – ikke bare på papir.</li>
+          </ul>
+          <p>Det her er ikke endnu et Bitcoin-projekt. Det er din livline.</p>
         </>
       ),
     },
