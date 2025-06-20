@@ -9,25 +9,28 @@ export default function Page() {
   const [currentPitchPage, setCurrentPitchPage] = useState(0);
   const [logoSize, setLogoSize] = useState(150); // Justérbar logo-størrelse i px
 
-  // Pitch-indhold opdelt i sektioner
+  // Pitch-indhold opdelt i sektioner (tilbage til original tekst)
   const pitchContent = [
     {
       title: 'I. Indledning',
       content: (
         <>
           <p>
-            SelvDepot specialiserer sig i rådgivning og optimering af Bitcoin-opbevaring – kendt som self-custody.
+            SelvDepot er specialiseret i rådgivning og optimering af opbevaring af Bitcoin – også kaldet self-custody.
             <br />
-            Vi assisterer både privatpersoner og institutioner i at eje deres bitcoin sikkert, uanset teknisk baggrund.
+            Vi hjælper både privatpersoner og større enheder med at eje deres bitcoin korrekt, uanset teknisk niveau.
           </p>
+          <p>Punkter:</p>
           <ul style={{ listStyleType: 'none', paddingLeft: '1.5rem' }}>
-            <li><span style={{ color: '#c9a66b' }}>•</span> Verdens første aktiv uden modpartsrisiko</li>
-            <li><span style={{ color: '#c9a66b' }}>•</span> Opbevaring og overførsel uden tredjeparter</li>
-            <li><span style={{ color: '#c9a66b' }}>•</span> De fleste opbevarer ikke korrekt</li>
-            <li><span style={{ color: '#c9a66b' }}>•</span> Mange ejer kun IOU’er fra tredjeparter</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Bitcoin er verdens første aktiv uden modpartsrisiko</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Det kan opbevares og overføres uden banker, stater eller tilladelse</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Alligevel holder de fleste ikke deres bitcoin korrekt</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Mange tror, de ejer bitcoin – men har kun et løfte fra en tredjepart</li>
           </ul>
           <p style={{ fontStyle: 'italic', color: '#a0aec0', margin: '2rem 0', lineHeight: '1.6' }}>
-            “They’re not Bitcoin holders, they’re holders of Bitcoin IOUs.” – Trace Mayer
+            <em>“[...] they’re not Bitcoin holders, they’re holders of Bitcoin IOUs.”</em>
+            <br />
+            – Trace Mayer, tidlig investor og stifter af “Proof of Keys”-bevægelsen
           </p>
         </>
       ),
@@ -37,20 +40,23 @@ export default function Page() {
       content: (
         <>
           <p>
-            Det nuværende fiat-system udsætter din formue for alvorlige risici, der truer din økonomiske frihed.
+            Det nuværende fiat-system udsætter din formue for betydelige risici, som truer din økonomiske frihed og fremtid.
           </p>
+          <p>Punkter:</p>
           <ul style={{ listStyleType: 'none', paddingLeft: '1.5rem' }}>
-            <li><span style={{ color: '#c9a66b' }}>•</span> Inflation og faldende købekraft</li>
-            <li><span style={{ color: '#c9a66b' }}>•</span> Øget kontrol fra stater og banker</li>
-            <li><span style={{ color: '#c9a66b' }}>•</span> 80% bruger usikre custodial løsninger, risikerende:</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Inflation og faldende købekraft eroderer dine penge over tid</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Øget kontrol og konfiskatoriske tiltag fra stater og banker begrænser din frihed</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Over 80 % af bitcoin-ejere bruger custodial løsninger som børser, ETF’er og platforme, hvilket medfører:</li>
             <ul style={{ listStyleType: 'none', paddingLeft: '1.5rem' }}>
-              <li><span style={{ color: '#c9a66b' }}>•</span> Hacks, insolvens (fx FTX, Mt. Gox)</li>
-              <li><span style={{ color: '#c9a66b' }}>•</span> Beslaglæggelse og frosne konti</li>
-              <li><span style={{ color: '#c9a66b' }}>•</span> Overvågning og regulering</li>
+              <li><span style={{ color: '#c9a66b' }}>•</span> Risiko for hacks, datalæk, insolvens og nedlukning (fx FTX, Mt. Gox, Coinbase)</li>
+              <li><span style={{ color: '#c9a66b' }}>•</span> Mistet adgang, beslaglæggelse og frosne konti</li>
+              <li><span style={{ color: '#c9a66b' }}>•</span> Overvågning og regulatorisk pres</li>
             </ul>
           </ul>
           <p style={{ fontStyle: 'italic', color: '#a0aec0', margin: '2rem 0', lineHeight: '1.6' }}>
-            “Not your keys, not your coins.”
+            Den største risiko er at forblive fanget i fiat-systemet, men selv med bitcoin mister du ejerskab, hvis du ikke holder dine egne nøgler.
+            <br />
+            <em>“Not your keys, not your coins.”</em>
           </p>
         </>
       ),
@@ -59,18 +65,18 @@ export default function Page() {
       title: 'III. Løsningen',
       content: (
         <>
-          <p>Vores tilgang inkluderer:</p>
+          <p>Punkter:</p>
           <ul style={{ listStyleType: 'none', paddingLeft: '1.5rem' }}>
-            <li><span style={{ color: '#c9a66b' }}>•</span> Personlig 1:1-rådgivning og sikker opsætning</li>
-            <li><span style={{ color: '#c9a66b' }}>•</span> Trinvis udvikling af din løsning</li>
-            <li><span style={{ color: '#c9a66b' }}>•</span> Fuldt ejerskab – vi rører ikke dine bitcoin</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> 1:1 rådgivning med personlig og sikker opsætning</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Vi bygger løsningen sammen – trin for trin</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Du ejer det selv – vi rører aldrig dine bitcoin</li>
           </ul>
-          <p>Yderligere funktioner:</p>
+          <p>Inkluderer:</p>
           <ul style={{ listStyleType: 'none', paddingLeft: '1.5rem' }}>
             <li><span style={{ color: '#c9a66b' }}>•</span> Arveplanlægning</li>
-            <li><span style={{ color: '#c9a66b' }}>•</span> Robust backup-struktur</li>
-            <li><span style={{ color: '#c9a66b' }}>•</span> Tilpasset dokumentation</li>
-            <li><span style={{ color: '#c9a66b' }}>•</span> Skræddersyet efter din profil</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Backup-struktur</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Dokumentation og forståelse</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Tilpasses din risikoprofil og tekniske evner</li>
           </ul>
         </>
       ),
@@ -79,14 +85,14 @@ export default function Page() {
       title: 'IV. Udbytte',
       content: (
         <>
-          <p>Efter vores rådgivning opnår du:</p>
+          <p>Efter rådgivning har du:</p>
           <ul style={{ listStyleType: 'none', paddingLeft: '1.5rem' }}>
-            <li><span style={{ color: '#c9a66b' }}>•</span> 100% ejerskab og kontrol</li>
-            <li><span style={{ color: '#c9a66b' }}>•</span> En forstået, selvkonstrueret løsning</li>
-            <li><span style={{ color: '#c9a66b' }}>•</span> Uafhængighed af tredjeparter</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> 100 % ejerskab og kontrol over dine bitcoin</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> En løsning du selv har konstrueret og forstår</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Uafhængighed af banker og platforme</li>
             <li><span style={{ color: '#c9a66b' }}>•</span> Langtidsholdbar og arvevenlig struktur</li>
-            <li><span style={{ color: '#c9a66b' }}>•</span> Fremtidig sparring</li>
-            <li><span style={{ color: '#c9a66b' }}>•</span> Tryghed for dig og din familie</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Mulighed for fremtidig sparring eller justering</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Tryghed og ro – for dig og din familie</li>
           </ul>
         </>
       ),
@@ -95,14 +101,14 @@ export default function Page() {
       title: 'V. Hvorfor vælge SelvDepot?',
       content: (
         <>
-          <p>Vores unikke fordele:</p>
+          <p>Punkter:</p>
           <ul style={{ listStyleType: 'none', paddingLeft: '1.5rem' }}>
-            <li><span style={{ color: '#c9a66b' }}>•</span> 100% Bitcoin-fokuseret rådgivning</li>
-            <li><span style={{ color: '#c9a66b' }}>•</span> Fuldt uafhængige – ingen formidling</li>
-            <li><span style={{ color: '#c9a66b' }}>•</span> Ingen handel eller gebyrer</li>
-            <li><span style={{ color: '#c9a66b' }}>•</span> Kun undervisning, ingen opbevaring</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Vi er 100 % Bitcoin-native – vi rådgiver kun i Bitcoin</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> 100 % uafhængige – vi holder intet, formidler intet</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Vi beskæftiger os ikke med trading, investering eller gebyrer</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Vi underviser – ikke opbevarer</li>
           </ul>
-          <p>Ej din bitcoin – for evigt.</p>
+          <p>Du lærer at eje dine bitcoin selv – for evigt</p>
         </>
       ),
     },
@@ -143,15 +149,16 @@ export default function Page() {
                 10.000 kr.
               </p>
               <p style={{ fontSize: '1.1rem', color: '#a0aec0', marginBottom: '1rem' }}>
-                For begyndere eller optimering.
+                Til dig, der vil i gang – eller optimere det, du allerede har.
               </p>
               <ul style={{ listStyleType: 'none', paddingLeft: '0', fontSize: '1.1rem', color: '#a0aec0' }}>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Hardware wallet-rådgivning</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Single-sig opsætning</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Backup-strategi</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Grundlæggende sikkerhed</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Hardware wallet-rådgivning og opsætning</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Single-sig med/uden passphrase</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Backup-strategi og risikoforståelse</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Grundlæggende sikkerhed og vaner</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Gennemgang af eksisterende opsætning (hvis ønsket)</li>
               </ul>
-              <p style={{ fontSize: '0.9rem', color: '#718096' }}>Varighed: ~2 timer</p>
+              <p style={{ fontSize: '0.9rem', color: '#718096' }}>Varighed: Ca. 2 timer</p>
             </div>
 
             {/* Pakke: Ejer med overblik */}
@@ -194,15 +201,16 @@ export default function Page() {
                 20.000 kr.
               </p>
               <p style={{ fontSize: '1.1rem', color: '#a0aec0', marginBottom: '1rem' }}>
-                For større beholdninger og teknisk dybde.
+                Til dig med større mængder bitcoin og behov for teknisk dybde.
               </p>
               <ul style={{ listStyleType: 'none', paddingLeft: '0', fontSize: '1.1rem', color: '#a0aec0' }}>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Alt i "Klar til at eje"</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Airgapped wallet</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Bitcoin node opsætning</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Skræddersyet recovery</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Alt i første pakke</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Airgapped wallet-struktur</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Brug og opsætning af Bitcoin node</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Skræddersyet recovery-plan</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Fysisk backup-strategi</li>
               </ul>
-              <p style={{ fontSize: '0.9rem', color: '#718096' }}>Varighed: 2–4 timer</p>
+              <p style={{ fontSize: '0.9rem', color: '#718096' }}>Varighed: 2–4 timer (afhænger af node)</p>
             </div>
 
             {/* Pakke: Fuld kontrol */}
@@ -229,15 +237,16 @@ export default function Page() {
                 45.000 kr.
               </p>
               <p style={{ fontSize: '1.1rem', color: '#a0aec0', marginBottom: '1rem' }}>
-                For suveræn sikkerhed og arveplanlægning.
+                Til dig, der ønsker suveræn sikkerhed – for livet og for arvingerne.
               </p>
               <ul style={{ listStyleType: 'none', paddingLeft: '0', fontSize: '1.1rem', color: '#a0aec0' }}>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Alt i "Ejer med overblik"</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Multisig opsætning</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Udvidet trusselsanalyse</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Arveplan og check-up</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Alt i “Ejer med overblik”</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Multisig-opsætning (hvis ønsket)</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Udvidet trusselsanalyse (phishing, kidnapning, mm.)</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Arveplan og familievejledning</li>
+                <li><span style={{ color: '#c9a66b' }}>•</span> Én gratis check-up inden for 12 måneder</li>
               </ul>
-              <p style={{ fontSize: '0.9rem', color: '#718096' }}>Varighed: Fleksibel</p>
+              <p style={{ fontSize: '0.9rem', color: '#718096' }}>Varighed: Fleksibel efter behov og kompleksitet</p>
             </div>
           </div>
         </>
@@ -245,10 +254,16 @@ export default function Page() {
     },
   ];
 
-  // Testimonial-data
+  // Testimonial-data (tilbage til original kontekst)
   const testimonials = [
-    { quote: "SelvDepot sikrede mine Bitcoin med usædvanlig præcision og ro.", author: "Jens Hansen" },
-    { quote: "Enestående service – højst anbefalelsesværdig.", author: "Anna Sørensen" },
+    {
+      quote: "SelvDepot gav mig ro i sindet ved at sikre mine Bitcoin på en måde, jeg forstår fuldt ud.",
+      author: "Jens Hansen, Kunde",
+    },
+    {
+      quote: "Eksklusiv service og professionel vejledning – højst anbefalelsesværdig!",
+      author: "Anna Sørensen, Kunde",
+    },
   ];
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
@@ -323,16 +338,18 @@ export default function Page() {
           SelvDepot
         </h1>
         <h2 style={{ fontSize: '2.2rem', fontWeight: 500, color: '#c9a66b', marginTop: '1rem' }}>
-          Sikker ejerskab af dine Bitcoin
+          Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
+          <br />
+          <span style={{ fontWeight: 'normal', color: '#ffffff' }}>Sikkert. Privat. For evigt.</span>
         </h2>
-        <p style={{ fontSize: '1.3rem', color: '#a0aec0', marginTop: '1rem' }}>Privat. Permanent. Tryg.</p>
       </section>
 
       {/* Intro */}
       <section style={{ padding: '3rem', background: 'rgba(45, 55, 72, 0.7)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)' }}>
         <p style={{ fontSize: '1.4rem', textAlign: 'center', lineHeight: '1.8', color: '#e2e8f0' }}>
-          Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine vilkår.
-          <br />Tag kontrol over din fremtid og din families arv.
+          Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
+          <br />
+          Dine penge. Din fremtid. Din familie. Tag kontrol.
         </p>
         <div style={{ marginTop: '2rem', textAlign: 'center' }}>
           <a
@@ -356,7 +373,7 @@ export default function Page() {
             onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
             onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
           >
-            Book en privat konsultation
+            Book et gratis 30-minutters møde
           </a>
         </div>
       </section>
@@ -364,19 +381,22 @@ export default function Page() {
       {/* Hvad Bitcoin er */}
       <section style={{ padding: '3rem', background: 'rgba(26, 32, 44, 0.8)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)' }}>
         <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: '#c9a66b', textAlign: 'center', marginBottom: '2rem' }}>
-          Om Bitcoin
+          Hvad Bitcoin er
         </h2>
         <p style={{ fontSize: '1.4rem', lineHeight: '1.8', textAlign: 'center', maxWidth: '900px', margin: '0 auto', color: '#e2e8f0' }}>
-          Bitcoin er mere end en investering – det er digitale basepenge med et upolitisk, begrænset udbud.
-          Uden manipulation, uden mellemled. Uden korrekt opbevaring forsvinder dog dets værdi.
-          Hos SelvDepot mestre du self-custody med fuld kontrol og privatliv.
+          Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
+          med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen.
+          Ingen banker. Ingen stater. Ingen modparter.
+          Men uden korrekt opbevaring forsvinder sikkerheden og suveræniteten.
+          Hos SelvDepot lærer du at holde dine Bitcoin, som de var tiltænkt:
+          100% under din egen kontrol. Privat. Permanent.
         </p>
       </section>
 
       {/* Video */}
       <section style={{ padding: '3rem', background: 'rgba(45, 55, 72, 0.7)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)', textAlign: 'center' }}>
         <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: '#c9a66b', marginBottom: '2rem' }}>
-          Introduktion til din sikkerhed
+          Introduktion
         </h2>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <video
@@ -401,9 +421,14 @@ export default function Page() {
       {/* Brødtekst */}
       <section style={{ padding: '3rem', background: 'rgba(26, 32, 44, 0.8)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)' }}>
         <p style={{ fontSize: '1.4rem', lineHeight: '1.8', textAlign: 'center', maxWidth: '900px', margin: '0 auto', color: '#e2e8f0' }}>
-          SelvDepot er din livline i en verden, hvor fiat-systemet undergraver din formue gennem inflation og kontrol.
-          Med 80% af Bitcoin-ejere udsat for tab via hacks og modpartsrisiko, er du din egen største trussel.
-          Vores personlige rådgivning sikrer dit ejerskab med arveplanlægning og trusselsanalyse – uden at røre dine nøgler.
+          Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden hvor det
+          traditionelle FIAT-system suger livet ud af dine beholdninger og aktiver gennem inflation
+          og kontrol. Over 80% af Bitcoin-ejere risikerer at miste alt gennem hacks,
+          social engineering og modpartsrisiko – men DU er stadig den største risiko for tab af dine Bitcoin.
+          Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody inklusiv
+          arveplanlægning, trusselsanalyse, svigtpunktsanalyse, multisig m.m. – uden at vi
+          nogensinde rører dine private keys. Dette er ikke bare en chance for 100% kontrol og tryghed.
+          Det er din sidste udvej før dørene lukker, og du bliver fanget i et forgængeligt system.
         </p>
       </section>
 
@@ -430,21 +455,27 @@ export default function Page() {
           onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
           onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
         >
-          Sikr din frihed i dag
+          Klar til at tage ansvar? Book et kald nu
         </a>
       </section>
 
       {/* Vurderingstekst */}
       <section style={{ padding: '3rem', background: 'rgba(26, 32, 44, 0.8)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)', textAlign: 'center' }}>
         <p style={{ fontSize: '1.2rem', color: '#c9a66b', fontStyle: 'italic', maxWidth: '700px', margin: '0 auto', lineHeight: '1.8' }}>
-          Dette er ingen salgspitch. Vi vurderer din egnethed til self-custody. Hvis du ikke opfylder kravene – fx pga. alder eller tekniske begrænsninger – tilbyder vi støtte, indtil du er klar.
-          <br /><br />Ejerskab kræver ansvar. Ingen garantiordning findes.
+          Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
+          self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har
+          de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger –
+          vil du blive afvist, men med mulighed for undervisning og støtte, indtil du er klar.
+          <br />
+          <br />
+          Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller hjælpelinje
+          at ringe til, hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt ansvar.
         </p>
       </section>
 
       {/* Testimonial */}
       <section style={{ padding: '3rem', background: 'rgba(45, 55, 72, 0.7)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: '#c9a66b', marginBottom: '2rem' }}>Kundernes erfaringer</h2>
+        <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: '#c9a66b', marginBottom: '2rem' }}>Hvad vores kunder siger</h2>
         <div style={{ maxWidth: '700px', margin: '0 auto', padding: '2rem', background: 'rgba(26, 32, 44, 0.9)', borderRadius: '10px' }}>
           <p style={{ fontSize: '1.3rem', lineHeight: '1.8', color: '#e2e8f0', fontStyle: 'italic' }}>
             "{testimonials[currentTestimonial].quote}"
@@ -476,7 +507,7 @@ export default function Page() {
 
       {/* Pakker */}
       <section style={{ padding: '3rem', background: 'rgba(26, 32, 44, 0.8)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)' }}>
-        <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: '#c9a66b', textAlign: 'center', marginBottom: '2rem' }}>Vores Pakker</h2>
+        <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: '#c9a66b', textAlign: 'center', marginBottom: '2rem' }}>Pakker & Priser</h2>
         {pitchContent[5].content}
       </section>
 
@@ -499,15 +530,20 @@ export default function Page() {
       {activeSection === 'Kontakt' && (
         <div style={{ marginTop: '1rem', color: '#a0aec0', fontSize: '1rem', textAlign: 'center' }}>
           <p>
-            📧{' '}
+            📬 Email:{' '}
             <a href="mailto:Selvdepot@gmail.com" style={{ color: '#c9a66b' }}>
               Selvdepot@gmail.com
             </a>
           </p>
           <p>
-            📅{' '}
-            <a href="https://calendly.com/selvdepot/30min" target="_blank" rel="noopener noreferrer" style={{ color: '#c9a66b' }}>
-              Book tid
+            📅 Book:{' '}
+            <a
+              href="https://calendly.com/selvdepot/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: '#c9a66b' }}
+            >
+              calendly.com/selvdepot/30min
             </a>
           </p>
         </div>
@@ -610,9 +646,9 @@ export default function Page() {
         activeSection === section && (
           <div key={section} style={{ marginTop: '1rem', color: '#a0aec0', fontSize: '1rem', textAlign: 'center' }}>
             <p>
-              {section === 'Disclaimer' && 'Dette er ikke juridisk eller finansiel rådgivning – kun uddannelse i Bitcoin-opbevaring.'}
-              {section === 'Privatliv' && 'Ingen data indsamles uden samtykke. Se Calendlys politikker.'}
-              {section === 'Vilkår' && 'Brug accepterer uddannelsesformål. Dansk lov gælder.'}
+              {section === 'Disclaimer' && 'Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk, finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene undervisning og værktøjer til selvstændig opbevaring af Bitcoin.'}
+              {section === 'Privatliv' && 'Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly håndteres dine oplysninger af dem under deres politikker. Vi bruger ikke cookies eller analytics.'}
+              {section === 'Vilkår' && 'Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål. Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.'}
             </p>
           </div>
         )
