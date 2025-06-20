@@ -291,7 +291,7 @@ export default function Page() {
           marginLeft: 'auto',
           marginRight: 'auto',
           position: 'relative',
-          minHeight: '250px',
+          minHeight: '300px', // Increased to ensure full stretch and spacing
           overflow: 'visible',
           zIndex: 0, // Ensure container is above main background
         }}
@@ -300,14 +300,16 @@ export default function Page() {
           src="/logo.png"
           alt="SelvDepot Logo"
           style={{
-            maxWidth: '250px', // Reduced from 300px to avoid touching the button
-            height: 'auto',
             position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            width: '100%',
+            height: '100%', // Stretch from top to bottom
             opacity: 0.3,
             zIndex: 0, // Place above main background, below text
+            objectFit: 'cover', // Ensure the image covers the area without distortion
             borderRadius: '4px',
             boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
             pointerEvents: 'none',
@@ -319,7 +321,7 @@ export default function Page() {
             padding: '2.5rem',
             zIndex: 1, // Ensure text is above logo
             width: '100%',
-            // Removed backgroundColor: 'rgba(0, 0, 0, 0.2)' to remove black rectangle
+            // No backgroundColor to avoid black rectangle
           }}
         >
           <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: 0, textAlign: 'center', textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)' }}>
@@ -341,7 +343,7 @@ export default function Page() {
       </p>
 
       {/* Book-møde efter intro */}
-      <div style={{ marginTop: '1rem', textAlign: 'center' }}>
+      <div style={{ marginTop: '2rem', textAlign: 'center' }}>
         <a
           href="https://calendly.com/selvdepot/30min"
           target="_blank"
