@@ -96,7 +96,7 @@ export default function Page() {
           <>
             <input
               type="email"
-              placeholder="Modtag Intro PDF via Email"
+              placeholder="Modtag Introduktion PDF via Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               style={{
