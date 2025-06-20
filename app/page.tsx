@@ -22,9 +22,9 @@ export default function Page() {
             SelvDepot er rådgivning i sikker, privat og fremtidssikret opbevaring af Bitcoin.
           </p>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
-            <li>Vi arbejder 1:1 med formuende personer, der ønsker fuld kontrol uden at røre deres private keys.</li>
-            <li>Alt bygger på gennemtænkt sikkerhed, open-source værktøjer og absolut diskretion.</li>
-            <li>Det her handler ikke om hype – men om, hvordan du undgår at miste alt.</li>
+            <li>Vi arbejder 1:1 med formuebeviste personer.</li>
+            <li>Vi bygger på gennemtænkt sikkerhed, open-source værktøjer og skræddersyer efter behov.</li>
+            <li>Det her handler ikke om hype, crypto eller trading cykler – men om, hvordan du beholder dine Bitcoin.</li>
           </ul>
         </>
       ),
@@ -36,9 +36,8 @@ export default function Page() {
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
             <li>De fleste Bitcoin-ejere har stadig modpartsrisiko (børser, apps, custodians).</li>
             <li>20% af al BTC er allerede mistet – ikke pga. hacks, men pga. menneskelige fejl.</li>
-            <li>Uden en klar arveplan kan dine efterladte miste adgangen for altid.</li>
-            <li>En enkelt fejl – ét stykke papir, én mistet kode – og pengene er væk.</li>
-            <li>Compliance og sikkerhed kolliderer ofte – vi forener dem.</li>
+            <li>Uden et robust set-up, en klar arveplan og korrekte værktøjer kan du/dine elskede miste adgangen for altid.</li>
+            <li>En enkelt fejl – ét forkert tryk, én mistet kode/nøgle – og pengene er for evigt væk.</li>
           </ul>
         </>
       ),
@@ -49,13 +48,12 @@ export default function Page() {
         <>
           <p>Vi hjælper dig med en skræddersyet opsætning af:</p>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
-            <li>Hardware-wallets (cold storage, offline sikkerhed)</li>
-            <li>Multisig (flere nøgler – ingen enkeltfejl)</li>
-            <li>Arveplan (sikrer kontinuitet for din familie)</li>
+            <li>Hardware  wallets, alt efter behov(hot/cold, single/multi/passphrase m.m.).</li>
+            <li>Arveplan, kan din familie/børn finde ud af at få adgang til dine Bitcoin i tilfælde af sygdom/død?</li>
+            <li>Trusselsanalyse, Svigtepunksanalyse, Privatlivsbehov.</li>
           </ul>
-          <p>Du får hjælp til hele opsætningen – uden at vi nogensinde har adgang til dine midler.</p>
+          <p>Du får hjælp til hele opsætningen – uden at vi nogensinde har adgang til dine midler, enhed eller lignede.</p>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
-            <li>Alt er open-source, dokumenteret og testet – du kan selv inspicere det hele.</li>
           </ul>
         </>
       ),
@@ -65,11 +63,11 @@ export default function Page() {
       content: (
         <>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
-            <li>Du får ro i maven – nu og i fremtiden.</li>
-            <li>Du ved præcis, hvor dine Bitcoin er – og at ingen andre har adgang.</li>
-            <li>Du undgår at efterlade kaos til din familie.</li>
+            <li>Du får ro i maven nu og i fremtiden.</li>
+            <li>Du ved præcis, hvor dine Bitcoin er, at få adgang og at ingen andre har kan.</li>
+            <li>Du undgår at efterlade kaos til din ikke-tekniske onkel eller selv at miste dem.</li>
             <li>Du slipper for at famle i mørket – vi har prøvet det før og guider dig hele vejen.</li>
-            <li>Du tager ansvar – men med en sparringspartner, der forstår både teknikken og dine værdier.</li>
+            <li>Du tager ansvar – men med en sparringspartner, der forstår både teknikken og dine behov.</li>
           </ul>
         </>
       ),
@@ -79,13 +77,13 @@ export default function Page() {
       content: (
         <>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
-            <li>Vi er 100 % Bitcoin-only – vi gør ikke alt. Vi gør det her.</li>
-            <li>Alt vi bruger er open-source og gennemtestet – ingen sorte bokse.</li>
-            <li>Vi forstår HNWI’s behov: kontrol, diskretion og arv.</li>
+            <li>Vi er 100 % Bitcoin-only – vi gør ikke alt. Vi gør det her med præcision.</li>
+            <li>Alt vi bruger er open-source, verified og battle-tested – ingen sorte bokse.</li>
+            <li>Vi forstår formuebevistes behov: kontrol, diskretion, arv og sikkerhed.</li>
             <li>Vi rådgiver – vi opbevarer ikke. Du ejer, du bestemmer.</li>
             <li>Vores løsninger fungerer i praksis – ikke bare på papir.</li>
           </ul>
-          <p>Det her er ikke endnu et Bitcoin-projekt. Det er din livline.</p>
+          <p>Det her er ikke endnu et crypto, trading eller andet gøjl. Det er din livline til at sikre din formue.</p>
         </>
       ),
     },
@@ -123,11 +121,11 @@ export default function Page() {
               </p>
               <p>Inkluderer:</p>
               <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', fontSize: '0.9rem' }}>
-                <li>Hardware wallet-rådgivning og opsætning</li>
+                <li>Hardware wallet opsætning</li>
                 <li>Single-sig med/uden passphrase</li>
                 <li>Backup-strategi og risikoforståelse</li>
                 <li>Grundlæggende sikkerhed og vaner</li>
-                <li>Gennemgang af eksisterende opsætning (hvis ønsket)</li>
+                <li>Pakken bruges også til gennemgang af eksisterende opsætning (hvis ønsket)</li>
               </ul>
               <p style={{ fontSize: '0.9rem' }}>
                 <strong>Varighed:</strong> Ca. 2 timer
@@ -159,13 +157,14 @@ export default function Page() {
               <p>Inkluderer:</p>
               <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', fontSize: '0.9rem' }}>
                 <li>Alt i første pakke</li>
+                <li>Rådgivning om hardware wallets</li>
                 <li>Airgapped wallet-struktur</li>
                 <li>Brug og opsætning af Bitcoin node</li>
-                <li>Skræddersyet recovery-plan</li>
-                <li>Fysisk backup-strategi</li>
+                <li>Skræddersyet recovery-plan/guide</li>
+                <li>Fokus på back-up, sikkerhed og gennemgang af angrebsvektorer</li>
               </ul>
               <p style={{ fontSize: '0.9rem' }}>
-                <strong>Varighed:</strong> 2–4 timer (afhænger af node)
+                <strong>Varighed:</strong> 2–4 timer (ekslusiv Node download)
               </p>
             </div>
 
@@ -192,10 +191,12 @@ export default function Page() {
               <p>Inkluderer:</p>
               <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', fontSize: '0.9rem' }}>
                 <li>Alt i “Ejer med overblik”</li>
-                <li>Multisig-opsætning (hvis ønsket)</li>
-                <li>Udvidet trusselsanalyse (phishing, kidnapning, mm.)</li>
+                <li>Multisig-opsætning (hvis relevant)</li>
+                <li>Udvidet trusselsanalyse, svigtpunksanalyse</li>
                 <li>Arveplan og familievejledning</li>
-                <li>Én gratis check-up inden for 12 måneder</li>
+                <li>Opsætning og brug af Bitcoin node </li>
+                <li>UTXO-management, privat bevidsthed</li>
+                <li>Ét gratis check-up inden for 4 måneder</li>
               </ul>
               <p style={{ fontSize: '0.9rem' }}>
                 <strong>Varighed:</strong> Fleksibel efter behov og kompleksitet
@@ -359,7 +360,7 @@ export default function Page() {
         Ingen banker. Ingen stater. Ingen modparter.
         Men uden korrekt opbevaring forsvinder sikkerheden og suveræniteten.
         Hos SelvDepot lærer du at holde dine Bitcoin, som de var tiltænkt:
-        100% under din egen kontrol. Privat. Permanent.
+        100% under din egen kontrol.
       </p>
 
       {/* Video */}
