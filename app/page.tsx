@@ -275,7 +275,7 @@ export default function Page() {
         color: '#ffffff',
         width: '100%',
         margin: 0,
-        position: 'relative', // Ensure main is a stacking context
+        position: 'relative',
         zIndex: -2, // Place main background below logo
       }}
     >
@@ -290,9 +290,9 @@ export default function Page() {
           maxWidth: '800px',
           marginLeft: 'auto',
           marginRight: 'auto',
-          position: 'relative', // Contain absolutely positioned logo
-          minHeight: '250px', // Ensure space for logo and text
-          overflow: 'visible', // Prevent clipping
+          position: 'relative',
+          minHeight: '250px',
+          overflow: 'visible',
           zIndex: 0, // Ensure container is above main background
         }}
       >
@@ -300,26 +300,26 @@ export default function Page() {
           src="/logo.png"
           alt="SelvDepot Logo"
           style={{
-            maxWidth: '300px', // Adjust size to fit
+            maxWidth: '250px', // Reduced from 300px to avoid touching the button
             height: 'auto',
             position: 'absolute',
             top: '50%',
             left: '50%',
-            transform: 'translate(-50%, -50%)', // Center the logo
-            opacity: 0.3, // Lower opacity for transparency
+            transform: 'translate(-50%, -50%)',
+            opacity: 0.3,
             zIndex: 0, // Place above main background, below text
             borderRadius: '4px',
             boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-            pointerEvents: 'none', // Prevent interaction with logo
+            pointerEvents: 'none',
           }}
         />
         <div
           style={{
             textAlign: 'center',
-            padding: '2.5rem', // Spacing for readability
+            padding: '2.5rem',
             zIndex: 1, // Ensure text is above logo
-            width: '100%', // Span container for centering
-            backgroundColor: 'rgba(0, 0, 0, 0.2)', // Subtle backdrop for text contrast
+            width: '100%',
+            // Removed backgroundColor: 'rgba(0, 0, 0, 0.2)' to remove black rectangle
           }}
         >
           <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: 0, textAlign: 'center', textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)' }}>
@@ -567,138 +567,4 @@ export default function Page() {
                     borderRadius: '4px',
                     border: 'none',
                     cursor: 'pointer',
-                    fontWeight: 'bold',
-                    fontSize: '1rem',
-                  }}
-                >
-                  Forrige
-                </button>
-              )}
-              {currentPitchPage < pitchContent.length - 1 && (
-                <button
-                  onClick={handleNextPage}
-                  style={{
-                    background: '#22c55e',
-                    color: '#fff',
-                    padding: '0.7rem 1.5rem',
-                    borderRadius: '4px',
-                    border: 'none',
-                    cursor: 'pointer',
-                    fontWeight: 'bold',
-                    fontSize: '1rem',
-                  }}
-                >
-                  Næste
-                </button>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
-      {/* Password Modal */}
-      {showPasswordModal && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            zIndex: 1000,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: '#1e293b',
-              padding: '2rem',
-              borderRadius: '8px',
-              textAlign: 'center',
-              width: '300px',
-              color: '#ffffff',
-            }}
-          >
-            <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem' }}>Indtast adgangskode</h3>
-            <form onSubmit={handlePasswordSubmit}>
-              <input
-                type="password"
-                value={passwordInput}
-                onChange={(e) => setPasswordInput(e.target.value)}
-                style={{
-                  width: '100%',
-                  padding: '0.5rem',
-                  marginBottom: '1rem',
-                  border: '1px solid #4b5563',
-                  borderRadius: '4px',
-                  backgroundColor: '#374151',
-                  color: '#ffffff',
-                }}
-                placeholder="Indtast kode"
-              />
-              <div>
-                <button
-                  type="submit"
-                  style={{
-                    background: '#22c55e',
-                    color: '#fff',
-                    padding: '0.5rem 1rem',
-                    borderRadius: '4px',
-                    border: 'none',
-                    cursor: 'pointer',
-                    fontWeight: 'bold',
-                  }}
-                >
-                  Bekræft
-                </button>
-                <button
-                  type="button"
-                  onClick={handleClosePasswordModal}
-                  style={{
-                    background: '#dc2626',
-                    color: '#fff',
-                    padding: '0.5rem 1rem',
-                    borderRadius: '4px',
-                    border: 'none',
-                    cursor: 'pointer',
-                    fontWeight: 'bold',
-                    marginLeft: '1rem',
-                  }}
-                >
-                  Annuller
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
-      {activeSection === 'Disclaimer' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
-          <p>
-            Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk,
-            finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene undervisning
-            og værktøjer til selvstændig opbevaring af Bitcoin.
-          </p>
-        </div>
-      )}
-      {activeSection === 'Privatliv' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
-          <p>
-            Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly
-            håndteres dine oplysninger af dem under deres politikker. Vi bruger ikke cookies eller analytics.
-          </p>
-        </div>
-      )}
-      {activeSection === 'Vilkår' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
-          <p>
-            Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
-            Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
-          </p>
-        </div>
-      )}
-    </main>
-  );
-}
+                    fontWeight:
