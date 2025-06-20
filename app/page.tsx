@@ -35,7 +35,7 @@ export default function Page() {
         <>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
             <li>De fleste Bitcoin-ejere har stadig modpartsrisiko (børser, apps, custodians).</li>
-            <li>20% af al BTC er allerede mistet – ikke pga hacks, men pga menneskelige fejl.</li>
+            <li>20% af al BTC er allerede mistet – ikke pga. hacks, men pga. menneskelige fejl.</li>
             <li>Uden et robust set-up, en klar arveplan og korrekte værktøjer kan du/dine elskede miste adgangen for altid.</li>
             <li>En enkelt fejl – ét forkert tryk, én mistet kode/nøgle – og pengene er for evigt væk.</li>
           </ul>
@@ -48,12 +48,13 @@ export default function Page() {
         <>
           <p>Vi hjælper dig med en skræddersyet opsætning af:</p>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
-            <li>Hardware wallets, alt efter behov (hot/cold, single/multi/passphrase m.m.).</li>
-            <li>Arveplan, kan din familie/børn finde ud af at få adgang til dine Bitcoin i tilfælde af sygdom?</li>
-            <li>Trusselsanalyse, Svigtpunktsanalyse, Privatlivsbehov.</li>
+            <li>Hardware  wallets, alt efter behov(hot/cold, single/multi/passphrase m.m.).</li>
+            <li>Arveplan, kan din familie/børn finde ud af at få adgang til dine Bitcoin i tilfælde af sygdom/død?</li>
+            <li>Trusselsanalyse, Svigtepunksanalyse, Privatlivsbehov.</li>
           </ul>
-          <p>Du får hjælp til hele opsætningen – uden at vi nogensinde har adgang til dine midler, enhed eller lignende.</p>
-          <ul style={{ listStyleType: 'none', paddingLeft: 0, marginBottom: '2rem' }}></ul>
+          <p>Du får hjælp til hele opsætningen – uden at vi nogensinde har adgang til dine midler, enhed eller lignede.</p>
+          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
+          </ul>
         </>
       ),
     },
@@ -111,7 +112,7 @@ export default function Page() {
               }}
             >
               <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-                Klar til at eje
+                🟠 Klar til at eje
               </h3>
               <p>
                 <strong>Pris:</strong> 10.000 kr.
@@ -132,6 +133,7 @@ export default function Page() {
                 <strong>Note:</strong> Vi stopper ikke før det virker, er testet og forstået.
               </p>
             </div>
+
             {/* Pakke: Ejer med overblik */}
             <div
               style={{
@@ -145,7 +147,7 @@ export default function Page() {
               }}
             >
               <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-                Ejer med overblik
+                🟡 Ejer med overblik
               </h3>
               <p>
                 <strong>Pris:</strong> 20.000 kr.
@@ -165,6 +167,7 @@ export default function Page() {
                 <strong>Varighed:</strong> 2–4 timer (ekslusiv Node download)
               </p>
             </div>
+
             {/* Pakke: Fuld kontrol */}
             <div
               style={{
@@ -178,7 +181,7 @@ export default function Page() {
               }}
             >
               <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-                Fuld kontrol
+                🔵 Fuld kontrol
               </h3>
               <p>
                 <strong>Pris:</strong> 45.000 kr.
@@ -191,7 +194,7 @@ export default function Page() {
                 <li>Multisig-opsætning (hvis relevant)</li>
                 <li>Udvidet trusselsanalyse, svigtpunksanalyse</li>
                 <li>Arveplan og familievejledning</li>
-                <li>Opsætning og brug af Bitcoin node</li>
+                <li>Opsætning og brug af Bitcoin node </li>
                 <li>UTXO-management, privat bevidsthed</li>
                 <li>Ét gratis check-up inden for 4 måneder</li>
               </ul>
@@ -226,17 +229,17 @@ export default function Page() {
     }
   };
 
-  // Tastaturgenvej til at udløse pitch-adgang (Ctrl + Shift + P)
+  // Tastaturgenvej til at udløse pitch-adgang (Ctrl + P)
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.ctrlKey && event.shiftKey && event.key === 'P' && !showPasswordModal) {
+      if (event.ctrlKey && event.key === 'p') {
         event.preventDefault();
         handlePitchAccess();
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [showPasswordModal]);
+  }, [passwordInput]);
 
   // Navigation i pitch
   const handleNextPage = () => {
@@ -274,9 +277,7 @@ export default function Page() {
         padding: '2rem 1rem',
         color: '#ffffff',
         width: '100%',
-        margin: '0 auto',
-        position: 'relative',
-        zIndex: -2, // Place main background below logo
+        margin: 0,
       }}
     >
       {/* Logo og titel */}
@@ -284,50 +285,30 @@ export default function Page() {
         style={{
           marginTop: '2rem',
           display: 'flex',
-          justifyContent: 'center',
           alignItems: 'center',
           flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: '1rem',
           maxWidth: '800px',
           marginLeft: 'auto',
           marginRight: 'auto',
-          position: 'relative',
-          minHeight: '300px', // Increased to ensure full stretch and spacing
-          overflow: 'visible',
-          zIndex: 0, // Ensure container is above main background
         }}
       >
         <img
           src="/logo.png"
           alt="SelvDepot Logo"
           style={{
-            position: 'absolute',
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            width: '100%',
-            height: '100%', // Stretch from top to bottom
-            opacity: 0.3,
-            zIndex: 0, // Place above main background, below text
-            objectFit: 'cover', // Ensure the image covers the area without distortion
+            maxWidth: '150px',
+            height: 'auto',
             borderRadius: '4px',
             boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-            pointerEvents: 'none',
           }}
         />
-        <div
-          style={{
-            textAlign: 'center',
-            padding: '2.5rem',
-            zIndex: 1, // Ensure text is above logo
-            width: '100%',
-            // No backgroundColor to avoid black rectangle
-          }}
-        >
-          <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: 0, textAlign: 'center', textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)' }}>
+        <div>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: 0, textAlign: 'center' }}>
             SelvDepot
           </h1>
-          <h2 style={{ fontSize: '1.5rem', marginTop: '0.5rem', textAlign: 'center', textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)' }}>
+          <h2 style={{ fontSize: '1.5rem', marginTop: '0.5rem', textAlign: 'center' }}>
             Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
             <br />
             <span style={{ fontWeight: 'normal' }}>Sikkert. Privat. For evigt.</span>
@@ -343,7 +324,7 @@ export default function Page() {
       </p>
 
       {/* Book-møde efter intro */}
-      <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+      <div style={{ marginTop: '1rem', textAlign: 'center' }}>
         <a
           href="https://calendly.com/selvdepot/30min"
           target="_blank"
@@ -495,13 +476,13 @@ export default function Page() {
       {activeSection === 'Kontakt' && (
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
           <p>
-            Email:{' '}
+            📬 Email:{' '}
             <a href="mailto:Selvdepot@gmail.com" style={{ color: '#60a5fa' }}>
               Selvdepot@gmail.com
             </a>
           </p>
           <p>
-            Book:{' '}
+            📅 Book:{' '}
             <a
               href="https://calendly.com/selvdepot/30min"
               target="_blank"
