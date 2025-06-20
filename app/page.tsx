@@ -226,25 +226,17 @@ export default function Page() {
     }
   };
 
-  // Tastaturgenvej til at udløse pitch-adgang (Ctrl + P) with refined check
+  // Tastaturgenvej til at udløse pitch-adgang (Ctrl + P) - Simplified and fixed
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      const activeElement = document.activeElement as HTMLElement;
-      // Only trigger if not in an input/textarea and modal is not active
-      if (
-        event.ctrlKey &&
-        event.key === 'p' &&
-        activeElement &&
-        !['INPUT', 'TEXTAREA'].includes(activeElement.tagName) &&
-        !showPasswordModal
-      ) {
-        event.stopPropagation(); // Prevent bubbling but allow default behavior
+      if (event.ctrlKey && event.key === 'p' && !showPasswordModal) {
+        event.preventDefault(); // Prevent default browser action (e.g., print/PDF)
         handlePitchAccess();
       }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [passwordInput, showPasswordModal]);
+  }, [showPasswordModal]);
 
   // Navigation i pitch
   const handleNextPage = () => {
