@@ -288,30 +288,30 @@ export default function Page() {
           maxWidth: '800px',
           marginLeft: 'auto',
           marginRight: 'auto',
-          position: 'relative', // Allow absolute positioning of pseudo-element
+          position: 'relative', // Allow absolute positioning of logo
+          minHeight: '200px', // Ensure enough space for logo and text
         }}
       >
-        <div
+        <img
+          src="/logo.png"
+          alt="SelvDepot Logo"
           style={{
-            backgroundImage: 'url("/logo.png")',
-            backgroundSize: 'contain',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            opacity: 0.3, // Lower opacity for logo
+            maxWidth: '300px', // Adjust size to fit
+            height: 'auto',
             position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            zIndex: -1, // Place logo behind text
-            maxWidth: '300px', // Ensure logo fits within container
-            margin: '0 auto',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)', // Center the logo
+            opacity: 0.3, // Lower opacity for transparency
+            zIndex: -1, // Place behind text
+            borderRadius: '4px',
+            boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
           }}
-        ></div>
+        />
         <div
           style={{
             textAlign: 'center',
-            padding: '2rem', // Add padding to ensure text doesn't overlap logo
+            padding: '2rem', // Add padding to prevent text overlap
             zIndex: 1, // Ensure text is above logo
           }}
         >
