@@ -226,10 +226,17 @@ export default function Page() {
     }
   };
 
-  // Tastaturgenvej til at udløse pitch-adgang (Ctrl + P)
+  // Tastaturgenvej til at udløse pitch-adgang (Ctrl + P) with input check
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.ctrlKey && event.key === 'p') {
+      // Check if the active element is not an input or textarea
+      const activeElement = document.activeElement as HTMLElement;
+      if (
+        event.ctrlKey &&
+        event.key === 'p' &&
+        activeElement &&
+        !['INPUT', 'TEXTAREA'].includes(activeElement.tagName)
+      ) {
         event.preventDefault();
         handlePitchAccess();
       }
