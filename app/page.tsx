@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Page() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -142,6 +142,7 @@ export default function Page() {
     },
   ];
 
+  // Håndter adgangskode for pitch
   const handlePitchAccess = () => {
     const password = prompt('Indtast adgangskode for at vise pitch');
     if (password === '9945') {
@@ -153,6 +154,19 @@ export default function Page() {
     }
   };
 
+  // Tastaturgenvej til at udløse pitch-adgang (Ctrl + P)
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.ctrlKey && event.key === 'p') {
+        event.preventDefault();
+        handlePitchAccess();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  // Navigation i pitch
   const handleNextPage = () => {
     if (currentPitchPage < pitchContent.length - 1) {
       setCurrentPitchPage(currentPitchPage + 1);
@@ -163,6 +177,13 @@ export default function Page() {
     if (currentPitchPage > 0) {
       setCurrentPitchPage(currentPitchPage - 1);
     }
+  };
+
+  // Luk pitch
+  const handleClosePitch = () => {
+    setShowPitch(false);
+    setActiveSection(null);
+    setCurrentPitchPage(0);
   };
 
   return (
@@ -330,16 +351,10 @@ export default function Page() {
           color: '#d1d5db',
         }}
       >
-        {['Kontakt', 'Disclaimer', 'Pitch', 'Privatliv', 'Vilkår'].map((section) => (
+        {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
           <p
             key={section}
-            onClick={() => {
-              if (section === 'Pitch') {
-                handlePitchAccess();
-              } else {
-                setActiveSection(activeSection === section ? null : section);
-              }
-            }}
+            onClick={() => setActiveSection(activeSection === section ? null : section)}
             style={{
               cursor: 'pointer',
               textDecoration: 'underline',
@@ -373,6 +388,87 @@ export default function Page() {
           </p>
         </div>
       )}
+      {/* Pitch-sektion (skjult, men placeret efter Kontakt) */}
+      {activeSection === 'Pitch' && showPitch && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: '#0f172a',
+            padding: '2rem',
+            zIndex: 1000,
+            overflowY: 'auto',
+            textAlign: 'left',
+            fontSize: '1rem',
+            lineHeight: '1.6',
+            color: '#ffffff',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+          }}
+        >
+          <button
+            onClick={handleClosePitch}
+            style={{
+              position: 'absolute',
+              top: '1rem',
+              right: '1rem',
+              background: '#dc2626',
+              color: '#fff',
+              padding: '0.5rem 1rem',
+              borderRadius: '8px',
+              border: 'none',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+            }}
+          >
+            Luk
+          </button>
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
+              {pitchContent[currentPitchPage].title}
+            </h2>
+            {pitchContent[currentPitchPage].content}
+            <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
+              {currentPitchPage > 0 && (
+                <button
+                  onClick={handlePreviousPage}
+                  style={{
+                    background: '#2563eb',
+                    color: '#fff',
+                    padding: '0.8rem 2rem',
+                    borderRadius: '8px',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  Forrige
+                </button>
+              )}
+              {currentPitchPage < pitchContent.length - 1 && (
+                <button
+                  onClick={handleNextPage}
+                  style={{
+                    background: '#22c55e',
+                    color: '#fff',
+                    padding: '0.8rem 2rem',
+                    borderRadius: '8px',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  Næste
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
       {activeSection === 'Disclaimer' && (
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
           <p>
@@ -396,59 +492,6 @@ export default function Page() {
             Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
             Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
           </p>
-        </div>
-      )}
-      {activeSection === 'Pitch' && showPitch && (
-        <div
-          style={{
-            marginTop: '2rem',
-            padding: '2rem',
-            backgroundColor: '#0f172a',
-            borderRadius: '8px',
-            boxShadow: '0 0 12px rgba(0,0,0,0.3)',
-            textAlign: 'left',
-            fontSize: '1rem',
-            lineHeight: '1.6',
-          }}
-        >
-          <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
-            {pitchContent[currentPitchPage].title}
-          </h2>
-          {pitchContent[currentPitchPage].content}
-          <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem' }}>
-            {currentPitchPage > 0 && (
-              <button
-                onClick={handlePreviousPage}
-                style={{
-                  background: '#2563eb',
-                  color: '#fff',
-                  padding: '0.8rem 2rem',
-                  borderRadius: '8px',
-                  border: 'none',
-                  cursor: 'pointer',
-                  fontWeight: 'bold',
-                }}
-              >
-                Forrige
-              </button>
-            )}
-            {currentPitchPage < pitchContent.length - 1 && (
-              <button
-                onClick={handleNextPage}
-                style={{
-                  background: '#22c55e',
-                  color: '#fff',
-                  padding: '0.8rem 2rem',
-                  borderRadius: '8px',
-                  border: 'none',
-                  cursor: 'pointer',
-                  fontWeight: 'bold',
-                }}
-              >
-                Næste
-              </button>
-            )}
-          </div>
         </div>
       )}
     </main>
