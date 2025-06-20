@@ -46,7 +46,7 @@ export default function Page() {
         <div>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: 0 }}>SelvDepot</h1>
           <h2 style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>
-            Vi hjælper dig eje dine Bitcoin og sove trygt.
+            Vi hjælper dig eje dine Bitcoin selv - og sove trygt.
             <br />
             <span style={{ fontWeight: 'normal' }}>Sikkert. Privat. For evigt.</span>
           </h2>
@@ -133,7 +133,7 @@ export default function Page() {
       </div>
 
       {/* Hvad Bitcoin er */}
-      <p style={{ marginTop: '3rem', fontSize: '1.05rem', lineHeight: '1.6' }}>
+      <p style={{ marginTop: '3rem', fontSize: '1.05rem', lineHeight: '1.6', textAlign: 'justify' }}>
         Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
         med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen.
         Ingen banker. Ingen stater. Ingen modparter.
@@ -159,7 +159,7 @@ export default function Page() {
 
       {/* Brødtekst */}
       <div style={{ marginTop: '2rem', fontSize: '1rem', lineHeight: '1.6' }}>
-        <p style={{ margin: 0 }}>
+        <p style={{ margin: 0, textAlign: 'justify' }}>
           Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden hvor det
           traditionelle FIAT-system suger livet ud af dine beholdninger og aktiver gennem inflation
           og kontrol. Over 80% af Bitcoin-ejere risikerer at miste alt gennem hacks,
@@ -201,6 +201,7 @@ export default function Page() {
           maxWidth: '600px',
           marginLeft: 'auto',
           marginRight: 'auto',
+          textAlign: 'justify',
         }}
       >
         Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
