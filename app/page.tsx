@@ -567,4 +567,138 @@ export default function Page() {
                     borderRadius: '4px',
                     border: 'none',
                     cursor: 'pointer',
-                    fontWeight:
+                    fontWeight: 'bold',
+                    fontSize: '1rem',
+                  }}
+                >
+                  Forrige
+                </button>
+              )}
+              {currentPitchPage < pitchContent.length - 1 && (
+                <button
+                  onClick={handleNextPage}
+                  style={{
+                    background: '#22c55e',
+                    color: '#fff',
+                    padding: '0.7rem 1.5rem',
+                    borderRadius: '4px',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontWeight: 'bold',
+                    fontSize: '1rem',
+                  }}
+                >
+                  Næste
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+      {/* Password Modal */}
+      {showPasswordModal && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+            zIndex: 1000,
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: '#1e293b',
+              padding: '2rem',
+              borderRadius: '8px',
+              textAlign: 'center',
+              width: '300px',
+              color: '#ffffff',
+            }}
+          >
+            <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem' }}>Indtast adgangskode</h3>
+            <form onSubmit={handlePasswordSubmit}>
+              <input
+                type="password"
+                value={passwordInput}
+                onChange={(e) => setPasswordInput(e.target.value)}
+                style={{
+                  width: '100%',
+                  padding: '0.5rem',
+                  marginBottom: '1rem',
+                  border: '1px solid #4b5563',
+                  borderRadius: '4px',
+                  backgroundColor: '#374151',
+                  color: '#ffffff',
+                }}
+                placeholder="Indtast kode"
+              />
+              <div>
+                <button
+                  type="submit"
+                  style={{
+                    background: '#22c55e',
+                    color: '#fff',
+                    padding: '0.5rem 1rem',
+                    borderRadius: '4px',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontWeight: 'bold',
+                  }}
+                >
+                  Bekræft
+                </button>
+                <button
+                  type="button"
+                  onClick={handleClosePasswordModal}
+                  style={{
+                    background: '#dc2626',
+                    color: '#fff',
+                    padding: '0.5rem 1rem',
+                    borderRadius: '4px',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontWeight: 'bold',
+                    marginLeft: '1rem',
+                  }}
+                >
+                  Annuller
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+      {activeSection === 'Disclaimer' && (
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
+          <p>
+            Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk,
+            finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene undervisning
+            og værktøjer til selvstændig opbevaring af Bitcoin.
+          </p>
+        </div>
+      )}
+      {activeSection === 'Privatliv' && (
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
+          <p>
+            Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly
+            håndteres dine oplysninger af dem under deres politikker. Vi bruger ikke cookies eller analytics.
+          </p>
+        </div>
+      )}
+      {activeSection === 'Vilkår' && (
+        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
+          <p>
+            Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
+            Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
+          </p>
+        </div>
+      )}
+    </main>
+  );
+}
