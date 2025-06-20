@@ -9,7 +9,7 @@ export default function Page() {
   const [currentPitchPage, setCurrentPitchPage] = useState(0);
   const [logoSize, setLogoSize] = useState(150); // Justérbar logo-størrelse i px
 
-  // Pitch-indhold opdelt i sektioner (tilbage til original tekst)
+  // Pitch-indhold opdelt i sektioner
   const pitchContent = [
     {
       title: 'I. Indledning',
@@ -113,7 +113,7 @@ export default function Page() {
       ),
     },
     {
-      title: 'VI. Pakker & Priser',
+      title: 'VI. Pakker',
       content: (
         <>
           <div
@@ -125,13 +125,13 @@ export default function Page() {
               marginTop: '2rem',
             }}
           >
-            {/* Pakke: Klar til at eje */}
+            {/* Pakke: Klar til at eje (Billig - Grøn) */}
             <div
               style={{
                 flex: '1 1 300px',
                 maxWidth: '350px',
                 padding: '2rem',
-                background: '#2d3748',
+                background: '#2f855a', // Grøn for billig
                 borderRadius: '12px',
                 boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)',
                 transition: 'transform 0.3s',
@@ -145,29 +145,18 @@ export default function Page() {
               <h3 style={{ fontSize: '1.8rem', fontWeight: 600, color: '#ffffff', marginBottom: '1rem' }}>
                 Klar til at eje
               </h3>
-              <p style={{ fontSize: '2.2rem', fontWeight: 700, color: '#c9a66b', margin: '0.5rem 0' }}>
-                10.000 kr.
-              </p>
-              <p style={{ fontSize: '1.1rem', color: '#a0aec0', marginBottom: '1rem' }}>
+              <p style={{ fontSize: '1.1rem', color: '#e6fff3', marginBottom: '1rem' }}>
                 Til dig, der vil i gang – eller optimere det, du allerede har.
               </p>
-              <ul style={{ listStyleType: 'none', paddingLeft: '0', fontSize: '1.1rem', color: '#a0aec0' }}>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Hardware wallet-rådgivning og opsætning</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Single-sig med/uden passphrase</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Backup-strategi og risikoforståelse</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Grundlæggende sikkerhed og vaner</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Gennemgang af eksisterende opsætning (hvis ønsket)</li>
-              </ul>
-              <p style={{ fontSize: '0.9rem', color: '#718096' }}>Varighed: Ca. 2 timer</p>
             </div>
 
-            {/* Pakke: Ejer med overblik */}
+            {/* Pakke: Ejer med overblik (Dyr - Guld) */}
             <div
               style={{
                 flex: '1 1 300px',
                 maxWidth: '350px',
                 padding: '2rem',
-                background: '#2d3748',
+                background: '#c9a66b', // Guld for dyr
                 borderRadius: '12px',
                 boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)',
                 transition: 'transform 0.3s',
@@ -178,14 +167,14 @@ export default function Page() {
               onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.02)')}
               onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
             >
-              <div style={{ fontSize: '2.5rem', color: '#c9a66b', marginBottom: '1rem' }}>●</div>
+              <div style={{ fontSize: '2.5rem', color: '#1a202c', marginBottom: '1rem' }}>●</div>
               <span
                 style={{
                   position: 'absolute',
                   top: '1rem',
                   right: '1rem',
-                  background: '#c9a66b',
-                  color: '#1a202c',
+                  background: '#1a202c',
+                  color: '#c9a66b',
                   padding: '0.3rem 0.8rem',
                   borderRadius: '6px',
                   fontSize: '0.9rem',
@@ -194,32 +183,21 @@ export default function Page() {
               >
                 Anbefalet
               </span>
-              <h3 style={{ fontSize: '1.8rem', fontWeight: 600, color: '#ffffff', marginBottom: '1rem' }}>
+              <h3 style={{ fontSize: '1.8rem', fontWeight: 600, color: '#1a202c', marginBottom: '1rem' }}>
                 Ejer med overblik
               </h3>
-              <p style={{ fontSize: '2.2rem', fontWeight: 700, color: '#c9a66b', margin: '0.5rem 0' }}>
-                20.000 kr.
-              </p>
-              <p style={{ fontSize: '1.1rem', color: '#a0aec0', marginBottom: '1rem' }}>
+              <p style={{ fontSize: '1.1rem', color: '#1a202c', marginBottom: '1rem' }}>
                 Til dig med større mængder bitcoin og behov for teknisk dybde.
               </p>
-              <ul style={{ listStyleType: 'none', paddingLeft: '0', fontSize: '1.1rem', color: '#a0aec0' }}>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Alt i første pakke</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Airgapped wallet-struktur</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Brug og opsætning af Bitcoin node</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Skræddersyet recovery-plan</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Fysisk backup-strategi</li>
-              </ul>
-              <p style={{ fontSize: '0.9rem', color: '#718096' }}>Varighed: 2–4 timer (afhænger af node)</p>
             </div>
 
-            {/* Pakke: Fuld kontrol */}
+            {/* Pakke: Fuld kontrol (Dyrest - Blå) */}
             <div
               style={{
                 flex: '1 1 300px',
                 maxWidth: '350px',
                 padding: '2rem',
-                background: '#2d3748',
+                background: '#2b6cb0', // Blå for dyrest
                 borderRadius: '12px',
                 boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)',
                 transition: 'transform 0.3s',
@@ -233,39 +211,15 @@ export default function Page() {
               <h3 style={{ fontSize: '1.8rem', fontWeight: 600, color: '#ffffff', marginBottom: '1rem' }}>
                 Fuld kontrol
               </h3>
-              <p style={{ fontSize: '2.2rem', fontWeight: 700, color: '#c9a66b', margin: '0.5rem 0' }}>
-                45.000 kr.
-              </p>
-              <p style={{ fontSize: '1.1rem', color: '#a0aec0', marginBottom: '1rem' }}>
+              <p style={{ fontSize: '1.1rem', color: '#e6f0fa', marginBottom: '1rem' }}>
                 Til dig, der ønsker suveræn sikkerhed – for livet og for arvingerne.
               </p>
-              <ul style={{ listStyleType: 'none', paddingLeft: '0', fontSize: '1.1rem', color: '#a0aec0' }}>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Alt i “Ejer med overblik”</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Multisig-opsætning (hvis ønsket)</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Udvidet trusselsanalyse (phishing, kidnapning, mm.)</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Arveplan og familievejledning</li>
-                <li><span style={{ color: '#c9a66b' }}>•</span> Én gratis check-up inden for 12 måneder</li>
-              </ul>
-              <p style={{ fontSize: '0.9rem', color: '#718096' }}>Varighed: Fleksibel efter behov og kompleksitet</p>
             </div>
           </div>
         </>
       ),
     },
   ];
-
-  // Testimonial-data (tilbage til original kontekst)
-  const testimonials = [
-    {
-      quote: "SelvDepot gav mig ro i sindet ved at sikre mine Bitcoin på en måde, jeg forstår fuldt ud.",
-      author: "Jens Hansen, Kunde",
-    },
-    {
-      quote: "Eksklusiv service og professionel vejledning – højst anbefalelsesværdig!",
-      author: "Anna Sørensen, Kunde",
-    },
-  ];
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   // Håndter adgangskode for pitch
   const handlePitchAccess = () => {
@@ -294,7 +248,6 @@ export default function Page() {
   // Navigation
   const handleNextPage = () => (currentPitchPage < pitchContent.length - 1 ? setCurrentPitchPage(currentPitchPage + 1) : null);
   const handlePreviousPage = () => (currentPitchPage > 0 ? setCurrentPitchPage(currentPitchPage - 1) : null);
-  const handleNextTestimonial = () => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
   const handleClosePitch = () => {
     setShowPitch(false);
     setActiveSection(null);
@@ -304,7 +257,10 @@ export default function Page() {
   return (
     <main
       style={{
-        background: '#1a202c',
+        backgroundImage: 'url("/imagebaggrund.png"), linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.9))',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
         padding: '4rem 2rem',
         color: '#ffffff',
@@ -319,9 +275,9 @@ export default function Page() {
       <hr style={{ border: '1px solid #c9a66b', width: '5%', margin: '3rem auto' }} />
 
       {/* Header */}
-      <section style={{ textAlign: 'center', padding: '3rem', background: 'rgba(45, 55, 72, 0.9)', borderRadius: '10px', boxShadow: '0 8px 30px rgba(0, 0, 0, 0.4)' }}>
+      <section style={{ textAlign: 'center', padding: '3rem', borderRadius: '10px', boxShadow: '0 8px 30px rgba(0, 0, 0, 0.4)' }}>
         <img
-          src="/logo.png"
+          src="/new-logo.png" // Nyt billede
           alt="SelvDepot Logo"
           style={{
             maxWidth: `${logoSize}px`, // Justerbar størrelse
@@ -345,7 +301,7 @@ export default function Page() {
       </section>
 
       {/* Intro */}
-      <section style={{ padding: '3rem', background: 'rgba(45, 55, 72, 0.7)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)' }}>
+      <section style={{ padding: '3rem', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)' }}>
         <p style={{ fontSize: '1.4rem', textAlign: 'center', lineHeight: '1.8', color: '#e2e8f0' }}>
           Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
           <br />
@@ -376,10 +332,20 @@ export default function Page() {
             Book et gratis 30-minutters møde
           </a>
         </div>
+        <img
+          src="/new-logo.png" // Nyt billede
+          alt="SelvDepot Logo"
+          style={{
+            maxWidth: '120px',
+            height: 'auto',
+            margin: '2rem auto',
+            display: 'block',
+          }}
+        />
       </section>
 
       {/* Hvad Bitcoin er */}
-      <section style={{ padding: '3rem', background: 'rgba(26, 32, 44, 0.8)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)' }}>
+      <section style={{ padding: '3rem', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)' }}>
         <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: '#c9a66b', textAlign: 'center', marginBottom: '2rem' }}>
           Hvad Bitcoin er
         </h2>
@@ -394,7 +360,7 @@ export default function Page() {
       </section>
 
       {/* Video */}
-      <section style={{ padding: '3rem', background: 'rgba(45, 55, 72, 0.7)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)', textAlign: 'center' }}>
+      <section style={{ padding: '3rem', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)', textAlign: 'center' }}>
         <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: '#c9a66b', marginBottom: '2rem' }}>
           Introduktion
         </h2>
@@ -419,7 +385,7 @@ export default function Page() {
       </section>
 
       {/* Brødtekst */}
-      <section style={{ padding: '3rem', background: 'rgba(26, 32, 44, 0.8)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)' }}>
+      <section style={{ padding: '3rem', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)' }}>
         <p style={{ fontSize: '1.4rem', lineHeight: '1.8', textAlign: 'center', maxWidth: '900px', margin: '0 auto', color: '#e2e8f0' }}>
           Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden hvor det
           traditionelle FIAT-system suger livet ud af dine beholdninger og aktiver gennem inflation
@@ -433,7 +399,7 @@ export default function Page() {
       </section>
 
       {/* Sekundær CTA */}
-      <section style={{ padding: '3rem', background: 'rgba(45, 55, 72, 0.7)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)', textAlign: 'center' }}>
+      <section style={{ padding: '3rem', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)', textAlign: 'center' }}>
         <a
           href="https://calendly.com/selvdepot/30min"
           target="_blank"
@@ -460,7 +426,7 @@ export default function Page() {
       </section>
 
       {/* Vurderingstekst */}
-      <section style={{ padding: '3rem', background: 'rgba(26, 32, 44, 0.8)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)', textAlign: 'center' }}>
+      <section style={{ padding: '3rem', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)', textAlign: 'center' }}>
         <p style={{ fontSize: '1.2rem', color: '#c9a66b', fontStyle: 'italic', maxWidth: '700px', margin: '0 auto', lineHeight: '1.8' }}>
           Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
           self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har
@@ -473,46 +439,14 @@ export default function Page() {
         </p>
       </section>
 
-      {/* Testimonial */}
-      <section style={{ padding: '3rem', background: 'rgba(45, 55, 72, 0.7)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: '#c9a66b', marginBottom: '2rem' }}>Hvad vores kunder siger</h2>
-        <div style={{ maxWidth: '700px', margin: '0 auto', padding: '2rem', background: 'rgba(26, 32, 44, 0.9)', borderRadius: '10px' }}>
-          <p style={{ fontSize: '1.3rem', lineHeight: '1.8', color: '#e2e8f0', fontStyle: 'italic' }}>
-            "{testimonials[currentTestimonial].quote}"
-          </p>
-          <p style={{ fontSize: '1.1rem', marginTop: '1rem', color: '#c9a66b' }}>
-            – {testimonials[currentTestimonial].author}
-          </p>
-          <button
-            onClick={handleNextTestimonial}
-            style={{
-              background: '#c9a66b',
-              color: '#1a202c',
-              padding: '0.8rem 2rem',
-              borderRadius: '8px',
-              border: 'none',
-              marginTop: '1.5rem',
-              cursor: 'pointer',
-              fontSize: '1.1rem',
-              fontWeight: 500,
-              transition: 'transform 0.3s',
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-          >
-            Næste
-          </button>
-        </div>
-      </section>
-
       {/* Pakker */}
-      <section style={{ padding: '3rem', background: 'rgba(26, 32, 44, 0.8)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)' }}>
-        <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: '#c9a66b', textAlign: 'center', marginBottom: '2rem' }}>Pakker & Priser</h2>
+      <section style={{ padding: '3rem', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)' }}>
+        <h2 style={{ fontSize: '2.5rem', fontWeight: 600, color: '#c9a66b', textAlign: 'center', marginBottom: '2rem' }}>Pakker</h2>
         {pitchContent[5].content}
       </section>
 
       {/* Footer */}
-      <section style={{ padding: '2rem', background: 'rgba(45, 55, 72, 0.9)', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)', textAlign: 'center' }}>
+      <section style={{ padding: '2rem', margin: '3rem 0', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.3)', textAlign: 'center' }}>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', fontSize: '1rem', color: '#a0aec0' }}>
           {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
             <p
@@ -558,7 +492,7 @@ export default function Page() {
             left: 0,
             width: '100vw',
             height: '100vh',
-            background: 'rgba(26, 32, 44, 0.95)',
+            background: 'rgba(0, 0, 0, 0.95)', // Tilpasset til baggrund
             padding: '3rem',
             zIndex: 1000,
             overflowY: 'auto',
@@ -592,6 +526,15 @@ export default function Page() {
             Luk
           </button>
           <div style={{ maxWidth: '1200px', margin: '0 auto', background: '#2d3748', padding: '2rem', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.4)' }}>
+            <img
+              src="/new-logo.png" // Nyt billede
+              alt="SelvDepot Logo"
+              style={{
+                maxWidth: '150px',
+                height: 'auto',
+                marginBottom: '2rem',
+              }}
+            />
             <h2 style={{ fontSize: '2.8rem', fontWeight: 600, marginBottom: '1.5rem', color: '#c9a66b' }}>
               {pitchContent[currentPitchPage].title}
             </h2>
