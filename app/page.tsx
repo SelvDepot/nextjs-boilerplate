@@ -70,10 +70,6 @@ export default function Page() {
         >
           Ville du føle dig sikker med din nuværende løsning, hvis dine BTC blev 10x mere værd i morgen?
         </p>
-        <p style={{ fontSize: '1rem', maxWidth: '600px', margin: '0 auto', color: '#e2e8f0' }}>
-          PDF’en med vores introduktion og spørgeskema bliver sendt personligt til dig efter du har booket en
-          gratis rådgivningssamtale – så vi sammen kan skræddersy næste skridt.
-        </p>
       </div>
 
       {/* Book-møde CTA */}
