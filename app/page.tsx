@@ -115,79 +115,117 @@ export default function Page() {
       title: 'VI. Pakker & Priser',
       content: (
         <>
-          <h3 style={{ fontSize: '1.2rem', fontWeight: 'bold', marginTop: '1rem' }}>🟠 Klar til at eje</h3>
-          <p>
-            <strong>Pris:</strong> 10.000 kr.
-            <br />
-            Til dig, der vil i gang – eller optimere det, du allerede har.
-          </p>
-          <p>Inkluderer:</p>
-          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
-            <li>Hardware wallet-rådgivning og opsætning</li>
-            <li>Single-sig med/uden passphrase</li>
-            <li>Backup-strategi og risikoforståelse</li>
-            <li>Grundlæggende sikkerhed og vaner</li>
-            <li>Gennemgang af eksisterende opsætning (hvis ønsket)</li>
-          </ul>
-          <p>
-            <strong>Varighed:</strong> Ca. 2 timer
-            <br />
-            <strong>Note:</strong> Vi stopper ikke før det virker, er testet og forstået.
-          </p>
-          <h3 style={{ fontSize: '1.2rem', fontWeight: 'bold', marginTop: '1rem' }}>🟡 Ejer med overblik</h3>
-          <p>
-            <strong>Pris:</strong> 20.000 kr.
-            <br />
-            Til dig med større mængder bitcoin og behov for teknisk dybde.
-          </p>
-          <p>Inkluderer:</p>
-          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
-            <li>Alt i første pakke</li>
-            <li>Airgapped wallet-struktur</li>
-            <li>Brug og opsætning af Bitcoin node</li>
-            <li>Skræddersyet recovery-plan</li>
-            <li>Fysisk backup-strategi</li>
-          </ul>
-          <p>
-            <strong>Varighed:</strong> 2–4 timer (afhænger af node)
-          </p>
-          <h3 style={{ fontSize: '1.2rem', fontWeight: 'bold', marginTop: '1rem' }}>🔵 Fuld kontrol</h3>
-          <p>
-            <strong>Pris:</strong> 45.000 kr.
-            <br />
-            Til dig, der ønsker suveræn sikkerhed – for livet og for arvingerne.
-          </p>
-          <p>Inkluderer:</p>
-          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
-            <li>Alt i “Ejer med overblik”</li>
-            <li>Multisig-opsætning (hvis ønsket)</li>
-            <li>Udvidet trusselsanalyse (phishing, kidnapning, mm.)</li>
-            <li>Arveplan og familievejledning</li>
-            <li>Én gratis check-up inden for 12 måneder</li>
-          </ul>
-          <p>
-            <strong>Varighed:</strong> Fleksibel efter behov og kompleksitet
-            <br />
-            <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
-          </p>
-          <p style={{ marginTop: '1rem' }}>
-            <a
-              href="https://calendly.com/selvdepot/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '1rem',
+              justifyContent: 'center',
+            }}
+          >
+            {/* Pakke: Klar til at eje */}
+            <div
               style={{
-                background: '#2563eb',
-                color: '#fff',
-                padding: '0.8rem 1.5rem',
+                flex: '1 1 300px',
+                maxWidth: '350px',
+                padding: '1.5rem',
+                border: '2px solid #22c55e',
                 borderRadius: '8px',
-                textDecoration: 'none',
-                display: 'inline-block',
-                fontWeight: 'bold',
+                backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
               }}
             >
-              Book dit gratis opkald nu
-            </a>
-          </p>
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+                🟠 Klar til at eje
+              </h3>
+              <p>
+                <strong>Pris:</strong> 10.000 kr.
+                <br />
+                Til dig, der vil i gang – eller optimere det, du allerede har.
+              </p>
+              <p>Inkluderer:</p>
+              <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+                <li>Hardware wallet-rådgivning og opsætning</li>
+                <li>Single-sig med/uden passphrase</li>
+                <li>Backup-strategi og risikoforståelse</li>
+                <li>Grundlæggende sikkerhed og vaner</li>
+                <li>Gennemgang af eksisterende opsætning (hvis ønsket)</li>
+              </ul>
+              <p>
+                <strong>Varighed:</strong> Ca. 2 timer
+                <br />
+                <strong>Note:</strong> Vi stopper ikke før det virker, er testet og forstået.
+              </p>
+            </div>
+
+            {/* Pakke: Ejer med overblik */}
+            <div
+              style={{
+                flex: '1 1 300px',
+                maxWidth: '350px',
+                padding: '1.5rem',
+                border: '2px solid #facc15',
+                borderRadius: '8px',
+                backgroundColor: 'rgba(250, 204, 21, 0.1)',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
+              }}
+            >
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+                🟡 Ejer med overblik
+              </h3>
+              <p>
+                <strong>Pris:</strong> 20.000 kr.
+                <br />
+                Til dig med større mængder bitcoin og behov for teknisk dybde.
+              </p>
+              <p>Inkluderer:</p>
+              <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+                <li>Alt i første pakke</li>
+                <li>Airgapped wallet-struktur</li>
+                <li>Brug og opsætning af Bitcoin node</li>
+                <li>Skræddersyet recovery-plan</li>
+                <li>Fysisk backup-strategi</li>
+              </ul>
+              <p>
+                <strong>Varighed:</strong> 2–4 timer (afhænger af node)
+              </p>
+            </div>
+
+            {/* Pakke: Fuld kontrol */}
+            <div
+              style={{
+                flex: '1 1 300px',
+                maxWidth: '350px',
+                padding: '1.5rem',
+                border: '2px solid #2563eb',
+                borderRadius: '8px',
+                backgroundColor: 'rgba(37, 99, 235, 0.1)',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
+              }}
+            >
+              <h3 style={{ fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
+                🔵 Fuld kontrol
+              </h3>
+              <p>
+                <strong>Pris:</strong> 45.000 kr.
+                <br />
+                Til dig, der ønsker suveræn sikkerhed – for livet og for arvingerne.
+              </p>
+              <p>Inkluderer:</p>
+              <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+                <li>Alt i “Ejer med overblik”</li>
+                <li>Multisig-opsætning (hvis ønsket)</li>
+                <li>Udvidet trusselsanalyse (phishing, kidnapning, mm.)</li>
+                <li>Arveplan og familievejledning</li>
+                <li>Én gratis check-up inden for 12 måneder</li>
+              </ul>
+              <p>
+                <strong>Varighed:</strong> Fleksibel efter behov og kompleksitet
+                <br />
+                <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
+              </p>
+            </div>
+          </div>
         </>
       ),
     },
@@ -478,7 +516,7 @@ export default function Page() {
           >
             Luk
           </button>
-          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <h2 style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>
               {pitchContent[currentPitchPage].title}
             </h2>
