@@ -214,7 +214,7 @@ export default function Page() {
     setShowPasswordModal(true);
   };
 
-  const handlePasswordSubmit = (e) => {
+  const handlePasswordSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (passwordInput === '9945') {
       setShowPitch(true);
@@ -238,7 +238,7 @@ export default function Page() {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [passwordInput]); // Genafvikler effekt, når passwordInput ændres
+  }, [passwordInput]);
 
   // Navigation i pitch
   const handleNextPage = () => {
