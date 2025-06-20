@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Page() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -225,6 +225,18 @@ export default function Page() {
       setPasswordInput(''); // Ryd input ved fejl
     }
   };
+
+  // Tastaturgenvej til at udløse pitch-adgang (Ctrl + Shift + P)
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.ctrlKey && event.shiftKey && event.key === 'P' && !showPasswordModal) {
+        event.preventDefault();
+        handlePitchAccess();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [showPasswordModal]);
 
   // Navigation i pitch
   const handleNextPage = () => {
