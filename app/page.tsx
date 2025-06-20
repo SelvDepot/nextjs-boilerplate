@@ -5,8 +5,32 @@ import { useState } from 'react';
 
 export default function Page() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [email, setEmail] = useState('');
   const [emailSubmitted, setEmailSubmitted] = useState(false);
-  const [showDisclaimer, setShowDisclaimer] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append('email', email);
+
+    const response = await fetch('https://formspree.io/f/xldnwgya', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Accept: 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      setEmailSubmitted(true);
+      setStatusMessage('✔️ PDF sendt til din e-mail!');
+      setEmail('');
+    } else {
+      setStatusMessage('Noget gik galt. Prøv igen.');
+    }
+  }
 
   return (
     <main
@@ -60,7 +84,7 @@ export default function Page() {
         Dine penge. Din fremtid. Din familie. Tag kontrol.
       </p>
 
-      {/* Book-møde */}
+      {/* Book-møde efter intro */}
       <div style={{ marginTop: '1rem', textAlign: 'center' }}>
         <a
           href="https://calendly.com/selvdepot/30min"
@@ -79,13 +103,8 @@ export default function Page() {
         </a>
       </div>
 
-      {/* Email til PDF */}
-      <form
-        action="https://formspree.io/f/xldnwgya"
-        method="POST"
-        onSubmit={() => setEmailSubmitted(true)}
-        style={{ marginTop: '3rem', textAlign: 'center' }}
-      >
+      {/* FOMO + Email */}
+      <form onSubmit={handleSubmit} style={{ marginTop: '3rem', textAlign: 'center' }}>
         <p
           style={{
             fontSize: '1.1rem',
@@ -97,69 +116,45 @@ export default function Page() {
           Ville du føle dig sikker, hvis dine BTC blev 10x mere værd i morgen?
         </p>
 
-        <input
-          type="email"
-          name="email"
-          required
-          placeholder="Modtag Introduktion PDF via Email"
-          style={{
-            padding: '0.8rem',
-            borderRadius: '8px',
-            border: '1px solid #ccc',
-            maxWidth: '300px',
-            width: '100%',
-            marginBottom: '1rem',
-          }}
-        />
-        <input type="hidden" name="_redirect" value="/tak-for-email" />
-        <br />
-        <button
-          type="submit"
-          onClick={() => setShowDisclaimer(true)}
-          style={{
-            background: '#22c55e',
-            color: '#fff',
-            padding: '0.8rem 2rem',
-            borderRadius: '8px',
-            border: 'none',
-            cursor: 'pointer',
-            fontWeight: 'bold',
-          }}
-        >
-          JA TAK
-        </button>
-
-        {showDisclaimer && (
-          <div
-            style={{
-              marginTop: '0.8rem',
-              color: '#d1d5db',
-              fontSize: '0.75rem',
-              backgroundColor: 'rgba(255,255,255,0.05)',
-              padding: '0.5rem',
-              borderRadius: '6px',
-              display: 'inline-block',
-              maxWidth: '300px',
-            }}
-          >
-            Ved at indsende din e-mail accepterer du at modtage nyheder og eksklusive tilbud fra
-            SelvDepot. Du kan til enhver tid framelde dig.
+        {!emailSubmitted && (
+          <>
+            <input
+              type="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              placeholder="Modtag Introduktion PDF via Email"
+              style={{
+                padding: '0.8rem',
+                borderRadius: '8px',
+                border: '1px solid #ccc',
+                maxWidth: '300px',
+                width: '100%',
+                marginBottom: '1rem',
+              }}
+            />
             <br />
             <button
-              onClick={() => setShowDisclaimer(false)}
-              type="button"
+              type="submit"
               style={{
-                marginTop: '0.3rem',
-                fontSize: '0.7rem',
-                background: 'none',
+                background: '#22c55e',
+                color: '#fff',
+                padding: '0.8rem 2rem',
+                borderRadius: '8px',
                 border: 'none',
-                color: '#facc15',
                 cursor: 'pointer',
-                textDecoration: 'underline',
+                fontWeight: 'bold',
               }}
             >
-              Luk
+              JA TAK
             </button>
+          </>
+        )}
+
+        {statusMessage && (
+          <div style={{ marginTop: '1rem', fontSize: '0.9rem', color: '#facc15' }}>
+            {statusMessage}
           </div>
         )}
       </form>
@@ -238,7 +233,7 @@ export default function Page() {
       >
         Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
         self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har
-        de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger –
+        de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger – 
         vil du blive afvist, men med mulighed for undervisning og støtte, indtil du er klar.
         <br />
         <br />
@@ -298,9 +293,9 @@ export default function Page() {
       {activeSection === 'Disclaimer' && (
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
           <p>
-            Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke
-            juridisk, finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene
-            undervisning og værktøjer til selvstændig opbevaring af Bitcoin.
+            Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk,
+            finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene undervisning
+            og værktøjer til selvstændig opbevaring af Bitcoin.
           </p>
         </div>
       )}
@@ -315,8 +310,8 @@ export default function Page() {
       {activeSection === 'Vilkår' && (
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
           <p>
-            Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål. Vi
-            tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
+            Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
+            Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
           </p>
         </div>
       )}
