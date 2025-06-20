@@ -1,279 +1,278 @@
 'use client';
 
 import * as React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Page() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  const [email, setEmail] = useState('');
-  const [emailSubmitted, setEmailSubmitted] = useState(false);
-  const [statusMessage, setStatusMessage] = useState('');
+  const [showPitch, setShowPitch] = useState(false);
+  const [currentPitchPage, setCurrentPitchPage] = useState(0);
+  const [logoSize, setLogoSize] = useState(50); // Startstørrelse tilpasset til det nye design
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+  // Pitch-indhold opdelt i sektioner (simpel version til intro)
+  const pitchContent = [
+    {
+      title: 'I. Indledning',
+      content: (
+        <>
+          <p>
+            SelvDepot er specialiseret i rådgivning og optimering af opbevaring af Bitcoin – også kaldet self-custody.
+            <br />
+            Vi hjælper både privatpersoner og større enheder med at eje deres bitcoin korrekt, uanset teknisk niveau.
+          </p>
+          <p>Punkter:</p>
+          <ul style={{ listStyleType: 'none', paddingLeft: '1.5rem' }}>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Bitcoin er verdens første aktiv uden modpartsrisiko</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Det kan opbevares og overføres uden banker, stater eller tilladelse</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Alligevel holder de fleste ikke deres bitcoin korrekt</li>
+            <li><span style={{ color: '#c9a66b' }}>•</span> Mange tror, de ejer bitcoin – men har kun et løfte fra en tredjepart</li>
+          </ul>
+        </>
+      ),
+    },
+    // Andre sektioner kan tilføjes senere, men holdes simple for nu
+  ];
 
-    const formData = new FormData();
-    formData.append('email', email);
-
-    const response = await fetch('https://formspree.io/f/xldnwgya', {
-      method: 'POST',
-      body: formData,
-      headers: {
-        Accept: 'application/json',
-      },
-    });
-
-    if (response.ok) {
-      setEmailSubmitted(true);
-      setStatusMessage('✔️ PDF sendt til din e-mail!');
-      setEmail('');
+  // Håndter adgangskode for pitch
+  const handlePitchAccess = () => {
+    const password = prompt('Indtast adgangskode for at vise pitch');
+    if (password === '9945') {
+      setShowPitch(true);
+      setActiveSection('Pitch');
+      setCurrentPitchPage(0);
     } else {
-      setStatusMessage('Noget gik galt. Prøv igen.');
+      alert('Forkert adgangskode');
     }
-  }
+  };
+
+  // Tastaturgenvej til pitch (Ctrl + P)
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.ctrlKey && event.key === 'p') {
+        event.preventDefault();
+        handlePitchAccess();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  // Navigation
+  const handleNextPage = () => (currentPitchPage < pitchContent.length - 1 ? setCurrentPitchPage(currentPitchPage + 1) : null);
+  const handlePreviousPage = () => (currentPitchPage > 0 ? setCurrentPitchPage(currentPitchPage - 1) : null);
+  const handleClosePitch = () => {
+    setShowPitch(false);
+    setActiveSection(null);
+    setCurrentPitchPage(0);
+  };
 
   return (
     <main
       style={{
-        backgroundImage: 'url("/imagebaggrund.png")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#1a1a1a', // Mørk baggrund som vist
         minHeight: '100vh',
-        padding: '2rem',
-        maxWidth: '800px',
-        margin: '0 auto',
-        color: '#ffffff',
+        padding: '4rem 2rem',
+        color: '#ffffff', // Lys tekst for kontrast
+        width: '100%',
+        margin: 0,
+        fontFamily: '"Roboto", sans-serif',
+        position: 'relative',
+        overflowX: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
       }}
     >
-      {/* Logo og titel */}
-      <div
-        style={{
-          marginTop: '2rem',
-          display: 'flex',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          gap: '1rem',
-        }}
-      >
+      {/* Horisontal linje */}
+      <hr style={{ border: '1px solid #c9a66b', width: '5%', margin: '2rem auto' }} />
+
+      {/* Header */}
+      <section style={{ textAlign: 'center', padding: '2rem' }}>
         <img
-          src="/logo.png"
+          src="/new-logo.png" // Nyt billede
           alt="SelvDepot Logo"
           style={{
-            maxWidth: '150px',
+            maxWidth: `${logoSize}px`,
             height: 'auto',
+            border: '2px solid #c9a66b',
             borderRadius: '8px',
-            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
+            boxShadow: '0 4px 15px rgba(201, 166, 107, 0.3)',
+            marginBottom: '1rem',
+            transition: 'max-width 0.3s ease',
+            position: 'absolute',
+            top: '2rem',
+            left: '2rem',
           }}
+          onClick={() => setLogoSize(logoSize === 50 ? 70 : 50)} // Klik for at skifte størrelse
         />
-        <div>
-          <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: 0 }}>SelvDepot</h1>
-          <h2 style={{ fontSize: '1.5rem', marginTop: '0.5rem' }}>
-            Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
-            <br />
-            <span style={{ fontWeight: 'normal' }}>Sikkert. Privat. For evigt.</span>
-          </h2>
-        </div>
-      </div>
+        <h1 style={{ fontSize: '4rem', fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase', color: '#c9a66b' }}>
+          SELVDEPOT
+        </h1>
+        <h2 style={{ fontSize: '1.5rem', fontWeight: 500, color: '#c9a66b', marginTop: '0.5rem' }}>
+          Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
+          <br />
+          <span style={{ fontWeight: 'normal', color: '#ffffff' }}>Sikkert. Privat. For evigt.</span>
+        </h2>
+      </section>
 
-      {/* Intro */}
-      <p style={{ marginTop: '2rem', fontSize: '1.2rem' }}>
-        Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
-        <br />
-        Dine penge. Din fremtid. Din familie. Tag kontrol.
-      </p>
+      {/* Intro tekst */}
+      <section style={{ textAlign: 'center', padding: '2rem', maxWidth: '600px' }}>
+        <p style={{ fontSize: '1.2rem', lineHeight: '1.6', color: '#ffffff' }}>
+          Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
+          <br />
+          Dine penge. Din fremtid. Din familie. Tag kontrol.
+        </p>
+      </section>
 
-      {/* Book-møde efter intro */}
-      <div style={{ marginTop: '1rem', textAlign: 'center' }}>
+      {/* CTA knap */}
+      <section style={{ textAlign: 'center', padding: '2rem' }}>
         <a
           href="https://calendly.com/selvdepot/30min"
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            background: '#2563eb',
-            color: '#fff',
+            background: '#c9a66b',
+            color: '#1a1a1a',
             padding: '1rem 2rem',
+            fontSize: '1.2rem',
+            fontWeight: 600,
             borderRadius: '8px',
             textDecoration: 'none',
             display: 'inline-block',
+            boxShadow: '0 4px 15px rgba(201, 166, 107, 0.4)',
+            transition: 'transform 0.3s',
           }}
+          onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+          onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
         >
           Book et gratis 30-minutters møde
         </a>
-      </div>
+      </section>
 
-      {/* FOMO + Email */}
-      <form onSubmit={handleSubmit} style={{ marginTop: '3rem', textAlign: 'center' }}>
-        <p
+      {/* Pitch-sektion (kun tilgængelig via adgangskode) */}
+      {activeSection === 'Pitch' && showPitch && (
+        <div
           style={{
-            fontSize: '1.1rem',
-            fontWeight: 'bold',
-            color: '#facc15',
-            marginBottom: '1rem',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            background: 'rgba(0, 0, 0, 0.9)',
+            padding: '3rem',
+            zIndex: 1000,
+            overflowY: 'auto',
+            textAlign: 'left',
+            fontSize: '1.2rem',
+            lineHeight: '1.8',
+            color: '#ffffff',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
           }}
         >
-          Ville du føle dig sikker, hvis dine BTC blev 10x mere værd i morgen?
-        </p>
-
-        {!emailSubmitted && (
-          <>
-            <input
-              type="email"
-              name="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              placeholder="Modtag Introduktion PDF via Email"
+          <button
+            onClick={handleClosePitch}
+            style={{
+              position: 'absolute',
+              top: '1.5rem',
+              right: '1.5rem',
+              background: '#4a5568',
+              color: '#ffffff',
+              padding: '0.7rem 1.5rem',
+              borderRadius: '8px',
+              border: 'none',
+              cursor: 'pointer',
+              fontWeight: 500,
+              transition: 'background 0.3s',
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = '#718096')}
+            onMouseLeave={(e) => (e.currentTarget.style.background = '#4a5568')}
+          >
+            Luk
+          </button>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', background: '#2d3748', padding: '2rem', borderRadius: '10px', boxShadow: '0 6px 20px rgba(0, 0, 0, 0.4)' }}>
+            <img
+              src="/new-logo.png"
+              alt="SelvDepot Logo"
               style={{
-                padding: '0.8rem',
-                borderRadius: '8px',
-                border: '1px solid #ccc',
-                maxWidth: '300px',
-                width: '100%',
-                marginBottom: '1rem',
+                maxWidth: '150px',
+                height: 'auto',
+                marginBottom: '2rem',
               }}
             />
-            <br />
-            <button
-              type="submit"
-              style={{
-                background: '#22c55e',
-                color: '#fff',
-                padding: '0.8rem 2rem',
-                borderRadius: '8px',
-                border: 'none',
-                cursor: 'pointer',
-                fontWeight: 'bold',
-              }}
-            >
-              JA TAK
-            </button>
-          </>
-        )}
-
-        {statusMessage && (
-          <div style={{ marginTop: '1rem', fontSize: '0.9rem', color: '#facc15' }}>
-            {statusMessage}
+            <h2 style={{ fontSize: '2.8rem', fontWeight: 600, marginBottom: '1.5rem', color: '#c9a66b' }}>
+              {pitchContent[currentPitchPage].title}
+            </h2>
+            {pitchContent[currentPitchPage].content}
+            <div style={{ marginTop: '2.5rem', display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
+              {currentPitchPage > 0 && (
+                <button
+                  onClick={handlePreviousPage}
+                  style={{
+                    background: '#4a5568',
+                    color: '#ffffff',
+                    padding: '0.9rem 2rem',
+                    borderRadius: '10px',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontWeight: 500,
+                    fontSize: '1.2rem',
+                    transition: 'background 0.3s',
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = '#718096')}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = '#4a5568')}
+                >
+                  Forrige
+                </button>
+              )}
+              {currentPitchPage < pitchContent.length - 1 && (
+                <button
+                  onClick={handleNextPage}
+                  style={{
+                    background: '#c9a66b',
+                    color: '#1a1a1a',
+                    padding: '0.9rem 2rem',
+                    borderRadius: '10px',
+                    border: 'none',
+                    cursor: 'pointer',
+                    fontWeight: 500,
+                    fontSize: '1.2rem',
+                    transition: 'background 0.3s',
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = '#d4af37')}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = '#c9a66b')}
+                >
+                  Næste
+                </button>
+              )}
+            </div>
           </div>
-        )}
-      </form>
+        </div>
+      )}
 
-      {/* Hvad Bitcoin er */}
-      <p style={{ marginTop: '3rem', fontSize: '1.05rem', lineHeight: '1.6', textAlign: 'justify' }}>
-        Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
-        med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen.
-        Ingen banker. Ingen stater. Ingen modparter.
-        Men uden korrekt opbevaring forsvinder sikkerheden og suveræniteten.
-        Hos SelvDepot lærer du at holde dine Bitcoin, som de var tiltænkt:
-        100% under din egen kontrol. Privat. Permanent.
-      </p>
-
-      {/* Video */}
-      <div style={{ marginTop: '2rem' }}>
-        <video
-          controls
-          style={{
-            width: '100%',
-            borderRadius: '8px',
-            boxShadow: '0 0 8px rgba(0,0,0,0.3)',
-          }}
-        >
-          <source src="/intro.mp4" type="video/mp4" />
-          Din browser understøtter ikke video-tagget.
-        </video>
-      </div>
-
-      {/* Brødtekst */}
-      <div style={{ marginTop: '2rem', fontSize: '1rem', lineHeight: '1.6' }}>
-        <p style={{ margin: 0, textAlign: 'justify' }}>
-          Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden hvor det
-          traditionelle FIAT-system suger livet ud af dine beholdninger og aktiver gennem inflation
-          og kontrol. Over 80% af Bitcoin-ejere risikerer at miste alt gennem hacks,
-          social engineering og modpartsrisiko – men DU er stadig den største risiko for tab af dine Bitcoin.
-          Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody inklusiv
-          arveplanlægning, trusselsanalyse, svigtpunktsanalyse, multisig m.m. – uden at vi
-          nogensinde rører dine private keys. Dette er ikke bare en chance for 100% kontrol og tryghed.
-          Det er din sidste udvej før dørene lukker, og du bliver fanget i et forgængeligt system.
-        </p>
-      </div>
-
-      {/* Sekundær CTA */}
-      <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-        <a
-          href="https://calendly.com/selvdepot/30min"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            background: '#15803d',
-            color: '#fff',
-            padding: '0.8rem 1.5rem',
-            borderRadius: '8px',
-            textDecoration: 'none',
-            display: 'inline-block',
-            fontWeight: 'bold',
-          }}
-        >
-          Klar til at tage ansvar? Book et kald nu
-        </a>
-      </div>
-
-      {/* Vurderingstekst */}
-      <p
-        style={{
-          marginTop: '2rem',
-          fontSize: '0.9rem',
-          color: '#facc15',
-          fontStyle: 'italic',
-          maxWidth: '600px',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          textAlign: 'justify',
-        }}
-      >
-        Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
-        self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har
-        de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger – 
-        vil du blive afvist, men med mulighed for undervisning og støtte, indtil du er klar.
-        <br />
-        <br />
-        Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller hjælpelinje
-        at ringe til, hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt ansvar.
-      </p>
-
-      {/* Footer-links */}
-      <div
-        style={{
-          marginTop: '4rem',
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '2rem',
-          flexWrap: 'wrap',
-          fontSize: '0.9rem',
-          color: '#d1d5db',
-        }}
-      >
-        {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
-          <p
-            key={section}
-            onClick={() => setActiveSection(activeSection === section ? null : section)}
-            style={{
-              cursor: 'pointer',
-              textDecoration: 'underline',
-              margin: 0,
-            }}
-          >
-            {section}
-          </p>
-        ))}
-      </div>
+      {/* Footer */}
+      <section style={{ padding: '2rem', marginTop: 'auto', textAlign: 'center', color: '#ffffff' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', fontSize: '1rem' }}>
+          {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
+            <p
+              key={section}
+              onClick={() => setActiveSection(activeSection === section ? null : section)}
+              style={{ cursor: 'pointer', textDecoration: 'underline', margin: '0 1rem', color: '#c9a66b' }}
+            >
+              {section}
+            </p>
+          ))}
+        </div>
+      </section>
 
       {/* Footer indhold */}
       {activeSection === 'Kontakt' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
+        <div style={{ marginTop: '1rem', color: '#ffffff', fontSize: '1rem', textAlign: 'center' }}>
           <p>
             📬 Email:{' '}
-            <a href="mailto:Selvdepot@gmail.com" style={{ color: '#60a5fa' }}>
+            <a href="mailto:Selvdepot@gmail.com" style={{ color: '#c9a66b' }}>
               Selvdepot@gmail.com
             </a>
           </p>
@@ -283,38 +282,37 @@ export default function Page() {
               href="https://calendly.com/selvdepot/30min"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: '#60a5fa' }}
+              style={{ color: '#c9a66b' }}
             >
               calendly.com/selvdepot/30min
             </a>
           </p>
         </div>
       )}
-      {activeSection === 'Disclaimer' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
-          <p>
-            Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk,
-            finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene undervisning
-            og værktøjer til selvstændig opbevaring af Bitcoin.
-          </p>
-        </div>
+
+      {['Disclaimer', 'Privatliv', 'Vilkår'].map((section) =>
+        activeSection === section && (
+          <div key={section} style={{ marginTop: '1rem', color: '#ffffff', fontSize: '1rem', textAlign: 'center' }}>
+            <p>
+              {section === 'Disclaimer' && 'Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk, finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene undervisning og værktøjer til selvstændig opbevaring af Bitcoin.'}
+              {section === 'Privatliv' && 'Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly håndteres dine oplysninger af dem under deres politikker. Vi bruger ikke cookies eller analytics.'}
+              {section === 'Vilkår' && 'Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål. Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.'}
+            </p>
+          </div>
+        )
       )}
-      {activeSection === 'Privatliv' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
-          <p>
-            Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly
-            håndteres dine oplysninger af dem under deres politikker. Vi bruger ikke cookies eller analytics.
-          </p>
-        </div>
-      )}
-      {activeSection === 'Vilkår' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem' }}>
-          <p>
-            Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
-            Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
-          </p>
-        </div>
-      )}
+
+      {/* Mobiloptimering */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          h1 { font-size: 3rem; }
+          h2 { font-size: 1.2rem; }
+          p { font-size: 1rem; }
+          a { width: 100%; padding: 1rem; }
+          section { padding: 1rem; }
+          img[alt="SelvDepot Logo"] { max-width: ${logoSize * 0.8}px; }
+        }
+      `}</style>
     </main>
   );
 }
