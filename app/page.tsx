@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 export default function Page() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  const [email, setEmail] = useState('');
   const [emailSubmitted, setEmailSubmitted] = useState(false);
 
   return (
@@ -80,7 +79,12 @@ export default function Page() {
       </div>
 
       {/* FOMO + Email */}
-      <div style={{ marginTop: '3rem', textAlign: 'center' }}>
+      <form
+        action="https://formspree.io/f/xldnwgya"
+        method="POST"
+        style={{ marginTop: '3rem', textAlign: 'center' }}
+        onSubmit={() => setEmailSubmitted(true)}
+      >
         <p
           style={{
             fontSize: '1.1rem',
@@ -92,45 +96,43 @@ export default function Page() {
           Ville du føle dig sikker, hvis dine BTC blev 10x mere værd i morgen?
         </p>
 
-        {!emailSubmitted ? (
-          <>
-            <input
-              type="email"
-              placeholder="Modtag Introduktion PDF via Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              style={{
-                padding: '0.8rem',
-                borderRadius: '8px',
-                border: '1px solid #ccc',
-                maxWidth: '300px',
-                width: '100%',
-                marginBottom: '1rem',
-              }}
-            />
-            <br />
-            <button
-              onClick={() => setEmailSubmitted(true)}
-              style={{
-                background: '#22c55e',
-                color: '#fff',
-                padding: '0.8rem 2rem',
-                borderRadius: '8px',
-                border: 'none',
-                cursor: 'pointer',
-                fontWeight: 'bold',
-              }}
-            >
-              JA TAK
-            </button>
-          </>
-        ) : (
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Modtag Introduktion PDF via Email"
+          style={{
+            padding: '0.8rem',
+            borderRadius: '8px',
+            border: '1px solid #ccc',
+            maxWidth: '300px',
+            width: '100%',
+            marginBottom: '1rem',
+          }}
+        />
+        <br />
+        <button
+          type="submit"
+          style={{
+            background: '#22c55e',
+            color: '#fff',
+            padding: '0.8rem 2rem',
+            borderRadius: '8px',
+            border: 'none',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+          }}
+        >
+          JA TAK
+        </button>
+
+        {emailSubmitted && (
           <div style={{ marginTop: '1rem', color: '#facc15', fontSize: '0.9rem' }}>
             Ved at indsende din e-mail accepterer du at modtage nyheder og eksklusive tilbud fra SelvDepot.
             Du kan til enhver tid framelde dig.
           </div>
         )}
-      </div>
+      </form>
 
       {/* Hvad Bitcoin er */}
       <p style={{ marginTop: '3rem', fontSize: '1.05rem', lineHeight: '1.6', textAlign: 'justify' }}>
@@ -187,7 +189,7 @@ export default function Page() {
             fontWeight: 'bold',
           }}
         >
-          Klar til at tage ansvar? Book et kald nu 
+          Klar til at tage ansvar? Book et kald nu
         </a>
       </div>
 
