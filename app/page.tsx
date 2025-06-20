@@ -288,8 +288,9 @@ export default function Page() {
           maxWidth: '800px',
           marginLeft: 'auto',
           marginRight: 'auto',
-          position: 'relative', // Allow absolute positioning of logo
-          minHeight: '200px', // Ensure enough space for logo and text
+          position: 'relative', // Contain absolutely positioned logo
+          minHeight: '250px', // Ensure enough space for logo and text
+          overflow: 'visible', // Prevent clipping
         }}
       >
         <img
@@ -306,19 +307,21 @@ export default function Page() {
             zIndex: -1, // Place behind text
             borderRadius: '4px',
             boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+            pointerEvents: 'none', // Prevent interaction with logo
           }}
         />
         <div
           style={{
             textAlign: 'center',
-            padding: '2rem', // Add padding to prevent text overlap
+            padding: '2.5rem', // Increased padding for better spacing
             zIndex: 1, // Ensure text is above logo
+            width: '100%', // Ensure text spans container
           }}
         >
-          <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: 0, textAlign: 'center' }}>
+          <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: 0, textAlign: 'center', textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)' }}>
             SelvDepot
           </h1>
-          <h2 style={{ fontSize: '1.5rem', marginTop: '0.5rem', textAlign: 'center' }}>
+          <h2 style={{ fontSize: '1.5rem', marginTop: '0.5rem', textAlign: 'center', textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)' }}>
             Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
             <br />
             <span style={{ fontWeight: 'normal' }}>Sikkert. Privat. For evigt.</span>
@@ -509,8 +512,8 @@ export default function Page() {
         <div
           style={{
             position: 'fixed',
-            top: 0,
-            left: 0,
+            top: '0',
+            left: '0',
             width: '100vw',
             height: '100vh',
             backgroundColor: '#1e293b',
@@ -593,8 +596,8 @@ export default function Page() {
         <div
           style={{
             position: 'fixed',
-            top: 0,
-            left: 0,
+            top: '0',
+            left: '0',
             width: '100vw',
             height: '100vh',
             backgroundColor: 'rgba(0, 0, 0, 0.5)',
