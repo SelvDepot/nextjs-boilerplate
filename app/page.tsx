@@ -13,13 +13,13 @@ export default function Page() {
   // Pitch-indhold opdelt i sektioner
   const pitchContent = [
     {
-      title: 'I. Indledning – Hvad er SelvDepot?',
+      title: 'I. Indledning – Hvad er MitDepot?',
       content: (
         <>
           <p>
             "Bitcoin er ikke bare en investering – det er din økonomiske livsforsikring."
             <br />
-            SelvDepot er rådgivning i sikker, privat og fremtidssikret opbevaring af Bitcoin.
+            MitDepot er rådgivning i sikker, privat og fremtidssikret opbevaring af Bitcoin.
           </p>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
             <li>Vi arbejder 1:1 med formuebeviste personer.</li>
@@ -43,22 +43,22 @@ export default function Page() {
       ),
     },
     {
-      title: 'III. Løsningen – Hvad tilbyder SelvDepot?',
+      title: 'III. Løsningen – Hvad tilbyder MitDepot?',
       content: (
         <>
           <p>Vi hjælper dig med en skræddersyet opsætning af:</p>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
-            <li>Hardware  wallets, alt efter behov(hot/cold, single/multi/passphrase m.m.).</li>
+            <li>Hardware wallets, alt efter behov (hot/cold, single/multi/passphrase m.m.).</li>
             <li>Arveplan, kan din familie/børn finde ud af at få adgang til dine Bitcoin i tilfælde af sygdom/død?</li>
             <li>Trusselsanalyse, Svigtepunksanalyse, Privatlivsbehov.</li>
           </ul>
-          <p>Du får hjælp til hele opsætningen – uden at vi nogensinde har adgang til dine midler, enhed eller lignede.</p>
+          <p>Du får hjælp til hele opsætningen – uden at vi nogensinde har adgang til dine midler, enhed eller lignende.</p>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}></ul>
         </>
       ),
     },
     {
-      title: 'IV. Udbytte – Hvordan SelvDepot kommer ind i billedet',
+      title: 'IV. Udbytte – Hvordan MitDepot kommer ind i billedet',
       content: (
         <>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
@@ -72,7 +72,7 @@ export default function Page() {
       ),
     },
     {
-      title: 'V. Hvorfor SelvDepot?',
+      title: 'V. Hvorfor MitDepot?',
       content: (
         <>
           <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
@@ -198,10 +198,10 @@ export default function Page() {
                 <li>Udvidet trusselsanalyse, svigtpunksanalyse</li>
                 <li>Arveplan og familievejledning</li>
                 <li>Opsætning og brug af Bitcoin node</li>
-                <li>UTXO-management, privat bevidsthed</li>
+                <li>UTXO-management, privat bevidahed</li>
                 <li>Ét gratis check-up inden for 4 måneder</li>
               </ul>
-              <p style={{ fontSize: '0.9rem' }}>
+              <p style={{ fontSize: '0Retail9rem' }}>
                 <strong>Varighed:</strong> Fleksibel efter behov og kompleksitet
               </p>
               <p style={{ fontSize: '0.9rem' }}>
@@ -300,7 +300,7 @@ export default function Page() {
       >
         <img
           src="/logo.png"
-          alt="SelvDepot Logo"
+          alt="MitDepot Logo"
           style={{
             maxWidth: '150px',
             height: 'auto',
@@ -310,7 +310,7 @@ export default function Page() {
         />
         <div>
           <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', margin: 0, textAlign: 'center' }}>
-            SelvDepot
+            MitDepot
           </h1>
           <h2 style={{ fontSize: '1.5rem', marginTop: '0.5rem', textAlign: 'center' }}>
             Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
@@ -330,7 +330,7 @@ export default function Page() {
       {/* Book-møde efter intro */}
       <div style={{ marginTop: '1rem', textAlign: 'center' }}>
         <a
-          href="https://calendly.com/selvdepot/30min"
+          href="https://calendly.com/mitdepot/30min"
           target="_blank"
           rel="noopener noreferrer"
           style={{
@@ -363,7 +363,7 @@ export default function Page() {
         med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen.
         Ingen banker. Ingen stater. Ingen modparter.
         Men uden korrekt opbevaring forsvinder sikkerheden og suveræniteten.
-        Hos SelvDepot lærer du at holde dine Bitcoin, som de var tiltænkt:
+        Hos MitDepot lærer du at holde dine Bitcoin, som de var tiltænkt:
         100% under din egen kontrol.
       </p>
 
@@ -393,7 +393,7 @@ export default function Page() {
       {/* Brødtekst */}
       <div style={{ marginTop: '2rem', fontSize: '1rem', lineHeight: '1.5', textAlign: 'center' }}>
         <p style={{ maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' }}>
-          Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden hvor det
+          Bitcoin self-custody ved hjælp af MitDepot er din livbåd i en verden hvor det
           traditionelle FIAT-system suger livet ud af dine beholdninger og aktiver gennem inflation
           og kontrol. Over 80% af Bitcoin-ejere risikerer at miste alt gennem hacks,
           social engineering og modpartsrisiko – men DU er stadig den største risiko for tab af dine Bitcoin.
@@ -407,7 +407,7 @@ export default function Page() {
       {/* Sekundær CTA */}
       <div style={{ marginTop: '2rem', textAlign: 'center' }}>
         <a
-          href="https://calendly.com/selvdepot/30min"
+          href="https://calendly.com/mitdepot/30min"
           target="_blank"
           rel="noopener noreferrer"
           style={{
@@ -481,19 +481,19 @@ export default function Page() {
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
           <p>
             📬 Email:{' '}
-            <a href="mailto:Selvdepot@gmail.com" style={{ color: '#60a5fa' }}>
-              Selvdepot@gmail.com
+            <a href="mailto:MitDepot@gmail.com" style={{ color: '#60a5fa' }}>
+              MitDepot@gmail.com
             </a>
           </p>
           <p>
             📅 Book:{' '}
             <a
-              href="https://calendly.com/selvdepot/30min"
+              href="https://calendly.com/mitdepot/30min"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: '#60a5fa' }}
             >
-              calendly.com/selvdepot/30min
+              calendly.com/mitdepot/30min
             </a>
           </p>
         </div>
@@ -665,7 +665,7 @@ export default function Page() {
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
           <p>
             Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk,
-            finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene undervisning
+            finansiel, skattemæssig eller investeringsrådgivning. MitDepot tilbyder alene undervisning
             og værktøjer til selvstændig opbevaring af Bitcoin.
           </p>
         </div>
@@ -681,7 +681,7 @@ export default function Page() {
       {activeSection === 'Vilkår' && (
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
           <p>
-            Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
+            Ved brug af MitDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
             Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
           </p>
         </div>
