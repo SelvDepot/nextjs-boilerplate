@@ -1,60 +1,66 @@
 /* General Body & Background */
 .main {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/logo.png");
-  background-size: cover; /* Changed to cover to avoid white edges from repeat */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/bitcoin-bg.jpg');
+  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; /* Removed repeat to prevent outline artifacts */
+  background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100vh;
   padding: 0;
   color: #ffffff;
   font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-weight: 500;
+  font-weight: 600; /* Increased for better contrast */
   width: 100%;
   margin: 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-x: hidden;
 }
 
 /* Header & Logo */
 .header {
   display: flex;
-  justify-content: center; /* Center the text */
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 0; /* Removed gap since image is gone */
+  gap: 1rem;
   max-width: 900px;
   margin: 3rem auto 2rem;
   text-align: center;
   flex-shrink: 0;
+  padding: 1rem;
+}
+
+.headerIcon {
+  font-size: 2rem;
+  color: #facc15;
+  margin-bottom: 0.5rem;
 }
 
 .headerText {
-  text-align: center; /* Ensure text is centered */
-}
-
-.logo {
-  display: none; /* Removed the logo image */
+  text-align: center;
 }
 
 .title {
-  font-size: 2.75rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 800;
   margin: 0;
   letter-spacing: -0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
-  font-size: 1.25rem;
-  font-weight: 400;
-  margin-top: 0.75rem;
-  line-height: 1.4;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  line-height: 1.6;
   color: #d1d5db;
 }
 
 .subtitleNormal {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* Content Wrapper */
@@ -63,51 +69,58 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 1rem;
+  gap: 2rem;
 }
 
 /* Text & Content Sections */
 .intro,
 .description,
 .mainContent {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   text-align: center;
-  line-height: 1.7;
+  line-height: 1.8;
   max-width: 800px;
-  margin: 1.5rem 0;
-  font-weight: 500;
+  margin: 2rem 0;
+  font-weight: 600;
 }
 
 .mainContent {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.mainContent:hover {
+  transform: translateY(-5px);
 }
 
 /* Call to Action (CTA) Buttons */
 .cta,
 .secondaryCta {
   text-align: center;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
 }
 
 .ctaButton {
   background: linear-gradient(90deg, #3b82f6, #2563eb);
   color: #ffffff;
-  padding: 0.9rem 2rem;
-  border-radius: 8px;
+  padding: 1rem 2.5rem;
+  border-radius: 10px;
   text-decoration: none;
   display: inline-block;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.2rem;
+  font-weight: 700;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .ctaButton:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
   background: linear-gradient(90deg, #2563eb, #1d4ed8);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .ctaButtonGreen {
@@ -123,7 +136,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 }
 
 .video {
@@ -131,36 +144,82 @@
   max-width: 800px;
   aspect-ratio: 16 / 9;
   border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.video:hover {
+  transform: scale(1.02);
 }
 
 /* Assessment Text */
 .assessmentText {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #facc15;
   font-style: italic;
   max-width: 700px;
   margin: 2rem 0;
   text-align: center;
-  line-height: 1.6;
-  background-color: rgba(250, 204, 21, 0.15);
+  line-height: 1.7;
+  background-color: rgba(250, 204, 21, 0.1);
   padding: 1.5rem;
-  border-radius: 8px;
-  border-left: 4px solid #facc15;
-  font-weight: 500;
+  border-radius: 10px;
+  border-left: 5px solid #facc15;
+  font-weight: 600;
+}
+
+/* Pitch Button */
+.pitchButton {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.pitchButton:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(90deg, #16a34a, #15803d);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip {
+  position: absolute;
+  bottom: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+}
+
+.pitchButton:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Footer */
 .footerLinks {
   display: flex;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 2rem;
   flex-wrap: wrap;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #d1d5db;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   flex-shrink: 0;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .footerLink {
@@ -168,22 +227,26 @@
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 6px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: all 0.2s ease;
+  outline: none;
 }
 
-.footerLink:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.footerLink:hover,
+.footerLink:focus {
+  background-color: rgba(255, 255, 255, 0.2);
   color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .footerContent {
   color: #d1d5db;
-  font-size: 0.95rem;
+  font-size: 1rem;
   text-align: center;
   line-height: 1.8;
   max-width: 800px;
-  margin: 0 auto 2rem;
-  font-weight: 500;
+  margin: 0 auto 1.5rem;
+  padding: 1rem;
+  font-weight: 600;
 }
 
 /* Password Modal */
@@ -193,11 +256,17 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .modalContent {
@@ -208,42 +277,50 @@
   width: 100%;
   max-width: 400px;
   color: #ffffff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 .modalContent h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 700;
   margin-bottom: 1.5rem;
 }
 
 .passwordInput {
   width: 100%;
-  padding: 0.8rem;
+  padding: 0.9rem;
   margin-bottom: 1.5rem;
-  border: 1px solid #4b5563;
-  border-radius: 6px;
+  border: 2px solid #4b5563;
+  border-radius: 8px;
   background-color: #374151;
   color: #ffffff;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: border-color 0.2s ease;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .passwordInput:focus {
   border-color: #60a5fa;
+  box-shadow: 0 0 8px rgba(96, 165, 250, 0.5);
   outline: none;
 }
 
 .confirmButton,
 .cancelButton {
-  padding: 0.7rem 1.5rem;
-  border-radius: 6px;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.1rem;
   transition: all 0.3s ease;
+  margin: 0 0.5rem;
 }
 
 .confirmButton {
@@ -254,13 +331,19 @@
 .cancelButton {
   background: linear-gradient(90deg, #dc2626, #b91c1c);
   color: #ffffff;
-  margin-left: 1rem;
 }
 
 .confirmButton:hover,
 .cancelButton:hover {
-  opacity: 0.85;
-  transform: translateY(-2px);
+  opacity: 0.9;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.confirmButton:focus,
+.cancelButton:focus {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
 }
 
 /* Pitch Section */
@@ -271,16 +354,16 @@
   width: 100vw;
   height: 100vh;
   background-color: #111827;
-  padding: 4rem 2rem;
+  padding: 3rem 1.5rem;
   z-index: 1000;
   overflow-y: auto;
   text-align: left;
-  font-size: 1.1rem;
-  line-height: 1.8;
+  font-size: 1.2rem;
+  line-height: 1.9;
   color: #ffffff;
   display: flex;
   flex-direction: column;
-  font-weight: 500;
+  animation: fadeIn 0.3s ease;
 }
 
 .closeButton {
@@ -289,61 +372,70 @@
   right: 1.5rem;
   background: linear-gradient(90deg, #dc2626, #b91c1c);
   color: #ffffff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: 700;
+  font-size: 1rem;
   transition: all 0.3s ease;
 }
 
 .closeButton:hover {
-  opacity: 0.85;
-  transform: translateY(-2px);
+  opacity: 0.9;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.closeButton:focus {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
 }
 
 .pitchContent {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 2.5rem;
+  padding: 2rem;
   background-color: rgba(31, 41, 55, 0.95);
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
   flex: 1;
 }
 
 .pitchContent h2 {
-  font-size: 1.8rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 800;
   margin-bottom: 1.5rem;
   color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .pitchList {
   list-style-type: disc;
-  padding-left: 1.8rem;
+  padding-left: 2rem;
   margin: 1.5rem 0;
-  font-size: 1rem;
-  line-height: 1.6;
-  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  font-weight: 600;
 }
 
 .pitchNavigation {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   justify-content: center;
+  align-items: center;
 }
 
 .navButton {
-  padding: 0.8rem 2rem;
-  border-radius: 6px;
+  padding: 0.9rem 2.5rem;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 700;
+  font-size: 1.1rem;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .prevButton {
@@ -356,42 +448,51 @@
   color: #ffffff;
 }
 
-.prevButton:hover {
-  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+.prevButton:hover,
+.nextButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-.nextButton:hover {
-  background: linear-gradient(90deg, #16a34a, #15803d);
+.prevButton:focus,
+.nextButton:focus {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+.progress {
+  font-size: 1rem;
+  color: #d1d5db;
+  font-weight: 600;
 }
 
 /* Pricing Packages */
 .packagesContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
   justify-content: center;
   padding: 1rem 0;
 }
 
 .package {
-  flex: 1 1 320px;
-  max-width: 360px;
-  padding: 2rem;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  padding: 1.5rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .package:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .package h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
   color: #ffffff;
 }
 
@@ -413,100 +514,53 @@
 .packageList {
   list-style-type: disc;
   padding-left: 1.5rem;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.7;
   margin: 1rem 0;
-  font-weight: 500;
+  font-weight: 600;
+  text-align: left;
 }
 
 .duration,
 .note {
-  font-size: 0.9rem;
-  margin-top: 1.2rem;
+  font-size: 0.95rem;
+  margin-top: 1rem;
   color: #d1d5db;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .main { padding: 0 0.5rem; }
+  .header { margin: 2rem auto; }
+  .title { font-size: 2.5rem; }
+  .subtitle { font-size: 1.3rem; }
+  .intro, .description, .mainContent { font-size: 1.1rem; margin: 1.5rem 0; }
+  .video { max-width: 90%; }
+  .assessmentText { font-size: 0.95rem; padding: 1rem; }
+  .footerLinks { gap: 1.5rem; }
+  .modalContent { max-width: 350px; }
+  .pitchSection { padding: 2rem 1rem; }
+  .pitchContent { padding: 1.5rem; }
+  .pitchContent h2 { font-size: 1.8rem; }
+}
+
 @media (max-width: 768px) {
-  .main {
-    padding: 0 1rem;
-  }
-
-  .header {
-    flex-direction: column;
-    gap: 1.5rem;
-    margin: 2rem auto;
-  }
-
-  .title {
-    font-size: 2.25rem;
-  }
-
-  .subtitle {
-    font-size: 1.1rem;
-  }
-
-  .intro,
-  .description,
-  .mainContent {
-    font-size: 1rem;
-    margin: 1rem 0;
-  }
-
-  .video {
-    max-width: 100%;
-  }
-
-  .assessmentText {
-    font-size: 0.9rem;
-    padding: 1rem;
-  }
-
-  .footerLinks {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .modalContent {
-    width: 90%;
-    max-width: 360px;
-    padding: 1.5rem;
-  }
-
-  .pitchSection {
-    padding: 2rem 1rem;
-  }
-
-  .pitchContent {
-    padding: 1.5rem;
-  }
-
-  .pitchContent h2 {
-    font-size: 1.6rem;
-  }
-
-  .package {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
+  .header { flex-direction: column; gap: 1rem; }
+  .title { font-size: 2rem; }
+  .subtitle { font-size: 1.1rem; }
+  .intro, .description, .mainContent { font-size: 1rem; margin: 1rem 0; }
+  .videoContainer { padding: 1rem 0; }
+  .ctaButton { padding: 0.8rem 2rem; font-size: 1.1rem; }
+  .pitchButton { padding: 0.8rem 1.8rem; font-size: 1.1rem; }
+  .navButton { padding: 0.7rem 2rem; font-size: 1rem; }
 }
 
 @media (max-width: 480px) {
-  .title {
-    font-size: 1.75rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-
-  .ctaButton {
-    padding: 0.7rem 1.5rem;
-    font-size: 0.95rem;
-  }
-
-  .videoContainer {
-    padding: 1rem 0;
-  }
+  .title { font-size: 1.8rem; }
+  .subtitle { font-size: 1rem; }
+  .ctaButton { padding: 0.7rem 1.5rem; font-size: 1rem; }
+  .video { max-width: 100%; }
+  .pitchButton { padding: 0.7rem 1.5rem; font-size: 1rem; }
+  .modalContent { padding: 1.2rem; }
 }
