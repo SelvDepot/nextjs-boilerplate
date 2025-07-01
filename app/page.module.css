@@ -5,7 +5,8 @@
   background-position: center;
   background-attachment: fixed;
   min-height: 100vh;
-  padding: 2rem 1.5rem;
+  height: 100%; /* Ensure full height */
+  padding: 0; /* Remove padding to control spacing with children */
   color: #ffffff;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   width: 100%;
@@ -27,7 +28,8 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  padding: 1rem 0;
+  padding: 2rem 0;
+  flex-shrink: 0; /* Prevent header from shrinking */
 }
 
 .logo {
@@ -62,6 +64,16 @@
   font-weight: 400;
 }
 
+/* Content Wrapper to Fill Space */
+.contentWrapper {
+  flex: 1 0 auto; /* Allow content to grow and fill space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+}
+
 /* Text & Content Sections */
 .intro,
 .description,
@@ -70,9 +82,7 @@
   text-align: center;
   line-height: 1.7;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem 0;
+  margin: 1rem 0;
 }
 
 .mainContent {
@@ -137,15 +147,13 @@
   color: #facc15;
   font-style: italic;
   max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 1rem 0;
   text-align: center;
   line-height: 1.6;
   background-color: rgba(250, 204, 21, 0.15);
   padding: 1.5rem;
   border-radius: 8px;
   border-left: 4px solid #facc15;
-  margin: 1rem 0;
 }
 
 /* Footer */
@@ -156,7 +164,8 @@
   flex-wrap: wrap;
   font-size: 0.95rem;
   color: #d1d5db;
-  padding: 1rem 0;
+  padding: 2rem 0;
+  flex-shrink: 0; /* Prevent footer from shrinking */
 }
 
 .footerLink {
@@ -422,7 +431,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .main {
-    padding: 1.5rem 1rem;
+    padding: 0 1rem;
   }
 
   .header {
@@ -442,7 +451,7 @@
   .description,
   .mainContent {
     font-size: 1rem;
-    padding: 1rem 0;
+    margin: 0.5rem 0;
   }
 
   .video {
