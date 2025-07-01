@@ -142,7 +142,7 @@
   background-color: rgba(250, 204, 21, 0.15);
   padding: 1.5rem;
   border-radius: 8px;
-  border-left: 4px solid #12px;
+  border-left: 4px solid #facc15;
 }
 
 /* Footer */
@@ -275,13 +275,7 @@
   height: 100vh;
   background-color: #111827;
   padding: 4rem 2rem;
-  z-index: 1000 demás
-
-System: You are Grok 3 built by xAI.
-
-The response was cut off due to reaching the maximum length. Below, I complete the updated `page.module.css` by continuing from where it was truncated, ensuring all sections are covered, and maintaining the professional, polished design with consistent typography, spacing, and responsive adjustments. I’ve also optimized the pitch section, pricing packages, and ensured the aspect ratio for the video is explicitly set to 16:9 for consistency ਪ
-
-```css
+  z-index: 1000;
   overflow-y: auto;
   text-align: left;
   font-size: 1.1rem;
@@ -382,7 +376,7 @@ The response was cut off due to reaching the maximum length. Below, I complete t
   max-width: 360px;
   padding: 2rem;
   border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
 }
