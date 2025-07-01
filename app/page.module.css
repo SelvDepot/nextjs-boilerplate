@@ -1,0 +1,379 @@
+/* page.module.css */
+
+/* General Body & Background */
+.main {
+  background-image: url("/imagebaggrund.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  color: #ffffff;
+  width: 100%;
+  margin: 0;
+}
+
+/* Header & Logo */
+.header {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.logo {
+  max-width: 150px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  font-weight: 300;
+}
+
+.subtitleNormal {
+  font-weight: normal;
+}
+
+/* Text & Content Sections */
+.intro,
+.description,
+.mainContent {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  text-align: center;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mainContent {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+/* Call to Action (CTA) Buttons */
+.cta,
+.secondaryCta {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.ctaButton {
+  background: #2563eb;
+  color: #fff;
+  padding: 0.8rem 1.8rem;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  background: #1d4ed8;
+}
+
+.ctaButtonGreen {
+  background: #15803d;
+}
+
+.ctaButtonGreen:hover {
+  background: #166534;
+}
+
+/* Video Section */
+.videoContainer {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Assessment Text */
+.assessmentText {
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+  color: #facc15;
+  font-style: italic;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 1.5;
+  background-color: rgba(250, 204, 21, 0.1);
+  padding: 1rem;
+  border-left: 3px solid #facc15;
+}
+
+/* Footer */
+.footerLinks {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: #d1d5db;
+}
+
+.footerLink {
+  cursor: pointer;
+  text-decoration: underline;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+  color: #ffffff;
+}
+
+.footerContent {
+  margin-top: 1.5rem;
+  color: #d1d5db;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.contactLink {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+.contactLink:hover {
+  text-decoration: underline;
+}
+
+/* Password Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalContent {
+  background-color: #1e293b;
+  padding: 2.5rem;
+  border-radius: 8px;
+  text-align: center;
+  width: 320px;
+  color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modalContent h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.passwordInput {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #4b5563;
+  border-radius: 4px;
+  background-color: #374151;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.confirmButton,
+.cancelButton {
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: opacity 0.2s ease;
+}
+
+.confirmButton {
+  background: #22c55e;
+  color: #fff;
+}
+
+.cancelButton {
+  background: #dc2626;
+  color: #fff;
+  margin-left: 1rem;
+}
+
+.confirmButton:hover,
+.cancelButton:hover {
+  opacity: 0.9;
+}
+
+/* Pitch Section */
+.pitchSection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1e293b;
+  padding: 3rem;
+  z-index: 1000;
+  overflow-y: auto;
+  text-align: left;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #dc2626;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.pitchContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.pitchContent h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.pitchList {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+}
+
+.pitchNavigation {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.navButton {
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.prevButton {
+  background: #2563eb;
+}
+
+.nextButton {
+  background: #22c55e;
+}
+
+.prevButton:hover {
+  background: #1d4ed8;
+}
+
+.nextButton:hover {
+  background: #16a34a;
+}
+
+/* Pricing Packages */
+.packagesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.package {
+  flex: 1 1 300px;
+  max-width: 350px;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.package:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.package h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.packageGreen {
+  border: 2px solid #22c55e;
+  background-color: rgba(34, 197, 94, 0.1);
+}
+
+.packageYellow {
+  border: 2px solid #facc15;
+  background-color: rgba(250, 204, 21, 0.1);
+}
+
+.packageBlue {
+  border: 2px solid #2563eb;
+  background-color: rgba(37, 99, 235, 0.1);
+}
+
+.packageList {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+}
+
+.duration,
+.note {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
