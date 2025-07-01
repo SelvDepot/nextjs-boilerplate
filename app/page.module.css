@@ -1,13 +1,15 @@
 /* General Body & Background */
 .main {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/logo.png");
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  background-repeat: repeat;
   background-attachment: fixed;
   min-height: 100vh;
   padding: 0;
   color: #ffffff;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 500; /* Thicker default weight */
   width: 100%;
   margin: 0;
   box-sizing: border-box;
@@ -44,21 +46,21 @@
 
 .title {
   font-size: 2.75rem;
-  font-weight: 700;
+  font-weight: 700; /* Bold for headings */
   margin: 0;
   letter-spacing: -0.02em;
 }
 
 .subtitle {
   font-size: 1.25rem;
-  font-weight: 300;
+  font-weight: 400; /* Slightly lighter for subtitle */
   margin-top: 0.75rem;
   line-height: 1.4;
   color: #d1d5db;
 }
 
 .subtitleNormal {
-  font-weight: 400;
+  font-weight: 500;
 }
 
 /* Content Wrapper */
@@ -79,6 +81,7 @@
   line-height: 1.7;
   max-width: 800px;
   margin: 1.5rem 0;
+  font-weight: 500; /* Thicker for body text */
 }
 
 .mainContent {
@@ -103,7 +106,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 600; /* Bold buttons */
   transition: all 0.3s ease;
 }
 
@@ -150,6 +153,7 @@
   padding: 1.5rem;
   border-radius: 8px;
   border-left: 4px solid #facc15;
+  font-weight: 500;
 }
 
 /* Footer */
@@ -162,6 +166,7 @@
   color: #d1d5db;
   padding: 2rem 0;
   flex-shrink: 0;
+  font-weight: 500;
 }
 
 .footerLink {
@@ -184,6 +189,7 @@
   line-height: 1.8;
   max-width: 800px;
   margin: 0 auto 2rem;
+  font-weight: 500;
 }
 
 /* Password Modal */
@@ -226,6 +232,7 @@
   background-color: #374151;
   color: #ffffff;
   font-size: 1rem;
+  font-weight: 500;
   transition: border-color 0.2s ease;
 }
 
@@ -279,6 +286,7 @@
   color: #ffffff;
   display: flex;
   flex-direction: column;
+  font-weight: 500;
 }
 
 .closeButton {
@@ -324,6 +332,7 @@
   margin: 1.5rem 0;
   font-size: 1rem;
   line-height: 1.6;
+  font-weight: 500;
 }
 
 .pitchNavigation {
@@ -413,6 +422,7 @@
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 1rem 0;
+  font-weight: 500;
 }
 
 .duration,
@@ -420,6 +430,7 @@
   font-size: 0.9rem;
   margin-top: 1.2rem;
   color: #d1d5db;
+  font-weight: 500;
 }
 
 /* Responsive Design */
