@@ -266,7 +266,10 @@ export default function Page() {
   return (
     <main
       style={{
-        backgroundColor: '#0a0a0a',
+        backgroundImage: 'url("/imagebaggrund.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
         minHeight: '100vh',
         padding: '4rem 2rem',
         color: '#ffffff',
@@ -349,7 +352,29 @@ export default function Page() {
         100% under din egen kontrol.
       </p>
 
-      {/* Video placeholder removed for simplicity, can be re-added if needed */}
+      {/* Video */}
+      <div
+        style={{
+          margin: '3rem auto',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <video
+          controls
+          style={{
+            width: '100%',
+            maxWidth: '700px',
+            borderRadius: '8px',
+            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+          }}
+        >
+          <source src="/intro.mp4" type="video/mp4" />
+          Din browser understøtter ikke video-tagget.
+        </video>
+      </div>
+
       {/* Brødtekst */}
       <div style={{ maxWidth: '800px', margin: '3rem auto', fontSize: '1.2rem', lineHeight: '1.6', color: '#d1d5db' }}>
         <p>
