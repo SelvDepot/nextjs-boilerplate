@@ -58,7 +58,6 @@ export default function Page() {
     },
     {
       title: 'IV. Udbytte – Hvordan MitDepot kommer ind i billedet',
-1500
       content: (
         <>
           <ul className={styles.pitchList}>
