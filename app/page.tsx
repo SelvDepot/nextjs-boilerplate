@@ -431,6 +431,34 @@ export default function Page() {
         at ringe til, hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt ansvar.
       </p>
 
+      {/* Photo Section */}
+      <div
+        style={{
+          margin: '3rem auto',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
+        <img
+          src="/my-photo.jpg" // Replace with your actual photo filename if different
+          alt="SelvDepot Feature"
+          style={{
+            width: '100%',
+            maxWidth: '700px',
+            borderRadius: '8px',
+            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+          }}
+        />
+      </div>
+
+      {/* Professional Description of Services */}
+      <div style={{ maxWidth: '800px', margin: '3rem auto', fontSize: '1.2rem', lineHeight: '1.6', color: '#d1d5db', textAlign: 'center' }}>
+        <p>
+          Hos SelvDepot tilbyder vi tre forskellige serviceniveauer – "Klar til at eje", "Ejer med overblik" og "Fuld kontrol" – designet til at matche dine specifikke behov som Bitcoin-ejer. Hvert niveau skræddersyes efter din situation, og vi kuraterer løsninger baseret på en grundig vurdering af dine tekniske færdigheder, sikkerhedskrav og fremtidige planer. Uanset niveauet får du personlig vejledning og support, så du kan tage fuld kontrol over dine midler med ro i sindet.
+        </p>
+      </div>
+
       {/* Footer-links */}
       <div
         style={{
