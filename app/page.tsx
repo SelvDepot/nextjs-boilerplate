@@ -274,98 +274,80 @@ export default function Page() {
         padding: '4rem 2rem',
         color: '#ffffff',
         fontFamily: 'Poppins, sans-serif',
-        textAlign: 'center',
       }}
     >
-      {/* Logo og titel */}
-      <div
-        style={{
-          position: 'relative',
-          maxWidth: '1200px',
-          margin: '0 auto',
-        }}
-      >
-        <img
-          src="/logo.png"
-          alt="SelvDepot Logo"
-          style={{
-            maxWidth: '200px',
-            position: 'absolute',
-            top: '1rem',
-            left: '1rem',
-            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-          }}
-        />
-        <div style={{ marginTop: '3rem' }}>
-          <h1 style={{ fontSize: '3rem', fontWeight: '700', margin: '0 0 1rem' }}>SelvDepot</h1>
-          <h2 style={{ fontSize: '1.8rem', fontWeight: '500', color: '#d1d5db', marginBottom: '2rem' }}>
-            Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
-            <br />
-            <span style={{ fontWeight: 'normal' }}>Sikkert. Privat. For evigt.</span>
-          </h2>
+      {/* Header */}
+      <header style={{ width: '100%', padding: '2rem 0', textAlign: 'center' }}>
+        <div style={{ position: 'relative', maxWidth: '1200px', margin: '0 auto' }}>
+          <img
+            src="/logo.png"
+            alt="SelvDepot Logo"
+            style={{
+              maxWidth: '200px',
+              position: 'absolute',
+              top: '0',
+              left: '2rem',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+            }}
+          />
+          <div>
+            <h1 style={{ fontSize: '3rem', fontWeight: '700', margin: '0 0 1rem' }}>SelvDepot</h1>
+            <h2 style={{ fontSize: '1.8rem', fontWeight: '500', color: '#d1d5db' }}>
+              Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
+              <br />
+              <span style={{ fontWeight: 'normal' }}>Sikkert. Privat. For evigt.</span>
+            </h2>
+          </div>
         </div>
-      </div>
+      </header>
 
       {/* Intro */}
-      <p style={{ maxWidth: '800px', margin: '2rem auto', fontSize: '1.2rem', lineHeight: '1.6', color: '#d1d5db' }}>
-        Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
-        <br />
-        Dine penge. Din fremtid. Din familie. Tag kontrol.
-      </p>
-
-      {/* Book-møde efter intro */}
-      <div style={{ marginTop: '2rem', textAlign: 'center' }}>
-        <a
-          href="https://calendly.com/selvdepot/30min"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            background: '#10b981',
-            color: '#ffffff',
-            padding: '1rem 2rem',
-            borderRadius: '9999px',
-            textDecoration: 'none',
-            fontSize: '1.1rem',
-            fontWeight: '600',
-            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-          }}
-        >
-          Book et gratis 30-minutters møde
-        </a>
-      </div>
+      <section style={{ width: '90%', margin: '0 auto 2rem', fontSize: '1.2rem', lineHeight: '1.6', color: '#d1d5db' }}>
+        <p>
+          Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
+          <br />
+          Dine penge. Din fremtid. Din familie. Tag kontrol.
+        </p>
+        <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+          <a
+            href="https://calendly.com/selvdepot/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              background: '#10b981',
+              color: '#ffffff',
+              padding: '1rem 2rem',
+              borderRadius: '9999px',
+              textDecoration: 'none',
+              fontSize: '1.1rem',
+              fontWeight: '600',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+            }}
+          >
+            Book et gratis 30-minutters møde
+          </a>
+        </div>
+      </section>
 
       {/* Hvad Bitcoin er */}
-      <p
-        style={{
-          maxWidth: '800px',
-          margin: '3rem auto',
-          fontSize: '1.2rem',
-          lineHeight: '1.6',
-          color: '#d1d5db',
-        }}
-      >
-        Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
-        med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen.
-        Ingen banker. Ingen stater. Ingen modparter.
-        Men uden korrekt opbevaring forsvinder sikkerheden og suveræniteten.
-        Hos SelvDepot lærer du at holde dine Bitcoin, som de var tiltænkt:
-        100% under din egen kontrol.
-      </p>
+      <section style={{ width: '90%', margin: '4rem auto', fontSize: '1.2rem', lineHeight: '1.6', color: '#d1d5db' }}>
+        <p>
+          Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
+          med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen.
+          Ingen banker. Ingen stater. Ingen modparter.
+          Men uden korrekt opbevaring forsvinder sikkerheden og suveræniteten.
+          Hos SelvDepot lærer du at holde dine Bitcoin, som de var tiltænkt:
+          100% under din egen kontrol.
+        </p>
+      </section>
 
       {/* Video */}
-      <div
-        style={{
-          margin: '3rem auto',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
+      <section style={{ width: '90%', margin: '4rem auto', display: 'flex', justifyContent: 'center' }}>
         <video
           controls
           style={{
             width: '100%',
-            maxWidth: '700px',
+            maxWidth: '1200px',
             borderRadius: '8px',
             boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
           }}
@@ -373,10 +355,10 @@ export default function Page() {
           <source src="/intro.mp4" type="video/mp4" />
           Din browser understøtter ikke video-tagget.
         </video>
-      </div>
+      </section>
 
       {/* Brødtekst */}
-      <div style={{ maxWidth: '800px', margin: '3rem auto', fontSize: '1.2rem', lineHeight: '1.6', color: '#d1d5db' }}>
+      <section style={{ width: '90%', margin: '4rem auto', fontSize: '1.2rem', lineHeight: '1.6', color: '#d1d5db' }}>
         <p>
           Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden hvor det
           traditionelle FIAT-system suger livet ud af dine beholdninger og aktiver gennem inflation
@@ -387,127 +369,125 @@ export default function Page() {
           nogensinde rører dine private keys. Dette er ikke bare en chance for 100% kontrol og tryghed.
           Det er din sidste udvej før dørene lukker, og du bliver fanget i et forgængeligt system.
         </p>
-      </div>
-
-      {/* Sekundær CTA */}
-      <div style={{ marginTop: '2rem', textAlign: 'center' }}>
-        <a
-          href="https://calendly.com/selvdepot/30min"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            background: '#15803d',
-            color: '#fff',
-            padding: '1rem 2rem',
-            borderRadius: '4px',
-            textDecoration: 'none',
-            fontSize: '1.1rem',
-            fontWeight: '600',
-            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-          }}
-        >
-          Klar til at tage ansvar? Book et kald nu
-        </a>
-      </div>
+        <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+          <a
+            href="https://calendly.com/selvdepot/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              background: '#15803d',
+              color: '#fff',
+              padding: '1rem 2rem',
+              borderRadius: '4px',
+              textDecoration: 'none',
+              fontSize: '1.1rem',
+              fontWeight: '600',
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+            }}
+          >
+            Klar til at tage ansvar? Book et kald nu
+          </a>
+        </div>
+      </section>
 
       {/* Vurderingstekst */}
-      <p
-        style={{
-          maxWidth: '600px',
-          margin: '3rem auto',
-          fontSize: '1rem',
-          color: '#facc15',
-          fontStyle: 'italic',
-          lineHeight: '1.6',
-        }}
-      >
-        Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
-        self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har
-        de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger –
-        vil du blive afvist, men med mulighed for undervisning og støtte, indtil du er klar.
-        <br />
-        <br />
-        Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller hjælpelinje
-        at ringe til, hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt ansvar.
-      </p>
+      <section style={{ width: '90%', margin: '4rem auto', fontSize: '1rem', color: '#facc15', fontStyle: 'italic', lineHeight: '1.6' }}>
+        <p>
+          Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
+          self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har
+          de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger –
+          vil du blive afvist, men med mulighed for undervisning og støtte, indtil du er klar.
+          <br />
+          <br />
+          Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller hjælpelinje
+          at ringe til, hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt ansvar.
+        </p>
+      </section>
 
       {/* Photo Section */}
-      <div
-        style={{
-          margin: '3rem auto',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}
-      >
+      <section style={{ width: '90%', margin: '4rem auto', display: 'flex', justifyContent: 'center' }}>
         <img
-          src="/Rådgivnings-niveauer.png" // Corrected filename
+          src="/Rådgivnings-niveauer.png"
           alt="SelvDepot Feature"
           style={{
             width: '100%',
-            maxWidth: '700px',
+            maxWidth: '1200px',
             borderRadius: '8px',
             boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
           }}
         />
-      </div>
+      </section>
 
       {/* Professional Description of Services */}
-      <div style={{ maxWidth: '800px', margin: '3rem auto', fontSize: '1.2rem', lineHeight: '1.6', color: '#d1d5db', textAlign: 'center' }}>
+      <section style={{ width: '90%', margin: '4rem auto', fontSize: '1.2rem', lineHeight: '1.6', color: '#d1d5db', textAlign: 'center' }}>
         <p>
           Hos SelvDepot tilbyder vi tre forskellige serviceniveauer – "Klar til at eje", "Ejer med overblik" og "Fuld kontrol" – designet til at matche dine specifikke behov som Bitcoin-ejer. Hvert niveau skræddersyes efter din situation, og vi kuraterer løsninger baseret på en grundig vurdering af dine tekniske færdigheder, sikkerhedskrav og fremtidige planer. Uanset niveauet får du personlig vejledning og support, så du kan tage fuld kontrol over dine midler med ro i sindet.
         </p>
-      </div>
+      </section>
 
-      {/* Footer-links */}
-      <div
-        style={{
-          marginTop: '4rem',
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '2rem',
-          flexWrap: 'wrap',
-          fontSize: '1rem',
-          color: '#d1d5db',
-        }}
-      >
-        {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
-          <p
-            key={section}
-            onClick={() => setActiveSection(activeSection === section ? null : section)}
-            style={{
-              cursor: 'pointer',
-              textDecoration: 'underline',
-              margin: 0,
-            }}
-          >
-            {section}
-          </p>
-        ))}
-      </div>
-
-      {/* Footer indhold */}
-      {activeSection === 'Kontakt' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '1rem', textAlign: 'center' }}>
-          <p>
-            📬 Email:{' '}
-            <a href="mailto:Selvdepot@gmail.com" style={{ color: '#60a5fa' }}>
-              Selvdepot@gmail.com
-            </a>
-          </p>
-          <p>
-            📅 Book:{' '}
-            <a
-              href="https://calendly.com/selvdepot/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: '#60a5fa' }}
-            >
-              calendly.com/selvdepot/30min
-            </a>
-          </p>
+      {/* Footer */}
+      <footer style={{ width: '100%', padding: '2rem 0', backgroundColor: 'rgba(30, 41, 59, 0.9)', textAlign: 'center' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', color: '#d1d5db', fontSize: '1rem' }}>
+            {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
+              <p
+                key={section}
+                onClick={() => setActiveSection(activeSection === section ? null : section)}
+                style={{ cursor: 'pointer', textDecoration: 'underline', margin: 0 }}
+              >
+                {section}
+              </p>
+            ))}
+          </div>
+          {activeSection === 'Kontakt' && (
+            <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '1rem', textAlign: 'center' }}>
+              <p>
+                📬 Email:{' '}
+                <a href="mailto:Selvdepot@gmail.com" style={{ color: '#60a5fa' }}>
+                  Selvdepot@gmail.com
+                </a>
+              </p>
+              <p>
+                📅 Book:{' '}
+                <a
+                  href="https://calendly.com/selvdepot/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#60a5fa' }}
+                >
+                  calendly.com/selvdepot/30min
+                </a>
+              </p>
+            </div>
+          )}
+          {activeSection === 'Disclaimer' && (
+            <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '1rem', textAlign: 'center' }}>
+              <p>
+                Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk,
+                finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene undervisning
+                og værktøjer til selvstændig opbevaring af Bitcoin.
+              </p>
+            </div>
+          )}
+          {activeSection === 'Privatliv' && (
+            <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '1rem', textAlign: 'center' }}>
+              <p>
+                Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly
+                håndteres dine oplysninger af dem under deres politikker. Vi bruger ikke cookies eller analytics.
+              </p>
+            </div>
+          )}
+          {activeSection === 'Vilkår' && (
+            <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '1rem', textAlign: 'center' }}>
+              <p>
+                Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
+                Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
+              </p>
+            </div>
+          )}
         </div>
-      )}
+      </footer>
+
       {/* Pitch-sektion */}
       {activeSection === 'Pitch' && showPitch && (
         <div
@@ -669,31 +649,6 @@ export default function Page() {
               </div>
             </form>
           </div>
-        </div>
-      )}
-      {activeSection === 'Disclaimer' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '1rem', textAlign: 'center' }}>
-          <p>
-            Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk,
-            finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene undervisning
-            og værktøjer til selvstændig opbevaring af Bitcoin.
-          </p>
-        </div>
-      )}
-      {activeSection === 'Privatliv' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '1rem', textAlign: 'center' }}>
-          <p>
-            Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly
-            håndteres dine oplysninger af dem under deres politikker. Vi bruger ikke cookies eller analytics.
-          </p>
-        </div>
-      )}
-      {activeSection === 'Vilkår' && (
-        <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '1rem', textAlign: 'center' }}>
-          <p>
-            Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
-            Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
-          </p>
         </div>
       )}
     </main>
