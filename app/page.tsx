@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import styles from './page.module.css'; // Import the CSS module
+import styles from './page.module.css';
 
 export default function Page() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -11,7 +11,6 @@ export default function Page() {
   const [showPasswordModal, setShowPasswordModal] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
 
-  // Pitch-indhold opdelt i sektioner
   const pitchContent = [
     {
       title: 'I. Indledning – Hvad er MitDepot?',
@@ -54,12 +53,12 @@ export default function Page() {
             <li>Trusselsanalyse, Svigtepunksanalyse, Privatlivsbehov.</li>
           </ul>
           <p>Du får hjælp til hele opsætningen – uden at vi nogensinde har adgang til dine midler, enhed eller lignende.</p>
-          <ul className={styles.pitchList}></ul>
         </>
       ),
     },
     {
       title: 'IV. Udbytte – Hvordan MitDepot kommer ind i billedet',
+1500
       content: (
         <>
           <ul className={styles.pitchList}>
@@ -91,44 +90,37 @@ export default function Page() {
       title: 'VI. Pakker & Priser',
       content: (
         <div className={styles.packagesContainer}>
-          {/* Pakke: Klar til at eje */}
-          <div className={styles.package} style={{ border: '2px solid #22c55e', backgroundColor: 'rgba(34, 197, 94, 0.1)' }}>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-              🟠 Klar til at eje
-            </h3>
+          <div className={`${styles.package} ${styles.packageGreen}`}>
+            <h3>🟠 Klar til at eje</h3>
             <p>
               <strong>Pris:</strong> 10.000 kr.
               <br />
               Til dig, der vil i gang – eller optimere det, du allerede har.
             </p>
             <p>Inkluderer:</p>
-            <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', fontSize: '0.9rem' }}>
+            <ul className={styles.packageList}>
               <li>Hardware wallet opsætning</li>
               <li>Single-sig med/uden passphrase</li>
               <li>Backup-strategi og risikoforståelse</li>
               <li>Grundlæggende sikkerhed og vaner</li>
               <li>Pakken bruges også til gennemgang af eksisterende opsætning (hvis ønsket)</li>
             </ul>
-            <p style={{ fontSize: '0.9rem' }}>
+            <p className={styles.duration}>
               <strong>Varighed:</strong> Ca. 2 timer
             </p>
-            <p style={{ fontSize: '0.9rem' }}>
+            <p className={styles.note}>
               <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
             </p>
           </div>
-
-          {/* Pakke: Ejer med overblik */}
-          <div className={styles.package} style={{ border: '2px solid #facc15', backgroundColor: 'rgba(250, 204, 21, 0.1)' }}>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-              🟡 Ejer med overblik
-            </h3>
+          <div className={`${styles.package} ${styles.packageYellow}`}>
+            <h3>🟡 Ejer med overblik</h3>
             <p>
               <strong>Pris:</strong> 20.000 kr.
               <br />
               Til dig med større mængder bitcoin og behov for teknisk dybde.
             </p>
             <p>Inkluderer:</p>
-            <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', fontSize: '0.9rem' }}>
+            <ul className={styles.packageList}>
               <li>Alt i første pakke</li>
               <li>Rådgivning om hardware wallets</li>
               <li>Airgapped wallet-struktur</li>
@@ -136,26 +128,22 @@ export default function Page() {
               <li>Skræddersyet recovery-plan/guide</li>
               <li>Fokus på back-up, sikkerhed og gennemgang af angrebsvektorer</li>
             </ul>
-            <p style={{ fontSize: '0.9rem' }}>
+            <p className={styles.duration}>
               <strong>Varighed:</strong> 2–4 timer (ekslusiv Node download)
             </p>
-            <p style={{ fontSize: '0.9rem' }}>
+            <p className={styles.note}>
               <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
             </p>
           </div>
-
-          {/* Pakke: Fuld kontrol */}
-          <div className={styles.package} style={{ border: '2px solid #2563eb', backgroundColor: 'rgba(37, 99, 235, 0.1)' }}>
-            <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-              🔵 Fuld kontrol
-            </h3>
+          <div className={`${styles.package} ${styles.packageBlue}`}>
+            <h3>🔵 Fuld kontrol</h3>
             <p>
               <strong>Pris:</strong> 45.000 kr.
               <br />
               Til dig, der ønsker suveræn sikkerhed – for livet og for arvingerne.
             </p>
             <p>Inkluderer:</p>
-            <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', fontSize: '0.9rem' }}>
+            <ul className={styles.packageList}>
               <li>Alt i “Ejer med overblik”</li>
               <li>Multisig-opsætning (hvis relevant)</li>
               <li>Udvidet trusselsanalyse, svigtpunksanalyse</li>
@@ -164,10 +152,10 @@ export default function Page() {
               <li>UTXO-management, privat bevidahed</li>
               <li>Ét gratis check-up inden for 4 måneder</li>
             </ul>
-            <p style={{ fontSize: '0.9rem' }}>
+            <p className={styles.duration}>
               <strong>Varighed:</strong> Fleksibel efter behov og kompleksitet
             </p>
-            <p style={{ fontSize: '0.9rem' }}>
+            <p className={styles.note}>
               <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
             </p>
           </div>
@@ -176,7 +164,6 @@ export default function Page() {
     },
   ];
 
-  // Håndter adgangskode for pitch med censureret input
   const handlePitchAccess = () => {
     setShowPasswordModal(true);
   };
@@ -188,14 +175,13 @@ export default function Page() {
       setActiveSection('Pitch');
       setCurrentPitchPage(0);
       setShowPasswordModal(false);
-      setPasswordInput(''); // Ryd input efter succes
+      setPasswordInput('');
     } else {
       alert('Forkert adgangskode. Prøv igen.');
-      setPasswordInput(''); // Ryd input ved fejl
+      setPasswordInput('');
     }
   };
 
-  // Tastaturgenvej til at udløse pitch-adgang (Ctrl + P)
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.ctrlKey && event.key === 'p') {
@@ -207,7 +193,6 @@ export default function Page() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [passwordInput]);
 
-  // Navigation i pitch
   const handleNextPage = () => {
     if (currentPitchPage < pitchContent.length - 1) {
       setCurrentPitchPage(currentPitchPage + 1);
@@ -220,7 +205,6 @@ export default function Page() {
     }
   };
 
-  // Luk pitch
   const handleClosePitch = () => {
     setShowPitch(false);
     setActiveSection(null);
@@ -234,17 +218,10 @@ export default function Page() {
 
   return (
     <main className={styles.main}>
-      {/* Logo og titel */}
       <div className={styles.header}>
-        <img
-          src="/logo.png"
-          alt="MitDepot Logo"
-          className={styles.logo}
-        />
+        <img src="/logo.png" alt="MitDepot Logo" className={styles.logo} />
         <div>
-          <h1 className={styles.title}>
-            MitDepot
-          </h1>
+          <h1 className={styles.title}>MitDepot</h1>
           <h2 className={styles.subtitle}>
             Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
             <br />
@@ -254,14 +231,12 @@ export default function Page() {
       </div>
 
       <div className={styles.contentWrapper}>
-        {/* Intro */}
         <p className={styles.intro}>
           Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
           <br />
           Dine penge. Din fremtid. Din familie. Tag kontrol.
         </p>
 
-        {/* Book-møde efter intro */}
         <div className={styles.cta}>
           <a
             href="https://calendly.com/selvdepot/30min"
@@ -273,7 +248,6 @@ export default function Page() {
           </a>
         </div>
 
-        {/* Hvad Bitcoin er */}
         <p className={styles.description}>
           Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
           med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen.
@@ -283,18 +257,13 @@ export default function Page() {
           100% under din egen kontrol!
         </p>
 
-        {/* Video */}
         <div className={styles.videoContainer}>
-          <video
-            controls
-            className={styles.video}
-          >
+          <video controls className={styles.video}>
             <source src="/intro.mp4" type="video/mp4" />
             Din browser understøtter ikke video-tagget.
           </video>
         </div>
 
-        {/* Brødtekst */}
         <div className={styles.mainContent}>
           <p>
             Bitcoin self-custody ved hjælp af MitDepot er din livbåd i en verden hvor det
@@ -308,7 +277,6 @@ export default function Page() {
           </p>
         </div>
 
-        {/* Sekundær CTA */}
         <div className={styles.secondaryCta}>
           <a
             href="https://calendly.com/selvdepot/30min"
@@ -320,7 +288,6 @@ export default function Page() {
           </a>
         </div>
 
-        {/* Vurderingstekst */}
         <p className={styles.assessmentText}>
           Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
           self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har
@@ -333,7 +300,6 @@ export default function Page() {
         </p>
       </div>
 
-      {/* Footer-links */}
       <div className={styles.footerLinks}>
         {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
           <p
@@ -346,12 +312,11 @@ export default function Page() {
         ))}
       </div>
 
-      {/* Footer indhold */}
       {activeSection === 'Kontakt' && (
         <div className={styles.footerContent}>
           <p>
             📬 Email:{' '}
-            <a href="mailto:selvdepot@gmail.com" style={{ color: '#60a5fa' }}>
+            <a href="mailto:selvdepot@gmail.com" className={styles.footerLink}>
               SelvDepot@gmail.com
             </a>
           </p>
@@ -361,41 +326,29 @@ export default function Page() {
               href="https://calendly.com/selvdepot/30min"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ color: '#60a5fa' }}
+              className={styles.footerLink}
             >
               calendly.com/selvdepot/30min
             </a>
           </p>
         </div>
       )}
-      {/* Pitch-sektion */}
       {activeSection === 'Pitch' && showPitch && (
         <div className={styles.pitchSection}>
-          <button
-            onClick={handleClosePitch}
-            className={styles.closeButton}
-          >
+          <button onClick={handleClosePitch} className={styles.closeButton}>
             Luk
           </button>
           <div className={styles.pitchContent}>
-            <h2>
-              {pitchContent[currentPitchPage].title}
-            </h2>
+            <h2>{pitchContent[currentPitchPage].title}</h2>
             {pitchContent[currentPitchPage].content}
             <div className={styles.pitchNavigation}>
               {currentPitchPage > 0 && (
-                <button
-                  onClick={handlePreviousPage}
-                  className={`${styles.navButton} ${styles.prevButton}`}
-                >
+                <button onClick={handlePreviousPage} className={`${styles.navButton} ${styles.prevButton}`}>
                   Forrige
                 </button>
               )}
               {currentPitchPage < pitchContent.length - 1 && (
-                <button
-                  onClick={handleNextPage}
-                  className={`${styles.navButton} ${styles.nextButton}`}
-                >
+                <button onClick={handleNextPage} className={`${styles.navButton} ${styles.nextButton}`}>
                   Næste
                 </button>
               )}
@@ -403,7 +356,6 @@ export default function Page() {
           </div>
         </div>
       )}
-      {/* Password Modal */}
       {showPasswordModal && (
         <div className={styles.modal}>
           <div className={styles.modalContent}>
@@ -417,17 +369,10 @@ export default function Page() {
                 placeholder="Indtast kode"
               />
               <div>
-                <button
-                  type="submit"
-                  className={styles.confirmButton}
-                >
+                <button type="submit" className={styles.confirmButton}>
                   Bekræft
                 </button>
-                <button
-                  type="button"
-                  onClick={handleClosePasswordModal}
-                  className={styles.cancelButton}
-                >
+                <button type="button" onClick={handleClosePasswordModal} className={styles.cancelButton}>
                   Annuller
                 </button>
               </div>
