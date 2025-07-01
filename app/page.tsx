@@ -330,7 +330,7 @@ export default function Page() {
       {/* Book-møde efter intro */}
       <div style={{ marginTop: '1rem', textAlign: 'center' }}>
         <a
-          href="https://calendly.com/mitdepot/30min"
+          href="https://calendly.com/selvdepot/30min"
           target="_blank"
           rel="noopener noreferrer"
           style={{
@@ -364,7 +364,7 @@ export default function Page() {
         Ingen banker. Ingen stater. Ingen modparter.
         Men uden korrekt opbevaring forsvinder sikkerheden og suveræniteten.
         Hos MitDepot lærer du at holde dine Bitcoin, som de var tiltænkt:
-        100% under din egen kontrol.
+        100% under din egen kontrol!
       </p>
 
       {/* Video */}
@@ -407,7 +407,7 @@ export default function Page() {
       {/* Sekundær CTA */}
       <div style={{ marginTop: '2rem', textAlign: 'center' }}>
         <a
-          href="https://calendly.com/mitdepot/30min"
+          href="https://calendly.com/selvdepot/30min"
           target="_blank"
           rel="noopener noreferrer"
           style={{
@@ -488,12 +488,12 @@ export default function Page() {
           <p>
             📅 Book:{' '}
             <a
-              href="https://calendly.com/mitdepot/30min"
+              href="https://calendly.com/selvdepot/30min"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: '#60a5fa' }}
             >
-              calendly.com/mitdepot/30min
+              calendly.com/selvdepot/30min
             </a>
           </p>
         </div>
