@@ -272,8 +272,8 @@ export default function Page() {
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
                 transition: 'transform 0.2s',
               }}
-              onMouseEnter={(e) => (e.target.style.transform = 'scale(1.05)')}
-              onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
+              onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => (e.target as HTMLAnchorElement).style.transform = 'scale(1.05)'}
+              onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => (e.target as HTMLAnchorElement).style.transform = 'scale(1)'}
             >
               Book et gratis 30-minutters møde
             </a>
@@ -329,8 +329,8 @@ export default function Page() {
                 boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
                 transition: 'transform 0.2s',
               }}
-              onMouseEnter={(e) => (e.target.style.transform = 'scale(1.05)')}
-              onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
+              onMouseEnter={(e: React.MouseEvent<HTMLAnchorElement>) => (e.target as HTMLAnchorElement).style.transform = 'scale(1.05)'}
+              onMouseLeave={(e: React.MouseEvent<HTMLAnchorElement>) => (e.target as HTMLAnchorElement).style.transform = 'scale(1)'}
             >
               Klar til at tage ansvar? Book et kald nu
             </a>
