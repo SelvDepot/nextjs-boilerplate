@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { useState, useEffect } from 'react';
+import styles from './page.module.css';
 
 export default function Page() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -88,7 +89,6 @@ export default function Page() {
       title: 'VI. Pakker & Priser',
       content: (
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1rem', justifyItems: 'center' }}>
-          {/* Pakke: Klar til at eje */}
           <div style={{ padding: '1.5rem', border: '2px solid #22c55e', borderRadius: '8px', backgroundColor: 'rgba(34, 197, 94, 0.1)', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
             <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>🟠 Klar til at eje</h3>
             <p><strong>Pris:</strong> 10.000 kr.<br />Til dig, der vil i gang – eller optimere det, du allerede har.</p>
@@ -102,7 +102,6 @@ export default function Page() {
             </ul>
             <p style={{ fontSize: '0.9rem' }}><strong>Varighed:</strong> Ca. 2 timer<br /><strong>Note:</strong> Vi stopper ikke før det virker, er testet og forstået.</p>
           </div>
-          {/* Pakke: Ejer med overblik */}
           <div style={{ padding: '1.5rem', border: '2px solid #facc15', borderRadius: '8px', backgroundColor: 'rgba(250, 204, 21, 0.1)', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
             <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>🟡 Ejer med overblik</h3>
             <p><strong>Pris:</strong> 20.000 kr.<br />Til dig med større mængder bitcoin og behov for teknisk dybde.</p>
@@ -117,7 +116,6 @@ export default function Page() {
             </ul>
             <p style={{ fontSize: '0.9rem' }}><strong>Varighed:</strong> 2–4 timer (ekslusiv Node download)</p>
           </div>
-          {/* Pakke: Fuld kontrol */}
           <div style={{ padding: '1.5rem', border: '2px solid #2563eb', borderRadius: '8px', backgroundColor: 'rgba(37, 99, 235, 0.1)', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
             <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>🔵 Fuld kontrol</h3>
             <p><strong>Pris:</strong> 45.000 kr.<br />Til dig, der ønsker suveræn sikkerhed – for livet og for arvingerne.</p>
@@ -190,22 +188,7 @@ export default function Page() {
         margin: '0 auto',
       }}
     >
-      {/* Header */}
-      <header
-        style={{
-          gridColumn: '1 / 4',
-          position: 'fixed',
-          top: 0,
-          width: '100%',
-          height: '80px',
-          background: 'rgba(30, 41, 59, 0.95)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
-          zIndex: 1000,
-        }}
-      >
+      <header className={styles.header}>
         <img src="/logo.png" alt="SelvDepot Logo" style={{ maxWidth: '200px', marginRight: '2rem' }} />
         <div>
           <h1 style={{ fontSize: '48px', fontWeight: 700, margin: 0 }}>SelvDepot</h1>
@@ -217,9 +200,7 @@ export default function Page() {
         </div>
       </header>
 
-      {/* Main Content */}
       <div style={{ gridColumn: '2 / 3', padding: '100px 2rem 2rem' }}>
-        {/* Intro */}
         <section style={{ marginBottom: '2rem' }}>
           <p style={{ fontSize: '18px', lineHeight: '1.8', color: '#d1d5db' }}>
             Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
@@ -230,27 +211,13 @@ export default function Page() {
               href="https://calendly.com/selvdepot/30min"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                background: 'linear-gradient(90deg, #10b981, #065f46)',
-                color: '#ffffff',
-                padding: '1.5rem 3rem',
-                borderRadius: '9999px',
-                textDecoration: 'none',
-                fontSize: '18px',
-                fontWeight: 600,
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-                transition: 'transform 0.2s',
-                ':hover': { transform: 'scale(1.05)' },
-              }}
-              onMouseEnter={(e) => (e.target.style.transform = 'scale(1.05)')}
-              onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
+              className={styles.ctaButton}
             >
               Book et gratis 30-minutters møde
             </a>
           </div>
         </section>
 
-        {/* Hvad Bitcoin er */}
         <section style={{ margin: '4rem 0' }}>
           <p style={{ fontSize: '18px', lineHeight: '1.8', color: '#d1d5db' }}>
             Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
@@ -262,16 +229,14 @@ export default function Page() {
           </p>
         </section>
 
-        {/* Video */}
         <section style={{ margin: '4rem 0', display: 'flex', justifyContent: 'center' }}>
-          <video controls style={{ maxWidth: '1000px', width: '100%', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', objectFit: 'cover' }}>
+          <video controls className={styles.media}>
             <source src="/intro.mp4" type="video/mp4" />
             Din browser understøtter ikke video-tagget.
           </video>
-          <p style={{ fontSize: '14px', color: '#d1d5db', textAlign: 'center' }}>Introduktion til SelvDepot</p>
+          <p className={styles.caption}>Introduktion til SelvDepot</p>
         </section>
 
-        {/* Brødtekst */}
         <section style={{ margin: '4rem 0' }}>
           <p style={{ fontSize: '18px', lineHeight: '1.8', color: '#d1d5db' }}>
             Bitcoin self-custody ved hjælp af SelvDepot er din livbåd i en verden hvor det
@@ -288,27 +253,13 @@ export default function Page() {
               href="https://calendly.com/selvdepot/30min"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                background: 'linear-gradient(90deg, #10b981, #065f46)',
-                color: '#ffffff',
-                padding: '1.5rem 3rem',
-                borderRadius: '4px',
-                textDecoration: 'none',
-                fontSize: '18px',
-                fontWeight: 600,
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-                transition: 'transform 0.2s',
-                ':hover': { transform: 'scale(1.05)' },
-              }}
-              onMouseEnter={(e) => (e.target.style.transform = 'scale(1.05)')}
-              onMouseLeave={(e) => (e.target.style.transform = 'scale(1)')}
+              className={styles.secondaryCta}
             >
               Klar til at tage ansvar? Book et kald nu
             </a>
           </div>
         </section>
 
-        {/* Vurderingstekst */}
         <section style={{ margin: '4rem 0', fontSize: '18px', color: '#facc15', fontStyle: 'italic', lineHeight: '1.8' }}>
           <p>
             Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
@@ -321,13 +272,11 @@ export default function Page() {
           </p>
         </section>
 
-        {/* Photo Section */}
         <section style={{ margin: '4rem 0', display: 'flex', justifyContent: 'center' }}>
-          <img src="/Rådgivnings-niveauer.png" alt="SelvDepot Feature" style={{ maxWidth: '1000px', width: '100%', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', objectFit: 'cover' }} />
-          <p style={{ fontSize: '14px', color: '#d1d5db', textAlign: 'center' }}>Rådgivningsniveauer hos SelvDepot</p>
+          <img src="/Rådgivnings-niveauer.png" alt="SelvDepot Feature" className={styles.media} />
+          <p className={styles.caption}>Rådgivningsniveauer hos SelvDepot</p>
         </section>
 
-        {/* Professional Description of Services */}
         <section style={{ margin: '4rem 0', fontSize: '18px', lineHeight: '1.8', color: '#d1d5db', textAlign: 'center' }}>
           <p>
             Hos SelvDepot tilbyder vi tre forskellige serviceniveauer – "Klar til at eje", "Ejer med overblik" og "Fuld kontrol" – designet til at matche dine specifikke behov som Bitcoin-ejer. Hvert niveau skræddersyes efter din situation, og vi kuraterer løsninger baseret på en grundig vurdering af dine tekniske færdigheder, sikkerhedskrav og fremtidige planer. Uanset niveauet får du personlig vejledning og support, så du kan tage fuld kontrol over dine midler med ro i sindet.
@@ -335,82 +284,50 @@ export default function Page() {
         </section>
       </div>
 
-      {/* Footer */}
-      <footer style={{ gridColumn: '1 / 4', padding: '2rem 0', backgroundColor: '#1e293b', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '2rem', maxWidth: '1400px', margin: '0 auto' }}>
-        <div style={{ textAlign: 'center' }}>
+      <footer className={styles.footer}>
+        <div className={styles.footerSection}>
           <img src="/logo.png" alt="SelvDepot Logo" style={{ maxWidth: '150px', marginBottom: '1rem' }} />
         </div>
-        <div style={{ textAlign: 'center' }}>
+        <div className={styles.footerSection}>
           {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
             <p
               key={section}
               onClick={() => setActiveSection(activeSection === section ? null : section)}
-              style={{ fontSize: '18px', cursor: 'pointer', textDecoration: 'underline', margin: '0.5rem 0', color: '#d1d5db' }}
+              style={{ margin: '0.5rem 0', cursor: 'pointer', textDecoration: 'underline' }}
             >
               {section}
             </p>
           ))}
         </div>
         {activeSection === 'Kontakt' && (
-          <div style={{ textAlign: 'center', color: '#d1d5db', fontSize: '18px' }}>
+          <div className={styles.footerSection}>
             <p>📬 Email: <a href="mailto:Selvdepot@gmail.com" style={{ color: '#60a5fa' }}>Selvdepot@gmail.com</a></p>
             <p>📅 Book: <a href="https://calendly.com/selvdepot/30min" target="_blank" rel="noopener noreferrer" style={{ color: '#60a5fa' }}>calendly.com/selvdepot/30min</a></p>
           </div>
         )}
         {activeSection === 'Disclaimer' && (
-          <div style={{ textAlign: 'center', color: '#d1d5db', fontSize: '18px' }}>
+          <div className={styles.footerSection}>
             <p>Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk, finansiel, skattemæssig eller investeringsrådgivning. SelvDepot tilbyder alene undervisning og værktøjer til selvstændig opbevaring af Bitcoin.</p>
           </div>
         )}
         {activeSection === 'Privatliv' && (
-          <div style={{ textAlign: 'center', color: '#d1d5db', fontSize: '18px' }}>
+          <div className={styles.footerSection}>
             <p>Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly håndteres dine oplysninger af dem under deres politikker. Vi bruger ikke cookies eller analytics.</p>
           </div>
         )}
         {activeSection === 'Vilkår' && (
-          <div style={{ textAlign: 'center', color: '#d1d5db', fontSize: '18px' }}>
+          <div className={styles.footerSection}>
             <p>Ved brug af SelvDepot accepterer du, at alt indhold er til uddannelsesmæssige formål. Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.</p>
           </div>
         )}
       </footer>
 
-      {/* Pitch-sektion */}
       {activeSection === 'Pitch' && showPitch && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            backgroundColor: '#1e293b',
-            padding: '3rem',
-            zIndex: 1000,
-            overflowY: 'auto',
-            textAlign: 'left',
-            fontSize: '18px',
-            lineHeight: '1.8',
-            color: '#ffffff',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-          }}
-        >
+        <div className={styles.pitchModal}>
           <button
             onClick={handleClosePitch}
-            style={{
-              position: 'absolute',
-              top: '1rem',
-              right: '1rem',
-              background: '#dc2626',
-              color: '#fff',
-              padding: '0.5rem 1rem',
-              borderRadius: '4px',
-              border: 'none',
-              cursor: 'pointer',
-              fontWeight: 'bold',
-              fontSize: '18px',
-            }}
+            className={styles.closeButton}
+            style={{ position: 'absolute', top: '1rem', right: '1rem' }}
           >
             Luk
           </button>
@@ -419,36 +336,12 @@ export default function Page() {
             {pitchContent[currentPitchPage].content}
             <div style={{ marginTop: '3rem', display: 'flex', gap: '1rem', justifyContent: 'center' }}>
               {currentPitchPage > 0 && (
-                <button
-                  onClick={handlePreviousPage}
-                  style={{
-                    background: '#2563eb',
-                    color: '#fff',
-                    padding: '0.7rem 1.5rem',
-                    borderRadius: '4px',
-                    border: 'none',
-                    cursor: 'pointer',
-                    fontWeight: 'bold',
-                    fontSize: '18px',
-                  }}
-                >
+                <button onClick={handlePreviousPage} className={styles.navButton}>
                   Forrige
                 </button>
               )}
               {currentPitchPage < pitchContent.length - 1 && (
-                <button
-                  onClick={handleNextPage}
-                  style={{
-                    background: '#22c55e',
-                    color: '#fff',
-                    padding: '0.7rem 1.5rem',
-                    borderRadius: '4px',
-                    border: 'none',
-                    cursor: 'pointer',
-                    fontWeight: 'bold',
-                    fontSize: '18px',
-                  }}
-                >
+                <button onClick={handleNextPage} className={styles.nextButton}>
                   Næste
                 </button>
               )}
@@ -457,81 +350,21 @@ export default function Page() {
         </div>
       )}
 
-      {/* Password Modal */}
       {showPasswordModal && (
-        <div
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            width: '100vw',
-            height: '100vh',
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            zIndex: 1000,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: '#1e293b',
-              padding: '2rem',
-              borderRadius: '8px',
-              textAlign: 'center',
-              width: '300px',
-              color: '#ffffff',
-            }}
-          >
+        <div className={styles.passwordModal}>
+          <div className={styles.passwordModalContent}>
             <h3 style={{ fontSize: '28px', fontWeight: 500, marginBottom: '1rem' }}>Indtast adgangskode</h3>
             <form onSubmit={handlePasswordSubmit}>
               <input
                 type="password"
                 value={passwordInput}
                 onChange={(e) => setPasswordInput(e.target.value)}
-                style={{
-                  width: '100%',
-                  padding: '0.5rem',
-                  marginBottom: '1rem',
-                  border: '1px solid #4b5563',
-                  borderRadius: '4px',
-                  backgroundColor: '#374151',
-                  color: '#ffffff',
-                  fontSize: '18px',
-                }}
+                className={styles.passwordInput}
                 placeholder="Indtast kode"
               />
               <div>
-                <button
-                  type="submit"
-                  style={{
-                    background: '#22c55e',
-                    color: '#fff',
-                    padding: '0.5rem 1rem',
-                    borderRadius: '4px',
-                    border: 'none',
-                    cursor: 'pointer',
-                    fontWeight: 'bold',
-                    fontSize: '18px',
-                  }}
-                >
-                  Bekræft
-                </button>
-                <button
-                  type="button"
-                  onClick={handleClosePasswordModal}
-                  style={{
-                    background: '#dc2626',
-                    color: '#fff',
-                    padding: '0.5rem 1rem',
-                    borderRadius: '4px',
-                    border: 'none',
-                    cursor: 'pointer',
-                    fontWeight: 'bold',
-                    fontSize: '18px',
-                    marginLeft: '1rem',
-                  }}
-                >
+                <button type="submit" className={styles.modalButton}>Bekræft</button>
+                <button type="button" onClick={handleClosePasswordModal} className={styles.closeButton} style={{ marginLeft: '1rem' }}>
                   Annuller
                 </button>
               </div>
@@ -539,41 +372,6 @@ export default function Page() {
           </div>
         </div>
       )}
-
-      {/* Responsive Design */}
-      <style jsx global>{`
-        @media (max-width: 768px) {
-          main {
-            grid-template-columns: 1fr;
-            padding: 1rem;
-          }
-          header {
-            position: relative;
-            height: auto;
-            padding: 1rem 0;
-          }
-          header img {
-            position: static;
-            margin-bottom: 1rem;
-          }
-          header h1 {
-            font-size: 36px;
-          }
-          header h2 {
-            font-size: 22px;
-          }
-          section {
-            width: 100%;
-          }
-          footer {
-            grid-template-columns: 1fr;
-            padding: 1rem 0;
-          }
-          footer div {
-            margin: 1rem 0;
-          }
-        }
-      `}</style>
     </main>
   );
 }
