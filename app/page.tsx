@@ -12,12 +12,155 @@ export default function Page() {
   const [passwordInput, setPasswordInput] = useState('');
 
   const pitchContent = [
-    { title: 'I. Indledning – Hvad er MitDepot?', content: <><p>"Bitcoin er ikke bare en investering – det er din økonomiske livsforsikring." <br />MitDepot er rådgivning i sikker, privat og fremtidssikret opbevaring af Bitcoin.</p><ul className={styles.pitchList}><li>Vi arbejder 1:1 med formuebeviste personer.</li><li>Vi bygger på gennemtænkt sikkerhed, open-source værktøjer og skræddersyer efter behov.</li><li>Det her handler ikke om hype, crypto eller trading cykler – men om, hvordan du beholder dine Bitcoin.</li></ul></> },
-    { title: 'II. Problemet – Hvorfor er det her nødvendigt?', content: <><ul className={styles.pitchList}><li>De fleste Bitcoin-ejere har stadig modpartsrisiko (børser, apps, custodians).</li><li>20% af al BTC er allerede mistet – ikke pga. hacks, men pga. menneskelige fejl.</li><li>Uden et robust set-up, en klar arveplan og korrekte værktøjer kan du/dine elskede miste adgangen for altid.</li><li>En enkelt fejl – ét forkert tryk, én mistet kode/nøgle – og pengene er for evigt væk.</li></ul></> },
-    { title: 'III. Løsningen – Hvad tilbyder MitDepot?', content: <><p>Vi hjælper dig med en skræddersyet opsætning af:</p><ul className={styles.pitchList}><li>Hardware wallets, alt efter behov (hot/cold, single/multi/passphrase m.m.).</li><li>Arveplan, kan din familie/børn finde ud af at få adgang til dine Bitcoin i tilfælde af sygdom/død?</li><li>Trusselsanalyse, Svigtepunksanalyse, Privatlivsbehov.</li></ul><p>Du får hjælp til hele opsætningen – uden at vi nogensinde har adgang til dine midler, enhed eller lignende.</p></> },
-    { title: 'IV. Udbytte – Hvordan MitDepot kommer ind i billedet', content: <><ul className={styles.pitchList}><li>Du får ro i maven nu og i fremtiden.</li><li>Du ved præcis, hvor dine Bitcoin er, at få adgang og at ingen andre har kan.</li><li>Du undgår at efterlade kaos til din ikke-tekniske onkel eller selv at miste dem.</li><li>Du slipper for at famle i mørket – vi har prøvet det før og guider dig hele vejen.</li><li>Du tager ansvar – men med en sparringspartner, der forstår både teknikken og dine behov.</li></ul></> },
-    { title: 'V. Hvorfor MitDepot?', content: <><ul className={styles.pitchList}><li>Vi er 100 % Bitcoin-only – vi gør ikke alt. Vi gør det her med præcision.</li><li>Alt vi bruger er open-source, verified og battle-tested – ingen sorte bokse.</li><li>Vi forstår formuebevistes behov: kontrol, diskretion, arv og sikkerhed.</li><li>Vi rådgiver – vi opbevarer ikke. Du ejer, du bestemmer.</li><li>Vores løsninger fungerer i praksis – ikke bare på papir.</li></ul><p>Det her er ikke endnu et crypto, trading eller andet gøjl. Det er din livline til at sikre din formue.</p></> },
-    { title: 'VI. Pakker & Priser', content: <div className={styles.packagesContainer}><div className={`${styles.package} ${styles.packageGreen}`}><h3>🟠 Klar til at eje</h3><p><strong>Pris:</strong> 10.000 kr.<br />Til dig, der vil i gang – eller optimere det, du allerede har.</p><p>Inkluderer:</p><ul className={styles.packageList}><li>Hardware wallet opsætning</li><li>Single-sig med/uden passphrase</li><li>Backup-strategi og risikoforståelse</li><li>Grundlæggende sikkerhed og vaner</li><li>Pakken bruges også til gennemgang af eksisterende opsætning (hvis ønsket)</li></ul><p className={styles.duration}><strong>Varighed:</strong> Ca. 2 timer</p><p className={styles.note}><strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.</p></div><div className={`${styles.package} ${styles.packageYellow}`}><h3>🟡 Ejer med overblik</h3><p><strong>Pris:</strong> 20.000 kr.<br />Til dig med større mængder bitcoin og behov for teknisk dybde.</p><p>Inkluderer:</p><ul className={styles.packageList}><li>Alt i første pakke</li><li>Rådgivning om hardware wallets</li><li>Airgapped wallet-struktur</li><li>Brug og opsætning af Bitcoin node</li><li>Skræddersyet recovery-plan/guide</li><li>Fokus på back-up, sikkerhed og gennemgang af angrebsvektorer</li></ul><p className={styles.duration}><strong>Varighed:</strong> 2–4 timer (ekslusiv Node download)</p><p className={styles.note}><strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.</p></div><div className={`${styles.package} ${styles.packageBlue}`}><h3>🔵 Fuld kontrol</h3><p><strong>Pris:</strong> 45.000 kr.<br />Til dig, der ønsker suveræn sikkerhed – for livet og for arvingerne.</p><p>Inkluderer:</p><ul className={styles.packageList}><li>Alt i “Ejer med overblik”</li><li>Multisig-opsætning (hvis relevant)</li><li>Udvidet trusselsanalyse, svigtpunksanalyse</li><li>Arveplan og familievejledning</li><li>Opsætning og brug af Bitcoin node</li><li>UTXO-management, privat bevidahed</li><li>Ét gratis check-up inden for 4 måneder</li></ul><p className={styles.duration}><strong>Varighed:</strong> Fleksibel efter behov og kompleksitet</p><p className={styles.note}><strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.</p></div></div> },
+    {
+      title: 'I. Indledning – Hvad er MitDepot?',
+      content: (
+        <>
+          <p>
+            "Bitcoin er ikke bare en investering – det er din økonomiske livsforsikring."
+            <br />
+            MitDepot er rådgivning i sikker, privat og fremtidssikret opbevaring af Bitcoin.
+          </p>
+          <ul className={styles.pitchList}>
+            <li>Vi arbejder 1:1 med formuebeviste personer.</li>
+            <li>Vi bygger på gennemtænkt sikkerhed, open-source værktøjer og skræddersyer efter behov.</li>
+            <li>Det her handler ikke om hype, crypto eller trading cykler – men om, hvordan du beholder dine Bitcoin.</li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      title: 'II. Problemet – Hvorfor er det her nødvendigt?',
+      content: (
+        <>
+          <ul className={styles.pitchList}>
+            <li>De fleste Bitcoin-ejere har stadig modpartsrisiko (børser, apps, custodians).</li>
+            <li>20% af al BTC er allerede mistet – ikke pga. hacks, men pga. menneskelige fejl.</li>
+            <li>Uden et robust set-up, en klar arveplan og korrekte værktøjer kan du/dine elskede miste adgangen for altid.</li>
+            <li>En enkelt fejl – ét forkert tryk, én mistet kode/nøgle – og pengene er for evigt væk.</li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      title: 'III. Løsningen – Hvad tilbyder MitDepot?',
+      content: (
+        <>
+          <p>Vi hjælper dig med en skræddersyet opsætning af:</p>
+          <ul className={styles.pitchList}>
+            <li>Hardware wallets, alt efter behov (hot/cold, single/multi/passphrase m.m.).</li>
+            <li>Arveplan, kan din familie/børn finde ud af at få adgang til dine Bitcoin i tilfælde af sygdom/død?</li>
+            <li>Trusselsanalyse, Svigtepunksanalyse, Privatlivsbehov.</li>
+          </ul>
+          <p>Du får hjælp til hele opsætningen – uden at vi nogensinde har adgang til dine midler, enhed eller lignende.</p>
+        </>
+      ),
+    },
+    {
+      title: 'IV. Udbytte – Hvordan MitDepot kommer ind i billedet',
+      content: (
+        <>
+          <ul className={styles.pitchList}>
+            <li>Du får ro i maven nu og i fremtiden.</li>
+            <li>Du ved præcis, hvor dine Bitcoin er, at få adgang og at ingen andre har kan.</li>
+            <li>Du undgår at efterlade kaos til din ikke-tekniske onkel eller selv at miste dem.</li>
+            <li>Du slipper for at famle i mørket – vi har prøvet det før og guider dig hele vejen.</li>
+            <li>Du tager ansvar – men med en sparringspartner, der forstår både teknikken og dine behov.</li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      title: 'V. Hvorfor MitDepot?',
+      content: (
+        <>
+          <ul className={styles.pitchList}>
+            <li>Vi er 100 % Bitcoin-only – vi gør ikke alt. Vi gør det her med præcision.</li>
+            <li>Alt vi bruger er open-source, verified og battle-tested – ingen sorte bokse.</li>
+            <li>Vi forstår formuebevistes behov: kontrol, diskretion, arv og sikkerhed.</li>
+            <li>Vi rådgiver – vi opbevarer ikke. Du ejer, du bestemmer.</li>
+            <li>Vores løsninger fungerer i praksis – ikke bare på papir.</li>
+          </ul>
+          <p>Det her er ikke endnu et crypto, trading eller andet gøjl. Det er din livline til at sikre din formue.</p>
+        </>
+      ),
+    },
+    {
+      title: 'VI. Pakker & Priser',
+      content: (
+        <div className={styles.packagesContainer}>
+          <div className={`${styles.package} ${styles.packageGreen}`}>
+            <h3>🟠 Klar til at eje</h3>
+            <p>
+              <strong>Pris:</strong> 10.000 kr.
+              <br />
+              Til dig, der vil i gang – eller optimere det, du allerede har.
+            </p>
+            <p>Inkluderer:</p>
+            <ul className={styles.packageList}>
+              <li>Hardware wallet opsætning</li>
+              <li>Single-sig med/uden passphrase</li>
+              <li>Backup-strategi og risikoforståelse</li>
+              <li>Grundlæggende sikkerhed og vaner</li>
+              <li>Pakken bruges også til gennemgang af eksisterende opsætning (hvis ønsket)</li>
+            </ul>
+            <p className={styles.duration}>
+              <strong>Varighed:</strong> Ca. 2 timer
+            </p>
+            <p className={styles.note}>
+              <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
+            </p>
+          </div>
+          <div className={`${styles.package} ${styles.packageYellow}`}>
+            <h3>🟡 Ejer med overblik</h3>
+            <p>
+              <strong>Pris:</strong> 20.000 kr.
+              <br />
+              Til dig med større mængder bitcoin og behov for teknisk dybde.
+            </p>
+            <p>Inkluderer:</p>
+            <ul className={styles.packageList}>
+              <li>Alt i første pakke</li>
+              <li>Rådgivning om hardware wallets</li>
+              <li>Airgapped wallet-struktur</li>
+              <li>Brug og opsætning af Bitcoin node</li>
+              <li>Skræddersyet recovery-plan/guide</li>
+              <li>Fokus på back-up, sikkerhed og gennemgang af angrebsvektorer</li>
+            </ul>
+            <p className={styles.duration}>
+              <strong>Varighed:</strong> 2–4 timer (ekslusiv Node download)
+            </p>
+            <p className={styles.note}>
+              <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
+            </p>
+          </div>
+          <div className={`${styles.package} ${styles.packageBlue}`}>
+            <h3>🔵 Fuld kontrol</h3>
+            <p>
+              <strong>Pris:</strong> 45.000 kr.
+              <br />
+              Til dig, der ønsker suveræn sikkerhed – for livet og for arvingerne.
+            </p>
+            <p>Inkluderer:</p>
+            <ul className={styles.packageList}>
+              <li>Alt i “Ejer med overblik”</li>
+              <li>Multisig-opsætning (hvis relevant)</li>
+              <li>Udvidet trusselsanalyse, svigtpunksanalyse</li>
+              <li>Arveplan og familievejledning</li>
+              <li>Opsætning og brug af Bitcoin node</li>
+              <li>UTXO-management, privat bevidahed</li>
+              <li>Ét gratis check-up inden for 4 måneder</li>
+            </ul>
+            <p className={styles.duration}>
+              <strong>Varighed:</strong> Fleksibel efter behov og kompleksitet
+            </p>
+            <p className={styles.note}>
+              <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
+            </p>
+          </div>
+        </div>
+      ),
+    },
   ];
 
   const handlePitchAccess = () => {
@@ -49,22 +192,32 @@ export default function Page() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [passwordInput]);
 
-  const handleNextPage = () => currentPitchPage < pitchContent.length - 1 && setCurrentPitchPage(currentPitchPage + 1);
-  const handlePreviousPage = () => currentPitchPage > 0 && setCurrentPitchPage(currentPitchPage - 1);
+  const handleNextPage = () => {
+    if (currentPitchPage < pitchContent.length - 1) {
+      setCurrentPitchPage(currentPitchPage + 1);
+    }
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPitchPage > 0) {
+      setCurrentPitchPage(currentPitchPage - 1);
+    }
+  };
+
   const handleClosePitch = () => {
     setShowPitch(false);
     setActiveSection(null);
     setCurrentPitchPage(0);
   };
+
   const handleClosePasswordModal = () => {
     setShowPasswordModal(false);
     setPasswordInput('');
   };
 
   return (
-    <main className={styles.main} role="main" aria-label="MitDepot Bitcoin Self-Custody Page">
-      <header className={styles.header}>
-        <div className={styles.headerIcon} aria-hidden="true">₿</div>
+    <main className={styles.main}>
+      <div className={styles.header}>
         <div className={styles.headerText}>
           <h1 className={styles.title}>MitDepot</h1>
           <h2 className={styles.subtitle}>
@@ -73,12 +226,13 @@ export default function Page() {
             <span className={styles.subtitleNormal}>Sikkert. Privat. For evigt.</span>
           </h2>
         </div>
-      </header>
+      </div>
 
       <div className={styles.contentWrapper}>
         <p className={styles.intro}>
           Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
-          <br />Dine penge. Din fremtid. Din familie. Tag kontrol.
+          <br />
+          Dine penge. Din fremtid. Din familie. Tag kontrol.
         </p>
 
         <div className={styles.cta}>
@@ -87,7 +241,6 @@ export default function Page() {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.ctaButton}
-            aria-label="Book a free 30-minute meeting"
           >
             Book et gratis 30-minutters møde
           </a>
@@ -103,7 +256,7 @@ export default function Page() {
         </p>
 
         <div className={styles.videoContainer}>
-          <video controls className={styles.video} preload="metadata" aria-label="Intro video about MitDepot">
+          <video controls className={styles.video}>
             <source src="/intro.mp4" type="video/mp4" />
             Din browser understøtter ikke video-tagget.
           </video>
@@ -128,7 +281,6 @@ export default function Page() {
             target="_blank"
             rel="noopener noreferrer"
             className={`${styles.ctaButton} ${styles.ctaButtonGreen}`}
-            aria-label="Book a call to take responsibility"
           >
             Klar til at tage ansvar? Book et kald nu
           </a>
@@ -139,42 +291,30 @@ export default function Page() {
           self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har
           de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger –
           vil du blive afvist, men med mulighed for undervisning og støtte, indtil du er klar.
-          <br /><br />
+          <br />
+          <br />
           Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller hjælpelinje
           at ringe til, hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt ansvar.
         </p>
-
-        <button
-          className={styles.pitchButton}
-          onClick={handlePitchAccess}
-          aria-label="View detailed pitch (Ctrl + P)"
-          aria-expanded={showPitch}
-        >
-          View Pitch
-          <span className={styles.tooltip}>Press Ctrl + P for shortcut</span>
-        </button>
       </div>
 
-      <footer className={styles.footerLinks}>
+      <div className={styles.footerLinks}>
         {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
           <p
             key={section}
             onClick={() => setActiveSection(activeSection === section ? null : section)}
             className={styles.footerLink}
-            aria-label={`Open ${section} section`}
-            tabIndex={0}
-            onKeyPress={(e) => e.key === 'Enter' && setActiveSection(activeSection === section ? null : section)}
           >
             {section}
           </p>
         ))}
-      </footer>
+      </div>
 
       {activeSection === 'Kontakt' && (
-        <div className={styles.footerContent} role="region" aria-label="Contact Information">
+        <div className={styles.footerContent}>
           <p>
             📬 Email:{' '}
-            <a href="mailto:selvdepot@gmail.com" className={styles.footerLink} aria-label="Email SelvDepot">
+            <a href="mailto:selvdepot@gmail.com" className={styles.footerLink}>
               SelvDepot@gmail.com
             </a>
           </p>
@@ -185,7 +325,6 @@ export default function Page() {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.footerLink}
-              aria-label="Book a meeting on Calendly"
             >
               calendly.com/selvdepot/30min
             </a>
@@ -193,12 +332,8 @@ export default function Page() {
         </div>
       )}
       {activeSection === 'Pitch' && showPitch && (
-        <div className={styles.pitchSection} role="dialog" aria-label="Pitch Details">
-          <button
-            onClick={handleClosePitch}
-            className={styles.closeButton}
-            aria-label="Close pitch modal"
-          >
+        <div className={styles.pitchSection}>
+          <button onClick={handleClosePitch} className={styles.closeButton}>
             Luk
           </button>
           <div className={styles.pitchContent}>
@@ -206,30 +341,21 @@ export default function Page() {
             {pitchContent[currentPitchPage].content}
             <div className={styles.pitchNavigation}>
               {currentPitchPage > 0 && (
-                <button
-                  onClick={handlePreviousPage}
-                  className={`${styles.navButton} ${styles.prevButton}`}
-                  aria-label="Previous pitch page"
-                >
+                <button onClick={handlePreviousPage} className={`${styles.navButton} ${styles.prevButton}`}>
                   Forrige
                 </button>
               )}
               {currentPitchPage < pitchContent.length - 1 && (
-                <button
-                  onClick={handleNextPage}
-                  className={`${styles.navButton} ${styles.nextButton}`}
-                  aria-label="Next pitch page"
-                >
+                <button onClick={handleNextPage} className={`${styles.navButton} ${styles.nextButton}`}>
                   Næste
                 </button>
               )}
-              <span className={styles.progress}>{currentPitchPage + 1} / {pitchContent.length}</span>
             </div>
           </div>
         </div>
       )}
       {showPasswordModal && (
-        <div className={styles.modal} role="dialog" aria-label="Enter Password">
+        <div className={styles.modal}>
           <div className={styles.modalContent}>
             <h3>Indtast adgangskode</h3>
             <form onSubmit={handlePasswordSubmit}>
@@ -239,19 +365,12 @@ export default function Page() {
                 onChange={(e) => setPasswordInput(e.target.value)}
                 className={styles.passwordInput}
                 placeholder="Indtast kode"
-                aria-label="Password input"
-                autoFocus
               />
               <div>
-                <button type="submit" className={styles.confirmButton} aria-label="Confirm password">
+                <button type="submit" className={styles.confirmButton}>
                   Bekræft
                 </button>
-                <button
-                  type="button"
-                  onClick={handleClosePasswordModal}
-                  className={styles.cancelButton}
-                  aria-label="Cancel password entry"
-                >
+                <button type="button" onClick={handleClosePasswordModal} className={styles.cancelButton}>
                   Annuller
                 </button>
               </div>
@@ -260,7 +379,7 @@ export default function Page() {
         </div>
       )}
       {activeSection === 'Disclaimer' && (
-        <div className={styles.footerContent} role="region" aria-label="Disclaimer Information">
+        <div className={styles.footerContent}>
           <p>
             Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk,
             finansiel, skattemæssig eller investeringsrådgivning. MitDepot tilbyder alene undervisning
@@ -269,7 +388,7 @@ export default function Page() {
         </div>
       )}
       {activeSection === 'Privatliv' && (
-        <div className={styles.footerContent} role="region" aria-label="Privacy Information">
+        <div className={styles.footerContent}>
           <p>
             Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly
             håndteres dine oplysninger af dem under deres politikker. Vi bruger ikke cookies eller analytics.
@@ -277,7 +396,7 @@ export default function Page() {
         </div>
       )}
       {activeSection === 'Vilkår' && (
-        <div className={styles.footerContent} role="region" aria-label="Terms Information">
+        <div className={styles.footerContent}>
           <p>
             Ved brug af MitDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
             Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
