@@ -1,6 +1,6 @@
 /* General Body & Background */
 .main {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/imagebaggrund.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/logo.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
