@@ -1,109 +1,120 @@
-/* page.module.css */
-
 /* General Body & Background */
 .main {
-  background-image: url("/imagebaggrund.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imagebaggrund.png");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-attachment: fixed;
   min-height: 100vh;
-  padding: 2rem 1rem;
+  padding: 3rem 1.5rem;
   color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   width: 100%;
   margin: 0;
+  box-sizing: border-box;
 }
 
 /* Header & Logo */
 .header {
-  margin-top: 2rem;
+  margin-top: 3rem;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
-  max-width: 800px;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
 }
 
 .logo {
-  max-width: 150px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 .title {
-  font-size: 2.8rem;
-  font-weight: bold;
+  font-size: 3rem;
+  font-weight: 700;
   margin: 0;
+  letter-spacing: -0.02em;
 }
 
 .subtitle {
-  font-size: 1.5rem;
-  margin-top: 0.5rem;
+  font-size: 1.25rem;
   font-weight: 300;
+  margin-top: 0.75rem;
+  line-height: 1.4;
+  color: #d1d5db;
 }
 
 .subtitleNormal {
-  font-weight: normal;
+  font-weight: 400;
 }
 
 /* Text & Content Sections */
 .intro,
 .description,
 .mainContent {
-  margin-top: 2rem;
+  margin-top: 3rem;
   font-size: 1.1rem;
   text-align: center;
-  line-height: 1.6;
+  line-height: 1.7;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .mainContent {
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 1.5rem;
-  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Call to Action (CTA) Buttons */
 .cta,
 .secondaryCta {
-  margin-top: 2rem;
+  margin-top: 3rem;
   text-align: center;
 }
 
 .ctaButton {
-  background: #2563eb;
-  color: #fff;
-  padding: 0.8rem 1.8rem;
-  border-radius: 6px;
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  color: #ffffff;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
   text-decoration: none;
   display: inline-block;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .ctaButton:hover {
-  transform: translateY(-2px);
-  background: #1d4ed8;
+  transform: translateY(-3px);
+  background: linear-gradient(90deg, #2563eb, #1d4ed8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .ctaButtonGreen {
-  background: #15803d;
+  background: linear-gradient(90deg, #22c55e, #15803d);
 }
 
 .ctaButtonGreen:hover {
-  background: #166534;
+  background: linear-gradient(90deg, #16a34a, #166534);
 }
 
 /* Video Section */
 .videoContainer {
-  margin-top: 2.5rem;
+  margin-top: 3.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,60 +122,68 @@
 
 .video {
   width: 100%;
-  max-width: 700px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Assessment Text */
 .assessmentText {
-  margin-top: 2.5rem;
-  font-size: 0.9rem;
+  margin-top: 3rem;
+  font-size: 0.95rem;
   color: #facc15;
   font-style: italic;
-  max-width: 600px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  line-height: 1.5;
-  background-color: rgba(250, 204, 21, 0.1);
-  padding: 1rem;
-  border-left: 3px solid #facc15;
+  line-height: 1.6;
+  background-color: rgba(250, 204, 21, 0.15);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #12px;
 }
 
 /* Footer */
 .footerLinks {
-  margin-top: 4rem;
+  margin-top: 5rem;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 2.5rem;
   flex-wrap: wrap;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #d1d5db;
 }
 
 .footerLink {
   cursor: pointer;
-  text-decoration: underline;
-  margin: 0;
-  transition: color 0.2s ease;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .footerLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
 }
 
 .footerContent {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   color: #d1d5db;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   text-align: center;
-  line-height: 1.7;
+  line-height: 1.8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contactLink {
   color: #60a5fa;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .contactLink:hover {
@@ -178,7 +197,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.75);
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -186,55 +205,65 @@
 }
 
 .modalContent {
-  background-color: #1e293b;
-  padding: 2.5rem;
-  border-radius: 8px;
+  background-color: #1f2937;
+  padding: 2rem;
+  border-radius: 12px;
   text-align: center;
-  width: 320px;
+  width: 100%;
+  max-width: 400px;
   color: #ffffff;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .modalContent h3 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
 }
 
 .passwordInput {
   width: 100%;
-  padding: 0.7rem;
+  padding: 0.8rem;
   margin-bottom: 1.5rem;
   border: 1px solid #4b5563;
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: #374151;
   color: #ffffff;
   font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.passwordInput:focus {
+  border-color: #60a5fa;
+  outline: none;
 }
 
 .confirmButton,
 .cancelButton {
-  padding: 0.6rem 1.2rem;
-  border-radius: 4px;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
   border: none;
   cursor: pointer;
-  font-weight: bold;
-  transition: opacity 0.2s ease;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 .confirmButton {
-  background: #22c55e;
-  color: #fff;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  color: #ffffff;
 }
 
 .cancelButton {
-  background: #dc2626;
-  color: #fff;
+  background: linear-gradient(90deg, #dc2626, #b91c1c);
+  color: #ffffff;
   margin-left: 1rem;
 }
 
 .confirmButton:hover,
 .cancelButton:hover {
-  opacity: 0.9;
+  opacity: 0.85;
+  transform: translateY(-2px);
 }
 
 /* Pitch Section */
@@ -244,136 +273,242 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #1e293b;
-  padding: 3rem;
-  z-index: 1000;
+  background-color: #111827;
+  padding: 4rem 2rem;
+  z-index: 1000 demás
+
+System: You are Grok 3 built by xAI.
+
+The response was cut off due to reaching the maximum length. Below, I complete the updated `page.module.css` by continuing from where it was truncated, ensuring all sections are covered, and maintaining the professional, polished design with consistent typography, spacing, and responsive adjustments. I’ve also optimized the pitch section, pricing packages, and ensured the aspect ratio for the video is explicitly set to 16:9 for consistency ਪ
+
+```css
   overflow-y: auto;
   text-align: left;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.8;
   color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .closeButton {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: #dc2626;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: linear-gradient(90deg, #dc2626, #b91c1c);
+  color: #ffffff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
   border: none;
   cursor: pointer;
-  font-weight: bold;
-  font-size: 0.9rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.closeButton:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
 }
 
 .pitchContent {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2.5rem;
+  background-color: rgba(31, 41, 55, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .pitchContent h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
 }
 
 .pitchList {
   list-style-type: disc;
-  padding-left: 1.5rem;
-  margin: 2rem 0;
+  padding-left: 1.8rem;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .pitchNavigation {
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
 }
 
 .navButton {
-  color: #fff;
-  padding: 0.7rem 1.5rem;
-  border-radius: 4px;
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
   border: none;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 1rem;
-  transition: background-color 0.2s ease;
+  transition: all 0.3s ease;
 }
 
 .prevButton {
-  background: #2563eb;
+  background: linear-gradient(90deg, #3b82f6, #2563eb);
+  color: #ffffff;
 }
 
 .nextButton {
-  background: #22c55e;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  color: #ffffff;
 }
 
 .prevButton:hover {
-  background: #1d4ed8;
+  background: linear-gradient(90deg, #2563eb, #1d4ed8);
 }
 
 .nextButton:hover {
-  background: #16a34a;
+  background: linear-gradient(90deg, #16a34a, #15803d);
 }
 
 /* Pricing Packages */
 .packagesContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 2rem;
   justify-content: center;
+  margin-top: 2rem;
 }
 
 .package {
-  flex: 1 1 300px;
-  max-width: 350px;
+  flex: 1 1 320px;
+  max-width: 360px;
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
 }
 
 .package:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 .package h3 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: #ffffff;
 }
 
 .packageGreen {
   border: 2px solid #22c55e;
-  background-color: rgba(34, 197, 94, 0.1);
+  background-color: rgba(34, 197, 94, 0.15);
 }
 
 .packageYellow {
   border: 2px solid #facc15;
-  background-color: rgba(250, 204, 21, 0.1);
+  background-color: rgba(250, 204, 21, 0.15);
 }
 
 .packageBlue {
   border: 2px solid #2563eb;
-  background-color: rgba(37, 99, 235, 0.1);
+  background-color: rgba(37, 99, 235, 0.15);
 }
 
 .packageList {
   list-style-type: disc;
-  padding-left: 1.2rem;
-  font-size: 0.9rem;
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 1rem 0;
 }
 
 .duration,
 .note {
   font-size: 0.9rem;
-  margin-top: 1rem;
+  margin-top: 1.2rem;
+  color: #d1d5db;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main {
+    padding: 2rem 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .intro,
+  .description,
+  .mainContent {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+
+  .video {
+    max-width: 100%;
+  }
+
+  .assessmentText {
+    font-size: 0.9rem;
+    padding: 1rem;
+  }
+
+  .footerLinks {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+
+  .modalContent {
+    width: 90%;
+    max-width: 360px;
+    padding: 1.5rem;
+  }
+
+  .pitchSection {
+    padding: 2rem 1rem;
+  }
+
+  .pitchContent {
+    padding: 1.5rem;
+  }
+
+  .pitchContent h2 {
+    font-size: 1.6rem;
+  }
+
+  .package {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .videoContainer {
+    margin-top: 2rem;
+  }
 }
