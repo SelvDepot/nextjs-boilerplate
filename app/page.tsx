@@ -481,8 +481,8 @@ export default function Page() {
         <div style={{ marginTop: '1rem', color: '#d1d5db', fontSize: '0.9rem', textAlign: 'center' }}>
           <p>
             📬 Email:{' '}
-            <a href="mailto:MitDepot@gmail.com" style={{ color: '#60a5fa' }}>
-              MitDepot@gmail.com
+            <a href="mailto:selvdepot@gmail.com" style={{ color: '#60a5fa' }}>
+              SelvDepot@gmail.com
             </a>
           </p>
           <p>
