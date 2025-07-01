@@ -441,7 +441,7 @@ export default function Page() {
         }}
       >
         <img
-          src="/my-photo.jpg" // Replace with your actual photo filename if different
+          src="/Rådgivnings-niveauer.png" // Corrected filename
           alt="SelvDepot Feature"
           style={{
             width: '100%',
