@@ -213,7 +213,7 @@ export default function Page() {
         </p>
 
         <div className={styles.cta}>
-          <a href="[invalid url, do not cite] target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>
+          <a href="https://calendly.com/selvdepot/30min" target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>
             Book et gratis 30-minutters møde
           </a>
         </div>
@@ -244,7 +244,7 @@ export default function Page() {
         </div>
 
         <div className={styles.secondaryCta}>
-          <a href="[invalid url, do not cite] target="_blank" rel="noopener noreferrer" className={`${styles.ctaButton} ${styles.ctaButtonGreen}`}>
+          <a href="https://calendly.com/selvdepot/30min" target="_blank" rel="noopener noreferrer" className={`${styles.ctaButton} ${styles.ctaButtonGreen}`}>
             Klar til at tage ansvar? Book et kald nu
           </a>
         </div>
@@ -330,7 +330,7 @@ export default function Page() {
           <p>
             📅 Book:{' '}
             <a
-              href="[invalid url, do not cite]
+              href="https://calendly.com/selvdepot/30min"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.contactLink}
@@ -417,3 +417,6 @@ export default function Page() {
           </p>
         </div>
       )}
+    </main>
+  );
+}
