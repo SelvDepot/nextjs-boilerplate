@@ -218,8 +218,7 @@ export default function Page() {
   return (
     <main className={styles.main}>
       <div className={styles.header}>
-        <img src="/logo.png" alt="MitDepot Logo" className={styles.logo} />
-        <div>
+        <div className={styles.headerText}>
           <h1 className={styles.title}>MitDepot</h1>
           <h2 className={styles.subtitle}>
             Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
