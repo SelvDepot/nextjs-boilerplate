@@ -11,6 +11,7 @@
     "jsonwebtoken": "^9.0.2",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "@tailwindcss/postcss": "^6.0.0"
   }
 }
