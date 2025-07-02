@@ -1,9 +1,9 @@
 /* General Body & Background */
 .main {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/logo.png");
-  background-size: cover; /* Changed to cover to avoid white edges from repeat */
+  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; /* Removed repeat to prevent outline artifacts */
+  background-repeat: no-repeat;
   background-attachment: fixed;
   min-height: 100vh;
   padding: 0;
@@ -21,9 +21,9 @@
 /* Header & Logo */
 .header {
   display: flex;
-  justify-content: center; /* Center the text */
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 0; /* Removed gap since image is gone */
+  gap: 0;
   max-width: 900px;
   margin: 3rem auto 2rem;
   text-align: center;
@@ -31,11 +31,11 @@
 }
 
 .headerText {
-  text-align: center; /* Ensure text is centered */
+  text-align: center;
 }
 
 .logo {
-  display: none; /* Removed the logo image */
+  display: none;
 }
 
 .title {

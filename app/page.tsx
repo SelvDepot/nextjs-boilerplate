@@ -74,15 +74,9 @@ export default function Page() {
       title: 'V. Hvorfor MitDepot?',
       content: (
         <>
-<<<<<<< HEAD
-          <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', margin: '2rem 0' }}>
-            <li>Vi er 100 % Bitcoin-only – vi gør ikke alt. Vi gør én ting med præcision.</li>
-            <li>Alt vi bruger er open-source, verified og battle-tested – og du har eget input.</li>
-=======
           <ul className={styles.pitchList}>
             <li>Vi er 100 % Bitcoin-only – vi gør ikke alt. Vi gør det her med præcision.</li>
             <li>Alt vi bruger er open-source, verified og battle-tested – ingen sorte bokse.</li>
->>>>>>> 5ded8951d6610b6e78deb127ce802382cf8065b5
             <li>Vi forstår formuebevistes behov: kontrol, diskretion, arv og sikkerhed.</li>
             <li>Vi rådgiver – vi opbevarer ikke. Du ejer, du bestemmer.</li>
             <li>Vores løsninger fungerer i praksis – ikke bare på papir.</li>
@@ -94,122 +88,6 @@ export default function Page() {
     {
       title: 'VI. Pakker & Priser',
       content: (
-<<<<<<< HEAD
-        <>
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '1rem',
-              justifyContent: 'center',
-            }}
-          >
-            {/* Pakke: Klar til at eje */}
-            <div
-              style={{
-                flex: '1 1 300px',
-                maxWidth: '350px',
-                padding: '1.5rem',
-                border: '2px solid #22c55e',
-                borderRadius: '8px',
-                backgroundColor: 'rgba(34, 197, 94, 0.1)',
-                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-              }}
-            >
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-                🟠 Klar til at eje
-              </h3>
-              <p>
-                <strong>Pris:</strong> 10.000 kr.
-                <br />
-                Til dig, der vil i gang – eller optimere det, du allerede har.
-              </p>
-              <p>Inkluderer:</p>
-              <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', fontSize: '0.9rem' }}>
-                <li>Hardware wallet opsætning</li>
-                <li>Single-sig med/uden passphrase</li>
-                <li>Backup-strategi og risikoforståelse</li>
-                <li>Grundlæggende sikkerhed og vaner</li>
-                <li>Pakken kan også købes til gennemgang/kritik af eksisterende opsætning</li>
-              </ul>
-              <p style={{ fontSize: '0.9rem' }}>
-                <strong>Varighed:</strong> Ca. 2 timer
-                <br />
-                <strong>Note:</strong> Vi stopper ikke før det virker, er testet og forstået.
-              </p>
-            </div>
-
-            {/* Pakke: Ejer med overblik */}
-            <div
-              style={{
-                flex: '1 1 300px',
-                maxWidth: '350px',
-                padding: '1.5rem',
-                border: '2px solid #facc15',
-                borderRadius: '8px',
-                backgroundColor: 'rgba(250, 204, 21, 0.1)',
-                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-              }}
-            >
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-                🟡 Ejer med overblik
-              </h3>
-              <p>
-                <strong>Pris:</strong> 20.000 kr.
-                <br />
-                Til dig med større mængder bitcoin og behov for teknisk dybde.
-              </p>
-              <p>Inkluderer:</p>
-              <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', fontSize: '0.9rem' }}>
-                <li>Alt i første pakke</li>
-                <li>Rådgivning om hardware wallets</li>
-                <li>Airgapped wallet-struktur</li>
-                <li>Brug og opsætning af Bitcoin node</li>
-                <li>Skræddersyet recovery-plan/guide</li>
-                <li>Fokus på back-up, sikkerhed og gennemgang af angrebsvektorer</li>
-              </ul>
-              <p style={{ fontSize: '0.9rem' }}>
-                <strong>Varighed:</strong> 2–4 timer (ekslusiv Node download)
-              </p>
-            </div>
-
-            {/* Pakke: Fuld kontrol */}
-            <div
-              style={{
-                flex: '1 1 300px',
-                maxWidth: '350px',
-                padding: '1.5rem',
-                border: '2px solid #2563eb',
-                borderRadius: '8px',
-                backgroundColor: 'rgba(37, 99, 235, 0.1)',
-                boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-              }}
-            >
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-                🔵 Fuld kontrol
-              </h3>
-              <p>
-                <strong>Pris:</strong> 45.000 kr.
-                <br />
-                Til dig, der ønsker suveræn sikkerhed – for livet og for arvingerne.
-              </p>
-              <p>Inkluderer:</p>
-              <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem', fontSize: '0.9rem' }}>
-                <li>Alt i “Ejer med overblik”</li>
-                <li>Multisig-opsætning (hvis relevant)</li>
-                <li>Udvidet trusselsanalyse, svigtpunksanalyse</li>
-                <li>Arveplan og familievejledning</li>
-                <li>Opsætning og brug af Bitcoin node </li>
-                <li>UTXO-management, privat bevidsthed</li>
-                <li>Ét gratis check-up inden for 4 måneder</li>
-              </ul>
-              <p style={{ fontSize: '0.9rem' }}>
-                <strong>Varighed:</strong> Fleksibel efter behov og kompleksitet
-                <br />
-                <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
-              </p>
-            </div>
-=======
         <div className={styles.packagesContainer}>
           <div className={`${styles.package} ${styles.packageGreen}`}>
             <h3>🟠 Klar til at eje</h3>
@@ -232,7 +110,6 @@ export default function Page() {
             <p className={styles.note}>
               <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
             </p>
->>>>>>> 5ded8951d6610b6e78deb127ce802382cf8065b5
           </div>
           <div className={`${styles.package} ${styles.packageYellow}`}>
             <h3>🟡 Ejer med overblik</h3>
@@ -271,7 +148,7 @@ export default function Page() {
               <li>Udvidet trusselsanalyse, svigtpunksanalyse</li>
               <li>Arveplan og familievejledning</li>
               <li>Opsætning og brug af Bitcoin node</li>
-              <li>UTXO-management, privat bevidahed</li>
+              <li>UTXO-management, privat bevidsthed</li>
               <li>Ét gratis check-up inden for 4 måneder</li>
             </ul>
             <p className={styles.duration}>
