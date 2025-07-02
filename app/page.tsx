@@ -10,6 +10,8 @@ export default function Page() {
   const [currentPitchPage, setCurrentPitchPage] = useState(0);
   const [showPasswordModal, setShowPasswordModal] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
+  const [showDownloadModal, setShowDownloadModal] = useState(false);
+  const [pdfUrls, setPdfUrls] = useState<string[]>([]);
 
   const pitchContent = [
     {
@@ -181,6 +183,21 @@ export default function Page() {
     }
   };
 
+  const handleDownloadAccess = async () => {
+    try {
+      const response = await fetch('/api/pdfs');
+      const data = await response.json();
+      if (data.urls) {
+        setPdfUrls(data.urls);
+        setShowDownloadModal(true);
+      } else {
+        alert('Fejl ved hentning af PDF-links. Prøv igen.');
+      }
+    } catch (error) {
+      alert('Fejl ved forbindelse til serveren. Prøv igen senere.');
+    }
+  };
+
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.ctrlKey && event.key === 'p') {
@@ -215,6 +232,11 @@ export default function Page() {
     setPasswordInput('');
   };
 
+  const handleCloseDownloadModal = () => {
+    setShowDownloadModal(false);
+    setPdfUrls([]);
+  };
+
   return (
     <main className={styles.main}>
       <div className={styles.header}>
@@ -244,6 +266,12 @@ export default function Page() {
           >
             Book et gratis 30-minutters møde
           </a>
+          <button
+            onClick={handleDownloadAccess}
+            className={`${styles.ctaButton} ${styles.ctaButtonGreen}`}
+          >
+            Download Gratis PDF'er
+          </button>
         </div>
 
         <p className={styles.description}>
@@ -375,6 +403,34 @@ export default function Page() {
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+      {showDownloadModal && (
+        <div className={styles.modal}>
+          <div className={styles.modalContent}>
+            <h3>Download Gratis PDF'er</h3>
+            <p>Her kan du downloade vores forberedelsesmaterialer:</p>
+            <ul className={styles.downloadList}>
+              <li>
+                <a href={pdfUrls[0]} download className={styles.downloadButton}>
+                  MitDepot Recovery Ark
+                </a>
+              </li>
+              <li>
+                <a href={pdfUrls[1]} download className={styles.downloadButton}>
+                  MitDepot AntiScam
+                </a>
+              </li>
+              <li>
+                <a href={pdfUrls[2]} download className={styles.downloadButton}>
+                  MitDepot One Pager
+                </a>
+              </li>
+            </ul>
+            <button onClick={handleCloseDownloadModal} className={styles.cancelButton}>
+              Luk
+            </button>
           </div>
         </div>
       )}

@@ -79,82 +79,17 @@
   text-align: center;
   line-height: 1.7;
   max-width: 800px;
+>>>>>>> a5da6c624044f73b2de693eb5fe44342d3248416
   margin: 1.5rem 0;
-  font-weight: 500;
-}
-
-.mainContent {
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Call to Action (CTA) Buttons */
-.cta,
-.secondaryCta {
-  text-align: center;
-  padding: 1.5rem 0;
-}
-
-.ctaButton {
-  background: linear-gradient(90deg, #3b82f6, #2563eb);
-  color: #ffffff;
-  padding: 0.9rem 2rem;
-  border-radius: 8px;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1.1rem;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.ctaButton:hover {
-  transform: translateY(-3px);
-  background: linear-gradient(90deg, #2563eb, #1d4ed8);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.ctaButtonGreen {
-  background: linear-gradient(90deg, #22c55e, #15803d);
-}
-
-.ctaButtonGreen:hover {
-  background: linear-gradient(90deg, #16a34a, #166534);
-}
-
-/* Video Section */
-.videoContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 0;
-}
-
-.video {
-  width: 100%;
-  max-width: 800px;
-  aspect-ratio: 16 / 9;
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Assessment Text */
-.assessmentText {
-  font-size: 0.95rem;
-  color: #facc15;
-  font-style: italic;
-  max-width: 700px;
-  margin: 2rem 0;
-  text-align: center;
+  font-size: 1rem;
   line-height: 1.6;
-  background-color: rgba(250, 204, 21, 0.15);
-  padding: 1.5rem;
-  border-radius: 8px;
-  border-left: 4px solid #facc15;
   font-weight: 500;
 }
 
+<<<<<<< HEAD
+.downloadList li {
+  margin-bottom: 1rem;
+=======
 /* Footer */
 .footerLinks {
   display: flex;
@@ -167,8 +102,14 @@
   flex-shrink: 0;
   width: 100%;
   max-width: 1200px;
+>>>>>>> a5da6c624044f73b2de693eb5fe44342d3248416
 }
 
+<<<<<<< HEAD
+.downloadButton {
+  display: inline-block;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+=======
 .footerLink {
   cursor: pointer;
   text-decoration: none;
@@ -182,95 +123,21 @@
 
 .footerLink:hover {
   background-color: rgba(255, 255, 255, 0.1);
+>>>>>>> a5da6c624044f73b2de693eb5fe44342d3248416
   color: #ffffff;
-}
-
-.footerContent {
-  color: #d1d5db;
-  font-size: 0.95rem;
-  text-align: center;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  font-weight: 500;
-}
-
-/* Password Modal */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.75);
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modalContent {
-  background-color: #1f2937;
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-  width: 100%;
-  max-width: 400px;
-  color: #ffffff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.modalContent h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-}
-
-.passwordInput {
-  width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1.5rem;
-  border: 1px solid #4b5563;
-  border-radius: 6px;
-  background-color: #374151;
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: border-color 0.2s ease;
-}
-
-.passwordInput:focus {
-  border-color: #60a5fa;
-  outline: none;
-}
-
-.confirmButton,
-.cancelButton {
   padding: 0.7rem 1.5rem;
   border-radius: 6px;
-  border: none;
-  cursor: pointer;
+  text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
   transition: all 0.3s ease;
 }
 
-.confirmButton {
-  background: linear-gradient(90deg, #22c55e, #16a34a);
-  color: #ffffff;
-}
-
-.cancelButton {
-  background: linear-gradient(90deg, #dc2626, #b91c1c);
-  color: #ffffff;
-  margin-left: 1rem;
-}
-
-.confirmButton:hover,
-.cancelButton:hover {
-  opacity: 0.85;
+.downloadButton:hover {
+  background: linear-gradient(90deg, #16a34a, #15803d);
   transform: translateY(-2px);
 }
+<<<<<<< HEAD
+=======
 
 /* Pitch Section */
 .pitchSection {
@@ -561,3 +428,4 @@
     font-size: 0.85rem;
   }
 }
+>>>>>>> a5da6c624044f73b2de693eb5fe44342d3248416
