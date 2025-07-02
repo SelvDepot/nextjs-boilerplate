@@ -30,7 +30,7 @@ export default function Page() {
       ),
     },
     {
-      title: 'II. Problemet – Hvorfor er det her nødvendigt??',
+      title: 'II. Problemet – Hvorfor er det her nødvendigt?',
       content: (
         <>
           <ul className={styles.pitchList}>
