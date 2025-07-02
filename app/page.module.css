@@ -368,15 +368,19 @@
 /* Pricing Packages */
 .packagesContainer {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 1.5rem;
   justify-content: center;
   padding: 1rem 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .package {
-  flex: 1 1 300px;
-  max-width: 340px;
+  flex: 1 1 33.33%;
+  max-width: 33.33%;
+  min-width: 250px;
   padding: 1.5rem;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.05);
@@ -490,6 +494,10 @@
   .package {
     flex: 1 1 100%;
     max-width: 100%;
+  }
+
+  .packagesContainer {
+    flex-wrap: wrap;
   }
 }
 
