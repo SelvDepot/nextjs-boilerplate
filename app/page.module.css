@@ -362,3 +362,8 @@
   color: #999;
   margin-top: 1rem;
 }
+.packageRow {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+}
