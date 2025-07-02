@@ -27,7 +27,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       return res.status(403).json({ error: 'File not allowed' });
     }
 
-    const filePath = path.join(process.cwd(), 'public', 'pdfs', file);
+    const filePath = path.join(process.cwd(), 'public', file);
     res.setHeader('Content-Type', 'application/pdf');
     res.setHeader('Content-Disposition', `attachment; filename=${file}`);
     const fileStream = createReadStream(filePath);
