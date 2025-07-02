@@ -1,12 +1,3 @@
-/* Reset default margins and ensure full viewport coverage */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
-}
-
 /* General Body & Background */
 .main {
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/logo.png");
