@@ -442,7 +442,7 @@ html, body {
   font-size: 0.85rem;
   margin-top: 1rem;
   color: #d1d5db;
-  слов-weight: 500;
+  font-weight: 500;
 }
 
 /* Responsive Design */
@@ -490,15 +490,66 @@ html, body {
     width: 90%;
     max-width: 360px;
     padding: 1.5rem;
- క
+  }
 
-System: ### Instructions
-- **Replace `app/page.module.css`**:
-  - Copy the provided CSS code and paste it into `app/page.module.css`, replacing the entire file.
-- **Keep `app/page.tsx`**:
-  - No changes needed; use the previously provided `page.tsx` as it remains correct.
-- **Commit and Deploy**:
-  ```bash
-  git add app/page.module.css
-  git commit -m "Remove white outline by resetting body/html margins and ensuring full background coverage"
-  git push origin main
+  .pitchSection {
+    padding: 1.5rem;
+  }
+
+  .pitchContent {
+    padding: 1.2rem;
+  }
+
+  .pitchContent h2 {
+    font-size: 1.4rem;
+  }
+
+  .package {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .packagesContainer {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .videoContainer {
+    padding: 1rem 0;
+  }
+
+  .pitchSection {
+    padding: 1rem;
+  }
+
+  .pitchContent {
+    padding: 1rem;
+  }
+
+  .pitchContent h2 {
+    font-size: 1.3rem;
+  }
+
+  .pitchList {
+    font-size: 0.9rem;
+  }
+
+  .navButton {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
