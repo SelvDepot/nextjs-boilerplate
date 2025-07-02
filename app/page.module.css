@@ -15,6 +15,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 
@@ -64,6 +65,8 @@
   flex-direction: column;
   align-items: center;
   padding: 0 2rem;
+  width: 100%;
+  max-width: 1200px;
 }
 
 /* Text & Content Sections */
@@ -345,15 +348,18 @@
   font-weight: 600;
   font-size: 0.9rem;
   transition: all 0.3s ease;
+  z-index: 1001;
 }
 
 .prevButton {
   background: linear-gradient(90deg, #3b82f6, #2563eb);
+  type: "button";
   color: #ffffff;
 }
 
 .nextButton {
   background: linear-gradient(90deg, #22c55e, #16a34a);
+  type: "button";
   color: #ffffff;
 }
 
