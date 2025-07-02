@@ -1,129 +1,301 @@
-/* General Body & Background */
 .main {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/logo.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
-  padding: 0;
-  color: #ffffff;
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-weight: 500;
-  width: 100%;
-  margin: 0;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden; /* Prevent overflow from borders */
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
 }
 
-/* Header & Logo */
 .header {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0;
-  max-width: 900px;
-  margin: 3rem auto 2rem;
+  background: url('/logo.png') no-repeat center center;
+  background-size: cover;
+  padding: 4rem 2rem;
   text-align: center;
-  flex-shrink: 0;
+  color: #fff;
 }
 
 .headerText {
-  text-align: center;
-}
-
-.logo {
-  display: none;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .title {
-  font-size: 2.75rem;
-  font-weight: 700;
+  font-size: 3rem;
   margin: 0;
-  letter-spacing: -0.02em;
+  font-weight: 700;
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
   font-weight: 400;
-  margin-top: 0.75rem;
-  line-height: 1.4;
-  color: #d1d5db;
 }
 
 .subtitleNormal {
-  font-weight: 500;
+  font-weight: normal;
 }
 
-/* Content Wrapper */
 .contentWrapper {
-  flex: 1 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 2rem;
-  width: 100%;
+  flex: 1;
+  padding: 2rem;
   max-width: 1200px;
-  box-sizing: border-box;
+  margin: 0 auto;
+  text-align: center;
 }
 
-/* Text & Content Sections */
-.intro,
-.description,
-.mainContent {
+.intro {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: #1a202c;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.ctaButton:hover {
+  background: #2d3748;
+}
+
+.ctaButtonGreen {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.ctaButtonGreen:hover {
+  background: linear-gradient(90deg, #16a34a, #15803d);
+}
+
+.description {
   font-size: 1.1rem;
-  text-align: center;
   line-height: 1.7;
   max-width: 800px;
->>>>>>> a5da6c624044f73b2de693eb5fe44342d3248416
-  margin: 1.5rem 0;
-  font-size: 1rem;
-  line-height: 1.6;
-  font-weight: 500;
+  margin: 0 auto 2rem;
 }
 
-<<<<<<< HEAD
-.downloadList li {
-  margin-bottom: 1rem;
-=======
-/* Footer */
+.videoContainer {
+  margin: 2rem 0;
+}
+
+.video {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.mainContent {
+  margin: 2rem 0;
+}
+
+.mainContent p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.secondaryCta {
+  margin: 2rem 0;
+}
+
+.assessmentText {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #666;
+}
+
 .footerLinks {
   display: flex;
   justify-content: center;
-  gap: 2.5rem;
-  flex-wrap: wrap;
-  font-size: 0.95rem;
-  color: #d1d5db;
-  padding: 2rem 0;
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 1200px;
->>>>>>> a5da6c624044f73b2de693eb5fe44342d3248416
+  gap: 2rem;
+  padding: 1rem;
+  background: #1a202c;
+  color: #fff;
 }
 
-<<<<<<< HEAD
-.downloadButton {
-  display: inline-block;
-  background: linear-gradient(90deg, #22c55e, #16a34a);
-=======
 .footerLink {
   cursor: pointer;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  font-size: 0.85rem; /* Subtle font size */
-  color: #d1d5db; /* Subtle color */
-  font-weight: 400; /* Lighter weight for subtlety */
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
 }
 
 .footerLink:hover {
-  background-color: rgba(255, 255, 255, 0.1);
->>>>>>> a5da6c624044f73b2de693eb5fe44342d3248416
+  color: #22c55e;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+  background: #1a202c;
+}
+
+.footerContent a {
+  color: #22c55e;
+  text-decoration: none;
+}
+
+.footerContent a:hover {
+  text-decoration: underline;
+}
+
+.pitchSection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.pitchContent {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background: #dc2626;
+}
+
+.pitchNavigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.navButton {
+  background: #1a202c;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.prevButton {
+  margin-right: 1rem;
+}
+
+.nextButton {
+  margin-left: 1rem;
+}
+
+.navButton:hover {
+  background: #2d3748;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+}
+
+.passwordInput {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.confirmButton {
+  background: #22c55e;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.confirmButton:hover {
+  background: #16a34a;
+}
+
+.cancelButton {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancelButton:hover {
+  background: #dc2626;
+}
+
+.downloadList {
+  list-style-type: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 800px;
+  font-weight: 500;
+}
+
+.downloadList li {
+  margin-bottom: 1rem;
+}
+
+.downloadButton {
+  display: inline-block;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
   color: #ffffff;
   padding: 0.7rem 1.5rem;
   border-radius: 6px;
@@ -136,296 +308,57 @@
   background: linear-gradient(90deg, #16a34a, #15803d);
   transform: translateY(-2px);
 }
-<<<<<<< HEAD
-=======
-
-/* Pitch Section */
-.pitchSection {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #111827;
-  padding: 2rem;
-  z-index: 1000;
-  overflow-y: auto;
-  text-align: left;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-weight: 500;
-}
-
-.closeButton {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background: linear-gradient(90deg, #dc2626, #b91c1c);
-  color: #ffffff;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  z-index: 1001;
-}
-
-.closeButton:hover {
-  opacity: 0.85;
-  transform: translateY(-2px);
-}
-
-.pitchContent {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1.5rem;
-  background-color: rgba(31, 41, 55, 0.95);
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  flex: 0 1 auto;
-}
-
-.pitchContent h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1.2rem;
-  color: #ffffff;
-}
 
 .pitchList {
   list-style-type: disc;
-  padding-left: 1.5rem;
-  margin: 1.2rem 0;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  font-weight: 500;
+  padding-left: 2rem;
+  text-align: left;
 }
 
-.pitchNavigation {
-  margin-top: 1.5rem;
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.navButton {
-  padding: 0.6rem 1.5rem;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-  z-index: 1001;
-}
-
-.prevButton {
-  background: linear-gradient(90deg, #3b82f6, #2563eb);
-  color: #ffffff;
-}
-
-.nextButton {
-  background: linear-gradient(90deg, #22c55e, #16a34a);
-  color: #ffffff;
-}
-
-.prevButton:hover {
-  background: linear-gradient(90deg, #2563eb, #1d4ed8);
-}
-
-.nextButton:hover {
-  background: linear-gradient(90deg, #16a34a, #15803d);
-}
-
-/* Pricing Packages */
 .packagesContainer {
   display: flex;
-  flex-wrap: nowrap;
-  gap: 1.5rem;
-  justify-content: center;
-  padding: 1rem 0;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  overflow: hidden;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .package {
-  flex: 1 1 33.33%;
-  max-width: 33.33%;
-  min-width: 250px;
+  flex: 1;
+  min-width: 300px;
+  background: #fff;
   padding: 1.5rem;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.package:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-}
-
-.package h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
 .packageGreen {
-  border: 2px solid #22c55e;
-  background-color: rgba(34, 197, 94, 0.15);
+  border-left: 5px solid #22c55e;
 }
 
 .packageYellow {
-  border: 2px solid #facc15;
-  background-color: rgba(250, 204, 21, 0.15);
+  border-left: 5px solid #f59e0b;
 }
 
 .packageBlue {
-  border: 2px solid #2563eb;
-  background-color: rgba(37, 99, 235, 0.15);
+  border-left: 5px solid #3b82f6;
 }
 
 .packageList {
   list-style-type: disc;
-  padding-left: 1.5rem;
-  font-size: 0.9rem;
-  line-height: 1.5;
+  padding-left: 2rem;
+  text-align: left;
   margin: 1rem 0;
-  font-weight: 500;
 }
 
-.duration,
+.duration {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 1rem 0;
+}
+
 .note {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  color: #999;
   margin-top: 1rem;
-  color: #d1d5db;
-  font-weight: 500;
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .main {
-    padding: 0 1rem;
-  }
-
-  .header {
-    flex-direction: column;
-    gap: 1.5rem;
-    margin: 2rem auto;
-  }
-
-  .title {
-    font-size: 2.25rem;
-  }
-
-  .subtitle {
-    font-size: 1.1rem;
-  }
-
-  .intro,
-  .description,
-  .mainContent {
-    font-size: 1rem;
-    margin: 1rem 0;
-  }
-
-  .video {
-    max-width: 100%;
-  }
-
-  .assessmentText {
-    font-size: 0.9rem;
-    padding: 1rem;
-  }
-
-  .footerLinks {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-  }
-
-  .footerLink {
-    width: 100%;
-    max-width: 200px;
-  }
-
-  .modalContent {
-    width: 90%;
-    max-width: 360px;
-    padding: 1.5rem;
-  }
-
-  .pitchSection {
-    padding: 1.5rem;
-  }
-
-  .pitchContent {
-    padding: 1.2rem;
-  }
-
-  .pitchContent h2 {
-    font-size: 1.4rem;
-  }
-
-  .package {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
-  .packagesContainer {
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 1.75rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-
-  .ctaButton {
-    padding: 0.7rem 1.5rem;
-    font-size: 0.95rem;
-  }
-
-  .videoContainer {
-    padding: 1rem 0;
-  }
-
-  .pitchSection {
-    padding: 1rem;
-  }
-
-  .pitchContent {
-    padding: 1rem;
-  }
-
-  .pitchContent h2 {
-    font-size: 1.3rem;
-  }
-
-  .pitchList {
-    font-size: 0.9rem;
-  }
-
-  .navButton {
-    padding: 0.5rem 1.2rem;
-    font-size: 0.85rem;
-  }
-}
->>>>>>> a5da6c624044f73b2de693eb5fe44342d3248416
