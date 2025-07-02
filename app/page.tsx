@@ -235,8 +235,8 @@ export default function Page() {
     <main className={styles.main}>
       <div className={styles.header}>
         <div className={styles.headerText}>
-          <h1 className={styles.title}>MitDepot</h1>
-          <h2 className={styles.subtitle} style={{ color: '#1E90FF' }}>
+          <h1 className={styles.title} style={{ color: 'black', fontWeight: 'bold' }}>MitDepot</h1>
+          <h2 className={styles.subtitle} style={{ color: 'black', fontWeight: 'bold' }}>
             Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
             <br />
             <span className={styles.subtitleNormal}>Sikkert. Privat. For evigt.</span>
@@ -324,7 +324,7 @@ export default function Page() {
         {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
           <p
             key={section}
-            onClick={() => setActiveSection(activeSection === section ? null : section)}
+            onClick={() => setActiveSection(section)} // Changed to always set, no toggle
             className={styles.footerLink}
           >
             {section}
