@@ -233,7 +233,7 @@ export default function Page() {
       <div className={styles.header}>
         <div className={styles.headerText}>
           <h1 className={styles.title}>MitDepot</h1>
-          <h2 className={styles.subtitle} style={{ color: '#1E90FF' }}> {/* Changed to DodgerBlue */}
+          <h2 className={styles.subtitle} style={{ color: '#333333' }}> {/* Changed to DodgerBlue */}
             Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
             <br />
             <span className={styles.subtitleNormal}>Sikkert. Privat. For evigt.</span>
