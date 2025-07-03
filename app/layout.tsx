@@ -1,3 +1,4 @@
+import React from 'react';
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -39,7 +40,8 @@ export default function RootLayout({
                 <li>
                   <Link href="/about" className="hover:underline">
                     About
-                  </li>
+                  </Link>
+                </li>
                 <li>
                   <Link href="/contact" className="hover:underline">
                     Contact
