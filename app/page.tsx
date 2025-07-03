@@ -77,8 +77,8 @@ export default function Page() {
       content: (
         <>
           <ul className={styles.pitchList}>
-            <li>Vi er 100 % Bitcoin-only – vi gør ikke alt. Vi gør én ting med præcision.</li>
-            <li>Alt vi bruger er open-source, verified og battle-tested – og du har eget input.</li>
+            <li>Vi er 100 % Bitcoin-only – vi gør ikke alt. Vi gør det her med præcision.</li>
+            <li>Alt vi bruger er open-source, verified og battle-tested – ingen sorte bokse.</li>
             <li>Vi forstår formuebevistes behov: kontrol, diskretion, arv og sikkerhed.</li>
             <li>Vi rådgiver – vi opbevarer ikke. Du ejer, du bestemmer.</li>
             <li>Vores løsninger fungerer i praksis – ikke bare på papir.</li>
@@ -324,7 +324,7 @@ export default function Page() {
         {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
           <p
             key={section}
-            onClick={() => setActiveSection(section)} // Changed to always set, no toggle
+            onClick={() => setActiveSection(section)} // Instant open, no toggle
             className={styles.footerLink}
           >
             {section}
