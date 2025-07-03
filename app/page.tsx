@@ -324,7 +324,7 @@ export default function Page() {
         {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
           <p
             key={section}
-            onClick={() => setActiveSection(section)} // Instant open, no toggle
+            onClick={() => setActiveSection(section)} // Instant open
             className={styles.footerLink}
           >
             {section}

@@ -1,3 +1,7 @@
+.main {
+  background-color: #1a1a1a; /* Adjust to your original dark color if different */
+  color: #fff; /* Ensure text is white on dark background */
+}
 .packageRow {
   display: flex;
   gap: 20px;
