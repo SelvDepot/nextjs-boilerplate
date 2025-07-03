@@ -3,8 +3,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter, Roboto } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'], weight: ['700'] }); // Thicker text
-const roboto = Roboto({ subsets: ['latin'], weight: ['700'] }); // Thicker text
+const inter = Inter({ subsets: ['latin'], weight: ['700'] });
+const roboto = Roboto({ subsets: ['latin'], weight: ['700'] });
 
 export const metadata: Metadata = {
   title: 'MitDepot',
@@ -21,22 +21,17 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${roboto.className}`}
         style={{
-          backgroundColor: '#ffffff', // White background
+          backgroundColor: '#f0f4f8', // Neutral grå, læsevenlig og tiltalende
           minHeight: '100vh',
-          color: '#333333', // Dark gray text
+          color: '#333333', // Mørk grå tekst
         }}
       >
         <header
           style={{
-            backgroundImage: 'url(/logo.png)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            minHeight: '100vh', // Full height for entire page
+            minHeight: '150px',
           }}
-        >
-          <main>{children}</main>
-        </header>
+        ></header>
+        <main>{children}</main>
       </body>
     </html>
   );
