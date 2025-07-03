@@ -1,10 +1,8 @@
-import React from 'react';
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter, Roboto } from 'next/font/google';
+import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'], weight: ['700'] });
-const roboto = Roboto({ subsets: ['latin'], weight: ['700'] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'MitDepot',
@@ -18,12 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="da">
-      <body
-        className={`${inter.className} ${roboto.className}`}
-        style={{ color: '#111827', backgroundColor: '#f9fafb' }} // Default light gray background
-      >
-        <main>{children}</main>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

@@ -1,208 +1,225 @@
-/* Layout and general styles */
 .main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f4f4f4;
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #333;
 }
+
 .header {
-  background-color: #222;
-  padding: 20px 0;
+  background: url('/logo.png') no-repeat center center;
+  background-size: cover;
+  padding: 4rem 2rem;
   text-align: center;
   color: #fff;
 }
+
 .headerText {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
 }
+
 .title {
-  font-size: 3em;
-  margin: 0.5rem 0;
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 700;
 }
+
 .subtitle {
-  font-size: 1.5em;
+  font-size: 1.5rem;
   margin: 0.5rem 0;
+  font-weight: 400;
 }
+
 .subtitleNormal {
-  font-size: 1em;
   font-weight: normal;
 }
 
 .contentWrapper {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
 }
+
 .intro {
-  font-size: 1.2em;
-  line-height: 1.5;
-}
-.pitchList {
-  margin-top: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
   margin-bottom: 2rem;
-  padding-left: 1.2rem;
-  list-style-type: disc;
-}
-.packagesContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 2rem 0;
-}
-.package {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 1rem;
-  flex: 1 1 calc(33% - 2rem);
-}
-.packageRow {
-  display: flex;
-}
-.packageGreen {
-  background-color: #e0f7e9;
-}
-.packageYellow {
-  background-color: #fff9e0;
-}
-.packageBlue {
-  background-color: #e0f0ff;
-}
-.packageList {
-  margin: 0.5rem 0 1rem 1.2rem;
-  list-style-type: disc;
-}
-.duration {
-  font-size: 0.9em;
-  margin-top: 1rem;
-}
-.note {
-  font-size: 0.9em;
-  color: #555;
-  margin-top: 0.5rem;
 }
 
 .cta {
-  text-align: center;
-  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
+
 .ctaButton {
-  background-color: #1E90FF;
+  display: inline-block;
+  background: #1a202c;
   color: #fff;
   padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  margin: 0 0.5rem;
+  border-radius: 6px;
   text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
 }
-.ctaButtonGreen {
-  background-color: #28a745;
-}
+
 .ctaButton:hover {
-  opacity: 0.9;
+  background: #2d3748;
+}
+
+.ctaButtonGreen {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.ctaButtonGreen:hover {
+  background: linear-gradient(90deg, #16a34a, #15803d);
 }
 
 .description {
+  font-size: 1.1rem;
+  line-height: 1.7;
   max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  text-align: center;
+  margin: 0 auto 2rem;
 }
+
 .videoContainer {
-  text-align: center;
   margin: 2rem 0;
 }
+
 .video {
   max-width: 100%;
-  height: auto;
+  border-radius: 8px;
 }
+
 .mainContent {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-.secondaryCta {
-  text-align: center;
   margin: 2rem 0;
 }
-.assessmentText {
+
+.mainContent p {
+  font-size: 1.1rem;
+  line-height: 1.7;
   max-width: 800px;
-  margin: 2rem auto 4rem;
-  padding: 0 1rem;
-  font-size: 0.9em;
-  line-height: 1.4;
+  margin: 0 auto;
+}
+
+.secondaryCta {
+  margin: 2rem 0;
+}
+
+.assessmentText {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #666;
 }
 
 .footerLinks {
-  text-align: center;
-  margin: 2rem 0 1rem;
-}
-.footerLink {
-  color: #007BFF;
-  cursor: pointer;
-  margin: 0 0.5rem;
-  display: inline-block;
-}
-.footerContent {
-  max-width: 800px;
-  margin: 0 auto 2rem;
-  padding: 0 1rem;
-  font-size: 0.9em;
-  line-height: 1.4;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  background: #1a202c;
+  color: #fff;
 }
 
-/* Modal and Pitch Section */
+.footerLink {
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footerLink:hover {
+  color: #22c55e;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+  color: #fff;
+  background: #1a202c;
+}
+
+.footerContent a {
+  color: #22c55e;
+  text-decoration: none;
+}
+
+.footerContent a:hover {
+  text-decoration: underline;
+}
+
 .pitchSection {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.8);
-  overflow-y: auto;
-  padding: 2rem;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
-.closeButton {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: #ff4444;
-  color: #fff;
-  border: none;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-}
+
 .pitchContent {
-  background-color: #fff;
+  background: #fff;
   padding: 2rem;
   border-radius: 8px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
   position: relative;
-  max-width: 600px;
 }
-.pitchNavigation {
-  margin-top: 1rem;
-  display: flex;
-  justify-content: space-between;
-}
-.navButton {
-  background-color: #1E90FF;
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #ef4444;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
+  border-radius: 4px;
   cursor: pointer;
 }
-.prevButton {
-  margin-right: auto;
+
+.closeButton:hover {
+  background: #dc2626;
 }
+
+.pitchNavigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.navButton {
+  background: #1a202c;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.prevButton {
+  margin-right: 1rem;
+}
+
 .nextButton {
-  margin-left: auto;
+  margin-left: 1rem;
+}
+
+.navButton:hover {
+  background: #2d3748;
 }
 
 .modal {
@@ -211,51 +228,142 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
+
 .modalContent {
-  background-color: #fff;
+  background: #fff;
   padding: 2rem;
   border-radius: 8px;
-  max-width: 90%;
-  width: 400px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
 }
+
 .passwordInput {
   width: 100%;
   padding: 0.5rem;
   margin: 1rem 0;
-  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
+
 .confirmButton {
-  background-color: #1E90FF;
+  background: #22c55e;
   color: #fff;
   border: none;
   padding: 0.5rem 1rem;
-  margin-right: 1rem;
+  border-radius: 4px;
   cursor: pointer;
+  margin-right: 1rem;
 }
+
+.confirmButton:hover {
+  background: #16a34a;
+}
+
 .cancelButton {
-  background-color: #ccc;
-  color: #333;
+  background: #ef4444;
+  color: #fff;
   border: none;
   padding: 0.5rem 1rem;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-.downloadList {
-  list-style: none;
-  margin: 1rem 0;
-  padding: 0;
+.cancelButton:hover {
+  background: #dc2626;
 }
+
+.downloadList {
+  list-style-type: none;
+  padding: 0;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 800px;
+  font-weight: 500;
+}
+
+.downloadList li {
+  margin-bottom: 1rem;
+}
+
 .downloadButton {
-  background-color: #1E90FF;
-  color: #fff;
   display: inline-block;
-  margin: 0.5rem 0;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+  color: #ffffff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
   text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.downloadButton:hover {
+  background: linear-gradient(90deg, #16a34a, #15803d);
+  transform: translateY(-2px);
+}
+
+.pitchList {
+  list-style-type: disc;
+  padding-left: 2rem;
+  text-align: left;
+}
+
+.packagesContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.package {
+  flex: 1;
+  min-width: 300px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.packageGreen {
+  border-left: 5px solid #22c55e;
+}
+
+.packageYellow {
+  border-left: 5px solid #f59e0b;
+}
+
+.packageBlue {
+  border-left: 5px solid #3b82f6;
+}
+
+.packageList {
+  list-style-type: disc;
+  padding-left: 2rem;
+  text-align: left;
+  margin: 1rem 0;
+}
+
+.duration {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 1rem 0;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 1rem;
+}
+.packageRow {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
 }
