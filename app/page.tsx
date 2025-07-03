@@ -157,6 +157,7 @@ const pitchContent = [
   },
 ];
 
+// Add this line to fix the module error, keeping all other code unchanged
 export default function Page() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [showPitch, setShowPitch] = useState(false);
