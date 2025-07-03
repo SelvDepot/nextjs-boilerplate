@@ -233,27 +233,30 @@ export default function Page() {
 
   return (
     <main className={styles.main}>
-      <div className={styles.header}>
+      {/* Hero Section */}
+      <div className={styles.hero}>
         <div
-          className={styles.headerText}
+          className={styles.heroContent}
           style={{
             backgroundImage: 'url(/logo.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            padding: '20px',
-            backgroundColor: '#e6f3ff', // Light blue highlight
+            padding: '40px',
+            textAlign: 'center',
           }}
         >
-          <h1 className={styles.title} style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)', padding: '5px 10px' }}>
+          <h1 className={styles.title} style={{ backgroundColor: 'rgba(240, 244, 248, 0.9)', padding: '10px', display: 'inline-block' }}>
             MitDepot
           </h1>
           <h2
             className={styles.subtitle}
             style={{
               color: '#1E90FF',
-              backgroundColor: 'rgba(255, 255, 255, 0.7)',
-              padding: '5px 10px',
+              backgroundColor: 'rgba(240, 244, 248, 0.9)',
+              padding: '10px',
+              display: 'inline-block',
+              marginTop: '10px',
             }}
           >
             Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
@@ -261,69 +264,73 @@ export default function Page() {
             <span className={styles.subtitleNormal}>Sikkert. Privat. For evigt.</span>
           </h2>
         </div>
+        <div className={styles.ctaContainer}>
+          <a
+            href="https://calendly.com/selvdepot/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.ctaButton} ${styles.primaryCta}`}
+          >
+            Book et gratis 30-minutters møde
+          </a>
+          <button
+            onClick={handleDownloadAccess}
+            className={`${styles.ctaButton} ${styles.secondaryCta} mt-4`}
+          >
+            Download Gratis PDF'er
+          </button>
+        </div>
       </div>
 
-      <div className={styles.contentWrapper}>
-        <p className={styles.intro}>
-          Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
-          <br />
-          MitDepot er rådgivning i sikker, privat og fremtidssikret opbevaring af Bitcoin.
-          Dine penge. Din fremtid. Din familie. Tag kontrol.
+      {/* Content Section */}
+      <div className={styles.contentSection}>
+        <div className={styles.contentWrapper} style={{ padding: '40px 20px' }}>
+          <h3 className={styles.sectionHeading}>Hvorfor MitDepot?</h3>
+          <p className={styles.intro} style={{ marginBottom: '20px' }}>
+            Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
+          </p>
+          <p className={styles.intro} style={{ marginBottom: '20px' }}>
+            MitDepot er rådgivning i sikker, privat og fremtidssikret opbevaring af Bitcoin.
+          </p>
+          <ul className={styles.pitchList}>
+            <li style={{ marginBottom: '10px' }}>Vi arbejder 1:1 med formuebeviste personer.</li>
+            <li style={{ marginBottom: '10px' }}>Vi bygger på gennemtænkt sikkerhed, open-source værktøjer og skræddersyer efter behov.</li>
+            <li>Det her handler ikke om hype, crypto eller trading cykler – men om, hvordan du beholder dine Bitcoin.</li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Video Section */}
+      <div className={styles.videoSection}>
+        <div className={styles.videoContainer}>
+          <video controls className={styles.video} poster="/intro-preview.jpg">
+            <source src="/intro.mp4" type="video/mp4" />
+            Din browser understøtter ikke video-tagget.
+          </video>
+        </div>
+        <div className={styles.videoText} style={{ padding: '20px' }}>
+          <p>
+            Se, hvordan vi guider dig til fuld kontrol over dine Bitcoin. Udforsk vores proces i denne korte video.
+          </p>
+        </div>
+      </div>
+
+      {/* Main Content */}
+      <div className={styles.mainContent} style={{ padding: '40px 20px' }}>
+        <h3 className={styles.sectionHeading}>Hvad er Bitcoin Self-Custody?</h3>
+        <p style={{ marginBottom: '20px' }}>
+          Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen.
         </p>
-        <ul className={styles.pitchList}>
-          <li>Vi arbejder 1:1 med formuebeviste personer.</li>
-          <li>Vi bygger på gennemtænkt sikkerhed, open-source værktøjer og skræddersyer efter behov.</li>
-          <li>Det her handler ikke om hype, crypto eller trading cykler – men om, hvordan du beholder dine Bitcoin.</li>
-        </ul>
-      </div>
-
-      <div className={styles.cta}>
-        <a
-          href="https://calendly.com/selvdepot/30min"
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.ctaButton}
-        >
-          Book et gratis 30-minutters møde
-        </a>
-        <button
-          onClick={handleDownloadAccess}
-          className={`${styles.ctaButton} ${styles.ctaButtonGreen}`}
-        >
-          Download Gratis PDF'er
-        </button>
-      </div>
-
-      <p className={styles.description}>
-        Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
-        med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen.
-        Ingen banker. Ingen stater. Ingen modparter.
-        Men uden korrekt opbevaring forsvinder sikkerheden og suveræniteten.
-        Hos MitDepot lærer du at holde dine Bitcoin, som de var tiltænkt:
-        100% under din egen kontrol!
-      </p>
-
-      <div className={styles.videoContainer}>
-        <video controls className={styles.video}>
-          <source src="/intro.mp4" type="video/mp4" />
-          Din browser understøtter ikke video-tagget.
-        </video>
-      </div>
-
-      <div className={styles.mainContent}>
+        <p style={{ marginBottom: '20px' }}>
+          Ingen banker. Ingen stater. Ingen modparter. Men uden korrekt opbevaring forsvinder sikkerheden og suveræniteten.
+        </p>
         <p>
-          Bitcoin self-custody ved hjælp af MitDepot er din livbåd i en verden hvor det
-          traditionelle FIAT-system suger livet ud af dine beholdninger og aktiver gennem inflation
-          og kontrol. Over 80% af Bitcoin-ejere risikerer at miste alt gennem hacks,
-          social engineering og modpartsrisiko – men DU er stadig den største risiko for tab af dine Bitcoin.
-          Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody inklusiv
-          arveplanlægning, trusselsanalyse, svigtpunktsanalyse, multisig m.m. – uden at vi
-          nogensinde rører dine private keys. Dette er ikke bare en chance for 100% kontrol og tryghed.
-          Det er din sidste udvej før dørene lukker, og du bliver fanget i et forgængeligt system.
+          Hos MitDepot lærer du at holde dine Bitcoin, som de var tiltænkt: 100% under din egen kontrol!
         </p>
       </div>
 
-      <div className={styles.secondaryCta}>
+      {/* Secondary CTA */}
+      <div className={styles.secondaryCtaBlock}>
         <a
           href="https://calendly.com/selvdepot/30min"
           target="_blank"
@@ -334,23 +341,26 @@ export default function Page() {
         </a>
       </div>
 
-      <p className={styles.assessmentText}>
-        Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
-        self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har
-        de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger –
-        vil du blive afvist, men med mulighed for undervisning og støtte, indtil du er klar.
-        <br />
-        <br />
-        Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller hjælpelinje
-        at ringe til, hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt ansvar.
-      </p>
+      {/* Assessment Text */}
+      <div className={styles.assessmentSection} style={{ padding: '40px 20px' }}>
+        <h3 className={styles.sectionHeading}>Er du klar?</h3>
+        <p style={{ marginBottom: '20px' }}>
+          Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere self-custody af Bitcoin.
+        </p>
+        <p style={{ marginBottom: '20px' }}>
+          Hvis du er for ung, for gammel, eller af andre grunde ikke har de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger – vil du blive afvist, men med mulighed for undervisning og støtte, indtil du er klar.
+        </p>
+        <p>
+          Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller hjælpelinje at ringe til, hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt ansvar.
+        </p>
+      </div>
 
       <div className={styles.footerLinks}>
         {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
           <p
             key={section}
             onClick={() => setActiveSection(activeSection === section ? null : section)}
-            className={styles.footerLink}
+            className={`${styles.footerLink} font-bold`}
           >
             {section}
           </p>

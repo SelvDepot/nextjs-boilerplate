@@ -21,14 +21,16 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${roboto.className}`}
         style={{
-          backgroundColor: '#f0f4f8', // Neutral grå læsevenlig og tiltalende
+          backgroundColor: '#f0f4f8', // Consistent light gray background
           minHeight: '100vh',
-          color: '#333333', // Mørk grå tekst
+          color: '#333333', // Dark gray text
         }}
       >
         <header
           style={{
             minHeight: '150px',
+            backgroundColor: '#1E90FF', // Dark blue header
+            padding: '20px',
           }}
         ></header>
         <main>{children}</main>
