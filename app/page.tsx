@@ -1,6 +1,5 @@
 'use client';
 
-import * as React from 'react';
 import { useState, useEffect } from 'react';
 import styles from './page.module.css';
 
@@ -90,77 +89,78 @@ export default function Page() {
     {
       title: 'VI. Pakker & Priser',
       content: (
-        <div className={styles.packagesContainer}>
-          <div className={`${styles.package} ${styles.packageRow}`}>
-            <div className={`${styles.package} ${styles.packageGreen}`}>
-              <h3>🟠 Klar til at eje</h3>
-              <p>
-                <strong>Pris:</strong> 10.000 kr.
-                <br />
-                Til dig, der vil i gang – eller optimere det, du allerede har.
-              </p>
-              <p>Inkluderer:</p>
-              <ul className={styles.packageList}>
-                <li>Hardware wallet opsætning</li>
-                <li>Single-sig med/uden passphrase</li>
-                <li>Backup-strategi og risikoforståelse</li>
-                <li>Grundlæggende sikkerhed og vaner</li>
-                <li>Pakken bruges også til gennemgang af eksisterende opsætning (hvis ønsket)</li>
-              </ul>
-              <p className={styles.duration}>
-                <strong>Varighed:</strong> Ca. 2 timer
-              </p>
-              <p className={styles.note}>
-                <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
-              </p>
-            </div>
-            <div className={`${styles.package} ${styles.packageYellow}`}>
-              <h3>🟡 Ejer med overblik</h3>
-              <p>
-                <strong>Pris:</strong> 20.000 kr.
-                <br />
-                Til dig med større mængder bitcoin og behov for teknisk dybde.
-              </p>
-              <p>Inkluderer:</p>
-              <ul className={styles.packageList}>
-                <li>Alt i første pakke</li>
-                <li>Rådgivning om hardware wallets</li>
-                <li>Airgapped wallet-struktur</li>
-                <li>Brug og opsætning af Bitcoin node</li>
-                <li>Skræddersyet recovery-plan/guide</li>
-                <li>Fokus på back-up, sikkerhed og gennemgang af angrebsvektorer</li>
-              </ul>
-              <p className={styles.duration}>
-                <strong>Varighed:</strong> 2–4 timer (ekslusiv Node download)
-              </p>
-              <p className={styles.note}>
-                <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
-              </p>
-            </div>
-            <div className={`${styles.package} ${styles.packageBlue}`}>
-              <h3>🔵 Fuld kontrol</h3>
-              <p>
-                <strong>Pris:</strong> 45.000 kr.
-                <br />
-                Til dig, der ønsker suveræn sikkerhed – for livet og for arvingerne.
-              </p>
-              <p>Inkluderer:</p>
-              <ul className={styles.packageList}>
-                <li>Alt i “Ejer med overblik”</li>
-                <li>Multisig-opsætning (hvis relevant)</li>
-                <li>Udvidet trusselsanalyse, svigtpunksanalyse</li>
-                <li>Arveplan og familievejledning</li>
-                <li>Opsætning og brug af Bitcoin node</li>
-                <li>UTXO-management, privat bevidsthed</li>
-                <li>Ét gratis check-up inden for 4 måneder</li>
-              </ul>
-              <p className={styles.duration}>
-                <strong>Varighed:</strong> Fleksibel efter behov og kompleksitet
-              </p>
-              <p className={styles.note}>
-                <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
-              </p>
-            </div>
+        <div
+          className={styles.packagesContainer}
+          style={{ display: 'flex', flexDirection: 'row', gap: '1rem', justifyContent: 'center' }}
+        >
+          <div className={`${styles.package} ${styles.packageGreen}`} style={{ flex: 1, minWidth: '300px' }}>
+            <h3>🟠 Klar til at eje</h3>
+            <p>
+              <strong>Pris:</strong> 10.000 kr.
+              <br />
+              Til dig, der vil i gang – eller optimere det, du allerede har.
+            </p>
+            <p>Inkluderer:</p>
+            <ul className={styles.packageList}>
+              <li>Hardware wallet opsætning</li>
+              <li>Single-sig med/uden passphrase</li>
+              <li>Backup-strategi og risikoforståelse</li>
+              <li>Grundlæggende sikkerhed og vaner</li>
+              <li>Pakken bruges også til gennemgang af eksisterende opsætning (hvis ønsket)</li>
+            </ul>
+            <p className={styles.duration}>
+              <strong>Varighed:</strong> Ca. 2 timer
+            </p>
+            <p className={styles.note}>
+              <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
+            </p>
+          </div>
+          <div className={`${styles.package} ${styles.packageYellow}`} style={{ flex: 1, minWidth: '300px' }}>
+            <h3>🟡 Ejer med overblik</h3>
+            <p>
+              <strong>Pris:</strong> 20.000 kr.
+              <br />
+              Til dig med større mængder bitcoin og behov for teknisk dybde.
+            </p>
+            <p>Inkluderer:</p>
+            <ul className={styles.packageList}>
+              <li>Alt i første pakke</li>
+              <li>Rådgivning om hardware wallets</li>
+              <li>Airgapped wallet-struktur</li>
+              <li>Brug og opsætning af Bitcoin node</li>
+              <li>Skræddersyet recovery-plan/guide</li>
+              <li>Fokus på back-up, sikkerhed og gennemgang af angrebsvektorer</li>
+            </ul>
+            <p className={styles.duration}>
+              <strong>Varighed:</strong> 2–4 timer (ekslusiv Node download)
+            </p>
+            <p className={styles.note}>
+              <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
+            </p>
+          </div>
+          <div className={`${styles.package} ${styles.packageBlue}`} style={{ flex: 1, minWidth: '300px' }}>
+            <h3>🔵 Fuld kontrol</h3>
+            <p>
+              <strong>Pris:</strong> 45.000 kr.
+              <br />
+              Til dig, der ønsker suveræn sikkerhed – for livet og for arvingerne.
+            </p>
+            <p>Inkluderer:</p>
+            <ul className={styles.packageList}>
+              <li>Alt i “Ejer med overblik”</li>
+              <li>Multisig-opsætning (hvis relevant)</li>
+              <li>Udvidet trusselsanalyse, svigtpunksanalyse</li>
+              <li>Arveplan og familievejledning</li>
+              <li>Opsætning og brug af Bitcoin node</li>
+              <li>UTXO-management, privat bevidsthed</li>
+              <li>Ét gratis check-up inden for 4 måneder</li>
+            </ul>
+            <p className={styles.duration}>
+              <strong>Varighed:</strong> Fleksibel efter behov og kompleksitet
+            </p>
+            <p className={styles.note}>
+              <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
+            </p>
           </div>
         </div>
       ),
@@ -361,8 +361,28 @@ export default function Page() {
       )}
 
       {activeSection === 'Pitch' && showPitch && (
-        <div className={styles.pitchSection}>
-          <button onClick={handleClosePitch} className={styles.closeButton}>
+        <div
+          className={styles.pitchSection}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            width: '100vw',
+            height: '100vh',
+            backgroundColor: 'black',
+            color: 'white',
+            zIndex: 50,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '2rem',
+          }}
+        >
+          <button
+            onClick={handleClosePitch}
+            className={styles.closeButton}
+            style={{ position: 'absolute', top: '1rem', right: '1rem' }}
+          >
             Luk
           </button>
           <div className={styles.pitchContent}>
@@ -370,12 +390,18 @@ export default function Page() {
             {pitchContent[currentPitchPage].content}
             <div className={styles.pitchNavigation}>
               {currentPitchPage > 0 && (
-                <button onClick={handlePreviousPage} className={`${styles.navButton} ${styles.prevButton}`}>
+                <button
+                  onClick={handlePreviousPage}
+                  className={`${styles.navButton} ${styles.prevButton}`}
+                >
                   Forrige
                 </button>
               )}
               {currentPitchPage < pitchContent.length - 1 && (
-                <button onClick={handleNextPage} className={`${styles.navButton} ${styles.nextButton}`}>
+                <button
+                  onClick={handleNextPage}
+                  className={`${styles.navButton} ${styles.nextButton}`}
+                >
                   Næste
                 </button>
               )}
@@ -428,7 +454,11 @@ export default function Page() {
                 <button type="submit" className={styles.confirmButton}>
                   Bekræft
                 </button>
-                <button type="button" onClick={handleClosePasswordModal} className={styles.cancelButton}>
+                <button
+                  type="button"
+                  onClick={handleClosePasswordModal}
+                  className={styles.cancelButton}
+                >
                   Annuller
                 </button>
               </div>
@@ -461,7 +491,6 @@ export default function Page() {
           </div>
         </div>
       )}
-
     </main>
   );
 }
