@@ -77,8 +77,8 @@ export default function Page() {
       content: (
         <>
           <ul className={styles.pitchList}>
-            <li>Vi er 100 % Bitcoin-only – vi gør ikke alt. Vi gør det her med præcision.</li>
-            <li>Alt vi bruger er open-source, verified og battle-tested – ingen sorte bokse.</li>
+            <li>Vi er 100 % Bitcoin-only – vi gør ikke alt. Vi gør én ting med præcision.</li>
+            <li>Alt vi bruger er open-source, verified og battle-tested – og du har eget input.</li>
             <li>Vi forstår formuebevistes behov: kontrol, diskretion, arv og sikkerhed.</li>
             <li>Vi rådgiver – vi opbevarer ikke. Du ejer, du bestemmer.</li>
             <li>Vores løsninger fungerer i praksis – ikke bare på papir.</li>
@@ -235,8 +235,8 @@ export default function Page() {
     <main className={styles.main}>
       <div className={styles.header}>
         <div className={styles.headerText}>
-          <h1 className={styles.title} style={{ color: 'black', fontWeight: 'bold' }}>MitDepot</h1>
-          <h2 className={styles.subtitle} style={{ color: 'black', fontWeight: 'bold' }}>
+          <h1 className={styles.title}>MitDepot</h1>
+          <h2 className={styles.subtitle} style={{ color: '#1E90FF' }}>
             Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
             <br />
             <span className={styles.subtitleNormal}>Sikkert. Privat. For evigt.</span>
@@ -324,7 +324,7 @@ export default function Page() {
         {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
           <p
             key={section}
-            onClick={() => setActiveSection(section)} // Instant open
+            onClick={() => setActiveSection(activeSection === section ? null : section)}
             className={styles.footerLink}
           >
             {section}
