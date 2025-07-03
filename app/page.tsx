@@ -261,7 +261,8 @@ export default function Page() {
             onClick={handleDownloadAccess}
             className={`${styles.ctaButton} ${styles.ctaButtonGreen}`}
           >
-            Download Gratis PDF'er
+            Download Gratis PDF
+            (One Pager, Antiscam, Ark)
           </button>
         </div>
 
@@ -407,7 +408,7 @@ export default function Page() {
                 pdfUrls.map((url, index) => (
                   <li key={index}>
                     <a href={url} download className={styles.downloadButton}>
-                      {['MitDepot Recovery Ark', 'MitDepot AntiScam', 'MitDepot One Pager'][index]}
+                      {['MitDepot Gendannelses Ark', 'MitDepot AntiScam', 'MitDepot One Pager'][index]}
                     </a>
                   </li>
                 ))
