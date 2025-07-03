@@ -330,7 +330,10 @@ export default function Page() {
         {['Kontakt', 'Disclaimer', 'Privatliv', 'Vilkår'].map((section) => (
           <p
             key={section}
-            onClick={() => setActiveSection(activeSection === section ? null : section)}
+            onClick={() => {
+              setActiveSection(activeSection === section ? null : section);
+              window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }); // Scroll to bottom
+            }}
             className={styles.footerLink}
           >
             {section}
@@ -339,7 +342,7 @@ export default function Page() {
       </div>
 
       {activeSection === 'Kontakt' && (
-        <div className={styles.footerContent}>
+        <div className={styles.footerContent} id="kontakt">
           <p>
             📬 Email:{' '}
             <a href="mailto:selvdepot@gmail.com" className={styles.footerLink}>
@@ -411,7 +414,7 @@ export default function Page() {
       )}
 
       {activeSection === 'Disclaimer' && (
-        <div className={styles.footerContent}>
+        <div className={styles.footerContent} id="disclaimer">
           <p>
             Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk,
             finansiel, skattemæssig eller investeringsrådgivning. MitDepot tilbyder alene undervisning
@@ -421,7 +424,7 @@ export default function Page() {
       )}
 
       {activeSection === 'Privatliv' && (
-        <div className={styles.footerContent}>
+        <div className={styles.footerContent} id="privatliv">
           <p>
             Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly
             håndteres dine oplysninger af dem under deres politikker. Vi bruger ikke cookies eller analytics.
@@ -430,7 +433,7 @@ export default function Page() {
       )}
 
       {activeSection === 'Vilkår' && (
-        <div className={styles.footerContent}>
+        <div className={styles.footerContent} id="vilkår">
           <p>
             Ved brug af MitDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
             Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
