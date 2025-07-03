@@ -21,7 +21,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${roboto.className}`}
         style={{
-          backgroundColor: '#f0f4f8', // Neutral grå, læsevenlig og tiltalende
+          backgroundColor: '#f0f4f8', // Neutral grå læsevenlig og tiltalende
           minHeight: '100vh',
           color: '#333333', // Mørk grå tekst
         }}
