@@ -1,9 +1,24 @@
-export default async function handler(req, res) {
-  // Array of URLs for the PDF files in the public folder
-  const urls = [
-    "/pdfs/MitDepot_Recovery_Ark.pdf",
-    "/pdfs/MitDepot_AntiScam.pdf",
-    "/pdfs/MitDepot_OnePager.pdf"
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { sign } from 'jsonwebtoken';
+
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'GET') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  const JWT_SECRET = process.env.JWT_SECRET || 'supersecretkey1234567890abcdef';
+  const BASE_URL = process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : 'http://localhost:3000';
+
+  const pdfs = [
+    'MitDepot_Recovery_Ark.pdf',
+    'MitDepot_AntiScam.pdf',
+    'MitDepot_One_Pager.pdf',
   ];
-  res.status(200).json({ urls });
+
+  const signedUrls = pdfs.map((pdf) => {
+    const token = sign({ pdf }, JWT_SECRET, { expiresIn: '1h' });
+    return `${BASE_URL}/api/download?file=${pdf}&token=${token}`;
+  });
+
+  return res.status(200).json({ urls: signedUrls });
 }
