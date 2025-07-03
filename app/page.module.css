@@ -1,169 +1,208 @@
+/* Layout and general styles */
 .main {
-  padding: 2rem;
-  font-family: 'Helvetica Neue', sans-serif;
-  background: #f5f5f5;
-  color: #111;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
 }
-
 .header {
+  background-color: #222;
+  padding: 20px 0;
   text-align: center;
-  background: url('/btc-bg.png') center no-repeat;
-  background-size: cover;
-  padding: 4rem 2rem;
+  color: #fff;
 }
-
 .headerText {
   max-width: 800px;
   margin: 0 auto;
 }
-
 .title {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #fff;
+  font-size: 3em;
+  margin: 0.5rem 0;
 }
-
 .subtitle {
-  font-size: 1.5rem;
-  color: #fff;
-  margin-top: 1rem;
+  font-size: 1.5em;
+  margin: 0.5rem 0;
 }
-
 .subtitleNormal {
+  font-size: 1em;
   font-weight: normal;
 }
 
 .contentWrapper {
-  max-width: 900px;
+  max-width: 800px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
-
 .intro {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+.pitchList {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding-left: 1.2rem;
+  list-style-type: disc;
+}
+.packagesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.package {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1 1 calc(33% - 2rem);
+}
+.packageRow {
+  display: flex;
+}
+.packageGreen {
+  background-color: #e0f7e9;
+}
+.packageYellow {
+  background-color: #fff9e0;
+}
+.packageBlue {
+  background-color: #e0f0ff;
+}
+.packageList {
+  margin: 0.5rem 0 1rem 1.2rem;
+  list-style-type: disc;
+}
+.duration {
+  font-size: 0.9em;
+  margin-top: 1rem;
+}
+.note {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 0.5rem;
 }
 
 .cta {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+  text-align: center;
+  margin: 2rem 0;
 }
-
 .ctaButton {
-  padding: 0.8rem 1.4rem;
-  background-color: #1a1a1a;
+  background-color: #1E90FF;
   color: #fff;
-  text-decoration: none;
+  padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 6px;
-  font-weight: bold;
+  border-radius: 4px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  margin: 0 0.5rem;
+  text-decoration: none;
 }
-
-.ctaButton:hover {
-  background-color: #333;
-}
-
 .ctaButtonGreen {
-  background-color: #4CAF50;
+  background-color: #28a745;
+}
+.ctaButton:hover {
+  opacity: 0.9;
 }
 
 .description {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
   text-align: center;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
 }
-
 .videoContainer {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   margin: 2rem 0;
 }
-
 .video {
-  width: 100%;
-  max-width: 600px;
-  border-radius: 10px;
+  max-width: 100%;
+  height: auto;
 }
-
 .mainContent {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
-
 .secondaryCta {
   text-align: center;
-  margin-bottom: 3rem;
+  margin: 2rem 0;
 }
-
 .assessmentText {
-  font-size: 0.95rem;
-  color: #444;
-  text-align: center;
-  line-height: 1.5;
+  max-width: 800px;
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
+  font-size: 0.9em;
+  line-height: 1.4;
 }
 
 .footerLinks {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 3rem;
-  font-size: 0.9rem;
-  cursor: pointer;
+  text-align: center;
+  margin: 2rem 0 1rem;
 }
-
+.footerLink {
+  color: #007BFF;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  display: inline-block;
+}
 .footerContent {
   max-width: 800px;
-  margin: 1rem auto;
-  padding: 1rem;
-  background-color: #eee;
-  border-radius: 6px;
+  margin: 0 auto 2rem;
+  padding: 0 1rem;
+  font-size: 0.9em;
+  line-height: 1.4;
 }
 
-.footerLink {
-  color: #1a1a1a;
-  text-decoration: underline;
-}
-
+/* Modal and Pitch Section */
 .pitchSection {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  overflow-y: auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #ff4444;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.pitchContent {
   background-color: #fff;
   padding: 2rem;
-  margin: 2rem auto;
   border-radius: 8px;
-  max-width: 800px;
   position: relative;
+  max-width: 600px;
 }
-
-.pitchContent h2 {
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-}
-
-.pitchList {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-  margin: 1rem 0;
-}
-
 .pitchNavigation {
+  margin-top: 1rem;
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
 }
-
 .navButton {
-  background-color: #222;
-  color: white;
+  background-color: #1E90FF;
+  color: #fff;
   border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 5px;
+  padding: 0.5rem 1rem;
   cursor: pointer;
+}
+.prevButton {
+  margin-right: auto;
+}
+.nextButton {
+  margin-left: auto;
 }
 
 .modal {
@@ -172,100 +211,51 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7);
+  background-color: rgba(0,0,0,0.5);
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 1000;
+  align-items: center;
 }
-
 .modalContent {
-  background: white;
+  background-color: #fff;
   padding: 2rem;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 500px;
+  border-radius: 8px;
+  max-width: 90%;
+  width: 400px;
 }
-
 .passwordInput {
   width: 100%;
   padding: 0.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
+  font-size: 1rem;
 }
-
-.confirmButton, .cancelButton {
-  margin-right: 0.5rem;
-  padding: 0.5rem 1rem;
+.confirmButton {
+  background-color: #1E90FF;
+  color: #fff;
   border: none;
-  background-color: #1a1a1a;
-  color: white;
-  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.cancelButton {
+  background-color: #ccc;
+  color: #333;
+  border: none;
+  padding: 0.5rem 1rem;
   cursor: pointer;
 }
 
 .downloadList {
   list-style: none;
-  padding-left: 0;
+  margin: 1rem 0;
+  padding: 0;
 }
-
 .downloadButton {
-  display: block;
+  background-color: #1E90FF;
+  color: #fff;
+  display: inline-block;
   margin: 0.5rem 0;
-  color: #0070f3;
-  text-decoration: underline;
-}
-
-.packagesContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.packageRow {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.package {
-  flex: 1 1 300px;
-  background: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.packageGreen {
-  border-left: 8px solid #4CAF50;
-}
-.packageYellow {
-  border-left: 8px solid #FFC107;
-}
-.packageBlue {
-  border-left: 8px solid #2196F3;
-}
-
-.packageList {
-  padding-left: 1.2rem;
-  margin-top: 0.5rem;
-}
-
-.duration, .note {
-  margin-top: 0.8rem;
-  font-size: 0.9rem;
-  color: #555;
-}
-
-.closeButton {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: #ff4444;
-  color: white;
-  border: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
 }
