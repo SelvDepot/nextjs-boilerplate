@@ -1,6 +1,6 @@
 .main {
-  background-color: #1a1a1a; /* Adjust to your original dark color if different */
-  color: #fff; /* Ensure text is white on dark background */
+  background-color: #1a1a1a; /* Common dark theme, adjust if your original was different */
+  color: #fff; /* White text for contrast */
 }
 .packageRow {
   display: flex;
