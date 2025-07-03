@@ -1,9 +1,271 @@
 .main {
-  background-color: #1a1a1a; /* Common dark theme, adjust if your original was different */
-  color: #fff; /* White text for contrast */
+  padding: 2rem;
+  font-family: 'Helvetica Neue', sans-serif;
+  background: #f5f5f5;
+  color: #111;
 }
+
+.header {
+  text-align: center;
+  background: url('/btc-bg.png') center no-repeat;
+  background-size: cover;
+  padding: 4rem 2rem;
+}
+
+.headerText {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-top: 1rem;
+}
+
+.subtitleNormal {
+  font-weight: normal;
+}
+
+.contentWrapper {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.intro {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.ctaButton {
+  padding: 0.8rem 1.4rem;
+  background-color: #1a1a1a;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.ctaButton:hover {
+  background-color: #333;
+}
+
+.ctaButtonGreen {
+  background-color: #4CAF50;
+}
+
+.description {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.videoContainer {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.mainContent {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.secondaryCta {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.assessmentText {
+  font-size: 0.95rem;
+  color: #444;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.footerContent {
+  max-width: 800px;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: #eee;
+  border-radius: 6px;
+}
+
+.footerLink {
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+
+.pitchSection {
+  background-color: #fff;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 8px;
+  max-width: 800px;
+  position: relative;
+}
+
+.pitchContent h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.pitchList {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.pitchNavigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.navButton {
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.passwordInput {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.confirmButton, .cancelButton {
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.downloadList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.downloadButton {
+  display: block;
+  margin: 0.5rem 0;
+  color: #0070f3;
+  text-decoration: underline;
+}
+
+.packagesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 .packageRow {
   display: flex;
-  gap: 20px;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.package {
+  flex: 1 1 300px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.packageGreen {
+  border-left: 8px solid #4CAF50;
+}
+.packageYellow {
+  border-left: 8px solid #FFC107;
+}
+.packageBlue {
+  border-left: 8px solid #2196F3;
+}
+
+.packageList {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.duration, .note {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #ff4444;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
 }
