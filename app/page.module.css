@@ -25,11 +25,16 @@
 .contentWrapper {
   flex: 1;
   padding: 2rem;
-  max-width: 1200px;
+  max-width: 1400px; /* Increased width to accommodate side-by-side */
   margin: 0 auto;
-  flex-wrap: nowrap;
+  /* Ensure no wrapping */
+  display: block; /* Reset to block to avoid flex interference */
 }
-
+.contentWrapper > div.flex {
+  display: flex !important; /* Force flex on child divs */
+  flex-wrap: nowrap !important; /* Prevent wrapping */
+  align-items: center; /* Vertically center items */
+}
 .intro {
   font-size: 1.2rem;
   line-height: 1.6;

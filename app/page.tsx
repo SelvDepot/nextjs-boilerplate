@@ -242,9 +242,9 @@ export default function Page() {
         </div>
       </div>
 
-      <div className={styles.contentWrapper}>
+      <div className={`${styles.contentWrapper} container mx-auto px-4`}>
         {/* Intro - Text left, Image right */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between mb-8 flex-nowrap">
           <div className="w-1/2 pr-6 text-left">
             <p className={styles.intro}>
               Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
@@ -264,7 +264,7 @@ export default function Page() {
         </div>
 
         {/* Description - Text right, Image left */}
-        <div className="flex items-center justify-between mb-8 flex-row-reverse">
+        <div className="flex items-center justify-between mb-8 flex-row-reverse flex-nowrap">
           <div className="w-1/2 pl-6 text-right">
             <p className={styles.description}>
               Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
@@ -294,7 +294,7 @@ export default function Page() {
         </div>
 
         {/* Main Content - Text left, Image right */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between mb-8 flex-nowrap">
           <div className="w-1/2 pr-6 text-left">
             <div className={styles.mainContent}>
               <p>
@@ -332,7 +332,7 @@ export default function Page() {
         </div>
 
         {/* Assessment Text - Text right, Image left */}
-        <div className="flex items-center justify-between mb-8 flex-row-reverse">
+        <div className="flex items-center justify-between mb-8 flex-row-reverse flex-nowrap">
           <div className="w-1/2 pl-6 text-right">
             <p className={styles.assessmentText}>
               Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
