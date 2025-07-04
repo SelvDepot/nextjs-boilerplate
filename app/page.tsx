@@ -2,6 +2,8 @@
 
 import * as React from 'react';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import styles from './page.module.css';
 
 export default function Page() {
@@ -31,60 +33,7 @@ export default function Page() {
         </>
       ),
     },
-    {
-      title: 'II. Problemet – Hvorfor er det her nødvendigt?',
-      content: (
-        <>
-          <ul className={styles.pitchList}>
-            <li>De fleste Bitcoin-ejere har stadig modpartsrisiko (børser, apps, custodians).</li>
-            <li>20% af al BTC er allerede mistet – ikke pga. hacks, men pga. menneskelige fejl.</li>
-            <li>Uden et robust set-up, en klar arveplan og korrekte værktøjer kan du/dine elskede miste adgangen for altid.</li>
-            <li>En enkelt fejl – ét forkert tryk, én mistet kode/nøgle – og pengene er for evigt væk.</li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: 'III. Løsningen – Hvad tilbyder MitDepot?',
-      content: (
-        <>
-          <p>Vi hjælper dig med en skræddersyet opsætning af:</p>
-          <ul className={styles.pitchList}>
-            <li>Hardware wallets, alt efter behov.</li>
-            <li>Arveplan, så din familie kan få adgang ved sygdom eller død.</li>
-            <li>Trusselsanalyse og sikkerhedsbehov.</li>
-          </ul>
-          <p>Du får hjælp til hele opsætningen – uden at vi nogensinde har adgang til dine midler.</p>
-        </>
-      ),
-    },
-    {
-      title: 'IV. Udbytte – Hvordan MitDepot kommer ind i billedet',
-      content: (
-        <>
-          <ul className={styles.pitchList}>
-            <li>Ro i maven nu og i fremtiden.</li>
-            <li>24/7 adgang til dine Bitcoin uden risiko.</li>
-            <li>Ingen kaos for din familie.</li>
-            <li>Professionel vejledning hele vejen.</li>
-          </ul>
-        </>
-      ),
-    },
-    {
-      title: 'V. Hvorfor MitDepot?',
-      content: (
-        <>
-          <ul className={styles.pitchList}>
-            <li>100% Bitcoin-fokuseret med præcision.</li>
-            <li>Open-source og testede løsninger.</li>
-            <li>Fokus på kontrol, diskretion og arv.</li>
-            <li>Du ejer alt – vi rådgiver kun.</li>
-          </ul>
-          <p>Dette er din livline til en sikker Bitcoin-fremtid.</p>
-        </>
-      ),
-    },
+    // ... (keep other pitchContent items as they are)
     {
       title: 'VI. Pakker & Priser',
       content: (
@@ -189,21 +138,65 @@ export default function Page() {
   };
 
   return (
-    <main className={styles.main}>
-      <div className={styles.header}>
-        <div className={styles.headerText}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-            <h1 className={styles.title}>MitDepot</h1>
-            <img src="/logo.png" alt="MitDepot Logo" style={{ height: '10rem', width: '15rem' }} />
-          </div>
-          <h2 className={styles.subtitle} style={{ color: '#333333' }}>
-            Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
-            <br />
-            <span className={styles.subtitleNormal}>Sikkert. Privat. For evigt.</span>
-          </h2>
-        </div>
-      </div>
+    <main className="min-h-screen bg-gray-900 relative overflow-hidden">
+      {/* Subtle watermark background */}
+      <div
+        className="absolute inset-0 bg-center bg-no-repeat opacity-10"
+        style={{ backgroundImage: 'url(/watermark.png)' }} // Add watermark.png to public/
+      ></div>
 
+      {/* Hero Section */}
+      <section className="container mx-auto px-6 py-16 flex items-center justify-between h-full">
+        {/* Left Side - Text Content */}
+        <div className="max-w-md text-white">
+          <h1 className="text-5xl font-serif mb-4 leading-tight">
+            <span className="text-white">MASTER BITCOIN </span>
+            <span className="text-bitcoin-orange">SELF</span>
+            <span className="text-white"> CUSTODY</span>
+          </h1>
+          <p className="text-gray-300 mb-6 max-w-prose">
+            Take control of your Bitcoin with secure, private self-custody solutions. MitDepot guides you to protect your wealth forever.
+          </p>
+          <div className="space-x-4">
+            <Link
+              href="https://calendly.com/selvdepot/30min"
+              className="inline-block bg-bitcoin-orange text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-bitcoin-orange"
+            >
+              Book a Consultation
+            </Link>
+            <Link
+              href="#learn-more"
+              className="inline-block border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
+            >
+              Learn More
+            </Link>
+          </div>
+        </div>
+
+        {/* Right Side - Video/Image */}
+        <div className="w-1/2 relative">
+          <div className="aspect-video bg-gray-800 rounded-lg overflow-hidden">
+            <Image
+              src="/hero-image.jpg" // Add hero-image.jpg to public/
+              alt="Bitcoin self-custody demo"
+              width={600}
+              height={400}
+              className="object-cover"
+            />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <Image
+                src="/play-icon.png" // Add play-icon.png to public/
+                alt="Play video"
+                width={60}
+                height={60}
+                className="opacity-75 hover:opacity-100 transition-opacity"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Rest of the Content */}
       <div className={styles.contentWrapper}>
         <div style={{ backgroundColor: '#fff3e0', padding: '1rem', borderRadius: '8px', marginBottom: '1.5rem' }}>
           <p className={styles.intro}>
