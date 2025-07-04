@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import styles from './page.module.css';
 
 export default function Page() {
@@ -242,38 +243,48 @@ export default function Page() {
       </div>
 
       <div className={styles.contentWrapper}>
-        <p className={styles.intro}>
-          Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
-          <br />
-          Dine penge. Din fremtid. Din familie. Tag kontrol.
-        </p>
-
-        <div className={styles.cta}>
-          <a
-            href="https://calendly.com/selvdepot/30min"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.ctaButton}
-          >
-            Book et gratis 30-minutters møde
-          </a>
-          {/* <button
-            onClick={handleDownloadAccess}
-            className={`${styles.ctaButton} ${styles.ctaButtonGreen}`}
-          >
-            Download Gratis PDF
-            (One Pager, Antiscam, Ark)
-          </button> */}
+        {/* Intro - Text left, Image right */}
+        <div className="flex items-center mb-8">
+          <div className="w-1/2 pr-4 text-left">
+            <p className={styles.intro}>
+              Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
+              <br />
+              Dine penge. Din fremtid. Din familie. Tag kontrol.
+            </p>
+          </div>
+          <div className="w-1/2">
+            <Image
+              src="/sample-image.jpg" // Replace with your image in public/
+              alt="Bitcoin concept"
+              width={400}
+              height={300}
+              className="object-cover rounded-lg"
+            />
+          </div>
         </div>
 
-        <p className={styles.description}>
-          Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
-          med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen.
-          Ingen banker. Ingen stater. Ingen modparter.
-          Men uden korrekt opbevaring forsvinder sikkerheden og suveræniteten.
-          Hos MitDepot lærer du at holde dine Bitcoin, som de var tiltænkt:
-          100% under din egen kontrol!
-        </p>
+        {/* Description - Text right, Image left */}
+        <div className="flex items-center mb-8 flex-row-reverse">
+          <div className="w-1/2 pl-4 text-right">
+            <p className={styles.description}>
+              Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
+              med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen.
+              Ingen banker. Ingen stater. Ingen modparter.
+              Men uden korrekt opbevaring forsvinder sikkerheden og suveræniteten.
+              Hos MitDepot lærer du at holde dine Bitcoin, som de var tiltænkt:
+              100% under din egen kontrol!
+            </p>
+          </div>
+          <div className="w-1/2">
+            <Image
+              src="/sample-image.jpg" // Replace with your image in public/
+              alt="Bitcoin security"
+              width={400}
+              height={300}
+              className="object-cover rounded-lg"
+            />
+          </div>
+        </div>
 
         <div className={styles.videoContainer}>
           <video controls className={styles.video}>
@@ -282,17 +293,31 @@ export default function Page() {
           </video>
         </div>
 
-        <div className={styles.mainContent}>
-          <p>
-            Bitcoin self-custody ved hjælp af MitDepot er din livbåd i en verden hvor det
-            traditionelle FIAT-system suger livet ud af dine beholdninger og aktiver gennem inflation
-            og kontrol. Over 80% af Bitcoin-ejere risikerer at miste alt gennem hacks,
-            social engineering og modpartsrisiko – men DU er stadig den største risiko for tab af dine Bitcoin.
-            Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody inklusiv
-            arveplanlægning, trusselsanalyse, svigtpunktsanalyse, multisig m.m. – uden at vi
-            nogensinde rører dine private keys. Dette er ikke bare en chance for 100% kontrol og tryghed.
-            Det er din sidste udvej før dørene lukker, og du bliver fanget i et forgængeligt system.
-          </p>
+        {/* Main Content - Text left, Image right */}
+        <div className="flex items-center mb-8">
+          <div className="w-1/2 pr-4 text-left">
+            <div className={styles.mainContent}>
+              <p>
+                Bitcoin self-custody ved hjælp af MitDepot er din livbåd i en verden hvor det
+                traditionelle FIAT-system suger livet ud af dine beholdninger og aktiver gennem inflation
+                og kontrol. Over 80% af Bitcoin-ejere risikerer at miste alt gennem hacks,
+                social engineering og modpartsrisiko – men DU er stadig den største risiko for tab af dine Bitcoin.
+                Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody inklusiv
+                arveplanlægning, trusselsanalyse, svigtpunktsanalyse, multisig m.m. – uden at vi
+                nogensinde rører dine private keys. Dette er ikke bare en chance for 100% kontrol og tryghed.
+                Det er din sidste udvej før dørene lukker, og du bliver fanget i et forgængeligt system.
+              </p>
+            </div>
+          </div>
+          <div className="w-1/2">
+            <Image
+              src="/sample-image.jpg" // Replace with your image in public/
+              alt="Self-custody setup"
+              width={400}
+              height={300}
+              className="object-cover rounded-lg"
+            />
+          </div>
         </div>
 
         <div className={styles.secondaryCta}>
@@ -306,16 +331,30 @@ export default function Page() {
           </a>
         </div>
 
-        <p className={styles.assessmentText}>
-          Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
-          self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har
-          de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger –
-          vil du blive afvist, men med mulighed for undervisning og støtte, indtil du er klar.
-          <br />
-          <br />
-          Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller hjælpelinje
-          at ringe til, hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt ansvar.
-        </p>
+        {/* Assessment Text - Text right, Image left */}
+        <div className="flex items-center mb-8 flex-row-reverse">
+          <div className="w-1/2 pl-4 text-right">
+            <p className={styles.assessmentText}>
+              Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
+              self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har
+              de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger –
+              vil du blive afvist, men med mulighed for undervisning og støtte, indtil du er klar.
+              <br />
+              <br />
+              Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller hjælpelinje
+              at ringe til, hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt ansvar.
+            </p>
+          </div>
+          <div className="w-1/2">
+            <Image
+              src="/sample-image.jpg" // Replace with your image in public/
+              alt="Responsibility concept"
+              width={400}
+              height={300}
+              className="object-cover rounded-lg"
+            />
+          </div>
+        </div>
       </div>
 
       <div className={styles.footerLinks}>
