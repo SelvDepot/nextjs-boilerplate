@@ -27,7 +27,9 @@
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  flex-wrap: nowrap;
 }
+
 .intro {
   font-size: 1.2rem;
   line-height: 1.6;
