@@ -230,17 +230,20 @@ export default function Page() {
   };
 
   return (
-    <main className={styles.main}>
-      <div className={styles.header}>
-        <div className={styles.headerText}>
-          <h1 className={styles.title}>MitDepot</h1>
-          <h2 className={styles.subtitle} style={{ color: '#333333' }}>
-            Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
-            <br />
-            <span className={styles.subtitleNormal}>Sikkert. Privat. For evigt.</span>
-          </h2>
-        </div>
+<main className={styles.main}>
+  <div className={styles.header}>
+    <div className={styles.headerText}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <h1 className={styles.title}>MitDepot</h1>
+        <img src="/logo.png" alt="MitDepot Logo" style={{ height: '3rem' }} />
       </div>
+      <h2 className={styles.subtitle} style={{ color: '#333333' }}>
+        Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
+        <br />
+        <span className={styles.subtitleNormal}>Sikkert. Privat. For evigt.</span>
+      </h2>
+    </div>
+  </div>
 
       <div className={styles.contentWrapper}>
         <p className={styles.intro}>
