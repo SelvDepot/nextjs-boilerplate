@@ -7,7 +7,7 @@
 }
 
 .header {
-  background: url('/logo.png') no-repeat center center;
+  background: url('/') no-repeat center center;
   background-size: cover;
   padding: 4rem 2rem;
   text-align: center;
