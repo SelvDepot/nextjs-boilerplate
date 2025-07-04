@@ -379,7 +379,7 @@ export default function Page() {
                   </li>
                 ))
               ) : (
-                <li>No links available</li>
+                <li>No links availablee</li>
               )}
             </ul>
             <button onClick={handleCloseDownloadModal} className={styles.cancelButton}>
