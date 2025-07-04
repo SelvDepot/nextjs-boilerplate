@@ -244,8 +244,8 @@ export default function Page() {
 
       <div className={styles.contentWrapper}>
         {/* Intro - Text left, Image right */}
-        <div className="flex items-center mb-8">
-          <div className="w-1/2 pr-4 text-left">
+        <div className="flex items-center justify-between mb-8">
+          <div className="w-1/2 pr-6 text-left">
             <p className={styles.intro}>
               Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
               <br />
@@ -254,7 +254,7 @@ export default function Page() {
           </div>
           <div className="w-1/2">
             <Image
-              src="/logo.png" // Replace with your image in public/
+              src="/logo.png" // Replace with your image
               alt="Bitcoin concept"
               width={400}
               height={300}
@@ -264,8 +264,8 @@ export default function Page() {
         </div>
 
         {/* Description - Text right, Image left */}
-        <div className="flex items-center mb-8 flex-row-reverse">
-          <div className="w-1/2 pl-4 text-right">
+        <div className="flex items-center justify-between mb-8 flex-row-reverse">
+          <div className="w-1/2 pl-6 text-right">
             <p className={styles.description}>
               Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
               med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen.
@@ -277,7 +277,7 @@ export default function Page() {
           </div>
           <div className="w-1/2">
             <Image
-              src="/logo.png" // Replace with your image in public/
+              src="/logo.png" // Replace with your image
               alt="Bitcoin security"
               width={400}
               height={300}
@@ -294,8 +294,8 @@ export default function Page() {
         </div>
 
         {/* Main Content - Text left, Image right */}
-        <div className="flex items-center mb-8">
-          <div className="w-1/2 pr-4 text-left">
+        <div className="flex items-center justify-between mb-8">
+          <div className="w-1/2 pr-6 text-left">
             <div className={styles.mainContent}>
               <p>
                 Bitcoin self-custody ved hjælp af MitDepot er din livbåd i en verden hvor det
@@ -311,7 +311,7 @@ export default function Page() {
           </div>
           <div className="w-1/2">
             <Image
-              src="/logo.png" // Replace with your image in public/
+              src="/logo.png" // Replace with your image
               alt="Self-custody setup"
               width={400}
               height={300}
@@ -332,8 +332,8 @@ export default function Page() {
         </div>
 
         {/* Assessment Text - Text right, Image left */}
-        <div className="flex items-center mb-8 flex-row-reverse">
-          <div className="w-1/2 pl-4 text-right">
+        <div className="flex items-center justify-between mb-8 flex-row-reverse">
+          <div className="w-1/2 pl-6 text-right">
             <p className={styles.assessmentText}>
               Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
               self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har
@@ -347,7 +347,7 @@ export default function Page() {
           </div>
           <div className="w-1/2">
             <Image
-              src="/logo.png" // Replace with your image in public/
+              src="/logo.png" // Replace with your image
               alt="Responsibility concept"
               width={400}
               height={300}
