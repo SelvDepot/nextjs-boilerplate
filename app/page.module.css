@@ -6,14 +6,6 @@
   font-family: Arial, sans-serif;
 }
 
-.header {
-  background: url('/') no-repeat center center;
-  background-size: cover;
-  padding: 4rem 2rem;
-  text-align: center;
-  color: #fff;
-}
-
 .headerText {
   max-width: 1200px;
   margin: 0 auto;
