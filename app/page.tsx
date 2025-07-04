@@ -168,7 +168,7 @@ export default function Page() {
   ];
 
   const handlePitchAccess = () => setShowPasswordModal(true);
-  const handlePasswordSubmit = (e) => {
+  const handlePasswordSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (passwordInput === '9945') {
       setShowPitch(true);
@@ -202,7 +202,7 @@ export default function Page() {
   };
 
   useEffect(() => {
-    const handleKeyDown = (event) => {
+    const handleKeyDown = (event: KeyboardEvent) => {
       if (event.ctrlKey && event.key === 'p') {
         event.preventDefault();
         handlePitchAccess();

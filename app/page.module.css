@@ -107,10 +107,6 @@
 .footerLink:hover {
   color: #22c55e;
 }
-.activeLink {
-  font-weight: bold;
-  color: #ff9900; /* Highlight active button */
-}
 .footerContent {
   max-width: 1200px;
   margin: 0 auto;
@@ -312,5 +308,5 @@
 }
 .activeLink {
   font-weight: bold;
-  color: #ff9900; /* Highlight active button */
+  color: #ff9900;
 }
