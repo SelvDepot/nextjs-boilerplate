@@ -5,13 +5,13 @@ import { useState, useEffect } from 'react';
 import styles from './page.module.css';
 
 export default function Page() {
-  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [activeSection, setActiveSection] = useState(null);
   const [showPitch, setShowPitch] = useState(false);
   const [currentPitchPage, setCurrentPitchPage] = useState(0);
   const [showPasswordModal, setShowPasswordModal] = useState(false);
   const [passwordInput, setPasswordInput] = useState('');
   const [showDownloadModal, setShowDownloadModal] = useState(false);
-  const [pdfUrls, setPdfUrls] = useState<string[]>([]);
+  const [pdfUrls, setPdfUrls] = useState([]);
 
   const pitchContent = [
     {
@@ -168,7 +168,7 @@ export default function Page() {
   ];
 
   const handlePitchAccess = () => setShowPasswordModal(true);
-  const handlePasswordSubmit = (e: React.FormEvent) => {
+  const handlePasswordSubmit = (e) => {
     e.preventDefault();
     if (passwordInput === '9945') {
       setShowPitch(true);
@@ -202,7 +202,7 @@ export default function Page() {
   };
 
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
+    const handleKeyDown = (event) => {
       if (event.ctrlKey && event.key === 'p') {
         event.preventDefault();
         handlePitchAccess();
@@ -233,7 +233,7 @@ export default function Page() {
       <div className={styles.header}>
         <div className={styles.headerText}>
           <h1 className={styles.title}>MitDepot</h1>
-          <h2 className={styles.subtitle} style={{ color: '#333333' }}> {/* Changed to DodgerBlue */}
+          <h2 className={styles.subtitle} style={{ color: '#333333' }}>
             Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
             <br />
             <span className={styles.subtitleNormal}>Sikkert. Privat. For evigt.</span>
@@ -323,32 +323,55 @@ export default function Page() {
           <p
             key={section}
             onClick={() => setActiveSection(activeSection === section ? null : section)}
-            className={styles.footerLink}
+            className={`${styles.footerLink} ${activeSection === section ? styles.activeLink : ''}`}
           >
             {section}
           </p>
         ))}
       </div>
 
-      {activeSection === 'Kontakt' && (
+      {activeSection && (
         <div className={styles.footerContent}>
-          <p>
-            📬 Email:{' '}
-            <a href="mailto:selvdepot@gmail.com" className={styles.footerLink}>
-              SelvDepot@gmail.com
-            </a>
-          </p>
-          <p>
-            📅 Book:{' '}
-            <a
-              href="https://calendly.com/selvdepot/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.footerLink}
-            >
-              calendly.com/selvdepot/30min
-            </a>
-          </p>
+          {activeSection === 'Kontakt' && (
+            <>
+              <p>
+                📬 Email:{' '}
+                <a href="mailto:selvdepot@gmail.com" className={styles.footerLink}>
+                  SelvDepot@gmail.com
+                </a>
+              </p>
+              <p>
+                📅 Book:{' '}
+                <a
+                  href="https://calendly.com/selvdepot/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.footerLink}
+                >
+                  calendly.com/selvdepot/30min
+                </a>
+              </p>
+            </>
+          )}
+          {activeSection === 'Disclaimer' && (
+            <p>
+              Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk,
+              finansiel, skattemæssig eller investeringsrådgivning. MitDepot tilbyder alene undervisning
+              og værktøjer til selvstændig opbevaring af Bitcoin.
+            </p>
+          )}
+          {activeSection === 'Privatliv' && (
+            <p>
+              Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly
+              håndteres dine oplysninger af dem under deres politikker. Vi bruger ikke cookies eller analytics.
+            </p>
+          )}
+          {activeSection === 'Vilkår' && (
+            <p>
+              Ved brug af MitDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
+              Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
+            </p>
+          )}
         </div>
       )}
       {activeSection === 'Pitch' && showPitch && (
@@ -420,31 +443,6 @@ export default function Page() {
               Luk
             </button>
           </div>
-        </div>
-      )}
-      {activeSection === 'Disclaimer' && (
-        <div className={styles.footerContent}>
-          <p>
-            Alt indhold på denne hjemmeside er udelukkende til generel information og udgør ikke juridisk,
-            finansiel, skattemæssig eller investeringsrådgivning. MitDepot tilbyder alene undervisning
-            og værktøjer til selvstændig opbevaring af Bitcoin.
-          </p>
-        </div>
-      )}
-      {activeSection === 'Privatliv' && (
-        <div className={styles.footerContent}>
-          <p>
-            Vi indsamler ingen personlige oplysninger uden dit samtykke. Ved booking via Calendly
-            håndteres dine oplysninger af dem under deres politikker. Vi bruger ikke cookies eller analytics.
-          </p>
-        </div>
-      )}
-      {activeSection === 'Vilkår' && (
-        <div className={styles.footerContent}>
-          <p>
-            Ved brug af MitDepot accepterer du, at alt indhold er til uddannelsesmæssige formål.
-            Vi tilbyder ikke investering, skatte- eller juridisk rådgivning. Dansk lovgivning er gældende.
-          </p>
         </div>
       )}
     </main>
