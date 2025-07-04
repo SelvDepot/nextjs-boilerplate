@@ -257,13 +257,13 @@ export default function Page() {
           >
             Book et gratis 30-minutters møde
           </a>
-          <button
+          {/* <button
             onClick={handleDownloadAccess}
             className={`${styles.ctaButton} ${styles.ctaButtonGreen}`}
           >
             Download Gratis PDF
             (One Pager, Antiscam, Ark)
-          </button>
+          </button> */}
         </div>
 
         <p className={styles.description}>
