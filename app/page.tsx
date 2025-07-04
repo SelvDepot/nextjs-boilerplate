@@ -5,13 +5,14 @@ import { useState, useEffect } from 'react';
 import styles from './page.module.css';
 
 export default function Page() {
-  const [activeSection, setActiveSection] = useState(null);
-  const [showPitch, setShowPitch] = useState(false);
-  const [currentPitchPage, setCurrentPitchPage] = useState(0);
-  const [showPasswordModal, setShowPasswordModal] = useState(false);
-  const [passwordInput, setPasswordInput] = useState('');
-  const [showDownloadModal, setShowDownloadModal] = useState(false);
-  const [pdfUrls, setPdfUrls] = useState([]);
+  // Define state with explicit types
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [showPitch, setShowPitch] = useState<boolean>(false);
+  const [currentPitchPage, setCurrentPitchPage] = useState<number>(0);
+  const [showPasswordModal, setShowPasswordModal] = useState<boolean>(false);
+  const [passwordInput, setPasswordInput] = useState<string>('');
+  const [showDownloadModal, setShowDownloadModal] = useState<boolean>(false);
+  const [pdfUrls, setPdfUrls] = useState<string[]>([]);
 
   const pitchContent = [
     {
@@ -168,6 +169,7 @@ export default function Page() {
   ];
 
   const handlePitchAccess = () => setShowPasswordModal(true);
+
   const handlePasswordSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (passwordInput === '9945') {
@@ -181,14 +183,13 @@ export default function Page() {
       setPasswordInput('');
     }
   };
+
   const handleDownloadAccess = async () => {
     try {
       console.log('Fetching PDF links...');
       const response = await fetch('/api/pdfs', { method: 'GET' });
-      console.log('Response status:', response.status);
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const data = await response.json();
-      console.log('Response data:', data);
       if (data.urls && Array.isArray(data.urls)) {
         setPdfUrls(data.urls);
         setShowDownloadModal(true);
@@ -257,18 +258,11 @@ export default function Page() {
           >
             Book et gratis 30-minutters møde
           </a>
-          {/* <button
-            onClick={handleDownloadAccess}
-            className={`${styles.ctaButton} ${styles.ctaButtonGreen}`}
-          >
-            Download Gratis PDF
-            (One Pager, Antiscam, Ark)
-          </button> */}
         </div>
 
         <p className={styles.description}>
           Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
-          med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen.
+          med begrænset udbud, der ikke omliggende til nogen.
           Ingen banker. Ingen stater. Ingen modparter.
           Men uden korrekt opbevaring forsvinder sikkerheden og suveræniteten.
           Hos MitDepot lærer du at holde dine Bitcoin, som de var tiltænkt:
@@ -286,8 +280,7 @@ export default function Page() {
           <p>
             Bitcoin self-custody ved hjælp af MitDepot er din livbåd i en verden hvor det
             traditionelle FIAT-system suger livet ud af dine beholdninger og aktiver gennem inflation
-            og kontrol. Over 80% af Bitcoin-ejere risikerer at miste alt gennem hacks,
-            social engineering og modpartsrisiko – men DU er stadig den største risiko for tab af dine Bitcoin.
+            og kontrol. Over 80% af Bitcoin-ejere risikerer at miste alt gennem, men DU er stadig den største risiko for tab af dine Bitcoin.
             Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody inklusiv
             arveplanlægning, trusselsanalyse, svigtpunktsanalyse, multisig m.m. – uden at vi
             nogensinde rører dine private keys. Dette er ikke bare en chance for 100% kontrol og tryghed.
