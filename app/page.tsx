@@ -233,9 +233,9 @@ export default function Page() {
 <main className={styles.main}>
   <div className={styles.header}>
     <div className={styles.headerText}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
         <h1 className={styles.title}>MitDepot</h1>
-        <img src="/logo.png" alt="MitDepot Logo" style={{ height: '3rem' }} />
+        <img src="/logo.png" alt="MitDepot Logo" style={{ height: '6rem' }} />
       </div>
       <h2 className={styles.subtitle} style={{ color: '#333333' }}>
         Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
