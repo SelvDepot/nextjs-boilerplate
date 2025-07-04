@@ -254,7 +254,7 @@ export default function Page() {
           </div>
           <div className="w-1/2">
             <Image
-              src="/sample-image.jpg" // Replace with your image in public/
+              src="/logo.png" // Replace with your image in public/
               alt="Bitcoin concept"
               width={400}
               height={300}
@@ -277,7 +277,7 @@ export default function Page() {
           </div>
           <div className="w-1/2">
             <Image
-              src="/sample-image.jpg" // Replace with your image in public/
+              src="/logo.png" // Replace with your image in public/
               alt="Bitcoin security"
               width={400}
               height={300}
@@ -311,7 +311,7 @@ export default function Page() {
           </div>
           <div className="w-1/2">
             <Image
-              src="/sample-image.jpg" // Replace with your image in public/
+              src="/logo.png" // Replace with your image in public/
               alt="Self-custody setup"
               width={400}
               height={300}
@@ -347,7 +347,7 @@ export default function Page() {
           </div>
           <div className="w-1/2">
             <Image
-              src="/sample-image.jpg" // Replace with your image in public/
+              src="/logo.png" // Replace with your image in public/
               alt="Responsibility concept"
               width={400}
               height={300}
