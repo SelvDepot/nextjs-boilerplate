@@ -2,8 +2,6 @@
 
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 import styles from './page.module.css';
 
 export default function Page() {
@@ -33,7 +31,62 @@ export default function Page() {
         </>
       ),
     },
-    // ... (keep other pitchContent items as they are)
+    {
+      title: 'II. Problemet – Hvorfor er det her nødvendigt?',
+      content: (
+        <>
+          <ul className={styles.pitchList}>
+            <li>De fleste Bitcoin-ejere har stadig modpartsrisiko (børser, apps, custodians).</li>
+            <li>20% af al BTC er allerede mistet – ikke pga. hacks, men pga. menneskelige fejl.</li>
+            <li>Uden et robust set-up, en klar arveplan og korrekte værktøjer kan du/dine elskede miste adgangen for altid.</li>
+            <li>En enkelt fejl – ét forkert tryk, én mistet kode/nøgle – og pengene er for evigt væk.</li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      title: 'III. Løsningen – Hvad tilbyder MitDepot?',
+      content: (
+        <>
+          <p>Vi hjælper dig med en skræddersyet opsætning af:</p>
+          <ul className={styles.pitchList}>
+            <li>Hardware wallets, alt efter behov (hot/cold, single/multi/passphrase m.m.).</li>
+            <li>Arveplan, kan din familie/børn finde ud af at få adgang til dine Bitcoin i tilfælde af sygdom/død?</li>
+            <li>Trusselsanalyse, Svigtepunksanalyse, Privatlivsbehov.</li>
+          </ul>
+          <p>Du får hjælp til hele opsætningen – uden at vi nogensinde har adgang til dine midler, enhed eller lignende.</p>
+        </>
+      ),
+    },
+    {
+      title: 'IV. Udbytte – Hvordan MitDepot kommer ind i billedet',
+      content: (
+        <>
+          <ul className={styles.pitchList}>
+            <li>Du får ro i maven nu og i fremtiden.</li>
+            <li>Du ved præcis, hvor dine Bitcoin er, har 24/7/365 adgang og at ingen andre har kan.</li>
+            <li>Du undgår at efterlade kaos til din ikke-tekniske onkel eller selv at miste dem.</li>
+            <li>Du slipper for at famle i mørket – vi har prøvet det før og guider dig hele vejen.</li>
+            <li>Du tager ansvar – men med en sparringspartner, der forstår både teknikken og dine behov.</li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      title: 'V. Hvorfor MitDepot?',
+      content: (
+        <>
+          <ul className={styles.pitchList}>
+            <li>Vi er 100 % Bitcoin-only – vi gør ikke alt. Vi gør det her med præcision.</li>
+            <li>Alt vi bruger er open-source, verified og battle-tested – ingen sorte bokse.</li>
+            <li>Vi forstår formuebevistes behov: kontrol, diskretion, arv og sikkerhed.</li>
+            <li>Vi rådgiver – vi opbevarer ikke. Du ejer, du bestemmer.</li>
+            <li>Vores løsninger fungerer i praksis – ikke bare på papir.</li>
+          </ul>
+          <p>Det her handler ikke om crypto, trading eller andet gøjl. Det er din livline til at sikre din fremtidige Bitcoin formue.</p>
+        </>
+      ),
+    },
     {
       title: 'VI. Pakker & Priser',
       content: (
@@ -41,36 +94,72 @@ export default function Page() {
           <div className={`${styles.package} ${styles.packageRow}`}>
             <div className={`${styles.package} ${styles.packageGreen}`}>
               <h3>🟠 Klar til at eje</h3>
-              <p><strong>Pris:</strong> 10.000 kr.</p>
-              <p>Til dig, der vil i gang.</p>
+              <p>
+                <strong>Pris:</strong> 10.000 kr.
+                <br />
+                Til dig, der vil i gang – eller optimere det, du allerede har.
+              </p>
+              <p>Inkluderer:</p>
               <ul className={styles.packageList}>
-                <li>Hardware wallet opsætning.</li>
-                <li>Backup-strategi.</li>
-                <li>Grundlæggende sikkerhed.</li>
+                <li>Hardware wallet opsætning</li>
+                <li>Single-sig med/uden passphrase</li>
+                <li>Backup-strategi og risikoforståelse</li>
+                <li>Grundlæggende sikkerhed og vaner</li>
+                <li>Pakken bruges også til gennemgang af eksisterende opsætning (hvis ønsket)</li>
               </ul>
-              <p><strong>Varighed:</strong> Ca. 2 timer.</p>
+              <p className={styles.duration}>
+                <strong>Varighed:</strong> Ca. 2 timer
+              </p>
+              <p className={styles.note}>
+                <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
+              </p>
             </div>
             <div className={`${styles.package} ${styles.packageYellow}`}>
               <h3>🟡 Ejer med overblik</h3>
-              <p><strong>Pris:</strong> 20.000 kr.</p>
-              <p>Til dig med større mængder.</p>
+              <p>
+                <strong>Pris:</strong> 20.000 kr.
+                <br />
+                Til dig med større mængder bitcoin og behov for teknisk dybde.
+              </p>
+              <p>Inkluderer:</p>
               <ul className={styles.packageList}>
-                <li>Alt i første pakke.</li>
-                <li>Airgapped wallet-struktur.</li>
-                <li>Bitcoin node opsætning.</li>
+                <li>Alt i første pakke</li>
+                <li>Rådgivning om hardware wallets</li>
+                <li>Airgapped wallet-struktur</li>
+                <li>Brug og opsætning af Bitcoin node</li>
+                <li>Skræddersyet recovery-plan/guide</li>
+                <li>Fokus på back-up, sikkerhed og gennemgang af angrebsvektorer</li>
               </ul>
-              <p><strong>Varighed:</strong> 2–4 timer.</p>
+              <p className={styles.duration}>
+                <strong>Varighed:</strong> 2–4 timer (ekslusiv Node download)
+              </p>
+              <p className={styles.note}>
+                <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
+              </p>
             </div>
             <div className={`${styles.package} ${styles.packageBlue}`}>
               <h3>🔵 Fuld kontrol</h3>
-              <p><strong>Pris:</strong> 45.000 kr.</p>
-              <p>Til suveræn sikkerhed.</p>
+              <p>
+                <strong>Pris:</strong> 45.000 kr.
+                <br />
+                Til dig, der ønsker suveræn sikkerhed – for livet og for arvingerne.
+              </p>
+              <p>Inkluderer:</p>
               <ul className={styles.packageList}>
-                <li>Alt i “Ejer med overblik”.</li>
-                <li>Multisig-opsætning.</li>
-                <li>Arveplan og vejledning.</li>
+                <li>Alt i “Ejer med overblik”</li>
+                <li>Multisig-opsætning (hvis relevant)</li>
+                <li>Udvidet trusselsanalyse, svigtpunksanalyse</li>
+                <li>Arveplan og familievejledning</li>
+                <li>Opsætning og brug af Bitcoin node</li>
+                <li>UTXO-management, privat bevidsthed</li>
+                <li>Ét gratis check-up inden for 4 måneder</li>
               </ul>
-              <p><strong>Varighed:</strong> Fleksibel.</p>
+              <p className={styles.duration}>
+                <strong>Varighed:</strong> Fleksibel efter behov og kompleksitet
+              </p>
+              <p className={styles.note}>
+                <strong>Note:</strong> Vi afslutter først, når alt er testet og forstået.
+              </p>
             </div>
           </div>
         </div>
@@ -79,7 +168,6 @@ export default function Page() {
   ];
 
   const handlePitchAccess = () => setShowPasswordModal(true);
-
   const handlePasswordSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (passwordInput === '9945') {
@@ -93,12 +181,14 @@ export default function Page() {
       setPasswordInput('');
     }
   };
-
   const handleDownloadAccess = async () => {
     try {
+      console.log('Fetching PDF links...');
       const response = await fetch('/api/pdfs', { method: 'GET' });
+      console.log('Response status:', response.status);
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const data = await response.json();
+      console.log('Response data:', data);
       if (data.urls && Array.isArray(data.urls)) {
         setPdfUrls(data.urls);
         setShowDownloadModal(true);
@@ -106,6 +196,7 @@ export default function Page() {
         alert('No URLs found in response');
       }
     } catch (error) {
+      console.error('Fetch error:', error);
       alert('Failed to fetch PDF links: ' + (error instanceof Error ? error.message : String(error)));
     }
   };
@@ -138,84 +229,51 @@ export default function Page() {
   };
 
   return (
-    <main className="min-h-screen bg-gray-900 relative overflow-hidden">
-      {/* Subtle watermark background */}
-      <div
-        className="absolute inset-0 bg-center bg-no-repeat opacity-10"
-        style={{ backgroundImage: 'url(/watermark.png)' }} // Add watermark.png to public/
-      ></div>
-
-      {/* Hero Section */}
-      <section className="container mx-auto px-6 py-16 flex items-center justify-between h-full">
-        {/* Left Side - Text Content */}
-        <div className="max-w-md text-white">
-          <h1 className="text-5xl font-serif mb-4 leading-tight">
-            <span className="text-white">MASTER BITCOIN </span>
-            <span className="text-bitcoin-orange">SELF</span>
-            <span className="text-white"> CUSTODY</span>
-          </h1>
-          <p className="text-gray-300 mb-6 max-w-prose">
-            Take control of your Bitcoin with secure, private self-custody solutions. MitDepot guides you to protect your wealth forever.
-          </p>
-          <div className="space-x-4">
-            <Link
-              href="https://calendly.com/selvdepot/30min"
-              className="inline-block bg-bitcoin-orange text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-bitcoin-orange"
-            >
-              Book a Consultation
-            </Link>
-            <Link
-              href="#learn-more"
-              className="inline-block border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
-            >
-              Learn More
-            </Link>
-          </div>
-        </div>
-
-        {/* Right Side - Video/Image */}
-        <div className="w-1/2 relative">
-          <div className="aspect-video bg-gray-800 rounded-lg overflow-hidden">
-            <Image
-              src="/hero-image.jpg" // Add hero-image.jpg to public/
-              alt="Bitcoin self-custody demo"
-              width={600}
-              height={400}
-              className="object-cover"
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Image
-                src="/play-icon.png" // Add play-icon.png to public/
-                alt="Play video"
-                width={60}
-                height={60}
-                className="opacity-75 hover:opacity-100 transition-opacity"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Rest of the Content */}
-      <div className={styles.contentWrapper}>
-        <div style={{ backgroundColor: '#fff3e0', padding: '1rem', borderRadius: '8px', marginBottom: '1.5rem' }}>
-          <p className={styles.intro}>
-            Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
+    <main className={styles.main}>
+      <div className={styles.header}>
+        <div className={styles.headerText}>
+          <h1 className={styles.title}>MitDepot</h1>
+          <h2 className={styles.subtitle} style={{ color: '#333333' }}>
+            Vi hjælper dig eje dine Bitcoin selv – og sove trygt.
             <br />
-            Dine penge. Din fremtid. Din familie. Tag kontrol.
-          </p>
+            <span className={styles.subtitleNormal}>Sikkert. Privat. For evigt.</span>
+          </h2>
+        </div>
+      </div>
+
+      <div className={styles.contentWrapper}>
+        <p className={styles.intro}>
+          Ingen mellemled. Ingen bureaukrati. Kun dig og dine Bitcoin på dine præmisser.
+          <br />
+          Dine penge. Din fremtid. Din familie. Tag kontrol.
+        </p>
+
+        <div className={styles.cta}>
+          <a
+            href="https://calendly.com/selvdepot/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.ctaButton}
+          >
+            Book et gratis 30-minutters møde
+          </a>
+          {/* <button
+            onClick={handleDownloadAccess}
+            className={`${styles.ctaButton} ${styles.ctaButtonGreen}`}
+          >
+            Download Gratis PDF
+            (One Pager, Antiscam, Ark)
+          </button> */}
         </div>
 
-        <div style={{ backgroundColor: '#fff3e0', padding: '1rem', borderRadius: '8px', marginBottom: '1.5rem' }}>
-          <p className={styles.description}>
-            Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
-            med begrænset udbud, der ikke omliggende til nogen.
-            Ingen banker. Ingen stater. Ingen modparter.
-            Men uden korrekt opbevaring forsvinder sikkerheden og suveræniteten.
-            Hos MitDepot lærer du at holde dine Bitcoin, som de var tiltænkt:
-            100% under din egen kontrol!
-          </p>
-        </div>
+        <p className={styles.description}>
+          Bitcoin er ikke spekulation. Det er basepenge i digital form – et globalt, upolitisk system
+          med begrænset udbud, der ikke kan manipuleres, printes eller overdrages til nogen.
+          Ingen banker. Ingen stater. Ingen modparter.
+          Men uden korrekt opbevaring forsvinder sikkerheden og suveræniteten.
+          Hos MitDepot lærer du at holde dine Bitcoin, som de var tiltænkt:
+          100% under din egen kontrol!
+        </p>
 
         <div className={styles.videoContainer}>
           <video controls className={styles.video}>
@@ -224,11 +282,12 @@ export default function Page() {
           </video>
         </div>
 
-        <div style={{ backgroundColor: '#fff3e0', padding: '1rem', borderRadius: '8px', marginBottom: '1.5rem' }}>
-          <p className={styles.mainContent}>
+        <div className={styles.mainContent}>
+          <p>
             Bitcoin self-custody ved hjælp af MitDepot er din livbåd i en verden hvor det
             traditionelle FIAT-system suger livet ud af dine beholdninger og aktiver gennem inflation
-            og kontrol. Over 80% af Bitcoin-ejere risikerer at miste alt gennem, men DU er stadig den største risiko for tab af dine Bitcoin.
+            og kontrol. Over 80% af Bitcoin-ejere risikerer at miste alt gennem hacks,
+            social engineering og modpartsrisiko – men DU er stadig den største risiko for tab af dine Bitcoin.
             Med vores 1:1-rådgivning lærer du at eje dine Bitcoin sikkert gennem self-custody inklusiv
             arveplanlægning, trusselsanalyse, svigtpunktsanalyse, multisig m.m. – uden at vi
             nogensinde rører dine private keys. Dette er ikke bare en chance for 100% kontrol og tryghed.
@@ -247,18 +306,16 @@ export default function Page() {
           </a>
         </div>
 
-        <div style={{ backgroundColor: '#fff3e0', padding: '1rem', borderRadius: '8px', marginBottom: '1.5rem' }}>
-          <p className={styles.assessmentText}>
-            Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
-            self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har
-            de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger –
-            vil du blive afvist, men med mulighed for undervisning og støtte, indtil du er klar.
-            <br />
-            <br />
-            Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller hjælpelinje
-            at ringe til, hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt ansvar.
-          </p>
-        </div>
+        <p className={styles.assessmentText}>
+          Dette er ikke et salgstrick. Vi vurderer nøje, om du reelt er egnet til at håndtere
+          self-custody af Bitcoin. Hvis du er for ung, for gammel, eller af andre grunde ikke har
+          de nødvendige forudsætninger – fx kognitiv svækkelse eller tekniske begrænsninger –
+          vil du blive afvist, men med mulighed for undervisning og støtte, indtil du er klar.
+          <br />
+          <br />
+          Ægte ejerskab kræver ægte ansvar. Der findes ingen garantiordning, hotline eller hjælpelinje
+          at ringe til, hvis noget går galt. Bitcoin giver dig fuld kontrol – og fuldt ansvar.
+        </p>
       </div>
 
       <div className={styles.footerLinks}>
@@ -379,7 +436,7 @@ export default function Page() {
                   </li>
                 ))
               ) : (
-                <li>No links availablee</li>
+                <li>No links available</li>
               )}
             </ul>
             <button onClick={handleCloseDownloadModal} className={styles.cancelButton}>
